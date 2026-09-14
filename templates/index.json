@@ -1,1 +1,710 @@
-{"sections":{"image-with-text-overlay-1":{"type":"image-with-text-overlay","blocks":{"subheading-1":{"type":"subheading","settings":{"text":"Professionel wellness til hjemmet"}},"heading-1":{"type":"heading","settings":{"text":"Dine rutiner —dine resultater","heading_tag":"h2"}},"richtext_KD8KLt":{"type":"richtext","settings":{"content":"<p>Enheder, der gør dine daglige minutter til synlige resultater. Timinutter om dagen er nok.<\/p>"}},"button-1":{"type":"button","settings":{"style":"solid","text":"Se produkterne","url":"","background":"#ffffff","text_color":"#1c1c1c"}},"button_e9WQKC":{"type":"button","settings":{"style":"solid","text":"Glow Therapy","url":"","background":"rgba(0,0,0,0)","text_color":"#000000"}}},"block_order":["subheading-1","heading-1","richtext_KD8KLt","button-1","button_e9WQKC"],"name":"Hero section","settings":{"custom_class":"Hero_sec","color_scheme":"scheme-3","image_size":"sm","image":"shopify:\/\/shop_images\/Section.png","allow_transparent_header":false,"reveal_on_scroll":true,"remove_vertical_spacing":true,"content_width":"md","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center-start sm:text-start","overlay_color":"#000000","overlay_opacity":20}},"multi_column_g6gVwX":{"type":"multi-column","blocks":{"image_with_text_x4ATGF":{"type":"image_with_text","settings":{"title":"Fri fragt over 499 kr.","heading_tag":"h3","content":"<p>GLS eller PostNord · 1–2 hverdage<\/p>","link_url":"","link_text":""}},"image_with_text_LGAWkj":{"type":"image_with_text","settings":{"title":"14 dages fortrydelsesret","heading_tag":"h3","content":"<p>Returnér uden begrundelse<\/p>","link_url":"","link_text":""}},"image_with_text_MTkne8":{"type":"image_with_text","settings":{"title":"2 års reklamationsret","heading_tag":"h3","content":"<p>CE-godkendte enheder<\/p>","link_url":"","link_text":""}},"image_with_text_87cAUd":{"type":"image_with_text","settings":{"title":"Dansk kundeservice","heading_tag":"h3","content":"<p>Svar inden for én hverdag<\/p>","link_url":"","link_text":""}}},"block_order":["image_with_text_x4ATGF","image_with_text_LGAWkj","image_with_text_MTkne8","image_with_text_87cAUd"],"name":"About section","settings":{"custom_class":"about_sec","color_scheme":"","separate_section_with_border":true,"columns_per_row":4,"stack_on_mobile":false,"overlap_image":false,"content_alignment":"center","text_alignment":"center","spacing":"sm","show_count_number":true,"count_number_size":11,"count_number_color":"#b18a50","column_heading_size":12,"column_heading_color":"#2a2420","column_content_size":13,"column_content_color":"#8c8278","subheading":"","title":"","heading_style":"h2","content":""}},"collection_list_wchGVw":{"type":"collection-list","blocks":{"collection_Qtcn7W":{"type":"collection","settings":{"color_scheme":"","collection":"glow-therapy","expand_collection":false,"content_position":"place-self-end-start text-start","show_product_count":true,"product_count_color":"#ffffff","product_count_font_size":13,"subheading":"","title":"Glow Therapy","button_text":"","button_link":"","button_style":"solid","overlay_color":"#000000","overlay_opacity":30}},"collection_HpNthX":{"type":"collection","settings":{"color_scheme":"","collection":"massage-recovery","expand_collection":false,"content_position":"place-self-end-start text-start","show_product_count":true,"product_count_color":"#d4af7a","product_count_font_size":13,"subheading":"","title":"Massage & Recovery","button_text":"","button_link":"","button_style":"solid","overlay_color":"#000000","overlay_opacity":30}},"collection_888D96":{"type":"collection","settings":{"color_scheme":"","collection":"home-fitness","expand_collection":false,"content_position":"place-self-end-start text-start","show_product_count":true,"product_count_color":"#d4af7a","product_count_font_size":13,"subheading":"","title":"Home Fitness","button_text":"","button_link":"","button_style":"solid","overlay_color":"#000000","overlay_opacity":30}},"collection_CV7FPC":{"type":"collection","settings":{"color_scheme":"","collection":"oral-care","expand_collection":false,"content_position":"place-self-end-start text-start","show_product_count":true,"product_count_color":"#d4af7a","product_count_font_size":13,"subheading":"","title":"Oral Care","button_text":"","button_link":"","button_style":"solid","overlay_color":"#000000","overlay_opacity":30}}},"block_order":["collection_Qtcn7W","collection_HpNthX","collection_888D96","collection_CV7FPC"],"name":"Product Categories ","settings":{"custom_class":"Cate_pro_sec","show_all_products":true,"all_products_text":"ALLE PRODUKTER","all_products_link":"","color_scheme":"","separate_section_with_border":true,"image_size":"auto","show_text_outside":false,"space_items":true,"stack_collections":true,"collections_per_row_desktop":4,"stack_collections_mobile":true,"collections_per_row_mobile":"1","subheading":"Fire kategorier","title":"Find det, din rutine mangler","heading_style":"h2","content":""}},"featured-collections-2":{"type":"featured-collections","blocks":{"collection-1":{"type":"collection","settings":{"collection":"all-collections","products_count":17}}},"block_order":["collection-1"],"name":"All Products section","settings":{"section_custom_class":"All_pro_sec","heading":"Mest valgte hPaste from divriotsos Sollu","subheading":"Udvalgte","color_scheme":"scheme-1","products_per_row_mobile":2,"products_per_row_desktop":4,"horizontal_spacing_factor":1,"vertical_spacing_factor":1,"show_cta":true,"cta_text":"SE ALLE 10 PRODUKTER","cta_link":"shopify:\/\/collections"}},"featured-product":{"type":"featured-product","blocks":{"badges-1":{"type":"badges","settings":{}},"title-1":{"type":"title","settings":{"heading_tag":"h3"}},"price-1":{"type":"price","settings":{"show_taxes_notice":false}},"payment-terms-1":{"type":"payment_terms","settings":{}},"separator-1":{"type":"separator","settings":{}},"description-1":{"type":"description","settings":{"collapse_content":false}},"variant-picker-1":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"selector_style":"block","swatch_selector_style":"swatch","variant_image_options":"","variant_image_show_underline":false,"size_chart_page":""}},"quantity-selector-1":{"type":"quantity_selector","settings":{}},"buy-buttons-1":{"type":"buy_buttons","settings":{"show_payment_button":false,"show_gift_card_recipient":false,"atc_button_background":"","atc_button_text_color":"","payment_button_background":"","payment_button_text_color":""}},"pickup-availability-1":{"type":"pickup_availability","settings":{}}},"block_order":["badges-1","title-1","price-1","payment-terms-1","separator-1","description-1","variant-picker-1","quantity-selector-1","buy-buttons-1","pickup-availability-1"],"disabled":true,"settings":{"color_scheme":"scheme-1","product":"julie","separate_section_with_border":true,"container_size":"lg","product_info_size":45,"center_basic_info":false,"desktop_media_layout":"carousel_dots","desktop_media_grid_gap":30,"mobile_controls":"dots","enable_media_autoplay":true,"enable_video_looping":true,"enable_image_zoom":false,"max_image_zoom_level":3,"subheading":"Our selection","title":"Product of the week","heading_style":"h2","content":""}},"custom_product_feature_73g4FA":{"type":"custom-product-feature","name":"Custom Product Feature","settings":{"custom_class":"custom-product-feature","product":"","image":"shopify:\/\/shop_images\/Sollu_Julie_LED-maske.png","eyebrow":"GLOW THERAPY · BESTSELLER","heading":"De fleste husker ansigtet. Julie husker også halsen.","description":"<p>Syv lysfunktioner og fem intensiteter dækker ansigt, hals og nakke i samme behandling. 10 minutter, tre gange om ugen — og resten passer sig selv.<\/p>","spec_1_label":"DÆKKER","spec_1_value":"Ansigt · hals · nakke","spec_2_label":"LYSFUNKTIONER","spec_2_value":"7 bølgelængder","spec_3_label":"INTENSITETER","spec_3_value":"5 niveauer","spec_4_label":"BEHANDLING","spec_4_value":"10 minutter · 3 gange om ugen","button_text":"Læg i kurv","button_link":"#","show_price":true,"custom_price":"3.299 kr.","background_color":"#ffffff","image_background":"#f5f3ef","text_color":"#282522","muted_color":"#99928b","accent_color":"#b18468","line_color":"#e8e2db","button_background":"#292623","button_text_color":"#ffffff","section_width":1200,"image_width":52,"min_height":640,"image_padding":40,"image_max_height":620,"content_width":500,"content_padding_top":45,"content_padding_right":40,"content_padding_bottom":45,"content_padding_left":40,"eyebrow_size":9,"eyebrow_letter_spacing":1.5,"eyebrow_margin_bottom":10,"heading_size":42,"heading_weight":400,"heading_line_height":1.1,"heading_letter_spacing":0,"description_width":330,"description_size":12,"description_line_height":1.6,"description_margin_top":20,"description_margin_bottom":15,"spec_label_width":90,"spec_gap":20,"spec_row_padding":8,"spec_label_size":8,"spec_label_spacing":1,"spec_value_size":10,"specs_margin_top":10,"specs_margin_bottom":15,"button_width":120,"button_height":45,"button_font_size":9,"button_letter_spacing":1,"action_gap":20,"action_margin_top":15,"price_size":10,"padding_top":0,"padding_bottom":0,"mobile_heading_size":30,"mobile_heading_line_height":1.1,"mobile_eyebrow_size":8,"mobile_description_size":12,"mobile_description_line_height":1.6,"mobile_image_padding":25,"mobile_image_max_height":450,"mobile_content_padding_top":40,"mobile_content_padding_right":25,"mobile_content_padding_bottom":40,"mobile_content_padding_left":25,"mobile_spec_label_width":90,"mobile_padding_top":0,"mobile_padding_bottom":0}},"multi-column":{"type":"multi-column","blocks":{"image-with-text-1":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Rens_huden.png","title":"Rens huden","heading_tag":"h4","content":"<p>Start på ren, tør hud. Ingen creme under behandlingen— lyset skal have fri adgang.<\/p>","link_url":"","link_text":""}},"image-with-text-2":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Link_8.png","title":"Ti minutter","heading_tag":"h4","content":"<p>Vælg program og læn dig tilbage. Enheden slukkerselv, når behandlingen er færdig.<\/p>","link_url":"","link_text":""}},"image-with-text-3":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Background_18.png","title":"Gentag rutinen","heading_tag":"h4","content":"<p>Tre til fire gange om ugen. De synlige resultaterkommer af gentagelsen, ikke af den enkelte gang.<\/p>","link_url":"","link_text":""}}},"block_order":["image-with-text-1","image-with-text-2","image-with-text-3"],"name":"Step Section","settings":{"custom_class":"Step_sec","color_scheme":"scheme-1","separate_section_with_border":true,"columns_per_row":3,"stack_on_mobile":false,"overlap_image":false,"content_alignment":"center","text_alignment":"center","spacing":"md","show_count_number":true,"count_number_size":15,"count_number_color":"#b18a50","column_heading_size":24,"column_heading_color":"#2a2420","column_content_size":16,"column_content_color":"#8c8278","subheading":"Sådan bruger du den","title":"Tre trin. Ti minutter.","heading_style":"h2","content":""}},"images-with-text-scroll":{"type":"images-with-text-scroll","blocks":{"image-with-text-2":{"type":"image_with_text","settings":{"image":"shopify:\/\/shop_images\/Sollu_Ease.png","subheading":"Om Sollu","title":"Dine rutiner —dine resultater","content":"<p>Professionelt wellness-udstyr til hjemmet, fordi din krop fortjenerden bedste pleje — uanset hvem du er. Vi udvælger få enheder,tester dem grundigt og beskriver dem præcist.<br\/><br\/>Ingen store løfter. Kun udstyr, der holder, og rutiner, du faktiskkan følge.<\/p>","link_text":"Læs historien bag Sollu","link_url":"","link_style":"link"}}},"block_order":["image-with-text-2"],"name":"About sollu section","settings":{"custom_class":"About_sollu_sec","color_scheme":"scheme-3","image_position":"end","text_alignment":"start","heading_tag":"h3","overlay_color":"#2a2420","overlay_opacity":100}},"custom_reviews_fcnBNy":{"type":"custom-reviews","blocks":{"review_7TFCKF":{"type":"review","settings":{"show_stars":true,"rating":5,"review_text":"Jeg havde ikke regnet med at kunne mærke forskel efter en måned. Det kunne jeg.","customer_name":"METTE K.","product_name":"Juli","verified_text":"Verificeret køb","show_separator":true}},"review_dJfXPK":{"type":"review","settings":{"show_stars":true,"rating":5,"review_text":"Står fremme i stuen, og det er helt bevidst. Den er faktisk pæn.","customer_name":"ANNE B.","product_name":"Sollu Vitra","verified_text":"Verificeret køb","show_separator":true}},"review_ddfbtk":{"type":"review","settings":{"show_stars":true,"rating":5,"review_text":"Ti minutter om aftenen på skuldrene. Sover bedre, og det var hele formålet.","customer_name":"LARS H.","product_name":"Sollu Relief","verified_text":"Verificeret køb","show_separator":true}}},"block_order":["review_7TFCKF","review_dJfXPK","review_ddfbtk"],"name":"Custom Reviews","settings":{"custom_class":"custom-reviews-section","background_color":"#f8f5ef","card_background":"#faf8f4","card_border_color":"#e8e1d6","heading_color":"#403a35","text_color":"#625b54","muted_color":"#9a9187","star_color":"#b28b4a","eyebrow_color":"#b28b4a","max_width":1200,"padding_top":65,"padding_bottom":65,"horizontal_padding":30,"show_eyebrow":true,"eyebrow":"ANMELDELSER · JUDGE.ME","eyebrow_case":"uppercase","eyebrow_size":10,"eyebrow_weight":400,"eyebrow_letter_spacing":2,"eyebrow_spacing":10,"show_heading":true,"heading":"Hvad kunderne siger","heading_size":32,"mobile_heading_size":27,"heading_weight":400,"heading_line_height":1.2,"heading_letter_spacing":0,"heading_case":"none","heading_spacing":8,"header_alignment":"center","header_bottom_spacing":40,"show_summary":true,"overall_rating":5,"overall_rating_text":"4.8 af 5","review_count":"214","review_count_label":"anmeldelser","star_size":13,"star_gap":1,"summary_text_size":11,"summary_text_weight":400,"card_gap":15,"card_padding":22,"card_min_height":170,"card_border_width":1,"card_star_size":12,"card_star_gap":1,"card_star_spacing":12,"review_text_size":14,"mobile_review_text_size":14,"review_line_height":1.6,"review_text_weight":400,"customer_spacing":18,"name_size":10,"name_weight":600,"name_case":"uppercase","name_spacing":3,"product_size":9,"verified_size":9,"mobile_padding_top":45,"mobile_padding_bottom":45,"mobile_horizontal_padding":18,"mobile_header_bottom_spacing":30,"mobile_card_gap":10,"mobile_card_padding":20,"custom_css":""}},"newsletter":{"type":"newsletter","settings":{"custom_class":"Newsletter_sec","color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"md","subheading":"Nyhedsbrev","title":"Tilmeld dig og få 15% på dinførste ordre","heading_style":"h2","content":"<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.<\/p>","button_text":"Tilmeld","input_bottom_info":"<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik<\/a>. Vi deler aldrig din e-mail.<\/p>","overlay_color":"#f5f0e8","overlay_opacity":100}}},"order":["image-with-text-overlay-1","multi_column_g6gVwX","collection_list_wchGVw","featured-collections-2","featured-product","custom_product_feature_73g4FA","multi-column","images-with-text-scroll","custom_reviews_fcnBNy","newsletter"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text-overlay-1": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "Professionel wellness til hjemmet"
+          }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Dine rutiner —dine resultater",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_KD8KLt": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Enheder, der gør dine daglige minutter til synlige resultater. Timinutter om dagen er nok.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Se produkterne",
+            "url": "",
+            "background": "#ffffff",
+            "text_color": "#1c1c1c"
+          }
+        },
+        "button_e9WQKC": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Glow Therapy",
+            "url": "",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "subheading-1",
+        "heading-1",
+        "richtext_KD8KLt",
+        "button-1",
+        "button_e9WQKC"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "multi_column_g6gVwX": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_x4ATGF": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Fri fragt over 499 kr.",
+            "heading_tag": "h3",
+            "content": "<p>GLS eller PostNord · 1–2 hverdage</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_LGAWkj": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "14 dages fortrydelsesret",
+            "heading_tag": "h3",
+            "content": "<p>Returnér uden begrundelse</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_MTkne8": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "2 års reklamationsret",
+            "heading_tag": "h3",
+            "content": "<p>CE-godkendte enheder</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_87cAUd": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Dansk kundeservice",
+            "heading_tag": "h3",
+            "content": "<p>Svar inden for én hverdag</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_x4ATGF",
+        "image_with_text_LGAWkj",
+        "image_with_text_MTkne8",
+        "image_with_text_87cAUd"
+      ],
+      "name": "About section",
+      "settings": {
+        "custom_class": "about_sec",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "sm",
+        "show_count_number": true,
+        "count_number_size": 11,
+        "count_number_color": "#b18a50",
+        "column_heading_size": 12,
+        "column_heading_color": "#2a2420",
+        "column_content_size": 13,
+        "column_content_color": "#8c8278",
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "collection_list_wchGVw": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_Qtcn7W": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "glow-therapy",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "show_product_count": true,
+            "product_count_color": "#ffffff",
+            "product_count_font_size": 13,
+            "subheading": "",
+            "title": "Glow Therapy",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_HpNthX": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "massage-recovery",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "show_product_count": true,
+            "product_count_color": "#d4af7a",
+            "product_count_font_size": 13,
+            "subheading": "",
+            "title": "Massage & Recovery",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_888D96": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "home-fitness",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "show_product_count": true,
+            "product_count_color": "#d4af7a",
+            "product_count_font_size": 13,
+            "subheading": "",
+            "title": "Home Fitness",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_CV7FPC": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "oral-care",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "show_product_count": true,
+            "product_count_color": "#d4af7a",
+            "product_count_font_size": 13,
+            "subheading": "",
+            "title": "Oral Care",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_Qtcn7W",
+        "collection_HpNthX",
+        "collection_888D96",
+        "collection_CV7FPC"
+      ],
+      "name": "Product Categories ",
+      "settings": {
+        "custom_class": "Cate_pro_sec",
+        "show_all_products": true,
+        "all_products_text": "ALLE PRODUKTER",
+        "all_products_link": "",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_desktop": 4,
+        "stack_collections_mobile": true,
+        "collections_per_row_mobile": "1",
+        "subheading": "Fire kategorier",
+        "title": "Find det, din rutine mangler",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "featured-collections-2": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-collections",
+            "products_count": 17
+          }
+        }
+      },
+      "block_order": [
+        "collection-1"
+      ],
+      "name": "All Products section",
+      "settings": {
+        "section_custom_class": "All_pro_sec",
+        "heading": "Mest valgte hPaste from divriotsos Sollu",
+        "subheading": "Udvalgte",
+        "color_scheme": "scheme-1",
+        "products_per_row_mobile": 2,
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "show_cta": true,
+        "cta_text": "SE ALLE 10 PRODUKTER",
+        "cta_link": "shopify://collections"
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "blocks": {
+        "badges-1": {
+          "type": "badges",
+          "settings": {}
+        },
+        "title-1": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price-1": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment-terms-1": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator-1": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description-1": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant-picker-1": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "variant_image_show_underline": false,
+            "size_chart_page": ""
+          }
+        },
+        "quantity-selector-1": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy-buttons-1": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup-availability-1": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "badges-1",
+        "title-1",
+        "price-1",
+        "payment-terms-1",
+        "separator-1",
+        "description-1",
+        "variant-picker-1",
+        "quantity-selector-1",
+        "buy-buttons-1",
+        "pickup-availability-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "product": "julie",
+        "separate_section_with_border": true,
+        "container_size": "lg",
+        "product_info_size": 45,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_dots",
+        "desktop_media_grid_gap": 30,
+        "mobile_controls": "dots",
+        "enable_media_autoplay": true,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 3,
+        "subheading": "Our selection",
+        "title": "Product of the week",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "custom_product_feature_73g4FA": {
+      "type": "custom-product-feature",
+      "name": "Custom Product Feature",
+      "settings": {
+        "custom_class": "custom-product-feature",
+        "product": "",
+        "image": "shopify://shop_images/Sollu_Julie_LED-maske.png",
+        "eyebrow": "GLOW THERAPY · BESTSELLER",
+        "heading": "De fleste husker ansigtet. Julie husker også halsen.",
+        "description": "<p>Syv lysfunktioner og fem intensiteter dækker ansigt, hals og nakke i samme behandling. 10 minutter, tre gange om ugen — og resten passer sig selv.</p>",
+        "spec_1_label": "DÆKKER",
+        "spec_1_value": "Ansigt · hals · nakke",
+        "spec_2_label": "LYSFUNKTIONER",
+        "spec_2_value": "7 bølgelængder",
+        "spec_3_label": "INTENSITETER",
+        "spec_3_value": "5 niveauer",
+        "spec_4_label": "BEHANDLING",
+        "spec_4_value": "10 minutter · 3 gange om ugen",
+        "button_text": "Læg i kurv",
+        "button_link": "#",
+        "show_price": true,
+        "custom_price": "3.299 kr.",
+        "background_color": "#ffffff",
+        "image_background": "#f5f3ef",
+        "text_color": "#282522",
+        "muted_color": "#99928b",
+        "accent_color": "#b18468",
+        "line_color": "#e8e2db",
+        "button_background": "#292623",
+        "button_text_color": "#ffffff",
+        "section_width": 1200,
+        "image_width": 52,
+        "min_height": 640,
+        "image_padding": 40,
+        "image_max_height": 620,
+        "content_width": 500,
+        "content_padding_top": 45,
+        "content_padding_right": 40,
+        "content_padding_bottom": 45,
+        "content_padding_left": 40,
+        "eyebrow_size": 9,
+        "eyebrow_letter_spacing": 1.5,
+        "eyebrow_margin_bottom": 10,
+        "heading_size": 42,
+        "heading_weight": 400,
+        "heading_line_height": 1.1,
+        "heading_letter_spacing": 0,
+        "description_width": 330,
+        "description_size": 12,
+        "description_line_height": 1.6,
+        "description_margin_top": 20,
+        "description_margin_bottom": 15,
+        "spec_label_width": 90,
+        "spec_gap": 20,
+        "spec_row_padding": 8,
+        "spec_label_size": 8,
+        "spec_label_spacing": 1,
+        "spec_value_size": 10,
+        "specs_margin_top": 10,
+        "specs_margin_bottom": 15,
+        "button_width": 120,
+        "button_height": 45,
+        "button_font_size": 9,
+        "button_letter_spacing": 1,
+        "action_gap": 20,
+        "action_margin_top": 15,
+        "price_size": 10,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_heading_size": 30,
+        "mobile_heading_line_height": 1.1,
+        "mobile_eyebrow_size": 8,
+        "mobile_description_size": 12,
+        "mobile_description_line_height": 1.6,
+        "mobile_image_padding": 25,
+        "mobile_image_max_height": 450,
+        "mobile_content_padding_top": 40,
+        "mobile_content_padding_right": 25,
+        "mobile_content_padding_bottom": 40,
+        "mobile_content_padding_left": 25,
+        "mobile_spec_label_width": 90,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "multi-column": {
+      "type": "multi-column",
+      "blocks": {
+        "image-with-text-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Rens_huden.png",
+            "title": "Rens huden",
+            "heading_tag": "h4",
+            "content": "<p>Start på ren, tør hud. Ingen creme under behandlingen— lyset skal have fri adgang.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image-with-text-2": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Link_8.png",
+            "title": "Ti minutter",
+            "heading_tag": "h4",
+            "content": "<p>Vælg program og læn dig tilbage. Enheden slukkerselv, når behandlingen er færdig.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image-with-text-3": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Background_18.png",
+            "title": "Gentag rutinen",
+            "heading_tag": "h4",
+            "content": "<p>Tre til fire gange om ugen. De synlige resultaterkommer af gentagelsen, ikke af den enkelte gang.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-1",
+        "image-with-text-2",
+        "image-with-text-3"
+      ],
+      "name": "Step Section",
+      "settings": {
+        "custom_class": "Step_sec",
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "md",
+        "show_count_number": true,
+        "count_number_size": 15,
+        "count_number_color": "#b18a50",
+        "column_heading_size": 24,
+        "column_heading_color": "#2a2420",
+        "column_content_size": 16,
+        "column_content_color": "#8c8278",
+        "subheading": "Sådan bruger du den",
+        "title": "Tre trin. Ti minutter.",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "images-with-text-scroll": {
+      "type": "images-with-text-scroll",
+      "blocks": {
+        "image-with-text-2": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Sollu_Ease_1.webp",
+            "subheading": "Om Sollu",
+            "title": "Dine rutiner —dine resultater",
+            "content": "<p>Professionelt wellness-udstyr til hjemmet, fordi din krop fortjenerden bedste pleje — uanset hvem du er. Vi udvælger få enheder,tester dem grundigt og beskriver dem præcist.<br/><br/>Ingen store løfter. Kun udstyr, der holder, og rutiner, du faktiskkan følge.</p>",
+            "link_text": "Læs historien bag Sollu",
+            "link_url": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-2"
+      ],
+      "name": "About sollu section",
+      "settings": {
+        "custom_class": "About_sollu_sec",
+        "color_scheme": "scheme-3",
+        "image_position": "end",
+        "text_alignment": "start",
+        "heading_tag": "h3",
+        "overlay_color": "#2a2420",
+        "overlay_opacity": 100
+      }
+    },
+    "custom_reviews_fcnBNy": {
+      "type": "custom-reviews",
+      "blocks": {
+        "review_7TFCKF": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_text": "Jeg havde ikke regnet med at kunne mærke forskel efter en måned. Det kunne jeg.",
+            "customer_name": "METTE K.",
+            "product_name": "Juli",
+            "verified_text": "Verificeret køb",
+            "show_separator": true
+          }
+        },
+        "review_dJfXPK": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_text": "Står fremme i stuen, og det er helt bevidst. Den er faktisk pæn.",
+            "customer_name": "ANNE B.",
+            "product_name": "Sollu Vitra",
+            "verified_text": "Verificeret køb",
+            "show_separator": true
+          }
+        },
+        "review_ddfbtk": {
+          "type": "review",
+          "settings": {
+            "show_stars": true,
+            "rating": 5,
+            "review_text": "Ti minutter om aftenen på skuldrene. Sover bedre, og det var hele formålet.",
+            "customer_name": "LARS H.",
+            "product_name": "Sollu Relief",
+            "verified_text": "Verificeret køb",
+            "show_separator": true
+          }
+        }
+      },
+      "block_order": [
+        "review_7TFCKF",
+        "review_dJfXPK",
+        "review_ddfbtk"
+      ],
+      "name": "Custom Reviews",
+      "settings": {
+        "custom_class": "custom-reviews-section",
+        "background_color": "#f8f5ef",
+        "card_background": "#faf8f4",
+        "card_border_color": "#e8e1d6",
+        "heading_color": "#403a35",
+        "text_color": "#625b54",
+        "muted_color": "#9a9187",
+        "star_color": "#b28b4a",
+        "eyebrow_color": "#b28b4a",
+        "max_width": 1200,
+        "padding_top": 65,
+        "padding_bottom": 65,
+        "horizontal_padding": 30,
+        "show_eyebrow": true,
+        "eyebrow": "ANMELDELSER · JUDGE.ME",
+        "eyebrow_case": "uppercase",
+        "eyebrow_size": 10,
+        "eyebrow_weight": 400,
+        "eyebrow_letter_spacing": 2,
+        "eyebrow_spacing": 10,
+        "show_heading": true,
+        "heading": "Hvad kunderne siger",
+        "heading_size": 32,
+        "mobile_heading_size": 27,
+        "heading_weight": 400,
+        "heading_line_height": 1.2,
+        "heading_letter_spacing": 0,
+        "heading_case": "none",
+        "heading_spacing": 8,
+        "header_alignment": "center",
+        "header_bottom_spacing": 40,
+        "show_summary": true,
+        "overall_rating": 5,
+        "overall_rating_text": "4.8 af 5",
+        "review_count": "214",
+        "review_count_label": "anmeldelser",
+        "star_size": 13,
+        "star_gap": 1,
+        "summary_text_size": 11,
+        "summary_text_weight": 400,
+        "card_gap": 15,
+        "card_padding": 22,
+        "card_min_height": 170,
+        "card_border_width": 1,
+        "card_star_size": 12,
+        "card_star_gap": 1,
+        "card_star_spacing": 12,
+        "review_text_size": 14,
+        "mobile_review_text_size": 14,
+        "review_line_height": 1.6,
+        "review_text_weight": 400,
+        "customer_spacing": 18,
+        "name_size": 10,
+        "name_weight": 600,
+        "name_case": "uppercase",
+        "name_spacing": 3,
+        "product_size": 9,
+        "verified_size": 9,
+        "mobile_padding_top": 45,
+        "mobile_padding_bottom": 45,
+        "mobile_horizontal_padding": 18,
+        "mobile_header_bottom_spacing": 30,
+        "mobile_card_gap": 10,
+        "mobile_card_padding": 20,
+        "custom_css": ""
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 15% på dinførste ordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
+    }
+  },
+  "order": [
+    "image-with-text-overlay-1",
+    "multi_column_g6gVwX",
+    "collection_list_wchGVw",
+    "featured-collections-2",
+    "featured-product",
+    "custom_product_feature_73g4FA",
+    "multi-column",
+    "images-with-text-scroll",
+    "custom_reviews_fcnBNy",
+    "newsletter"
+  ]
+}
