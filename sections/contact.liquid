@@ -1,0 +1,1240 @@
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<style>
+  #shopify-section-{{ section.id }} .contact-designer {
+    background: {{ section.settings.section_background }};
+    color: {{ section.settings.text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__inner {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 70px 20px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__grid {
+    display: grid;
+    grid-template-columns: 50% minmax(0, 1fr);
+    gap: 70px;
+    align-items: start;
+  }
+
+  /* FORM CARD */
+
+  #shopify-section-{{ section.id }} .contact-designer__form-card {
+    background: {{ section.settings.form_background }};
+    padding: 30px;
+    border-radius: 3px;
+    border: 1px solid {{ section.settings.card_border_color }};
+
+    {% if section.settings.card_shadow %}
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    {% else %}
+      box-shadow: none;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-header {
+    margin-bottom: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-heading {
+    margin: 0;
+    color: {{ section.settings.form_heading_color }};
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: {{ section.settings.title_weight }};
+    letter-spacing: 1px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-description {
+    margin-top: 10px;
+    color: {{ section.settings.form_description_color }};
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-description p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-card .fieldset {
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-card .fieldset-row {
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__form-card .input,
+  #shopify-section-{{ section.id }} .contact-designer__form-card textarea,
+  #shopify-section-{{ section.id }} .contact-designer__form-card select {
+    border-color: {{ section.settings.input_border_color }};
+  }
+
+  /* BUTTON */
+
+  #shopify-section-{{ section.id }} .contact-designer__submit {
+    margin-top: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__submit .button {
+    background: {{ section.settings.button_background }};
+    color: {{ section.settings.button_text_color }};
+    border-radius: {{ section.settings.button_radius }}px;
+    min-width: 140px;
+    min-height: 45px;
+    padding-inline: 20px;
+    border: none;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__submit .button:hover {
+    background: {{ section.settings.button_hover_background }};
+    color: {{ section.settings.button_hover_text_color }};
+  }
+
+  {% if section.settings.show_button_arrow %}
+    #shopify-section-{{ section.id }} .contact-designer__submit .button::after {
+      content: "→";
+      display: inline-block;
+      margin-left: 12px;
+      font-size: 17px;
+      line-height: 1;
+    }
+  {% endif %}
+
+
+  /* CONTACT INFORMATION */
+
+  #shopify-section-{{ section.id }} .contact-designer__info {
+    padding-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__info-header {
+    margin-bottom: 35px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__info-heading {
+    margin: 0;
+    color: {{ section.settings.info_heading_color }};
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: {{ section.settings.info_heading_weight }};
+    letter-spacing: 1px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__info-content {
+    margin-top: 10px;
+    color: {{ section.settings.info_description_color }};
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__info-content p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* ICON */
+
+  #shopify-section-{{ section.id }} .contact-designer__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: {{ section.settings.icon_background }};
+    color: {{ section.settings.icon_color }};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+
+  /* CONTACT TEXT */
+
+  #shopify-section-{{ section.id }} .contact-designer__item-label {
+    margin: 0 0 5px;
+    color: {{ section.settings.info_label_color }};
+    font-size: 11px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    text-transform: {{ section.settings.info_label_transform }};
+    font-weight: {{ section.settings.info_label_weight }};
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item-value {
+    margin: 0;
+    color: {{ section.settings.info_value_color }};
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: {{ section.settings.info_value_weight }};
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item-value a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item-value a:hover {
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item-description {
+    margin-top: 5px;
+    color: {{ section.settings.info_description_color }};
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__item-description p {
+    margin: 0;
+  }
+
+  /* MESSAGES */
+
+  #shopify-section-{{ section.id }} .contact-designer__messages {
+    margin-bottom: 20px;
+  }
+
+
+  /* MOBILE */
+
+  @media screen and (max-width: 749px) {
+
+    #shopify-section-{{ section.id }} .contact-designer__inner {
+      padding: 40px 16px;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__grid {
+      grid-template-columns: 1fr;
+      gap: 45px;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__form-card {
+      padding: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__form-card .fieldset-row {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__info {
+      padding-top: 0;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__submit .button {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+</style>
+
+
+<div
+  class="contact-designer color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %} {{ section.settings.custom_class }}"
+  data-section-id="{{ section.id }}"
+>
+
+  <div class="contact-designer__inner">
+
+    <div class="contact-designer__grid">
+
+
+      {%- comment -%}
+        LEFT SIDE - FORM
+      {%- endcomment -%}
+
+      <div class="contact-designer__form-card">
+
+        <div class="contact-designer__form-header">
+
+          {%- if section.settings.form_heading != blank -%}
+            <h2 class="contact-designer__form-heading">
+              {{ section.settings.form_heading }}
+            </h2>
+          {%- endif -%}
+
+          {%- if section.settings.form_description != blank -%}
+            <div class="contact-designer__form-description">
+              {{ section.settings.form_description }}
+            </div>
+          {%- endif -%}
+
+        </div>
+
+
+        {%- form 'contact', class: 'form' -%}
+
+          <div class="contact-designer__messages">
+
+            {%- if form.posted_successfully? -%}
+
+              {%- assign success_content = section.settings.success_message -%}
+
+              {%- if success_content == blank -%}
+                {%- assign success_content = 'contact.form.success_message' | t -%}
+              {%- endif -%}
+
+              {%- render 'banner',
+                status: 'success',
+                content: success_content
+              -%}
+
+            {%- endif -%}
+
+
+            {%- if form.errors -%}
+
+              {%- capture error_content -%}
+                {{ form.errors.translated_fields[form.errors.first] | capitalize }}
+                {{ form.errors.messages[form.errors.first] }}
+              {%- endcapture -%}
+
+              {%- render 'banner',
+                status: 'error',
+                content: error_content
+              -%}
+
+            {%- endif -%}
+
+          </div>
+
+
+          <div class="fieldset">
+
+            {%- assign name_label = section.settings.name_label -%}
+
+            {%- if name_label == blank -%}
+              {%- assign name_label = 'contact.form.name' | t -%}
+            {%- endif -%}
+
+
+            {%- assign email_label = section.settings.email_label -%}
+
+            {%- if email_label == blank -%}
+              {%- assign email_label = 'contact.form.email' | t -%}
+            {%- endif -%}
+
+
+            <div class="fieldset-row">
+
+              {%- render 'input',
+                type: 'text',
+                name: 'contact[name]',
+                label: name_label,
+                value: customer.name,
+                required: true,
+                autocomplete: 'name'
+              -%}
+
+
+              {%- render 'input',
+                type: 'email',
+                name: 'contact[email]',
+                label: email_label,
+                value: customer.email,
+                required: true,
+                autocomplete: 'email'
+              -%}
+
+            </div>
+
+
+            {%- for block in section.blocks -%}
+
+              {%- assign field_title = block.settings.title -%}
+
+              {%- if field_title == blank -%}
+
+                {%- capture field_title -%}
+                  Custom field {% increment custom_field %}
+                {%- endcapture -%}
+
+              {%- endif -%}
+
+
+              {%- capture name -%}
+                contact[{{ field_title | escape }}]
+              {%- endcapture -%}
+
+
+              {%- if block.type == 'text' -%}
+
+                {%- if block.settings.use_long_text -%}
+
+                  {%- render 'input',
+                    name: name,
+                    label: block.settings.title,
+                    required: block.settings.required,
+                    multiline: 4
+                  -%}
+
+                {%- else -%}
+
+                  {%- render 'input',
+                    type: 'text',
+                    name: name,
+                    label: block.settings.title,
+                    required: block.settings.required
+                  -%}
+
+                {%- endif -%}
+
+
+              {%- elsif block.type == 'dropdown' and block.settings.values != blank -%}
+
+                {%- assign values = block.settings.values | split: ',' -%}
+
+                {%- render 'select',
+                  option_values: values,
+                  show_empty_value: true,
+                  name: name,
+                  label: block.settings.title,
+                  required: block.settings.required
+                -%}
+
+              {%- endif -%}
+
+            {%- endfor -%}
+
+
+            {%- assign message_label = section.settings.message_label -%}
+
+            {%- if message_label == blank -%}
+              {%- assign message_label = 'contact.form.message' | t -%}
+            {%- endif -%}
+
+
+            {%- render 'input',
+              name: 'contact[body]',
+              label: message_label,
+              multiline: 4,
+              required: true
+            -%}
+
+          </div>
+
+
+          <div class="contact-designer__submit">
+
+            {%- assign button_content = section.settings.button_text -%}
+
+            {%- if button_content == blank -%}
+              {%- assign button_content = 'contact.form.submit' | t -%}
+            {%- endif -%}
+
+            {%- render 'button',
+              content: button_content,
+              type: 'submit'
+            -%}
+
+          </div>
+
+        {%- endform -%}
+
+      </div>
+
+
+      {%- comment -%}
+        RIGHT SIDE - CONTACT INFORMATION
+      {%- endcomment -%}
+
+      <div class="contact-designer__info">
+
+        <div class="contact-designer__info-header">
+
+          {%- if section.settings.info_heading != blank -%}
+
+            <h2 class="contact-designer__info-heading">
+              {{ section.settings.info_heading }}
+            </h2>
+
+          {%- endif -%}
+
+
+          {%- if section.settings.info_content != blank -%}
+
+            <div class="contact-designer__info-content">
+              {{ section.settings.info_content }}
+            </div>
+
+          {%- endif -%}
+
+        </div>
+
+
+        <div class="contact-designer__items">
+
+
+          {%- if section.settings.show_email -%}
+
+            <div class="contact-designer__item">
+
+              <div class="contact-designer__icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+                  <path d="m3 7 9 6 9-6"></path>
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                {%- if section.settings.email_item_label != blank -%}
+
+                  <div class="contact-designer__item-label">
+                    {{ section.settings.email_item_label }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.email_address != blank -%}
+
+                  <div class="contact-designer__item-value">
+
+                    <a href="mailto:{{ section.settings.email_address | escape }}">
+                      {{ section.settings.email_address }}
+                    </a>
+
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.email_description != blank -%}
+
+                  <div class="contact-designer__item-description">
+                    {{ section.settings.email_description }}
+                  </div>
+
+                {%- endif -%}
+
+              </div>
+
+            </div>
+
+          {%- endif -%}
+
+
+          {%- if section.settings.show_phone -%}
+
+            <div class="contact-designer__item">
+
+              <div class="contact-designer__icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M6.5 3.5 9 3l2 5-2 1.8a14.5 14.5 0 0 0 5.7 5.7l1.8-2 5 2-.5 2.5c-.3 1.4-1.5 2.5-3 2.5C11.3 20.5 3.5 12.7 3.5 4c0-1.5 1.1-2.7 3-3z"></path>
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                {%- if section.settings.phone_item_label != blank -%}
+
+                  <div class="contact-designer__item-label">
+                    {{ section.settings.phone_item_label }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.phone_number != blank -%}
+
+                  <div class="contact-designer__item-value">
+
+                    <a href="tel:{{ section.settings.phone_number | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}">
+                      {{ section.settings.phone_number }}
+                    </a>
+
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.phone_description != blank -%}
+
+                  <div class="contact-designer__item-description">
+                    {{ section.settings.phone_description }}
+                  </div>
+
+                {%- endif -%}
+
+              </div>
+
+            </div>
+
+          {%- endif -%}
+
+
+          {%- if section.settings.show_address -%}
+
+            <div class="contact-designer__item">
+
+              <div class="contact-designer__icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="2.5"></circle>
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                {%- if section.settings.address_item_label != blank -%}
+
+                  <div class="contact-designer__item-label">
+                    {{ section.settings.address_item_label }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.address_title != blank -%}
+
+                  <div class="contact-designer__item-value">
+                    {{ section.settings.address_title }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- if section.settings.address_description != blank -%}
+
+                  <div class="contact-designer__item-description">
+                    {{ section.settings.address_description | newline_to_br }}
+                  </div>
+
+                {%- endif -%}
+
+              </div>
+
+            </div>
+
+          {%- endif -%}
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Designer Contact Form",
+  "class": "shopify-section--contact",
+  "tag": "section",
+
+  "disabled_on": {
+    "groups": [
+      "header",
+      "custom.overlay"
+    ]
+  },
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class",
+      "info": "Add a custom CSS class to the whole contact section."
+    },
+
+    {
+      "type": "header",
+      "content": "Section"
+    },
+
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "Separate section with border",
+      "default": true
+    },
+
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#F7F5F2"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "General text color",
+      "default": "#333333"
+    },
+
+    {
+      "type": "header",
+      "content": "Form"
+    },
+
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Heading",
+      "default": "SEND OS EN BESKED"
+    },
+
+    {
+      "type": "richtext",
+      "id": "form_description",
+      "label": "Description",
+      "default": "<p>Udfyld formularen, så vender vi tilbage til dig hurtigst muligt.</p>"
+    },
+
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Heading weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+
+    {
+      "type": "color",
+      "id": "form_heading_color",
+      "label": "Heading color",
+      "default": "#2C2927"
+    },
+
+    {
+      "type": "color",
+      "id": "form_description_color",
+      "label": "Description color",
+      "default": "#8A827C"
+    },
+
+    {
+      "type": "color",
+      "id": "form_background",
+      "label": "Form card background",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#EAE7E3"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "card_shadow",
+      "label": "Show card shadow",
+      "default": false
+    },
+
+    {
+      "type": "color",
+      "id": "input_border_color",
+      "label": "Input border color",
+      "default": "#B9B1A9"
+    },
+
+    {
+      "type": "text",
+      "id": "name_label",
+      "label": "Name field label",
+      "default": "Navn"
+    },
+
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Email field label",
+      "default": "E-mail"
+    },
+
+    {
+      "type": "text",
+      "id": "message_label",
+      "label": "Message field label",
+      "default": "Besked"
+    },
+
+    {
+      "type": "header",
+      "content": "Button"
+    },
+
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SEND BESKED"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_button_arrow",
+      "label": "Show arrow",
+      "default": true
+    },
+
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#292624"
+    },
+
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Button hover text color",
+      "default": "#FFFFFF"
+    },
+
+    {
+      "type": "range",
+      "id": "button_radius",
+      "label": "Button radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+
+    {
+      "type": "header",
+      "content": "Contact information"
+    },
+
+    {
+      "type": "text",
+      "id": "info_heading",
+      "label": "Heading",
+      "default": "KONTAKT INFORMATION"
+    },
+
+    {
+      "type": "richtext",
+      "id": "info_content",
+      "label": "Description"
+    },
+
+    {
+      "type": "select",
+      "id": "info_heading_weight",
+      "label": "Heading weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+
+    {
+      "type": "color",
+      "id": "info_heading_color",
+      "label": "Heading color",
+      "default": "#2C2927"
+    },
+
+    {
+      "type": "color",
+      "id": "info_description_color",
+      "label": "Description color",
+      "default": "#8A827C"
+    },
+
+    {
+      "type": "header",
+      "content": "Email"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_email",
+      "label": "Show email",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "email_item_label",
+      "label": "Label",
+      "default": "E-MAIL"
+    },
+
+    {
+      "type": "text",
+      "id": "email_address",
+      "label": "Email address",
+      "default": "info@sollu.dk"
+    },
+
+    {
+      "type": "text",
+      "id": "email_description",
+      "label": "Description",
+      "default": "Vi svarer inden for 24 timer."
+    },
+
+    {
+      "type": "header",
+      "content": "Phone"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show phone",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "phone_item_label",
+      "label": "Label",
+      "default": "TELEFON"
+    },
+
+    {
+      "type": "text",
+      "id": "phone_number",
+      "label": "Phone number",
+      "default": "+45 12 34 56 78"
+    },
+
+    {
+      "type": "text",
+      "id": "phone_description",
+      "label": "Description",
+      "default": "Mandag – fredag: 09.00 – 16.00"
+    },
+
+    {
+      "type": "header",
+      "content": "Address"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_address",
+      "label": "Show address",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "address_item_label",
+      "label": "Label",
+      "default": "ADRESSE"
+    },
+
+    {
+      "type": "text",
+      "id": "address_title",
+      "label": "Address title",
+      "default": "Sollu ApS"
+    },
+
+    {
+      "type": "textarea",
+      "id": "address_description",
+      "label": "Address",
+      "default": "Gothersgade 15, 1123\nKøbenhavn K, Danmark"
+    },
+
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon circle background",
+      "default": "#F1EEE9"
+    },
+
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#8B8279"
+    },
+
+    {
+      "type": "header",
+      "content": "Contact text"
+    },
+
+    {
+      "type": "color",
+      "id": "info_label_color",
+      "label": "Label color",
+      "default": "#655E58"
+    },
+
+    {
+      "type": "select",
+      "id": "info_label_weight",
+      "label": "Label weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+
+    {
+      "type": "select",
+      "id": "info_label_transform",
+      "label": "Label text transform",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+
+    {
+      "type": "color",
+      "id": "info_value_color",
+      "label": "Value color",
+      "default": "#3B3734"
+    },
+
+    {
+      "type": "select",
+      "id": "info_value_weight",
+      "label": "Value weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+
+    {
+      "type": "header",
+      "content": "Messages"
+    },
+
+    {
+      "type": "textarea",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thanks for contacting us."
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "text",
+      "name": "Text field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Field label",
+          "default": "Custom field"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_long_text",
+          "label": "Use long text",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required field",
+          "default": false
+        }
+      ]
+    },
+
+    {
+      "type": "dropdown",
+      "name": "Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Field label",
+          "default": "Emne"
+        },
+        {
+          "type": "text",
+          "id": "values",
+          "label": "Dropdown values",
+          "info": "Separate values with commas.",
+          "default": "General inquiry, Support, Other"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required field",
+          "default": true
+        }
+      ]
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "Designer Contact Form",
+      "category": "Contact",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

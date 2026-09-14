@@ -1,0 +1,750 @@
+<style>
+  /* =========================================================
+     SOLLU CUSTOM FOOTER
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer {
+    width: 100%;
+    background: {{ section.settings.footer_background }};
+    color: {{ section.settings.footer_text_color }};
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__inner {
+    width: calc(100% - 96px);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 48px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     MAIN FOOTER
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__main {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 1fr);
+    gap: 45px;
+    align-items: start;
+  }
+
+
+  /* =========================================================
+     BRAND
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand {
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__logo {
+    display: block;
+    width: fit-content;
+    margin: 0 0 8px;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__logo img {
+    display: block;
+    width: auto;
+    max-width: {{ section.settings.logo_width }}px;
+    height: auto;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand-name {
+    display: block;
+    margin: 0 0 15px;
+
+    color: {{ section.settings.footer_heading_color }};
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: {{ section.settings.brand_font_size }}px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand-content {
+    max-width: 270px;
+
+    color: {{ section.settings.footer_text_color }};
+    opacity: 0.65;
+
+    font-size: {{ section.settings.body_font_size }}px;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand-content p {
+    margin: 0 0 8px;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__brand-content a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 1px;
+  }
+
+
+  /* =========================================================
+     MENU COLUMNS
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__column {
+    min-width: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__heading {
+    margin: 0 0 16px;
+
+    color: {{ section.settings.footer_heading_color }};
+
+    font-size: {{ section.settings.heading_font_size }}px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__links li {
+    margin: 0 0 9px;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__links li:last-child {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__links a {
+    display: inline-block;
+
+    color: {{ section.settings.footer_text_color }};
+    opacity: 0.65;
+
+    font-size: {{ section.settings.body_font_size }}px;
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__links a:hover {
+    opacity: 1;
+  }
+
+
+  /* =========================================================
+     BOTTOM BAR
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 55px;
+    padding-top: 13px;
+
+    border-top: 1px solid {{ section.settings.divider_color }};
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     COPYRIGHT + RICH TEXT
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__copyright {
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    margin: 0;
+
+    color: {{ section.settings.footer_text_color }};
+    opacity: 0.62;
+
+    font-size: 8px;
+    font-weight: 400;
+
+    line-height: 1.4;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__copyright p {
+    display: inline;
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__copyright a {
+    color: inherit;
+
+    text-decoration: underline;
+
+    text-underline-offset: 1px;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__copyright strong {
+    font-weight: 600;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__copyright em {
+    font-style: italic;
+  }
+
+
+  /* =========================================================
+     STATIC PAYMENT METHODS
+     ========================================================= */
+
+  #shopify-section-{{ section.id }} .sollu-footer__payments {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    flex: 0 0 auto;
+
+    gap: 6px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .sollu-footer__payment {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 21px;
+
+    padding: 0 9px;
+
+    border: 1px solid {{ section.settings.payment_border_color }};
+
+    color: {{ section.settings.payment_text_color }};
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 7px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.45px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================================================
+     TABLET
+     ========================================================= */
+
+  @media screen and (max-width: 999px) {
+
+    #shopify-section-{{ section.id }} .sollu-footer__inner {
+      width: calc(100% - 60px);
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__main {
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__bottom {
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__copyright {
+      white-space: normal;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__payments {
+      flex-wrap: wrap;
+    }
+  }
+
+
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+
+  @media screen and (max-width: 699px) {
+
+    #shopify-section-{{ section.id }} .sollu-footer__inner {
+      width: calc(100% - 40px);
+
+      padding-top: 35px;
+      padding-bottom: 20px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__main {
+      display: block;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__brand {
+      margin-bottom: 35px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__column {
+      margin-bottom: 28px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__column:last-child {
+      margin-bottom: 0;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__bottom {
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      margin-top: 35px;
+
+      padding-top: 13px;
+
+      gap: 15px;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__copyright {
+      width: 100%;
+    }
+
+    #shopify-section-{{ section.id }} .sollu-footer__payments {
+      justify-content: flex-start;
+
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer
+  class="sollu-footer{% if section.settings.custom_class != blank %} {{ section.settings.custom_class | strip }}{% endif %}"
+>
+
+  <div class="sollu-footer__inner">
+
+
+    <!-- =======================================================
+         MAIN FOOTER
+         ======================================================= -->
+
+    <div class="sollu-footer__main">
+
+
+      <!-- =====================================================
+           BRAND
+           ===================================================== -->
+
+      <div class="sollu-footer__brand">
+
+        {%- if section.settings.logo != blank -%}
+
+          <a
+            href="{{ section.settings.logo_link | default: routes.root_url }}"
+            class="sollu-footer__logo"
+          >
+
+            {{
+              section.settings.logo
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                widths: '100,150,200,300,400,600',
+                sizes: '(max-width: 699px) 180px, 220px',
+                alt: section.settings.logo_alt
+            }}
+
+          </a>
+
+        {%- endif -%}
+
+
+        {%- if section.settings.show_brand_name -%}
+
+          <span class="sollu-footer__brand-name">
+            {{ section.settings.brand_name }}
+          </span>
+
+        {%- endif -%}
+
+
+        {%- if section.settings.brand_content != blank -%}
+
+          <div class="sollu-footer__brand-content">
+            {{ section.settings.brand_content }}
+          </div>
+
+        {%- endif -%}
+
+      </div>
+
+
+      <!-- =====================================================
+           MENU BLOCKS
+           ===================================================== -->
+
+      {%- for block in section.blocks -%}
+
+        {%- if block.type == 'links' -%}
+
+          {%- assign menu = block.settings.menu -%}
+
+          {%- if menu != blank -%}
+
+            <div
+              class="sollu-footer__column"
+              {{ block.shopify_attributes }}
+            >
+
+              {%- if block.settings.menu_title != blank -%}
+
+                <p class="sollu-footer__heading">
+                  {{ block.settings.menu_title }}
+                </p>
+
+              {%- endif -%}
+
+
+              <ul
+                class="sollu-footer__links"
+                role="list"
+              >
+
+                {%- for link in menu.links -%}
+
+                  <li>
+
+                    <a href="{{ link.url }}">
+                      {{ link.title }}
+                    </a>
+
+                  </li>
+
+                {%- endfor -%}
+
+              </ul>
+
+            </div>
+
+          {%- endif -%}
+
+        {%- elsif block.type == "@app" -%}
+
+          {%- render block -%}
+
+        {%- endif -%}
+
+      {%- endfor -%}
+
+    </div>
+
+
+    <!-- =======================================================
+         EXACT STATIC BOTTOM BAR
+         ======================================================= -->
+
+    <div class="sollu-footer__bottom">
+
+
+      <!-- =====================================================
+           COPYRIGHT + RICH TEXT EDITOR
+           ===================================================== -->
+
+      <div class="sollu-footer__copyright">
+
+        © {{ 'now' | date: '%Y' }}
+        {{ section.settings.copyright_name }}.
+
+        {{ section.settings.legal_short_text }}
+
+      </div>
+
+
+      <!-- =====================================================
+           STATIC PAYMENT METHODS
+           ===================================================== -->
+
+      <ul
+        class="sollu-footer__payments"
+        role="list"
+      >
+
+        <li class="sollu-footer__payment">
+          DANKORT
+        </li>
+
+        <li class="sollu-footer__payment">
+          VISA
+        </li>
+
+        <li class="sollu-footer__payment">
+          MASTERCARD
+        </li>
+
+        <li class="sollu-footer__payment">
+          MOBILEPAY
+        </li>
+
+        <li class="sollu-footer__payment">
+          APPLE PAY
+        </li>
+
+        <li class="sollu-footer__payment">
+          KLARNA
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+{% schema %}
+{
+  "name": "Custom Sollu Footer",
+  "class": "shopify-section--footer",
+  "max_blocks": 4,
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class",
+      "info": "Add a custom CSS class to the whole footer."
+    },
+
+
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+
+    {
+      "type": "text",
+      "id": "logo_alt",
+      "label": "Logo alt text",
+      "default": "Sollu"
+    },
+
+    {
+      "type": "url",
+      "id": "logo_link",
+      "label": "Logo link"
+    },
+
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 40,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 80
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_brand_name",
+      "label": "Show brand name",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Sollu"
+    },
+
+    {
+      "type": "richtext",
+      "id": "brand_content",
+      "label": "Brand content",
+      "default": "<p>Din nye rutine – dine resultater</p><p>Sollu ApS · CVR 00000000<br>Danmark · kontakt@sollu.dk</p>"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Footer colors"
+    },
+
+    {
+      "type": "color",
+      "id": "footer_background",
+      "label": "Footer background",
+      "default": "#29231F"
+    },
+
+    {
+      "type": "color",
+      "id": "footer_heading_color",
+      "label": "Heading color",
+      "default": "#F5F1EB"
+    },
+
+    {
+      "type": "color",
+      "id": "footer_text_color",
+      "label": "Text color",
+      "default": "#A9A19A"
+    },
+
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#514943"
+    },
+
+    {
+      "type": "color",
+      "id": "payment_border_color",
+      "label": "Payment border color",
+      "default": "#514943"
+    },
+
+    {
+      "type": "color",
+      "id": "payment_text_color",
+      "label": "Payment text color",
+      "default": "#A9A19A"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+
+    {
+      "type": "range",
+      "id": "brand_font_size",
+      "min": 18,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Brand font size",
+      "default": 25
+    },
+
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Menu heading size",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Menu text size",
+      "default": 11
+    },
+
+
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+
+    {
+      "type": "text",
+      "id": "copyright_name",
+      "label": "Copyright name",
+      "default": "Sollu ApS"
+    },
+
+    {
+      "type": "richtext",
+      "id": "legal_short_text",
+      "label": "Legal text",
+      "default": "<p>Klager kan indbringes for Forbrugerklagenævnet, Nævnenes Hus, Toldboden 2, 8800 Viborg</p>"
+    }
+
+  ],
+
+  "blocks": [
+
+    {
+      "type": "links",
+      "name": "Footer menu",
+      "limit": 3,
+
+      "settings": [
+
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        },
+
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "Menu heading",
+          "default": "Shop"
+        }
+
+      ]
+    },
+
+    {
+      "type": "@app"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "Custom Sollu Footer"
+    }
+  ]
+}
+{% endschema %}

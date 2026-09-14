@@ -1,0 +1,468 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  CSS
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --product-list-items-per-row: {{ section.settings.products_per_row_mobile | times: 1 }};
+    --product-list-horizontal-spacing-factor: {{ section.settings.horizontal_spacing_factor }};
+    --product-list-vertical-spacing-factor: {{ section.settings.vertical_spacing_factor }};
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
+    }
+  }
+
+  /* Product rating */
+  .homepage-product-card__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .homepage-product-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    line-height: 1;
+  }
+
+  .homepage-product-card__star {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .homepage-product-card__star--full {
+    color: #000;
+  }
+
+  .homepage-product-card__star--empty {
+    color: #000;
+    opacity: 0.2;
+  }
+
+  .homepage-product-card__star--half {
+    color: #000;
+  }
+
+  .homepage-product-card__star--half::after {
+    content: "★";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    color: #000;
+  }
+
+  .homepage-product-card__rating-value {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  /* CTA spacing only */
+  .homepage-product-grid__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+</style>
+
+
+{%- if section.blocks.size > 0 -%}
+
+  <div
+    class="
+      {% if section.settings.section_custom_class != blank %}
+        {{ section.settings.section_custom_class }}
+      {% endif %}
+      section-spacing
+      color-scheme
+      color-scheme--{{ section.settings.color_scheme.id }}
+    "
+  >
+
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+
+      <div class="container">
+
+        <div class="section-header">
+
+          {%- if section.settings.subheading != blank -%}
+            <p class="section-header__subheading">
+              {{ section.settings.subheading }}
+            </p>
+          {%- endif -%}
+
+          {%- if section.settings.heading != blank -%}
+            <h2 class="h2">
+              {{ section.settings.heading }}
+            </h2>
+          {%- endif -%}
+
+        </div>
+
+      </div>
+
+    {%- endif -%}
+
+
+    <div class="container">
+
+      <div class="product-list product-list--center">
+
+        {%- for block in section.blocks -%}
+
+          {%- assign collection = block.settings.collection -%}
+
+          {%- if collection != blank -%}
+
+            {%- for product in collection.products limit: block.settings.products_count -%}
+
+              {%- comment -%}
+                PRODUCT CATEGORY
+              {%- endcomment -%}
+
+              {%- assign product_category = blank -%}
+
+              {%- for product_collection in product.collections -%}
+
+                {%- assign collection_name = product_collection.title | strip -%}
+                {%- assign collection_name_downcase = collection_name | downcase -%}
+
+                {%- unless collection_name_downcase == 'all collections' -%}
+
+                  {%- if product_category == blank -%}
+                    {%- assign product_category = collection_name -%}
+                  {%- endif -%}
+
+                {%- endunless -%}
+
+              {%- endfor -%}
+
+
+              {%- comment -%}
+                PRODUCT HIGHLIGHTS
+              {%- endcomment -%}
+
+              {%- assign product_highlights = product.metafields.custom.product_highlights.value -%}
+
+
+              {%- comment -%}
+                PRODUCT RATING
+              {%- endcomment -%}
+
+              {%- assign rating_count = product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+
+
+              <div class="product-list__item">
+
+                <div class="product-card">
+
+
+                  {%- comment -%}
+                    PRODUCT IMAGE
+                  {%- endcomment -%}
+
+                  {%- if product.featured_media != blank -%}
+
+                    <a
+                      href="{{ product.url }}"
+                      class="product-card__figure"
+                    >
+
+                      <div class="product-card__media">
+
+                        {{
+                          product.featured_media
+                          | image_url: width: 1200
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '200,300,400,500,600,800,1000,1200',
+                            sizes: '(max-width: 699px) 50vw, 25vw',
+                            class: 'product-card__image'
+                        }}
+
+                      </div>
+
+                    </a>
+
+                  {%- endif -%}
+
+
+                  <div class="product-card__info">
+
+
+                    {%- comment -%}
+                      CATEGORY
+                    {%- endcomment -%}
+
+                    {%- if product_category != blank -%}
+
+                      <div class="homepage-product-card__category">
+                        {{ product_category }}
+                      </div>
+
+                    {%- endif -%}
+
+
+                    {%- comment -%}
+                      PRODUCT TITLE
+                    {%- endcomment -%}
+
+                    <a
+                      href="{{ product.url }}"
+                      class="product-card__title"
+                    >
+                      {{ product.title }}
+                    </a>
+
+
+                    {%- comment -%}
+                      PRODUCT HIGHLIGHTS
+                    {%- endcomment -%}
+
+                    {%- if product_highlights != blank -%}
+
+                      <div class="homepage-product-card__highlights">
+                        {{ product_highlights }}
+                      </div>
+
+                    {%- endif -%}
+
+
+                    {%- comment -%}
+                      PRODUCT RATING
+                    {%- endcomment -%}
+
+                    {%- if rating_count > 0 -%}
+
+                      <div class="homepage-product-card__rating">
+
+                        <div
+                          class="homepage-product-card__stars"
+                          aria-label="{{ rating_count }} out of 5 stars"
+                        >
+
+                          {%- for star in (1..5) -%}
+
+                            {%- assign previous_star = star | minus: 1 -%}
+
+                            {%- if rating_count >= star -%}
+
+                              <span class="homepage-product-card__star homepage-product-card__star--full">
+                                ★
+                              </span>
+
+                            {%- elsif rating_count > previous_star -%}
+
+                              <span class="homepage-product-card__star homepage-product-card__star--half">
+                                ★
+                              </span>
+
+                            {%- else -%}
+
+                              <span class="homepage-product-card__star homepage-product-card__star--empty">
+                                ★
+                              </span>
+
+                            {%- endif -%}
+
+                          {%- endfor -%}
+
+                        </div>
+
+                        <span class="homepage-product-card__rating-value">
+                          {{ rating_count }}
+                        </span>
+
+                      </div>
+
+                    {%- endif -%}
+
+
+                    {%- comment -%}
+                      PRODUCT PRICE
+                    {%- endcomment -%}
+
+                    <div class="product-card__price">
+
+                      {%- render 'price-list', product: product -%}
+
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            {%- endfor -%}
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
+      </div>
+
+
+      {%- comment -%}
+        --------------------------------------------------------------------------------------------------------------------
+        CTA BUTTON
+        --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- if section.settings.show_cta and section.settings.cta_text != blank -%}
+
+        <div class="homepage-product-grid__cta">
+
+          <a
+            href="{{ section.settings.cta_link }}"
+            class="button"
+          >
+            {{ section.settings.cta_text }}
+          </a>
+
+        </div>
+
+      {%- endif -%}
+
+    </div>
+
+  </div>
+
+{%- endif -%}
+
+
+{% schema %}
+{
+  "name": "Featured products custom",
+  "class": "shopify-section--featured-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_custom_class",
+      "label": "Custom class",
+      "info": "Add a custom CSS class to the whole section."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured products"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_mobile",
+      "label": "Products per row on mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "products_per_row_desktop",
+      "label": "Products per row on desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "horizontal_spacing_factor",
+      "label": "Horizontal spacing factor",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "vertical_spacing_factor",
+      "label": "Vertical spacing factor",
+      "min": 0,
+      "max": 2,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "SE ALLE 10 PRODUKTER"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "range",
+          "id": "products_count",
+          "label": "Products to show",
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "default": 4
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products custom",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

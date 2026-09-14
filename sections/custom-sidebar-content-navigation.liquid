@@ -1,0 +1,1962 @@
+{%- assign section_custom_class = section.settings.custom_class | strip -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    width: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__container {
+    width: 100%;
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_horizontal }}px;
+    padding-right: {{ section.settings.padding_horizontal }}px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ==========================================
+     LAYOUT
+     ========================================== */
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__layout {
+    display: grid;
+
+    grid-template-columns:
+      {{ section.settings.sidebar_width }}px
+      minmax(0, 1fr);
+
+    gap: {{ section.settings.column_gap }}px;
+
+    align-items: start;
+  }
+
+
+  /* ==========================================
+     SIDEBAR
+     ========================================== */
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__sidebar {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  {% if section.settings.enable_sticky %}
+
+    #shopify-section-{{ section.id }} .sidebar-content-navigation__sidebar-inner {
+      position: sticky;
+
+      top: {{ section.settings.sticky_top }}px;
+
+      z-index: 5;
+    }
+
+  {% endif %}
+
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__nav {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__nav-item {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* ==========================================
+     SIDEBAR LINK
+     ========================================== */
+
+  #shopify-section-{{ section.id }} .sidebar-content-navigation__link {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height:
+      {{ section.settings.sidebar_item_height }}px;
+
+    padding:
+      {{ section.settings.sidebar_item_padding_vertical }}px
+      {{ section.settings.sidebar_item_padding_horizontal }}px;
+
+    box-sizing: border-box;
+
+    background-color:
+      {{ section.settings.sidebar_background }};
+
+    color:
+      {{ section.settings.sidebar_text_color }};
+
+    font-size:
+      {{ section.settings.sidebar_font_size }}px;
+
+    font-weight:
+      {{ section.settings.sidebar_font_weight }};
+
+    line-height: 1.25;
+
+    text-decoration: none;
+
+    border: 0;
+
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+
+  /* ==========================================
+     HOVER
+     ========================================== */
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__link:hover {
+    background-color:
+      {{ section.settings.sidebar_hover_background }};
+
+    color:
+      {{ section.settings.sidebar_hover_text }};
+  }
+
+
+  /* ==========================================
+     ACTIVE ITEM
+     
+     IMPORTANT:
+     Active state is controlled ONLY by
+     JavaScript on the LI element.
+     ========================================== */
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__nav-item.is-active
+  .sidebar-content-navigation__link {
+
+    background-color:
+      {{ section.settings.sidebar_active_background }};
+
+    color:
+      {{ section.settings.sidebar_active_text }};
+  }
+
+
+  /* ==========================================
+     ACTIVE LEFT BORDER
+     ========================================== */
+
+  {% if section.settings.active_border_width > 0 %}
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__nav-item.is-active
+    .sidebar-content-navigation__link::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      bottom: 0;
+
+      width:
+        {{ section.settings.active_border_width }}px;
+
+      background-color:
+        {{ section.settings.active_border_color }};
+    }
+
+  {% endif %}
+
+
+  /* ==========================================
+     RIGHT CONTENT
+     ========================================== */
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__content {
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__content-block {
+
+    position: relative;
+
+    width: 100%;
+
+    margin:
+      0 0
+      {{ section.settings.content_spacing }}px;
+
+    padding: 0;
+  }
+
+
+  /* ==========================================
+     CONTENT HEADING
+     ========================================== */
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__heading {
+
+    margin:
+      0 0
+      {{ section.settings.heading_spacing }}px;
+
+    padding:
+      0 0
+      {{ section.settings.heading_bottom_padding }}px;
+
+    color:
+      {{ section.settings.heading_color }};
+
+    font-size:
+      {{ section.settings.heading_size }}px;
+
+    font-weight:
+      {{ section.settings.heading_weight }};
+
+    line-height: 1.25;
+
+    border-bottom:
+      {{ section.settings.heading_border_width }}px
+      solid
+      {{ section.settings.heading_border_color }};
+  }
+
+
+  /* ==========================================
+     CONTENT TEXT
+     ========================================== */
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text {
+
+    color:
+      {{ section.settings.text_color }};
+
+    font-size:
+      {{ section.settings.text_size }}px;
+
+    line-height:
+      {{ section.settings.text_line_height }};
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text > *:first-child {
+    margin-top: 0;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text > *:last-child {
+    margin-bottom: 0;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text p {
+
+    margin-top: 0;
+
+    margin-bottom: 16px;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text ul,
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text ol {
+
+    margin-top: 0;
+
+    margin-bottom: 16px;
+
+    padding-left: 24px;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text li {
+
+    margin-bottom: 6px;
+  }
+
+
+  #shopify-section-{{ section.id }}
+  .sidebar-content-navigation__text a {
+
+    color: inherit;
+  }
+
+
+  /* ==========================================
+     MOBILE
+     ========================================== */
+
+  @media screen and (max-width: 749px) {
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__container {
+
+      padding-top:
+        {{ section.settings.mobile_padding_top }}px;
+
+      padding-bottom:
+        {{ section.settings.mobile_padding_bottom }}px;
+
+      padding-left:
+        {{ section.settings.mobile_padding_horizontal }}px;
+
+      padding-right:
+        {{ section.settings.mobile_padding_horizontal }}px;
+    }
+
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__layout {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap:
+        {{ section.settings.mobile_column_gap }}px;
+    }
+
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__sidebar {
+
+      width: 100%;
+    }
+
+
+    {% if section.settings.enable_sticky_mobile %}
+
+      #shopify-section-{{ section.id }}
+      .sidebar-content-navigation__sidebar-inner {
+
+        position: sticky;
+
+        top:
+          {{ section.settings.sticky_top }}px;
+
+        z-index: 5;
+      }
+
+    {% else %}
+
+      #shopify-section-{{ section.id }}
+      .sidebar-content-navigation__sidebar-inner {
+
+        position: static;
+      }
+
+    {% endif %}
+
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__link {
+
+      min-height:
+        {{ section.settings.mobile_sidebar_item_height }}px;
+
+      padding:
+        {{ section.settings.mobile_sidebar_item_padding_vertical }}px
+        {{ section.settings.mobile_sidebar_item_padding_horizontal }}px;
+
+      font-size:
+        {{ section.settings.mobile_sidebar_font_size }}px;
+    }
+
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__heading {
+
+      font-size:
+        {{ section.settings.mobile_heading_size }}px;
+    }
+
+
+    #shopify-section-{{ section.id }}
+    .sidebar-content-navigation__text {
+
+      font-size:
+        {{ section.settings.mobile_text_size }}px;
+    }
+
+  }
+</style>
+
+
+<div
+  id="sidebar-content-navigation-{{ section.id }}"
+
+  class="sidebar-content-navigation{% if section_custom_class != blank %} {{ section_custom_class | escape }}{% endif %}"
+
+  data-sidebar-content-navigation
+
+  data-section-id="{{ section.id }}"
+
+  data-scroll-offset="{{ section.settings.scroll_offset }}"
+
+  data-mobile-scroll-offset="{{ section.settings.mobile_scroll_offset }}"
+>
+
+
+  <div class="sidebar-content-navigation__container">
+
+
+    <div class="sidebar-content-navigation__layout">
+
+
+      <!-- ==========================================
+           LEFT SIDEBAR
+           ========================================== -->
+
+      <aside
+        class="sidebar-content-navigation__sidebar"
+      >
+
+
+        <div
+          class="sidebar-content-navigation__sidebar-inner"
+        >
+
+
+          <nav
+            aria-label="{{ section.settings.navigation_label | escape }}"
+          >
+
+
+            <ul
+              class="sidebar-content-navigation__nav"
+              role="list"
+            >
+
+
+              {% for block in section.blocks %}
+
+
+                {% if block.type == 'navigation_item' %}
+
+
+                  {% assign target_id =
+                    block.settings.target_id
+                    | strip
+                    | remove: '#'
+                    | handleize
+                  %}
+
+
+                  {% if block.settings.label != blank
+                    and target_id != blank
+                  %}
+
+
+                    <li
+                      class="sidebar-content-navigation__nav-item"
+                    >
+
+
+                      <a
+                        href="#{{ target_id }}"
+
+                        class="sidebar-content-navigation__link"
+
+                        data-sidebar-link
+
+                        data-target="{{ target_id }}"
+                      >
+
+                        {{ block.settings.label | escape }}
+
+                      </a>
+
+
+                    </li>
+
+
+                  {% endif %}
+
+
+                {% endif %}
+
+
+              {% endfor %}
+
+
+            </ul>
+
+
+          </nav>
+
+
+        </div>
+
+
+      </aside>
+
+
+      <!-- ==========================================
+           RIGHT CONTENT
+           ========================================== -->
+
+      <main
+        class="sidebar-content-navigation__content"
+      >
+
+
+        {% for block in section.blocks %}
+
+
+          {% if block.type == 'content_block' %}
+
+
+            {% assign content_id =
+              block.settings.target_id
+              | strip
+              | remove: '#'
+              | handleize
+            %}
+
+
+            {% if content_id != blank %}
+
+
+              <section
+                id="{{ content_id }}"
+
+                class="sidebar-content-navigation__content-block"
+
+                data-content-target="{{ content_id }}"
+
+                {{ block.shopify_attributes }}
+              >
+
+
+                {% if block.settings.heading != blank %}
+
+
+                  <h2
+                    class="sidebar-content-navigation__heading"
+                  >
+
+                    {{ block.settings.heading | escape }}
+
+                  </h2>
+
+
+                {% endif %}
+
+
+                {% if block.settings.text != blank %}
+
+
+                  <div
+                    class="sidebar-content-navigation__text rte"
+                  >
+
+                    {{ block.settings.text }}
+
+                  </div>
+
+
+                {% endif %}
+
+
+              </section>
+
+
+            {% endif %}
+
+
+          {% endif %}
+
+
+        {% endfor %}
+
+
+      </main>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+<script>
+(function () {
+
+  function initSidebarContentNavigation() {
+
+    const section = document.querySelector(
+      '#sidebar-content-navigation-{{ section.id }}'
+    );
+
+
+    if (!section) {
+      return;
+    }
+
+
+    /*
+    Prevent duplicate initialization.
+    */
+
+    if (
+      section.dataset.initialized === 'true'
+    ) {
+      return;
+    }
+
+
+    section.dataset.initialized = 'true';
+
+
+    /*
+    ==========================================
+    GET SIDEBAR ITEMS
+    ==========================================
+    */
+
+    const navItems = Array.from(
+      section.querySelectorAll(
+        '.sidebar-content-navigation__nav-item'
+      )
+    );
+
+
+    const links = Array.from(
+      section.querySelectorAll(
+        '[data-sidebar-link]'
+      )
+    );
+
+
+    if (
+      !navItems.length ||
+      !links.length
+    ) {
+      return;
+    }
+
+
+    /*
+    ==========================================
+    SET ACTIVE ITEM
+    ==========================================
+    
+    ONLY ONE ITEM CAN HAVE is-active.
+    ==========================================
+    */
+
+    function setActive(link) {
+
+
+      /*
+      Remove is-active from
+      every sidebar item.
+      */
+
+      navItems.forEach(
+        function (item) {
+
+          item.classList.remove(
+            'is-active'
+          );
+
+        }
+      );
+
+
+      /*
+      Remove is-active from
+      every link as well.
+      */
+
+      links.forEach(
+        function (item) {
+
+          item.classList.remove(
+            'is-active'
+          );
+
+          item.removeAttribute(
+            'aria-current'
+          );
+
+        }
+      );
+
+
+      if (!link) {
+        return;
+      }
+
+
+      /*
+      Find the LI of the clicked link.
+      */
+
+      const clickedItem =
+        link.closest(
+          '.sidebar-content-navigation__nav-item'
+        );
+
+
+      /*
+      Add is-active ONLY to
+      the clicked LI.
+      */
+
+      if (clickedItem) {
+
+        clickedItem.classList.add(
+          'is-active'
+        );
+
+      }
+
+
+      /*
+      Also add it to the link.
+      */
+
+      link.classList.add(
+        'is-active'
+      );
+
+
+      link.setAttribute(
+        'aria-current',
+        'true'
+      );
+
+    }
+
+
+    /*
+    ==========================================
+    FIND CONTENT TARGET
+    ==========================================
+    */
+
+    function getTarget(targetId) {
+
+
+      if (!targetId) {
+        return null;
+      }
+
+
+      /*
+      First find inside this section.
+      */
+
+      let target =
+        section.querySelector(
+          '[data-content-target="' +
+          CSS.escape(targetId) +
+          '"]'
+        );
+
+
+      /*
+      Fallback to document ID.
+      */
+
+      if (!target) {
+
+        target =
+          document.getElementById(
+            targetId
+          );
+
+      }
+
+
+      return target;
+
+    }
+
+
+    /*
+    ==========================================
+    HEADER HEIGHT
+    ==========================================
+    */
+
+    function getHeaderHeight() {
+
+
+      let headerHeight = 0;
+
+
+      const selectors = [
+
+        'header',
+
+        '.shopify-section-header',
+
+        '#shopify-section-header'
+
+      ];
+
+
+      selectors.forEach(
+        function (selector) {
+
+
+          const elements =
+            document.querySelectorAll(
+              selector
+            );
+
+
+          elements.forEach(
+            function (element) {
+
+
+              const rect =
+                element.getBoundingClientRect();
+
+
+              if (
+                rect.height > 0 &&
+                rect.bottom > 0
+              ) {
+
+
+                const style =
+                  window.getComputedStyle(
+                    element
+                  );
+
+
+                if (
+                  style.position === 'fixed' ||
+                  style.position === 'sticky'
+                ) {
+
+
+                  headerHeight =
+                    Math.max(
+                      headerHeight,
+                      rect.height
+                    );
+
+                }
+
+
+              }
+
+            }
+          );
+
+
+        }
+      );
+
+
+      return headerHeight;
+
+    }
+
+
+    /*
+    ==========================================
+    SCROLL OFFSET
+    ==========================================
+    */
+
+    function getScrollOffset() {
+
+
+      const isMobile =
+        window.innerWidth <= 749;
+
+
+      const customOffset =
+        parseInt(
+
+          isMobile
+
+            ? section.getAttribute(
+                'data-mobile-scroll-offset'
+              )
+
+            : section.getAttribute(
+                'data-scroll-offset'
+              ),
+
+          10
+
+        ) || 0;
+
+
+      const headerHeight =
+        getHeaderHeight();
+
+
+      return Math.max(
+        customOffset,
+        headerHeight + 10
+      );
+
+    }
+
+
+    /*
+    ==========================================
+    CLICK HANDLER
+    ==========================================
+    
+    IMPORTANT:
+
+    There is NO scroll event listener here.
+
+    Therefore scrolling will NEVER change
+    the active sidebar item.
+    ==========================================
+    */
+
+    links.forEach(
+      function (link) {
+
+
+        link.addEventListener(
+          'click',
+          function (event) {
+
+
+            event.preventDefault();
+
+
+            /*
+            Get target ID.
+            */
+
+            const targetId =
+              link.getAttribute(
+                'data-target'
+              );
+
+
+            if (!targetId) {
+              return;
+            }
+
+
+            /*
+            Find target section.
+            */
+
+            const target =
+              getTarget(targetId);
+
+
+            if (!target) {
+              return;
+            }
+
+
+            /*
+            ==================================
+            IMPORTANT
+
+            Select clicked item FIRST.
+            ==================================
+            */
+
+            setActive(link);
+
+
+            /*
+            ==================================
+            CALCULATE SCROLL POSITION
+            ==================================
+            */
+
+            const targetRect =
+              target.getBoundingClientRect();
+
+
+            const targetTop =
+              targetRect.top +
+              window.pageYOffset;
+
+
+            const offset =
+              getScrollOffset();
+
+
+            const finalPosition =
+              Math.max(
+                0,
+                targetTop - offset
+              );
+
+
+            /*
+            ==================================
+            SMOOTH SCROLL
+            ==================================
+            */
+
+            window.scrollTo({
+
+              top:
+                finalPosition,
+
+              behavior:
+                'smooth'
+
+            });
+
+
+            /*
+            ==================================
+            UPDATE HASH
+            ==================================
+            */
+
+            if (
+              window.history &&
+              window.history.replaceState
+            ) {
+
+
+              window.history.replaceState(
+
+                null,
+
+                '',
+
+                '#' + targetId
+
+              );
+
+            }
+
+
+          }
+        );
+
+
+      }
+    );
+
+
+    /*
+    ==========================================
+    INITIAL ACTIVE ITEM
+    ==========================================
+    
+    If URL contains #betaling,
+    Betaling will be active.
+
+    Otherwise first item is active.
+    ==========================================
+    */
+
+    const currentHash =
+      window.location.hash
+        .replace('#', '')
+        .trim();
+
+
+    if (currentHash) {
+
+
+      const hashLink =
+        links.find(
+          function (link) {
+
+
+            return (
+              link.getAttribute(
+                'data-target'
+              ) === currentHash
+            );
+
+
+          }
+        );
+
+
+      if (hashLink) {
+
+
+        setActive(
+          hashLink
+        );
+
+
+      } else {
+
+
+        setActive(
+          links[0]
+        );
+
+
+      }
+
+
+    } else {
+
+
+      /*
+      First item active on initial load.
+      */
+
+      setActive(
+        links[0]
+      );
+
+    }
+
+  }
+
+
+  /*
+  ==========================================
+  INITIAL LOAD
+  ==========================================
+  */
+
+  if (
+    document.readyState === 'loading'
+  ) {
+
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initSidebarContentNavigation
+    );
+
+
+  } else {
+
+
+    initSidebarContentNavigation();
+
+
+  }
+
+
+  /*
+  ==========================================
+  SHOPIFY THEME EDITOR
+  ==========================================
+  */
+
+  document.addEventListener(
+    'shopify:section:load',
+    function (event) {
+
+
+      if (
+        event.detail &&
+        event.detail.sectionId ===
+        '{{ section.id }}'
+      ) {
+
+
+        const section =
+          document.querySelector(
+            '#sidebar-content-navigation-{{ section.id }}'
+          );
+
+
+        if (section) {
+
+
+          section.dataset.initialized =
+            'false';
+
+
+        }
+
+
+        initSidebarContentNavigation();
+
+
+      }
+
+
+    }
+  );
+
+
+})();
+</script>
+
+
+{% schema %}
+{
+  "name": "Sidebar Content Nav",
+  "tag": "section",
+  "class": "sidebar-content-navigation-section",
+
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class",
+      "info": "Optional custom CSS class for the whole section."
+    },
+
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "default": 1200
+    },
+
+    {
+      "type": "range",
+      "id": "sidebar_width",
+      "label": "Sidebar width",
+      "min": 100,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 160
+    },
+
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 10,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+
+
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+
+    {
+      "type": "text",
+      "id": "navigation_label",
+      "label": "Navigation label",
+      "default": "Page navigation"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Sticky sidebar",
+      "default": true
+    },
+
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_mobile",
+      "label": "Sticky on mobile",
+      "default": false
+    },
+
+    {
+      "type": "range",
+      "id": "sticky_top",
+      "label": "Sticky top offset",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "sidebar_item_height",
+      "label": "Item height",
+      "min": 20,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "default": 35
+    },
+
+    {
+      "type": "range",
+      "id": "sidebar_item_padding_vertical",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+
+    {
+      "type": "range",
+      "id": "sidebar_item_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "range",
+      "id": "sidebar_font_size",
+      "label": "Font size",
+      "min": 9,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "select",
+      "id": "sidebar_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Sidebar colors"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_text_color",
+      "label": "Text",
+      "default": "#222222"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_hover_background",
+      "label": "Hover background",
+      "default": "#f5f1e9"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_hover_text",
+      "label": "Hover text",
+      "default": "#222222"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_active_background",
+      "label": "Active background",
+      "default": "#eee2cf"
+    },
+
+    {
+      "type": "color",
+      "id": "sidebar_active_text",
+      "label": "Active text",
+      "default": "#222222"
+    },
+
+    {
+      "type": "color",
+      "id": "active_border_color",
+      "label": "Active border",
+      "default": "#222222"
+    },
+
+    {
+      "type": "range",
+      "id": "active_border_width",
+      "label": "Active border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+
+
+    {
+      "type": "header",
+      "content": "Content"
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 18,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading spacing",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "heading_bottom_padding",
+      "label": "Heading bottom padding",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "range",
+      "id": "heading_border_width",
+      "label": "Heading border width",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+
+    {
+      "type": "color",
+      "id": "heading_border_color",
+      "label": "Heading border color",
+      "default": "#e5e5e5"
+    },
+
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#2c2927"
+    },
+
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#8b8178"
+    },
+
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "label": "Text line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "label": "Content spacing",
+      "min": 10,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 45
+    },
+
+
+    {
+      "type": "header",
+      "content": "Scrolling"
+    },
+
+    {
+      "type": "range",
+      "id": "scroll_offset",
+      "label": "Desktop scroll offset",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_scroll_offset",
+      "label": "Mobile scroll offset",
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_column_gap",
+      "label": "Sidebar/content gap",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_sidebar_item_height",
+      "label": "Sidebar item height",
+      "min": 25,
+      "max": 70,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_sidebar_item_padding_vertical",
+      "label": "Sidebar vertical padding",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 9
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_sidebar_item_padding_horizontal",
+      "label": "Sidebar horizontal padding",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_sidebar_font_size",
+      "label": "Sidebar font size",
+      "min": 9,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Heading size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 26
+    },
+
+    {
+      "type": "range",
+      "id": "mobile_text_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+
+  ],
+
+
+  "blocks": [
+
+    {
+      "type": "navigation_item",
+
+      "name": "Sidebar item",
+
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Generelt"
+        },
+
+        {
+          "type": "text",
+          "id": "target_id",
+          "label": "Target ID",
+          "info": "Use the same Target ID as the matching content block.",
+          "default": "general"
+        }
+
+      ]
+    },
+
+
+    {
+      "type": "content_block",
+
+      "name": "Content block",
+
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "1. Generelle oplysninger"
+        },
+
+        {
+          "type": "text",
+          "id": "target_id",
+          "label": "Target ID",
+          "info": "Must match the sidebar Target ID.",
+          "default": "general"
+        },
+
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content"
+        }
+
+      ]
+    }
+
+  ],
+
+
+  "presets": [
+
+    {
+      "name": "Sidebar Content Nav",
+
+      "blocks": [
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Generelt",
+            "target_id": "general"
+          }
+        },
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Betaling",
+            "target_id": "betaling"
+          }
+        },
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Levering",
+            "target_id": "levering"
+          }
+        },
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Fortrydelsesret",
+            "target_id": "fortrydelsesret"
+          }
+        },
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Reklamationsret",
+            "target_id": "reklamationsret"
+          }
+        },
+
+        {
+          "type": "navigation_item",
+
+          "settings": {
+            "label": "Persondatapolitik",
+            "target_id": "persondatapolitik"
+          }
+        },
+
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "1. Generelle oplysninger",
+            "target_id": "general",
+            "text": "<p>Sollu ApS</p><p>CVR: 12345678</p><p>Bredgade 10, 1260 København K</p><p>Email: kontakt@sollu.dk</p><p>Telefon: +45 12 34 56 78</p>"
+          }
+        },
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "2. Betaling",
+            "target_id": "betaling",
+            "text": "<p>På Sollu.dk kan der betales med:</p><ul><li>Dankort / VISA-Dankort</li><li>MasterCard</li><li>MobilePay</li><li>Apple Pay</li></ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager.</p>"
+          }
+        },
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "3. Levering",
+            "target_id": "levering",
+            "text": "<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.</p><p>Vi sender varer med GLS og PostNord.</p>"
+          }
+        },
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "4. Fortrydelsesret",
+            "target_id": "fortrydelsesret",
+            "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os.</p>"
+          }
+        },
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "5. Reklamationsret",
+            "target_id": "reklamationsret",
+            "text": "<p>Købelovens mangelregler finder anvendelse på varekøb.</p>"
+          }
+        },
+
+        {
+          "type": "content_block",
+
+          "settings": {
+            "heading": "6. Persondatapolitik",
+            "target_id": "persondatapolitik",
+            "text": "<p>Vi behandler dine personoplysninger i overensstemmelse med gældende regler.</p>"
+          }
+        }
+
+      ]
+
+    }
+
+  ]
+}
+{% endschema %}
