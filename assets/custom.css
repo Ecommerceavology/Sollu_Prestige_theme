@@ -2809,7 +2809,7 @@ span.custom-product-card__price-current{
 
 
 
-section.pswp__scroll-wrap .pswp__zoom-wrap {
+.pswp__scroll-wrap .pswp__zoom-wrap {
     height: 100% !IMPORTANT;
     width: 100% !important;
 }
