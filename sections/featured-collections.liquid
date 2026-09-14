@@ -84,7 +84,7 @@
 
   {%- comment -%}
     Save the current product before using "product" inside the collection loop.
-    This is needed on product detail pages so the current product can be excluded.
+    This allows us to exclude the product currently being viewed.
   {%- endcomment -%}
 
   {%- assign current_product = product -%}
@@ -136,14 +136,35 @@
 
           {%- if collection != blank -%}
 
-            {%- for product in collection.products limit: block.settings.products_count -%}
+            {%- comment -%}
+              Number of products that should actually be displayed.
+            {%- endcomment -%}
+
+            {%- assign products_to_show = block.settings.products_count -%}
+
+            {%- comment -%}
+              Counter for products actually displayed.
+
+              We intentionally loop through more products than needed because
+              the current product may need to be skipped.
+            {%- endcomment -%}
+
+            {%- assign displayed_products = 0 -%}
+
+
+            {%- for product in collection.products limit: 50 -%}
 
               {%- comment -%}
-                Exclude the product currently being viewed.
+                Stop once we have displayed the requested number of products.
+              {%- endcomment -%}
 
-                Example:
-                If customer is viewing "Model Mary",
-                "Model Mary" will not appear in this section.
+              {%- if displayed_products >= products_to_show -%}
+                {%- break -%}
+              {%- endif -%}
+
+
+              {%- comment -%}
+                Skip the product currently being viewed.
               {%- endcomment -%}
 
               {%- unless current_product != blank and product.id == current_product.id -%}
@@ -327,6 +348,15 @@
                   </div>
 
                 </div>
+
+
+                {%- comment -%}
+                  Increase the counter only when a product has actually
+                  been displayed.
+                {%- endcomment -%}
+
+                {%- assign displayed_products = displayed_products | plus: 1 -%}
+
 
               {%- endunless -%}
 
