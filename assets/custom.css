@@ -2802,6 +2802,9 @@ span.custom-product-card__price-current {
     
 }
 
+sale-price{
+    text-transform: lowercase !IMPORTANT;
+}
 
 
 
