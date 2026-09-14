@@ -506,7 +506,7 @@ h1.header__logo {
     color: #8c8278;
     text-align: left;
    
-    font-size: 15px;
+    font-size: 12px;
     line-height: 26.25px;
     font-weight: 300;
     max-width: 380px;
@@ -4440,7 +4440,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .Newsletter_sec .content p {
-        font-size: 14px;
+       
         line-height: 24px;
         max-width: 100%;
         margin-top: 12px;
@@ -5581,10 +5581,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         line-height: 34px;
     }
 
-    .Newsletter_sec .content p {
-        font-size: 14px;
-        line-height: 23px;
-    }
+
 
     .Newsletter_sec form .form-row {
         padding: 11px 0;
