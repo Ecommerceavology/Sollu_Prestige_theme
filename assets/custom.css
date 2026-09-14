@@ -6435,8 +6435,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .All_pro_sec .product-list.product-list--center {
-        gap: 18px 10px !important;
-    }
+    gap: 18px 10px!important;
+    margin: 0 !important;
+}
 
     .All_pro_sec p.section-header__subheading,
     .custom-reviews-section p.custom-reviews__eyebrow {
