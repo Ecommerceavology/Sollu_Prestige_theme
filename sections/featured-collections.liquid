@@ -82,6 +82,14 @@
 
 {%- if section.blocks.size > 0 -%}
 
+  {%- comment -%}
+    Save the current product before using "product" inside the collection loop.
+    This is needed on product detail pages so the current product can be excluded.
+  {%- endcomment -%}
+
+  {%- assign current_product = product -%}
+
+
   <div
     class="
       {% if section.settings.section_custom_class != blank %}
@@ -131,183 +139,196 @@
             {%- for product in collection.products limit: block.settings.products_count -%}
 
               {%- comment -%}
-                PRODUCT CATEGORY
+                Exclude the product currently being viewed.
+
+                Example:
+                If customer is viewing "Model Mary",
+                "Model Mary" will not appear in this section.
               {%- endcomment -%}
 
-              {%- assign product_category = blank -%}
-
-              {%- for product_collection in product.collections -%}
-
-                {%- assign collection_name = product_collection.title | strip -%}
-                {%- assign collection_name_downcase = collection_name | downcase -%}
-
-                {%- unless collection_name_downcase == 'all collections' -%}
-
-                  {%- if product_category == blank -%}
-                    {%- assign product_category = collection_name -%}
-                  {%- endif -%}
-
-                {%- endunless -%}
-
-              {%- endfor -%}
+              {%- unless current_product != blank and product.id == current_product.id -%}
 
 
-              {%- comment -%}
-                PRODUCT HIGHLIGHTS
-              {%- endcomment -%}
+                {%- comment -%}
+                  PRODUCT CATEGORY
+                {%- endcomment -%}
 
-              {%- assign product_highlights = product.metafields.custom.product_highlights.value -%}
+                {%- assign product_category = blank -%}
 
+                {%- for product_collection in product.collections -%}
 
-              {%- comment -%}
-                PRODUCT RATING
-              {%- endcomment -%}
+                  {%- assign collection_name = product_collection.title | strip -%}
+                  {%- assign collection_name_downcase = collection_name | downcase -%}
 
-              {%- assign rating_count = product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+                  {%- unless collection_name_downcase == 'all collections' -%}
 
-
-              <div class="product-list__item">
-
-                <div class="product-card">
-
-
-                  {%- comment -%}
-                    PRODUCT IMAGE
-                  {%- endcomment -%}
-
-                  {%- if product.featured_media != blank -%}
-
-                    <a
-                      href="{{ product.url }}"
-                      class="product-card__figure"
-                    >
-
-                      <div class="product-card__media">
-
-                        {{
-                          product.featured_media
-                          | image_url: width: 1200
-                          | image_tag:
-                            loading: 'lazy',
-                            widths: '200,300,400,500,600,800,1000,1200',
-                            sizes: '(max-width: 699px) 50vw, 25vw',
-                            class: 'product-card__image'
-                        }}
-
-                      </div>
-
-                    </a>
-
-                  {%- endif -%}
-
-
-                  <div class="product-card__info">
-
-
-                    {%- comment -%}
-                      CATEGORY
-                    {%- endcomment -%}
-
-                    {%- if product_category != blank -%}
-
-                      <div class="homepage-product-card__category">
-                        {{ product_category }}
-                      </div>
-
+                    {%- if product_category == blank -%}
+                      {%- assign product_category = collection_name -%}
                     {%- endif -%}
 
+                  {%- endunless -%}
 
-                    {%- comment -%}
-                      PRODUCT TITLE
-                    {%- endcomment -%}
-
-                    <a
-                      href="{{ product.url }}"
-                      class="product-card__title"
-                    >
-                      {{ product.title }}
-                    </a>
+                {%- endfor -%}
 
 
-                    {%- comment -%}
-                      PRODUCT HIGHLIGHTS
-                    {%- endcomment -%}
+                {%- comment -%}
+                  PRODUCT HIGHLIGHTS
+                {%- endcomment -%}
 
-                    {%- if product_highlights != blank -%}
+                {%- assign product_highlights = product.metafields.custom.product_highlights.value -%}
 
-                      <div class="homepage-product-card__highlights">
-                        {{ product_highlights }}
-                      </div>
 
-                    {%- endif -%}
+                {%- comment -%}
+                  PRODUCT RATING
+                {%- endcomment -%}
+
+                {%- assign rating_count = product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+
+
+                <div class="product-list__item">
+
+                  <div class="product-card">
 
 
                     {%- comment -%}
-                      PRODUCT RATING
+                      PRODUCT IMAGE
                     {%- endcomment -%}
 
-                    {%- if rating_count > 0 -%}
+                    {%- if product.featured_media != blank -%}
 
-                      <div class="homepage-product-card__rating">
+                      <a
+                        href="{{ product.url }}"
+                        class="product-card__figure"
+                      >
 
-                        <div
-                          class="homepage-product-card__stars"
-                          aria-label="{{ rating_count }} out of 5 stars"
-                        >
+                        <div class="product-card__media">
 
-                          {%- for star in (1..5) -%}
-
-                            {%- assign previous_star = star | minus: 1 -%}
-
-                            {%- if rating_count >= star -%}
-
-                              <span class="homepage-product-card__star homepage-product-card__star--full">
-                                ★
-                              </span>
-
-                            {%- elsif rating_count > previous_star -%}
-
-                              <span class="homepage-product-card__star homepage-product-card__star--half">
-                                ★
-                              </span>
-
-                            {%- else -%}
-
-                              <span class="homepage-product-card__star homepage-product-card__star--empty">
-                                ★
-                              </span>
-
-                            {%- endif -%}
-
-                          {%- endfor -%}
+                          {{
+                            product.featured_media
+                            | image_url: width: 1200
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '200,300,400,500,600,800,1000,1200',
+                              sizes: '(max-width: 699px) 50vw, 25vw',
+                              class: 'product-card__image'
+                          }}
 
                         </div>
 
-                        <span class="homepage-product-card__rating-value">
-                          {{ rating_count }}
-                        </span>
-
-                      </div>
+                      </a>
 
                     {%- endif -%}
 
 
-                    {%- comment -%}
-                      PRODUCT PRICE
-                    {%- endcomment -%}
+                    <div class="product-card__info">
 
-                    <div class="product-card__price">
 
-                      {%- render 'price-list', product: product -%}
+                      {%- comment -%}
+                        CATEGORY
+                      {%- endcomment -%}
+
+                      {%- if product_category != blank -%}
+
+                        <div class="homepage-product-card__category">
+                          {{ product_category }}
+                        </div>
+
+                      {%- endif -%}
+
+
+                      {%- comment -%}
+                        PRODUCT TITLE
+                      {%- endcomment -%}
+
+                      <a
+                        href="{{ product.url }}"
+                        class="product-card__title"
+                      >
+                        {{ product.title }}
+                      </a>
+
+
+                      {%- comment -%}
+                        PRODUCT HIGHLIGHTS
+                      {%- endcomment -%}
+
+                      {%- if product_highlights != blank -%}
+
+                        <div class="homepage-product-card__highlights">
+                          {{ product_highlights }}
+                        </div>
+
+                      {%- endif -%}
+
+
+                      {%- comment -%}
+                        PRODUCT RATING
+                      {%- endcomment -%}
+
+                      {%- if rating_count > 0 -%}
+
+                        <div class="homepage-product-card__rating">
+
+                          <div
+                            class="homepage-product-card__stars"
+                            aria-label="{{ rating_count }} out of 5 stars"
+                          >
+
+                            {%- for star in (1..5) -%}
+
+                              {%- assign previous_star = star | minus: 1 -%}
+
+                              {%- if rating_count >= star -%}
+
+                                <span class="homepage-product-card__star homepage-product-card__star--full">
+                                  ★
+                                </span>
+
+                              {%- elsif rating_count > previous_star -%}
+
+                                <span class="homepage-product-card__star homepage-product-card__star--half">
+                                  ★
+                                </span>
+
+                              {%- else -%}
+
+                                <span class="homepage-product-card__star homepage-product-card__star--empty">
+                                  ★
+                                </span>
+
+                              {%- endif -%}
+
+                            {%- endfor -%}
+
+                          </div>
+
+                          <span class="homepage-product-card__rating-value">
+                            {{ rating_count }}
+                          </span>
+
+                        </div>
+
+                      {%- endif -%}
+
+
+                      {%- comment -%}
+                        PRODUCT PRICE
+                      {%- endcomment -%}
+
+                      <div class="product-card__price">
+
+                        {%- render 'price-list', product: product -%}
+
+                      </div>
+
 
                     </div>
-
 
                   </div>
 
                 </div>
 
-              </div>
+              {%- endunless -%}
 
             {%- endfor -%}
 
