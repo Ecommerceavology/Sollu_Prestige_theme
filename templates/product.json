@@ -143,7 +143,7 @@
           "type": "tab",
           "settings": {
             "title": "SPECIFIKATIONER",
-            "content": "{{ product.metafields.custom.technical_specifications | metafield_tag: field: 'title' }}{{ product.metafields.custom.technical_specifications | metafield_tag: field: 'value' }}",
+            "content": "{{ product.metafields.custom.specification | metafield_tag }}",
             "page": "",
             "open_on_mobile": false
           }
