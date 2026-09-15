@@ -130,6 +130,19 @@
     "tabs_mgUAdq": {
       "type": "tabs",
       "blocks": {
+        "specifications_LDdn8Q": {
+          "type": "specifications",
+          "settings": {
+            "title": "SPECIFIKATIONER",
+            "small_heading": "TEKNISKE SPECIFIKATIONER",
+            "heading": "SPECS – TIL PRODUKTSIDE OG SEO",
+            "specification_heading": "SPECIFIKATION",
+            "value_heading": "VÆRDI",
+            "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
+            "custom_class": "",
+            "open_on_mobile": false
+          }
+        },
         "tab_3mXnGi": {
           "type": "tab",
           "settings": {
@@ -168,6 +181,7 @@
         }
       },
       "block_order": [
+        "specifications_LDdn8Q",
         "tab_3mXnGi",
         "tab_gXtpm8",
         "tab_6e4FiB",
