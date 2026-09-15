@@ -2825,9 +2825,10 @@ span.custom-product-card__price-current{
     background: #2a2420;
 }
 .specifications-tab-content .specifications-table .specifications-row.specifications-header>div {
-    color: #b8965a !important;
+    color: #b8965a!important;
     font-size: 13px;
-    letter-spacing: normal !important;
+    letter-spacing: normal!important;
+    padding: 6px 10px;
 }
 
 
