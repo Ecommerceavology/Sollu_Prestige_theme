@@ -2637,15 +2637,20 @@ span.custom-product-card__price-current {
     margin-top: 30px !important;
 }
 .Pro_detail_sec .product-gallery__media img {
-    border-radius: 16px !important;
+    border-radius: 16px!important;
+    max-height: 620px;
+    min-height: 520px !important;
+    object-fit: contain;
 }
-.Pro_detail_sec .product-gallery__carousel{
-     min-height: 520px !important;
+.Pro_detail_sec .product-gallery__carousel {
+    min-height: 520px!important;
+    max-height: 620px !important;
 }
 .Pro_detail_sec .product-gallery__media {
-    min-height: 520px !important;
-    background: white !IMPORTANT;
-    border-radius: 16px !important;
+    min-height: 520px!important;
+    background: #fff!important;
+    border-radius: 16px!important;
+    max-height: 620px !important;
 }
 .Pro_detail_sec button.product-gallery__thumbnail {
     width: 100% !IMPORTANT;
