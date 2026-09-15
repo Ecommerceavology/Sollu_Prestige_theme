@@ -2850,6 +2850,14 @@ span.custom-product-card__price-current{
 .specifications-row>div {
  padding: 6px 10px !important;
 }
+.Pro_content_tabs_sec .content-tabs .prose .metafield-rich_text_field p em {
+    background: #f7f0e5 !important;
+    border-left: 2px solid #b8965a !important;
+    display: inline-block;
+    line-height: normal;
+    padding: 10px !important;
+    margin-top: 20px !important;
+}
 
 
 
