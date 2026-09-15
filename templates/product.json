@@ -130,16 +130,13 @@
     "tabs_mgUAdq": {
       "type": "tabs",
       "blocks": {
-        "specifications_LDdn8Q": {
-          "type": "specifications",
+        "tab_gXtpm8": {
+          "type": "tab",
+          "disabled": true,
           "settings": {
             "title": "SPECIFIKATIONER",
-            "small_heading": "TEKNISKE SPECIFIKATIONER",
-            "heading": "SPECS – TIL PRODUKTSIDE OG SEO",
-            "specification_heading": "SPECIFIKATION",
-            "value_heading": "VÆRDI",
-            "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
-            "custom_class": "",
+            "content": "{{ product.metafields.custom.specification | metafield_tag }}",
+            "page": "",
             "open_on_mobile": false
           }
         },
@@ -152,12 +149,16 @@
             "open_on_mobile": false
           }
         },
-        "tab_gXtpm8": {
-          "type": "tab",
+        "specifications_LDdn8Q": {
+          "type": "specifications",
           "settings": {
             "title": "SPECIFIKATIONER",
-            "content": "{{ product.metafields.custom.specification | metafield_tag }}",
-            "page": "",
+            "small_heading": "TEKNISKE SPECIFIKATIONER",
+            "heading": "SPECS – TIL PRODUKTSIDE OG SEO",
+            "specification_heading": "SPECIFIKATION",
+            "value_heading": "VÆRDI",
+            "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
+            "custom_class": "",
             "open_on_mobile": false
           }
         },
@@ -181,9 +182,9 @@
         }
       },
       "block_order": [
-        "specifications_LDdn8Q",
-        "tab_3mXnGi",
         "tab_gXtpm8",
+        "tab_3mXnGi",
+        "specifications_LDdn8Q",
         "tab_6e4FiB",
         "tab_8HkVBr"
       ],
