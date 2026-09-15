@@ -2814,7 +2814,7 @@ span.custom-product-card__price-current{
 }
 
 
-.specifications-tab-content .specifications-header > div {
+.specifications-tab-content .specifications-table .specifications-header > div {
    
     margin: 0 !important;
 }
