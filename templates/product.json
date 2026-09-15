@@ -130,16 +130,6 @@
     "tabs_mgUAdq": {
       "type": "tabs",
       "blocks": {
-        "tab_gXtpm8": {
-          "type": "tab",
-          "disabled": true,
-          "settings": {
-            "title": "SPECIFIKATIONER",
-            "content": "{{ product.metafields.custom.specification | metafield_tag }}",
-            "page": "",
-            "open_on_mobile": false
-          }
-        },
         "tab_3mXnGi": {
           "type": "tab",
           "settings": {
@@ -182,7 +172,6 @@
         }
       },
       "block_order": [
-        "tab_gXtpm8",
         "tab_3mXnGi",
         "specifications_LDdn8Q",
         "tab_6e4FiB",
