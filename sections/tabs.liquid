@@ -1,18 +1,8 @@
 {%- if section.blocks.size > 0 -%}
-
   {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-  <div class="
-    section-spacing
-    color-scheme
-    color-scheme--{{ section.settings.color_scheme.id }}
-    color-scheme--bg-{{ color_scheme_hash }}
-    {% if section.settings.separate_section_with_border %}bordered-section{% endif %}
-    {% if section.settings.custom_class != blank %}{{ section.settings.custom_class }}{% endif %}
-  ">
-
+  <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
     <div class="container {% if section.settings.text_alignment == 'center' %}container--xl{% endif %}">
-
       <div class="section-stack">
 
         {%- render 'section-header',
@@ -39,9 +29,7 @@
           {%- for block in section.blocks -%}
 
             {%- liquid
-
               assign title = block.settings.page.title | default: block.settings.title
-
               assign content = ''
 
               if block.type == 'tab'
@@ -51,25 +39,14 @@
                 assign content = block.settings.liquid
 
               elsif block.type == 'specifications'
-
-              
-
-                assign content = product.metafields.custom.technical_specifications.value
-
-                if content == blank
-                  assign title = ''
-                endif
-
+                assign content = block.settings.specifications
               endif
-
             -%}
 
 
             {%- if title != blank and content != blank -%}
 
-              <!-- ==========================================
-                   TAB TITLE
-              =========================================== -->
+              <!-- TAB TITLE -->
 
               <button
                 class="h6"
@@ -82,9 +59,7 @@
               </button>
 
 
-              <!-- ==========================================
-                   TAB CONTENT
-              =========================================== -->
+              <!-- TAB PANEL -->
 
               <div
                 role="tabpanel"
@@ -92,42 +67,33 @@
                 {% cycle '', 'hidden', 'hidden', 'hidden', 'hidden' %}
               >
 
-
                 {% if block.type == 'specifications' %}
 
                   <!-- ==========================================
-                       SPECIFICATIONS BLOCK
+                       SPECIFICATIONS
                   =========================================== -->
 
                   <div
                     class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}"
                   >
 
-
                     {% if block.settings.small_heading != blank %}
-
                       <div class="specifications-small-heading">
                         {{ block.settings.small_heading }}
                       </div>
-
                     {% endif %}
 
 
                     {% if block.settings.heading != blank %}
-
                       <h3 class="specifications-heading">
                         {{ block.settings.heading }}
                       </h3>
-
                     {% endif %}
 
 
                     <div class="specifications-table">
 
-
-                      <!-- ==========================================
-                           TABLE HEADER
-                      =========================================== -->
+                      <!-- TABLE HEADER -->
 
                       <div class="specifications-row specifications-header">
 
@@ -143,25 +109,20 @@
 
 
                       <!-- ==========================================
-                           METAFIELD CONTENT
+                           METAFIELD ROWS
                       =========================================== -->
 
-                      {% assign specification_html = product.metafields.custom.technical_specifications.value %}
-
+                      {% assign specification_html = block.settings.specifications %}
 
                       {% if specification_html != blank %}
 
-                        {% assign specification_items = specification_html | split: '<li' %}
-
+                        {% assign specification_items = specification_html | split: '<li>' %}
 
                         {% for item in specification_items %}
 
                           {% if item contains '<strong>' %}
 
                             {% assign item_content = item | split: '</li>' | first %}
-
-
-                            <!-- GET LABEL -->
 
                             {% assign specification_name = item_content
                               | split: '<strong>'
@@ -170,30 +131,16 @@
                               | first
                             %}
 
-
-                            <!-- GET VALUE -->
-
                             {% assign specification_value = item_content
                               | split: '</strong>'
                               | last
                             %}
 
-
-                            <!-- CLEAN LABEL -->
-
                             {% assign specification_name = specification_name
                               | strip_html
                               | strip
+                              | remove: ':'
                             %}
-
-
-                            {% assign specification_name = specification_name
-                              | remove_first: ':'
-                              | strip
-                            %}
-
-
-                            <!-- CLEAN VALUE -->
 
                             {% assign specification_value = specification_value
                               | strip_html
@@ -206,9 +153,7 @@
                               <div class="specifications-row">
 
                                 <div class="specifications-label">
-                                  <strong>
-                                    {{ specification_name }}
-                                  </strong>
+                                  <strong>{{ specification_name }}</strong>
                                 </div>
 
                                 <div class="specifications-value">
@@ -225,7 +170,6 @@
 
                       {% endif %}
 
-
                     </div>
 
                   </div>
@@ -233,16 +177,13 @@
 
                 {% else %}
 
-                  <!-- ==========================================
-                       NORMAL TAB
-                  =========================================== -->
+                  <!-- NORMAL TAB -->
 
                   <div class="prose">
                     {{- content -}}
                   </div>
 
                 {% endif %}
-
 
               </div>
 
@@ -253,9 +194,8 @@
         </x-tabs>
 
 
-
         <!-- ==========================================
-             MOBILE
+             MOBILE ACCORDION
         =========================================== -->
 
         <div class="accordion-group sm:hidden">
@@ -263,9 +203,7 @@
           {%- for block in section.blocks -%}
 
             {%- liquid
-
               assign title = block.settings.page.title | default: block.settings.title
-
               assign content = ''
 
               if block.type == 'tab'
@@ -275,23 +213,14 @@
                 assign content = block.settings.liquid
 
               elsif block.type == 'specifications'
-
-                assign content = product.metafields.custom.technical_specifications.value
-
-                if content == blank
-                  assign title = ''
-                endif
-
+                assign content = block.settings.specifications
               endif
-
             -%}
 
 
             {%- if title != blank and content != blank -%}
 
-
               {% if block.type == 'specifications' %}
-
 
                 <!-- ==========================================
                      MOBILE SPECIFICATIONS
@@ -299,31 +228,23 @@
 
                 {%- capture specifications_content -%}
 
-                  <div
-                    class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}"
-                  >
-
+                  <div class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}">
 
                     {% if block.settings.small_heading != blank %}
-
                       <div class="specifications-small-heading">
                         {{ block.settings.small_heading }}
                       </div>
-
                     {% endif %}
 
 
                     {% if block.settings.heading != blank %}
-
                       <h3 class="specifications-heading">
                         {{ block.settings.heading }}
                       </h3>
-
                     {% endif %}
 
 
                     <div class="specifications-table">
-
 
                       <!-- HEADER -->
 
@@ -340,22 +261,19 @@
                       </div>
 
 
-                      <!-- METAFIELD -->
+                      <!-- ROWS -->
 
-                      {% assign specification_html = product.metafields.custom.technical_specifications.value %}
-
+                      {% assign specification_html = block.settings.specifications %}
 
                       {% if specification_html != blank %}
 
-                        {% assign specification_items = specification_html | split: '<li' %}
-
+                        {% assign specification_items = specification_html | split: '<li>' %}
 
                         {% for item in specification_items %}
 
                           {% if item contains '<strong>' %}
 
                             {% assign item_content = item | split: '</li>' | first %}
-
 
                             {% assign specification_name = item_content
                               | split: '<strong>'
@@ -364,24 +282,16 @@
                               | first
                             %}
 
-
                             {% assign specification_value = item_content
                               | split: '</strong>'
                               | last
                             %}
 
-
                             {% assign specification_name = specification_name
                               | strip_html
                               | strip
+                              | remove: ':'
                             %}
-
-
-                            {% assign specification_name = specification_name
-                              | remove_first: ':'
-                              | strip
-                            %}
-
 
                             {% assign specification_value = specification_value
                               | strip_html
@@ -394,9 +304,7 @@
                               <div class="specifications-row">
 
                                 <div class="specifications-label">
-                                  <strong>
-                                    {{ specification_name }}
-                                  </strong>
+                                  <strong>{{ specification_name }}</strong>
                                 </div>
 
                                 <div class="specifications-value">
@@ -412,7 +320,6 @@
                         {% endfor %}
 
                       {% endif %}
-
 
                     </div>
 
@@ -431,7 +338,6 @@
 
               {% else %}
 
-
                 <!-- NORMAL MOBILE TAB -->
 
                 {%- render 'accordion',
@@ -441,9 +347,7 @@
                   prose_content: true
                 -%}
 
-
               {% endif %}
-
 
             {%- endif -%}
 
@@ -452,20 +356,21 @@
         </div>
 
       </div>
-
     </div>
-
   </div>
 
 {%- endif -%}
 
 
-
 <!-- ==========================================
      SPECIFICATIONS CSS
-========================================== -->
+=========================================== -->
 
 <style>
+
+  /* ==========================================
+     MAIN
+  =========================================== */
 
   .specifications-tab-content {
     width: 100%;
@@ -477,13 +382,11 @@
   =========================================== */
 
   .specifications-tab-content .specifications-small-heading {
-
     margin-bottom: 10px;
 
     color: #b57b32;
 
     font-size: 12px;
-
     line-height: 1.5;
 
     font-weight: 400;
@@ -491,7 +394,6 @@
     letter-spacing: 4px;
 
     text-transform: uppercase;
-
   }
 
 
@@ -500,13 +402,11 @@
   =========================================== */
 
   .specifications-tab-content .specifications-heading {
-
     margin: 0 0 8px;
 
     color: #b57b32;
 
     font-size: 15px;
-
     line-height: 1.4;
 
     font-weight: 500;
@@ -514,7 +414,6 @@
     letter-spacing: 3px;
 
     text-transform: uppercase;
-
   }
 
 
@@ -523,15 +422,12 @@
   =========================================== */
 
   .specifications-tab-content .specifications-table {
-
     width: 100%;
 
     margin: 0;
 
     border-top: 1px solid #ded4c8;
-
     border-left: 1px solid #ded4c8;
-
   }
 
 
@@ -540,7 +436,6 @@
   =========================================== */
 
   .specifications-tab-content .specifications-row {
-
     display: grid;
 
     grid-template-columns: 225px minmax(0, 1fr);
@@ -548,9 +443,7 @@
     width: 100%;
 
     margin: 0 !important;
-
     padding: 0 !important;
-
   }
 
 
@@ -559,14 +452,11 @@
   =========================================== */
 
   .specifications-tab-content .specifications-header {
-
     background: #29231f;
-
   }
 
 
   .specifications-tab-content .specifications-header > div {
-
     box-sizing: border-box;
 
     padding: 4px 10px;
@@ -574,7 +464,6 @@
     color: #ffffff;
 
     font-size: 11px;
-
     line-height: 16px;
 
     font-weight: 500;
@@ -582,9 +471,7 @@
     text-transform: uppercase;
 
     border-right: 1px solid #29231f;
-
     border-bottom: 1px solid #29231f;
-
   }
 
 
@@ -607,22 +494,19 @@
     color: #2c2521;
 
     font-size: 13px;
-
     line-height: 18px;
 
     font-weight: 400;
 
     border-right: 1px solid #ded4c8;
-
     border-bottom: 1px solid #ded4c8;
 
     overflow-wrap: break-word;
-
   }
 
 
   /* ==========================================
-     LEFT COLUMN
+     SPECIFICATION NAME
   =========================================== */
 
   .specifications-tab-content
@@ -632,7 +516,6 @@
     color: #211d1a;
 
     font-weight: 700;
-
   }
 
 
@@ -643,12 +526,11 @@
     color: #211d1a;
 
     font-weight: 700;
-
   }
 
 
   /* ==========================================
-     RIGHT COLUMN
+     VALUE
   =========================================== */
 
   .specifications-tab-content
@@ -656,7 +538,6 @@
   .specifications-value {
 
     font-weight: 400;
-
   }
 
 
@@ -666,31 +547,22 @@
 
   @media screen and (max-width: 749px) {
 
-    .specifications-tab-content
-    .specifications-small-heading {
-
+    .specifications-tab-content .specifications-small-heading {
       font-size: 11px;
 
       letter-spacing: 3px;
-
     }
 
 
-    .specifications-tab-content
-    .specifications-heading {
-
+    .specifications-tab-content .specifications-heading {
       font-size: 14px;
 
       letter-spacing: 2px;
-
     }
 
 
-    .specifications-tab-content
-    .specifications-row {
-
+    .specifications-tab-content .specifications-row {
       grid-template-columns: 38% minmax(0, 62%);
-
     }
 
 
@@ -703,7 +575,6 @@
       font-size: 10px;
 
       line-height: 15px;
-
     }
 
 
@@ -716,13 +587,11 @@
       font-size: 12px;
 
       line-height: 17px;
-
     }
 
   }
 
 </style>
-
 
 
 {% schema %}
@@ -875,7 +744,6 @@
         }
 
       ]
-
     },
 
 
@@ -910,7 +778,6 @@
         }
 
       ]
-
     },
 
 
@@ -957,6 +824,13 @@
         },
 
         {
+          "type": "richtext",
+          "id": "specifications",
+          "label": "Technical Specifications",
+          "info": "Connect this setting to your Product Technical Specifications metafield using the dynamic source button."
+        },
+
+        {
           "type": "text",
           "id": "custom_class",
           "label": "Custom class",
@@ -971,7 +845,6 @@
         }
 
       ]
-
     }
 
   ],
@@ -993,7 +866,6 @@
             "title": "Tab 1",
             "content": "<p>Use this text to share information about your brand with your customers.</p>"
           }
-
         },
 
         {
@@ -1003,7 +875,6 @@
             "title": "Tab 2",
             "content": "<p>Describe a product, share announcements, or welcome customers to your store.</p>"
           }
-
         },
 
         {
@@ -1013,11 +884,9 @@
             "title": "Tab 3",
             "content": "<p>Share information about your shipping rates, return policy or contact information.</p>"
           }
-
         }
 
       ]
-
     }
 
   ]
