@@ -1,8 +1,11 @@
 {%- if section.blocks.size > 0 -%}
+
   {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
   <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+
     <div class="container {% if section.settings.text_alignment == 'center' %}container--xl{% endif %}">
+
       <div class="section-stack">
 
         {%- render 'section-header',
@@ -34,12 +37,10 @@
 
               if block.type == 'tab'
                 assign content = block.settings.page.content | default: block.settings.content
-
               elsif block.type == 'liquid'
                 assign content = block.settings.liquid
-
               elsif block.type == 'specifications'
-                assign content = block.settings.specifications
+                assign content = product.metafields.custom.technical_specifications.value
               endif
             -%}
 
@@ -59,7 +60,7 @@
               </button>
 
 
-              <!-- TAB PANEL -->
+              <!-- TAB CONTENT -->
 
               <div
                 role="tabpanel"
@@ -69,13 +70,7 @@
 
                 {% if block.type == 'specifications' %}
 
-                  <!-- ==========================================
-                       SPECIFICATIONS
-                  =========================================== -->
-
-                  <div
-                    class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}"
-                  >
+                  <div class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}">
 
                     {% if block.settings.small_heading != blank %}
                       <div class="specifications-small-heading">
@@ -108,11 +103,9 @@
                       </div>
 
 
-                      <!-- ==========================================
-                           METAFIELD ROWS
-                      =========================================== -->
+                      <!-- METAFIELD CONTENT -->
 
-                      {% assign specification_html = block.settings.specifications %}
+                      {% assign specification_html = product.metafields.custom.technical_specifications.value %}
 
                       {% if specification_html != blank %}
 
@@ -139,7 +132,11 @@
                             {% assign specification_name = specification_name
                               | strip_html
                               | strip
-                              | remove: ':'
+                            %}
+
+                            {% assign specification_name = specification_name
+                              | remove_first: ':'
+                              | strip
                             %}
 
                             {% assign specification_value = specification_value
@@ -208,12 +205,10 @@
 
               if block.type == 'tab'
                 assign content = block.settings.page.content | default: block.settings.content
-
               elsif block.type == 'liquid'
                 assign content = block.settings.liquid
-
               elsif block.type == 'specifications'
-                assign content = block.settings.specifications
+                assign content = product.metafields.custom.technical_specifications.value
               endif
             -%}
 
@@ -221,10 +216,6 @@
             {%- if title != blank and content != blank -%}
 
               {% if block.type == 'specifications' %}
-
-                <!-- ==========================================
-                     MOBILE SPECIFICATIONS
-                =========================================== -->
 
                 {%- capture specifications_content -%}
 
@@ -246,7 +237,7 @@
 
                     <div class="specifications-table">
 
-                      <!-- HEADER -->
+                      <!-- TABLE HEADER -->
 
                       <div class="specifications-row specifications-header">
 
@@ -261,9 +252,9 @@
                       </div>
 
 
-                      <!-- ROWS -->
+                      <!-- METAFIELD CONTENT -->
 
-                      {% assign specification_html = block.settings.specifications %}
+                      {% assign specification_html = product.metafields.custom.technical_specifications.value %}
 
                       {% if specification_html != blank %}
 
@@ -290,7 +281,11 @@
                             {% assign specification_name = specification_name
                               | strip_html
                               | strip
-                              | remove: ':'
+                            %}
+
+                            {% assign specification_name = specification_name
+                              | remove_first: ':'
+                              | strip
                             %}
 
                             {% assign specification_value = specification_value
@@ -338,8 +333,6 @@
 
               {% else %}
 
-                <!-- NORMAL MOBILE TAB -->
-
                 {%- render 'accordion',
                   title: title,
                   content: content,
@@ -356,7 +349,9 @@
         </div>
 
       </div>
+
     </div>
+
   </div>
 
 {%- endif -%}
@@ -364,22 +359,16 @@
 
 <!-- ==========================================
      SPECIFICATIONS CSS
-=========================================== -->
+========================================== -->
 
 <style>
-
-  /* ==========================================
-     MAIN
-  =========================================== */
 
   .specifications-tab-content {
     width: 100%;
   }
 
 
-  /* ==========================================
-     SMALL HEADING
-  =========================================== */
+  /* SMALL HEADING */
 
   .specifications-tab-content .specifications-small-heading {
     margin-bottom: 10px;
@@ -397,9 +386,7 @@
   }
 
 
-  /* ==========================================
-     MAIN HEADING
-  =========================================== */
+  /* MAIN HEADING */
 
   .specifications-tab-content .specifications-heading {
     margin: 0 0 8px;
@@ -417,9 +404,7 @@
   }
 
 
-  /* ==========================================
-     TABLE
-  =========================================== */
+  /* TABLE */
 
   .specifications-tab-content .specifications-table {
     width: 100%;
@@ -431,9 +416,7 @@
   }
 
 
-  /* ==========================================
-     ROW
-  =========================================== */
+  /* ROW */
 
   .specifications-tab-content .specifications-row {
     display: grid;
@@ -447,9 +430,7 @@
   }
 
 
-  /* ==========================================
-     HEADER
-  =========================================== */
+  /* HEADER */
 
   .specifications-tab-content .specifications-header {
     background: #29231f;
@@ -475,9 +456,7 @@
   }
 
 
-  /* ==========================================
-     BODY ROWS
-  =========================================== */
+  /* BODY */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -505,9 +484,7 @@
   }
 
 
-  /* ==========================================
-     SPECIFICATION NAME
-  =========================================== */
+  /* LEFT COLUMN */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -529,9 +506,7 @@
   }
 
 
-  /* ==========================================
-     VALUE
-  =========================================== */
+  /* RIGHT COLUMN */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -541,22 +516,18 @@
   }
 
 
-  /* ==========================================
-     MOBILE
-  =========================================== */
+  /* MOBILE */
 
   @media screen and (max-width: 749px) {
 
     .specifications-tab-content .specifications-small-heading {
       font-size: 11px;
-
       letter-spacing: 3px;
     }
 
 
     .specifications-tab-content .specifications-heading {
       font-size: 14px;
-
       letter-spacing: 2px;
     }
 
@@ -821,13 +792,6 @@
           "id": "value_heading",
           "label": "Value column heading",
           "default": "VÆRDI"
-        },
-
-        {
-          "type": "richtext",
-          "id": "specifications",
-          "label": "Technical Specifications",
-          "info": "Connect this setting to your Product Technical Specifications metafield using the dynamic source button."
         },
 
         {
