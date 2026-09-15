@@ -2835,7 +2835,7 @@ span.custom-product-card__price-current{
   > div {
    
     background: #f5f0e8;
-    padding: 6px 10px;
+   
    
 }
 .specifications-tab-content
@@ -2844,7 +2844,9 @@ span.custom-product-card__price-current{
    
     background: white !important;
 }
-
+.specifications-row>div {
+ padding: 6px 10px !important;
+}
 
 
 
