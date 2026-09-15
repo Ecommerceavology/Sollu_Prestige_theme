@@ -1,0 +1,693 @@
+{% comment %}
+  Dynamic Specifications Table
+  File: sections/specifications-table.liquid
+{% endcomment %}
+
+<section
+  class="specifications-table-section section-{{ section.id }}"
+  {% if section.settings.custom_class != blank %}
+    class="{{ section.settings.custom_class }}"
+  {% endif %}
+>
+  <div class="specifications-table-wrapper">
+
+    {% if section.settings.small_heading != blank %}
+      <div class="specifications-small-heading">
+        {{ section.settings.small_heading }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h2 class="specifications-heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="specifications-table">
+
+      <!-- TABLE HEADER -->
+      <div class="specifications-row specifications-header">
+        <div class="specifications-label">
+          {{ section.settings.specification_label }}
+        </div>
+
+        <div class="specifications-value">
+          {{ section.settings.value_label }}
+        </div>
+      </div>
+
+      <!-- DYNAMIC ROWS -->
+      {% for block in section.blocks %}
+        {% if block.type == 'specification' %}
+
+          <div
+            class="specifications-row"
+            {{ block.shopify_attributes }}
+          >
+            <div class="specifications-label">
+              {{ block.settings.specification }}
+            </div>
+
+            <div class="specifications-value">
+              {{ block.settings.value }}
+            </div>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .section-{{ section.id }} {
+    width: 100%;
+  }
+
+  .section-{{ section.id }} .specifications-table-wrapper {
+    width: 100%;
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+  }
+
+  /* Small heading */
+  .section-{{ section.id }} .specifications-small-heading {
+    margin-bottom: 10px;
+
+    color: {{ section.settings.small_heading_color }};
+
+    font-size: {{ section.settings.small_heading_size }}px;
+    line-height: 1.5;
+
+    font-weight: 400;
+
+    letter-spacing: {{ section.settings.small_heading_spacing }}px;
+
+    text-transform: uppercase;
+  }
+
+  /* Main heading */
+  .section-{{ section.id }} .specifications-heading {
+    margin: 0 0 8px;
+
+    color: {{ section.settings.heading_color }};
+
+    font-size: {{ section.settings.heading_size }}px;
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    letter-spacing: {{ section.settings.heading_spacing }}px;
+
+    text-transform: uppercase;
+  }
+
+  /* Table */
+  .section-{{ section.id }} .specifications-table {
+    width: 100%;
+
+    border-top: 1px solid {{ section.settings.border_color }};
+    border-left: 1px solid {{ section.settings.border_color }};
+  }
+
+  /* Every row */
+  .section-{{ section.id }} .specifications-row {
+    display: grid;
+
+    grid-template-columns:
+      {{ section.settings.label_width }}px
+      minmax(0, 1fr);
+
+    width: 100%;
+  }
+
+  /* Header */
+  .section-{{ section.id }} .specifications-header {
+    background: {{ section.settings.header_background }};
+    color: {{ section.settings.header_text_color }};
+  }
+
+  .section-{{ section.id }} .specifications-header > div {
+    padding:
+      {{ section.settings.header_vertical_padding }}px
+      {{ section.settings.horizontal_padding }}px;
+
+    font-size: {{ section.settings.header_font_size }}px;
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+  }
+
+  /* Normal cells */
+  .section-{{ section.id }} .specifications-row:not(.specifications-header) > div {
+    padding:
+      {{ section.settings.row_vertical_padding }}px
+      {{ section.settings.horizontal_padding }}px;
+
+    background: {{ section.settings.row_background }};
+
+    color: {{ section.settings.text_color }};
+
+    font-size: {{ section.settings.font_size }}px;
+    line-height: {{ section.settings.line_height }}px;
+
+    border-right: 1px solid {{ section.settings.border_color }};
+    border-bottom: 1px solid {{ section.settings.border_color }};
+  }
+
+  /* Header borders */
+  .section-{{ section.id }} .specifications-header > div {
+    border-right: 1px solid {{ section.settings.header_background }};
+    border-bottom: 1px solid {{ section.settings.header_background }};
+  }
+
+  /* Label column */
+  .section-{{ section.id }} .specifications-label {
+    font-weight: {{ section.settings.label_font_weight }};
+  }
+
+  /* Value column */
+  .section-{{ section.id }} .specifications-value {
+    font-weight: 400;
+  }
+
+  /* Last header column */
+  .section-{{ section.id }} .specifications-header .specifications-value {
+    border-right: 1px solid {{ section.settings.header_background }};
+  }
+
+
+  /* ==========================
+     MOBILE
+     ========================== */
+
+  @media screen and (max-width: 749px) {
+
+    .section-{{ section.id }} .specifications-table-wrapper {
+      max-width: 100%;
+    }
+
+    .section-{{ section.id }} .specifications-row {
+      grid-template-columns:
+        {{ section.settings.mobile_label_width }}%
+        minmax(0, 1fr);
+    }
+
+    .section-{{ section.id }} .specifications-small-heading {
+      font-size: {{ section.settings.mobile_small_heading_size }}px;
+    }
+
+    .section-{{ section.id }} .specifications-heading {
+      font-size: {{ section.settings.mobile_heading_size }}px;
+    }
+
+    .section-{{ section.id }} .specifications-header > div {
+      padding:
+        {{ section.settings.mobile_header_vertical_padding }}px
+        {{ section.settings.mobile_horizontal_padding }}px;
+
+      font-size: {{ section.settings.mobile_header_font_size }}px;
+    }
+
+    .section-{{ section.id }} .specifications-row:not(.specifications-header) > div {
+      padding:
+        {{ section.settings.mobile_row_vertical_padding }}px
+        {{ section.settings.mobile_horizontal_padding }}px;
+
+      font-size: {{ section.settings.mobile_font_size }}px;
+      line-height: {{ section.settings.mobile_line_height }}px;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Specifications Table",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom class"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 400,
+      "max": 1400,
+      "step": 10,
+      "unit": "px",
+      "default": 900
+    },
+
+    {
+      "type": "header",
+      "content": "Headings"
+    },
+    {
+      "type": "text",
+      "id": "small_heading",
+      "label": "Small heading",
+      "default": "TEKNISKE SPECIFIKATIONER"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SPECS – TIL PRODUKTSIDE OG SEO"
+    },
+
+    {
+      "type": "color",
+      "id": "small_heading_color",
+      "label": "Small heading color",
+      "default": "#B57B32"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#B57B32"
+    },
+    {
+      "type": "range",
+      "id": "small_heading_size",
+      "label": "Small heading size",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "small_heading_spacing",
+      "label": "Small heading letter spacing",
+      "min": 0,
+      "max": 8,
+      "step": 0.5,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading letter spacing",
+      "min": 0,
+      "max": 8,
+      "step": 0.5,
+      "unit": "px",
+      "default": 3
+    },
+
+    {
+      "type": "header",
+      "content": "Table Header"
+    },
+    {
+      "type": "text",
+      "id": "specification_label",
+      "label": "Specification heading",
+      "default": "SPECIFIKATION"
+    },
+    {
+      "type": "text",
+      "id": "value_label",
+      "label": "Value heading",
+      "default": "VÆRDI"
+    },
+    {
+      "type": "color",
+      "id": "header_background",
+      "label": "Header background",
+      "default": "#29231F"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "label": "Header font size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "header_vertical_padding",
+      "label": "Header vertical padding",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+
+    {
+      "type": "header",
+      "content": "Table Rows"
+    },
+    {
+      "type": "color",
+      "id": "row_background",
+      "label": "Row background",
+      "default": "#F5F0E9"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#2C2521"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#DED4C8"
+    },
+    {
+      "type": "range",
+      "id": "label_width",
+      "label": "Specification column width",
+      "min": 150,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 225
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Line height",
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "label_font_weight",
+      "label": "Specification font weight",
+      "min": 400,
+      "max": 800,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "row_vertical_padding",
+      "label": "Row vertical padding",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "horizontal_padding",
+      "label": "Horizontal padding",
+      "min": 4,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_label_width",
+      "label": "Mobile specification width",
+      "min": 25,
+      "max": 60,
+      "step": 1,
+      "unit": "%",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "label": "Mobile font size",
+      "min": 9,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_line_height",
+      "label": "Mobile line height",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_font_size",
+      "label": "Mobile header font size",
+      "min": 8,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Mobile heading size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "mobile_small_heading_size",
+      "label": "Mobile small heading size",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_vertical_padding",
+      "label": "Mobile header vertical padding",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "mobile_row_vertical_padding",
+      "label": "Mobile row vertical padding",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "mobile_horizontal_padding",
+      "label": "Mobile horizontal padding",
+      "min": 4,
+      "max": 15,
+      "step": 1,
+      "unit": "px",
+      "default": 7
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "specification",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "text",
+          "id": "specification",
+          "label": "Specification",
+          "default": "Dækning"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "value",
+          "label": "Value",
+          "default": "Ansigt + hals + nakke — to maskestykker i ét produkt"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Specifications Table",
+      "blocks": [
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Dækning",
+            "value": "Ansigt + hals + nakke — to maskestykker i ét produkt"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Lysfunktioner",
+            "value": "7 funktioner · 3 intensitetsniveauer"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "LED-perler",
+            "value": "Ansigt: 368 stk. · Hals: 312 stk."
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Behandlingstid",
+            "value": "10–20 min · 3–5 gange om ugen"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Batterikapacitet",
+            "value": "2000 mAh"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Batteritid",
+            "value": "Rækker til flere sessioner. Afhængig af valgt lysintensitet."
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Opladning",
+            "value": "USB-C · DC 5V = 1A"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Arbejdsspænding",
+            "value": "3,7V"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Effektforbrug",
+            "value": "4,5W"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Bølgelængder",
+            "value": "NIR 850±5nm · Rød 630±5nm · Blå 415±5nm · Orange 605±5nm"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Materiale",
+            "value": "Fødevaregodkendt medicinsk silikone"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Størrelse",
+            "value": "Ansigt: 315×219×5mm · Hals: 325×247×5mm"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Vægt",
+            "value": "Ansigt: ca. 230g · Hals: ca. 200g"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Certificering",
+            "value": "CE-godkendt · RoHS"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Standard",
+            "value": "GB4706.15-2008 · GB4706.1-2005"
+          }
+        },
+        {
+          "type": "specification",
+          "settings": {
+            "specification": "Reklamationsret",
+            "value": "24 måneders reklamationsret"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
