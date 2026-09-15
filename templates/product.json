@@ -153,8 +153,8 @@
           "type": "specifications",
           "settings": {
             "title": "SPECIFIKATIONER",
-            "small_heading": "TEKNISKE SPECIFIKATIONER",
-            "heading": "SPECS – TIL PRODUKTSIDE OG SEO",
+            "small_heading": "",
+            "heading": "",
             "specification_heading": "SPECIFIKATION",
             "value_heading": "VÆRDI",
             "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
