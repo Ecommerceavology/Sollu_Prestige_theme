@@ -1,16 +1,7 @@
 {%- if section.blocks.size > 0 -%}
   {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
-  <div
-    class="
-      section-spacing
-      color-scheme
-      color-scheme--{{ section.settings.color_scheme.id }}
-      color-scheme--bg-{{ color_scheme_hash }}
-      {% if section.settings.separate_section_with_border %}bordered-section{% endif %}
-      {% if section.settings.custom_class != blank %}{{ section.settings.custom_class }}{% endif %}
-    "
-  >
+  <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
     <div class="container {% if section.settings.text_alignment == 'center' %}container--xl{% endif %}">
       <div class="section-stack">
 
@@ -23,9 +14,9 @@
         -%}
 
 
-        <!-- =========================
+        <!-- ==========================================
              DESKTOP TABS
-        ========================== -->
+        =========================================== -->
 
         <x-tabs class="content-tabs {% if section.settings.text_alignment == 'center' %}content-tabs--center{% endif %} hidden sm:block">
 
@@ -48,7 +39,7 @@
                 assign content = block.settings.liquid
 
               elsif block.type == 'specifications'
-                assign content = 'specifications'
+                assign content = block.settings.specifications
               endif
             -%}
 
@@ -68,7 +59,7 @@
               </button>
 
 
-              <!-- TAB CONTENT -->
+              <!-- TAB PANEL -->
 
               <div
                 role="tabpanel"
@@ -78,11 +69,12 @@
 
                 {% if block.type == 'specifications' %}
 
+                  <!-- ==========================================
+                       SPECIFICATIONS
+                  =========================================== -->
+
                   <div
-                    class="prose specifications-tab-content"
-                    {% if block.settings.custom_class != blank %}
-                      data-custom-class="{{ block.settings.custom_class }}"
-                    {% endif %}
+                    class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}"
                   >
 
                     {% if block.settings.small_heading != blank %}
@@ -116,42 +108,67 @@
                       </div>
 
 
-                      <!-- SPECIFICATION ROWS -->
+                      <!-- ==========================================
+                           METAFIELD ROWS
+                      =========================================== -->
 
-                      {% assign specification_rows = block.settings.specifications | newline_to_br | split: '<br />' %}
+                      {% assign specification_html = block.settings.specifications %}
 
-                      {% for row in specification_rows %}
+                      {% if specification_html != blank %}
 
-                        {% assign row = row | strip %}
+                        {% assign specification_items = specification_html | split: '<li>' %}
 
-                        {% if row != blank %}
+                        {% for item in specification_items %}
 
-                          {% assign columns = row | split: '|' %}
+                          {% if item contains '<strong>' %}
 
-                          {% assign specification_name = columns[0] | strip %}
-                          {% assign specification_value = columns[1] | strip %}
+                            {% assign item_content = item | split: '</li>' | first %}
 
-                          {% if specification_name != blank %}
+                            {% assign specification_name = item_content
+                              | split: '<strong>'
+                              | last
+                              | split: '</strong>'
+                              | first
+                            %}
 
-                            <div class="specifications-row">
+                            {% assign specification_value = item_content
+                              | split: '</strong>'
+                              | last
+                            %}
 
-                              <div class="specifications-label">
-                                <strong>
-                                  {{ specification_name }}
-                                </strong>
+                            {% assign specification_name = specification_name
+                              | strip_html
+                              | strip
+                              | remove: ':'
+                            %}
+
+                            {% assign specification_value = specification_value
+                              | strip_html
+                              | strip
+                            %}
+
+
+                            {% if specification_name != blank %}
+
+                              <div class="specifications-row">
+
+                                <div class="specifications-label">
+                                  <strong>{{ specification_name }}</strong>
+                                </div>
+
+                                <div class="specifications-value">
+                                  {{ specification_value }}
+                                </div>
+
                               </div>
 
-                              <div class="specifications-value">
-                                {{ specification_value }}
-                              </div>
-
-                            </div>
+                            {% endif %}
 
                           {% endif %}
 
-                        {% endif %}
+                        {% endfor %}
 
-                      {% endfor %}
+                      {% endif %}
 
                     </div>
 
@@ -159,6 +176,8 @@
 
 
                 {% else %}
+
+                  <!-- NORMAL TAB -->
 
                   <div class="prose">
                     {{- content -}}
@@ -175,9 +194,9 @@
         </x-tabs>
 
 
-        <!-- =========================
+        <!-- ==========================================
              MOBILE ACCORDION
-        ========================== -->
+        =========================================== -->
 
         <div class="accordion-group sm:hidden">
 
@@ -194,7 +213,7 @@
                 assign content = block.settings.liquid
 
               elsif block.type == 'specifications'
-                assign content = 'specifications'
+                assign content = block.settings.specifications
               endif
             -%}
 
@@ -203,14 +222,13 @@
 
               {% if block.type == 'specifications' %}
 
+                <!-- ==========================================
+                     MOBILE SPECIFICATIONS
+                =========================================== -->
+
                 {%- capture specifications_content -%}
 
-                  <div
-                    class="prose specifications-tab-content"
-                    {% if block.settings.custom_class != blank %}
-                      data-custom-class="{{ block.settings.custom_class }}"
-                    {% endif %}
-                  >
+                  <div class="prose specifications-tab-content{% if block.settings.custom_class != blank %} {{ block.settings.custom_class }}{% endif %}">
 
                     {% if block.settings.small_heading != blank %}
                       <div class="specifications-small-heading">
@@ -228,7 +246,7 @@
 
                     <div class="specifications-table">
 
-                      <!-- TABLE HEADER -->
+                      <!-- HEADER -->
 
                       <div class="specifications-row specifications-header">
 
@@ -243,42 +261,65 @@
                       </div>
 
 
-                      <!-- SPECIFICATION ROWS -->
+                      <!-- ROWS -->
 
-                      {% assign specification_rows = block.settings.specifications | newline_to_br | split: '<br />' %}
+                      {% assign specification_html = block.settings.specifications %}
 
-                      {% for row in specification_rows %}
+                      {% if specification_html != blank %}
 
-                        {% assign row = row | strip %}
+                        {% assign specification_items = specification_html | split: '<li>' %}
 
-                        {% if row != blank %}
+                        {% for item in specification_items %}
 
-                          {% assign columns = row | split: '|' %}
+                          {% if item contains '<strong>' %}
 
-                          {% assign specification_name = columns[0] | strip %}
-                          {% assign specification_value = columns[1] | strip %}
+                            {% assign item_content = item | split: '</li>' | first %}
 
-                          {% if specification_name != blank %}
+                            {% assign specification_name = item_content
+                              | split: '<strong>'
+                              | last
+                              | split: '</strong>'
+                              | first
+                            %}
 
-                            <div class="specifications-row">
+                            {% assign specification_value = item_content
+                              | split: '</strong>'
+                              | last
+                            %}
 
-                              <div class="specifications-label">
-                                <strong>
-                                  {{ specification_name }}
-                                </strong>
+                            {% assign specification_name = specification_name
+                              | strip_html
+                              | strip
+                              | remove: ':'
+                            %}
+
+                            {% assign specification_value = specification_value
+                              | strip_html
+                              | strip
+                            %}
+
+
+                            {% if specification_name != blank %}
+
+                              <div class="specifications-row">
+
+                                <div class="specifications-label">
+                                  <strong>{{ specification_name }}</strong>
+                                </div>
+
+                                <div class="specifications-value">
+                                  {{ specification_value }}
+                                </div>
+
                               </div>
 
-                              <div class="specifications-value">
-                                {{ specification_value }}
-                              </div>
-
-                            </div>
+                            {% endif %}
 
                           {% endif %}
 
-                        {% endif %}
+                        {% endfor %}
 
-                      {% endfor %}
+                      {% endif %}
 
                     </div>
 
@@ -296,6 +337,8 @@
 
 
               {% else %}
+
+                <!-- NORMAL MOBILE TAB -->
 
                 {%- render 'accordion',
                   title: title,
@@ -315,27 +358,28 @@
       </div>
     </div>
   </div>
+
 {%- endif -%}
 
 
-<!-- =========================
+<!-- ==========================================
      SPECIFICATIONS CSS
-========================== -->
+=========================================== -->
 
 <style>
 
-  /* =========================================
-     SPECIFICATIONS WRAPPER
-  ========================================== */
+  /* ==========================================
+     MAIN
+  =========================================== */
 
   .specifications-tab-content {
     width: 100%;
   }
 
 
-  /* =========================================
+  /* ==========================================
      SMALL HEADING
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content .specifications-small-heading {
     margin-bottom: 10px;
@@ -353,9 +397,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      MAIN HEADING
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content .specifications-heading {
     margin: 0 0 8px;
@@ -373,9 +417,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      TABLE
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content .specifications-table {
     width: 100%;
@@ -387,9 +431,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      ROW
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content .specifications-row {
     display: grid;
@@ -399,14 +443,13 @@
     width: 100%;
 
     margin: 0 !important;
-
     padding: 0 !important;
   }
 
 
-  /* =========================================
+  /* ==========================================
      HEADER
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content .specifications-header {
     background: #29231f;
@@ -432,9 +475,9 @@
   }
 
 
-  /* =========================================
-     NORMAL ROWS
-  ========================================== */
+  /* ==========================================
+     BODY ROWS
+  =========================================== */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -462,9 +505,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      SPECIFICATION NAME
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -486,9 +529,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      VALUE
-  ========================================== */
+  =========================================== */
 
   .specifications-tab-content
   .specifications-row:not(.specifications-header)
@@ -498,9 +541,9 @@
   }
 
 
-  /* =========================================
+  /* ==========================================
      MOBILE
-  ========================================== */
+  =========================================== */
 
   @media screen and (max-width: 749px) {
 
@@ -781,12 +824,10 @@
         },
 
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "specifications",
-          "label": "Specifications",
-          "info": "Add one row per line. Use this format: Specification | Value",
-
-          "default": "Dækning | Ansigt + hals + nakke — to maskestykker i ét produkt\nLysfunktioner | 7 funktioner · 3 intensitetsniveauer\nLED-perler | Ansigt: 368 stk. · Hals: 312 stk.\nBehandlingstid | 10–20 min · 3–5 gange om ugen\nBatterikapacitet | 2000 mAh\nBatteritid | Rækker til flere sessioner. Afhængig af valgt lysintensitet.\nOpladning | USB-C · DC 5V = 1A\nArbejdsspænding | 3,7V\nEffektforbrug | 4,5W\nBølgelængder | NIR 850±5nm · Rød 630±5nm · Blå 415±5nm · Orange 605±5nm\nMateriale | Fødevaregodkendt medicinsk silikone\nStørrelse | Ansigt: 315×219×5mm · Hals: 325×247×5mm\nVægt | Ansigt: ca. 230g · Hals: ca. 200g\nCertificering | CE-godkendt · RoHS\nStandard | GB4706.15-2008 · GB4706.1-2005\nReklamationsret | 24 måneders reklamationsret"
+          "label": "Technical Specifications",
+          "info": "Connect this setting to your Product Technical Specifications metafield using the dynamic source button."
         },
 
         {
