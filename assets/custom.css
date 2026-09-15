@@ -2830,6 +2830,13 @@ span.custom-product-card__price-current{
     letter-spacing: normal!important;
     padding: 6px 10px;
 }
+.specifications-tab-content
+  .specifications-row:not(.specifications-header)
+  > div {
+   
+    background: #f5f0e8;
+   
+}
 
 
 
