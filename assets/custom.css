@@ -2837,6 +2837,12 @@ span.custom-product-card__price-current{
     background: #f5f0e8;
    
 }
+.specifications-tab-content
+  .specifications-row:not(.specifications-header)
+  .specifications-value {
+   
+    background: white !important;
+}
 
 
 
