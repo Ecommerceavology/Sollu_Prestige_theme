@@ -2863,7 +2863,9 @@ span.custom-product-card__price-current{
     padding: 10px !important;
     margin-top: 20px !important;
 }
-
+.Pro_content_tabs_sec .content-tabs .prose .metafield-rich_text_field p em br {
+    display: none;
+}
 
 
 
