@@ -139,19 +139,6 @@
             "open_on_mobile": false
           }
         },
-        "specifications_LDdn8Q": {
-          "type": "specifications",
-          "settings": {
-            "title": "SPECIFIKATIONER",
-            "small_heading": "",
-            "heading": "",
-            "specification_heading": "SPECIFIKATION",
-            "value_heading": "VÆRDI",
-            "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
-            "custom_class": "",
-            "open_on_mobile": false
-          }
-        },
         "tab_6e4FiB": {
           "type": "tab",
           "settings": {
@@ -174,11 +161,11 @@
           "type": "specifications",
           "settings": {
             "title": "SPECIFIKATIONER",
-            "small_heading": "TEKNISKE SPECIFIKATIONER",
-            "heading": "SPECS – TIL PRODUKTSIDE OG SEO",
+            "small_heading": "",
+            "heading": "",
             "specification_heading": "SPECIFIKATION",
             "value_heading": "VÆRDI",
-            "specifications": "{{ product.metafields.custom.specification | metafield_tag }}",
+            "specifications": "<p>{{ product.metafields.custom.specification | metafield_tag }}</p>",
             "custom_class": "",
             "open_on_mobile": false
           }
@@ -186,7 +173,6 @@
       },
       "block_order": [
         "tab_3mXnGi",
-        "specifications_LDdn8Q",
         "tab_6e4FiB",
         "tab_8HkVBr",
         "specifications_hmCEdA"
