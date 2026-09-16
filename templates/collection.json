@@ -1,1 +1,163 @@
-{"sections":{"image_with_text_overlay_HVa9aV":{"type":"image-with-text-overlay","blocks":{"subheading_UgqeXC":{"type":"subheading","settings":{"text":"VORES UNIVERS"}},"heading_XKBijr":{"type":"heading","settings":{"text":"Udforsk Sollu Kollektionerne","heading_tag":"h2"}},"richtext_FggAbk":{"type":"richtext","settings":{"content":"<p>Dyk ned i vores kuraterede kollektioner af restorative værktøjer, designet til at bringe ro, balance og velvære ind i dit daglige ritual.<\/p>"}}},"block_order":["subheading_UgqeXC","heading_XKBijr","richtext_FggAbk"],"name":"Hero section","settings":{"custom_class":"Hero_sec pro_hero_sec","color_scheme":"scheme-3","image_size":"sm","image":"shopify:\/\/shop_images\/Sollu_pa_badevaerelset.png","allow_transparent_header":false,"reveal_on_scroll":true,"remove_vertical_spacing":true,"content_width":"md","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center-start sm:text-start","overlay_color":"#000000","overlay_opacity":20}},"collection-banner":{"type":"collection-banner","disabled":true,"settings":{"color_scheme":"","image_size":"auto","allow_transparent_header":true,"show_image":true,"reveal":true,"enable_parallax":true,"show_collection_title":true,"show_collection_description":true,"show_breadcrumb":true,"content_width":"xs","text_alignment":"center","overlay_color":"#000000","overlay_opacity":50}},"custom_product_grid_filter_Rjmee4":{"type":"custom-product-grid-filter","name":"Custom Product Grid","settings":{"custom_class":"custom-product-grid","enable_category_dropdown":true,"category_label":"Kategorier","category_collections":[],"show_all_collection_option":true,"all_products_label":"Alla produkter","show_collection_product_count":false,"show_collection_name":true,"enable_sorting":true,"sort_label":"Sortér: Populær","products_per_page":8,"desktop_columns":"4","show_product_count":true,"count_font_size":10,"show_badges":true,"show_description":true,"description_words":10,"show_rating":true,"show_product_type":true,"control_font_size":10,"title_font_size":13,"description_font_size":9,"price_font_size":10,"show_bottom_button":true,"button_text":"SE ALLE PRODUKTER","background_color":"#f7f4ee","card_background":"#ffffff","text_color":"#292727","muted_color":"#99958d","border_color":"#a8a49d","accent_color":"#c9a77a","max_width":1180,"grid_gap":10,"padding_top":25,"padding_bottom":45,"empty_title":"Inga produkter hittades","empty_text":"Försök med ett annat filter."}},"main":{"type":"main-collection","disabled":true,"settings":{"color_scheme":"","hide_product_information":false,"products_per_page":48,"products_per_row_mobile":"2","products_size_desktop":"medium","show_grid_mode_selector":true,"horizontal_spacing_factor":1,"vertical_spacing_factor":1,"filter_layout":"drawer","quick_links_menu":"","show_sort_by":true,"show_filters":true,"show_results_count":true,"show_filter_group_name":false,"show_filter_values_count":true,"open_filters_by_default":false}},"newsletter_8TqiAL":{"type":"newsletter","settings":{"custom_class":"Newsletter_sec pro_newsletter","color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"md","subheading":"Nyhedsbrev","title":"Tilmeld dig og få 15% på dinførste ordre","heading_style":"h2","content":"<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.<\/p>","button_text":"Tilmeld","input_bottom_info":"<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik<\/a>. Vi deler aldrig din e-mail.<\/p>","overlay_color":"#f5f0e8","overlay_opacity":100}}},"order":["image_with_text_overlay_HVa9aV","collection-banner","custom_product_grid_filter_Rjmee4","main","newsletter_8TqiAL"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_HVa9aV": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_UgqeXC": {
+          "type": "subheading",
+          "settings": {
+            "text": "VORES UNIVERS"
+          }
+        },
+        "heading_XKBijr": {
+          "type": "heading",
+          "settings": {
+            "text": "Udforsk Sollu-verdenen",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_FggAbk": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Se vores udvalgte selvplejeprodukter, der styrker din krop og understøtter dine daglige rutiner.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_UgqeXC",
+        "heading_XKBijr",
+        "richtext_FggAbk"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Sollu_pa_badevaerelset.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "collection-banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "allow_transparent_header": true,
+        "show_image": true,
+        "reveal": true,
+        "enable_parallax": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_breadcrumb": true,
+        "content_width": "xs",
+        "text_alignment": "center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 50
+      }
+    },
+    "custom_product_grid_filter_Rjmee4": {
+      "type": "custom-product-grid-filter",
+      "name": "Custom Product Grid",
+      "settings": {
+        "custom_class": "custom-product-grid",
+        "enable_category_dropdown": true,
+        "category_label": "Kategorier",
+        "show_all_products_option": true,
+        "all_products_label": "Alla produkter",
+        "show_collection_product_count": false,
+        "show_collection_name": true,
+        "enable_sorting": true,
+        "products_per_page": 8,
+        "desktop_columns": "4",
+        "show_product_count": true,
+        "count_font_size": 10,
+        "show_badges": true,
+        "show_description": true,
+        "description_words": 10,
+        "show_rating": true,
+        "show_product_type": true,
+        "control_font_size": 10,
+        "title_font_size": 13,
+        "description_font_size": 9,
+        "price_font_size": 10,
+        "show_bottom_button": true,
+        "button_text": "SE ALLE PRODUKTER",
+        "background_color": "#f7f4ee",
+        "card_background": "#ffffff",
+        "text_color": "#292727",
+        "muted_color": "#99958d",
+        "border_color": "#a8a49d",
+        "accent_color": "#c9a77a",
+        "max_width": 1180,
+        "grid_gap": 10,
+        "padding_top": 25,
+        "padding_bottom": 45,
+        "empty_title": "Inga produkter hittades",
+        "empty_text": "Försök med ett annat filter."
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "hide_product_information": false,
+        "products_per_page": 48,
+        "products_per_row_mobile": "2",
+        "products_size_desktop": "medium",
+        "show_grid_mode_selector": true,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "filter_layout": "drawer",
+        "quick_links_menu": "",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_results_count": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": true,
+        "open_filters_by_default": false
+      }
+    },
+    "newsletter_8TqiAL": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec pro_newsletter",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 15% på dinførste ordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_HVa9aV",
+    "collection-banner",
+    "custom_product_grid_filter_Rjmee4",
+    "main",
+    "newsletter_8TqiAL"
+  ]
+}
