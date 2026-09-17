@@ -1,1 +1,255 @@
-{"sections":{"image_with_text_overlay_NLR9XU":{"type":"image-with-text-overlay","blocks":{"subheading_8nKcMj":{"type":"subheading","settings":{"text":"KUNDESERVICE"}},"heading_zP96b7":{"type":"heading","settings":{"text":"Vi er her for at hjælpe","heading_tag":"h2"}},"richtext_8xHwFk":{"type":"richtext","settings":{"content":"<p>Har du spørgsmål til din ordre, vores produkter eller levering?<\/p>"}}},"block_order":["subheading_8nKcMj","heading_zP96b7","richtext_8xHwFk"],"name":"Hero section","settings":{"custom_class":"Hero_sec pro_hero_sec faq_hero_sec","color_scheme":"scheme-3","image_size":"sm","image":"shopify:\/\/shop_images\/Section_2.png","allow_transparent_header":false,"reveal_on_scroll":true,"remove_vertical_spacing":true,"content_width":"md","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center-start sm:text-start","overlay_color":"#000000","overlay_opacity":20}},"faq":{"type":"faq","blocks":{"category":{"type":"category","settings":{"title":"Bestilling & Betaling","icon":"none","icon_width":16}},"question-1":{"type":"question","settings":{"question":"Hvordan placerer jeg en ordre?","answer":"<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"}},"question-2":{"type":"question","settings":{"question":"Hvilke betalingsmetoder accepterer I?","answer":"<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"}},"question-3":{"type":"question","settings":{"question":"Kan jeg ændre min ordre efter den er placeret?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}},"question_9rtFwV":{"type":"question","settings":{"question":"Modtager jeg en ordrebekræftelse?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}}},"block_order":["category","question-1","question-2","question-3","question_9rtFwV"],"settings":{"custom_class":"FAQ_sec FAQ_sec_1","color_scheme":"","separate_section_with_border":true,"show_categories":false,"subheading":"","title":"","heading_style":"h2","content":""}},"faq_6zNa4L":{"type":"faq","blocks":{"category_X69YBH":{"type":"category","settings":{"title":"Fragt & Levering","icon":"none","icon_width":16}},"question_g9B9qB":{"type":"question","settings":{"question":"Hvad er leveringstiden?","answer":"<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"}},"question_CeKaRj":{"type":"question","settings":{"question":"Kan jeg spore min pakke?","answer":"<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"}},"question_tmgWPB":{"type":"question","settings":{"question":"Hvilke fragtfirmaer benytter I?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}},"question_kFjYaw":{"type":"question","settings":{"question":"Sender I til udlandet?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}}},"block_order":["category_X69YBH","question_g9B9qB","question_CeKaRj","question_tmgWPB","question_kFjYaw"],"settings":{"custom_class":"FAQ_sec FAQ_sec_2","color_scheme":"","separate_section_with_border":true,"show_categories":false,"subheading":"","title":"","heading_style":"h2","content":""}},"faq_HAxGfx":{"type":"faq","blocks":{"category_R9HGW3":{"type":"category","settings":{"title":"Retur & Fortrydelse","icon":"none","icon_width":16}},"question_bd77An":{"type":"question","settings":{"question":"Hvad er jeres returpolitik?","answer":"<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.<\/p>"}},"question_fFBK8n":{"type":"question","settings":{"question":"Hvor lang tid har jeg til at fortryde mit køb?","answer":"<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.<\/p>"}},"question_x4fbE6":{"type":"question","settings":{"question":"Hvor hurtigt får jeg mine penge retur?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}},"question_F4gkVK":{"type":"question","settings":{"question":"Skal jeg selv betale for returfragt?","answer":"<p>You can contact us through our contact page! We will be happy to assist you.<\/p>"}}},"block_order":["category_R9HGW3","question_bd77An","question_fFBK8n","question_x4fbE6","question_F4gkVK"],"settings":{"custom_class":"FAQ_sec FAQ_sec_3","color_scheme":"","separate_section_with_border":true,"show_categories":false,"subheading":"","title":"","heading_style":"h2","content":""}},"newsletter_D7KWmg":{"type":"newsletter","settings":{"custom_class":"Newsletter_sec pro_newsletter","color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"md","subheading":"Nyhedsbrev","title":"Tilmeld dig og få 15% på dinførste ordre","heading_style":"h2","content":"<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.<\/p>","button_text":"Tilmeld","input_bottom_info":"<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik<\/a>. Vi deler aldrig din e-mail.<\/p>","overlay_color":"#f5f0e8","overlay_opacity":100}}},"order":["image_with_text_overlay_NLR9XU","faq","faq_6zNa4L","faq_HAxGfx","newsletter_D7KWmg"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_NLR9XU": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_8nKcMj": {
+          "type": "subheading",
+          "settings": {
+            "text": "KUNDESERVICE"
+          }
+        },
+        "heading_zP96b7": {
+          "type": "heading",
+          "settings": {
+            "text": "Vi er her for at hjælpe",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_8xHwFk": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Har du spørgsmål til din ordre, vores produkter eller levering?</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8nKcMj",
+        "heading_zP96b7",
+        "richtext_8xHwFk"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "category": {
+          "type": "category",
+          "settings": {
+            "title": "Bestilling & Betaling",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "question": "Hvordan placerer jeg en ordre?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "question": "Hvilke betalingsmetoder accepterer I?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "question": "Kan jeg ændre min ordre efter den er placeret?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "question_9rtFwV": {
+          "type": "question",
+          "settings": {
+            "question": "Modtager jeg en ordrebekræftelse?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category",
+        "question-1",
+        "question-2",
+        "question-3",
+        "question_9rtFwV"
+      ],
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "faq_6zNa4L": {
+      "type": "faq",
+      "blocks": {
+        "category_X69YBH": {
+          "type": "category",
+          "settings": {
+            "title": "Fragt & Levering",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_g9B9qB": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad er leveringstiden?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question_CeKaRj": {
+          "type": "question",
+          "settings": {
+            "question": "Kan jeg spore min pakke?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_tmgWPB": {
+          "type": "question",
+          "settings": {
+            "question": "Hvilke fragtfirmaer benytter I?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "question_kFjYaw": {
+          "type": "question",
+          "settings": {
+            "question": "Sender I til udlandet?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_X69YBH",
+        "question_g9B9qB",
+        "question_CeKaRj",
+        "question_tmgWPB",
+        "question_kFjYaw"
+      ],
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_2",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "faq_HAxGfx": {
+      "type": "faq",
+      "blocks": {
+        "category_R9HGW3": {
+          "type": "category",
+          "settings": {
+            "title": "Retur & Fortrydelse",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_bd77An": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad er jeres returpolitik?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question_fFBK8n": {
+          "type": "question",
+          "settings": {
+            "question": "Hvor lang tid har jeg til at fortryde mit køb?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_x4fbE6": {
+          "type": "question",
+          "settings": {
+            "question": "Hvor hurtigt får jeg mine penge retur?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "question_F4gkVK": {
+          "type": "question",
+          "settings": {
+            "question": "Skal jeg selv betale for returfragt?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_R9HGW3",
+        "question_bd77An",
+        "question_fFBK8n",
+        "question_x4fbE6",
+        "question_F4gkVK"
+      ],
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_3",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "newsletter_D7KWmg": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec pro_newsletter",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 10% på din førsteordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner der virker. Få besked når nye Sollu enheder introduceres. Du kan altid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_NLR9XU",
+    "faq",
+    "faq_6zNa4L",
+    "faq_HAxGfx",
+    "newsletter_D7KWmg"
+  ]
+}
