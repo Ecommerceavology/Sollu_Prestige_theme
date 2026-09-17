@@ -1,10 +1,11 @@
 {% liquid
   assign current_collection = collection
-  assign products_per_page = section.settings.products_per_page
 
   if current_collection == blank
     assign current_collection = collections.all
   endif
+
+  assign products_per_page = section.settings.products_per_page
 
   assign current_sort = current_collection.sort_by
 
@@ -12,6 +13,7 @@
     assign current_sort = 'manual'
   endif
 %}
+
 
 <section
   id="CustomProductGrid-{{ section.id }}"
@@ -33,26 +35,64 @@
 
   <div class="custom-product-grid__container">
 
+
+    <!-- ========================================= -->
     <!-- TOP BAR -->
+    <!-- ========================================= -->
+
     <div class="custom-product-grid__top">
 
+
       <!-- PRODUCT COUNT -->
+
       {% if section.settings.show_product_count %}
 
         <div class="custom-product-grid__count">
 
-          {% paginate current_collection.products by products_per_page %}
+          {% if current_sort == 'manual' and section.settings.manual_products != blank %}
 
-            {% if paginate.items > 0 %}
+            {% assign manual_count = 0 %}
 
-              {% assign count_start = paginate.current_offset | plus: 1 %}
-              {% assign count_end = paginate.current_offset | plus: current_collection.products.size %}
+            {% if current_collection.handle == 'all' %}
 
-              {% if count_end > paginate.items %}
-                {% assign count_end = paginate.items %}
-              {% endif %}
+              {% for manual_product in section.settings.manual_products %}
 
-              Viser {{ count_start }}–{{ count_end }} af {{ paginate.items }} produkter
+                {% if manual_product.available %}
+
+                  {% assign manual_count = manual_count | plus: 1 %}
+
+                {% endif %}
+
+              {% endfor %}
+
+            {% else %}
+
+              {% for manual_product in section.settings.manual_products %}
+
+                {% if manual_product.available %}
+
+                  {% for product_collection in manual_product.collections %}
+
+                    {% if product_collection.handle == current_collection.handle %}
+
+                      {% assign manual_count = manual_count | plus: 1 %}
+
+                      {% break %}
+
+                    {% endif %}
+
+                  {% endfor %}
+
+                {% endif %}
+
+              {% endfor %}
+
+            {% endif %}
+
+
+            {% if manual_count > 0 %}
+
+              Visar 1–{{ manual_count }} av {{ manual_count }} produkter
 
             {% else %}
 
@@ -60,20 +100,51 @@
 
             {% endif %}
 
-          {% endpaginate %}
+
+          {% else %}
+
+            {% paginate current_collection.products by products_per_page %}
+
+              {% if paginate.items > 0 %}
+
+                {% assign count_start = paginate.current_offset | plus: 1 %}
+
+                {% assign count_end = paginate.current_offset | plus: current_collection.products.size %}
+
+                {% if count_end > paginate.items %}
+
+                  {% assign count_end = paginate.items %}
+
+                {% endif %}
+
+                Visar {{ count_start }}–{{ count_end }} av {{ paginate.items }} produkter
+
+              {% else %}
+
+                Inga produkter
+
+              {% endif %}
+
+            {% endpaginate %}
+
+          {% endif %}
 
         </div>
 
       {% endif %}
 
 
+
+      <!-- ========================================= -->
       <!-- FILTER CONTROLS -->
+      <!-- ========================================= -->
+
       <div class="custom-product-grid__controls">
 
 
-        <!-- ================================= -->
+        <!-- ========================================= -->
         <!-- CATEGORY -->
-        <!-- ================================= -->
+        <!-- ========================================= -->
 
         {% if section.settings.enable_category_dropdown %}
 
@@ -91,11 +162,13 @@
                 viewBox="0 0 10 6"
                 fill="none"
               >
+
                 <path
                   d="M1 1L5 5L9 1"
                   stroke="currentColor"
                   stroke-width="1"
                 />
+
               </svg>
 
             </summary>
@@ -103,21 +176,26 @@
 
             <div class="custom-product-grid__dropdown-menu">
 
+
               <!-- ALL PRODUCTS -->
 
               {% if section.settings.show_all_products_option %}
 
-                {% assign all_url = routes.all_products_collection_url %}
+                {% assign all_products_url = routes.all_products_collection_url %}
+
 
                 {% if current_sort != blank and current_sort != 'manual' %}
 
-                  {% assign all_url = all_url | append: '?sort_by=' | append: current_sort %}
+                  {% assign all_products_url = all_products_url
+                    | append: '?sort_by='
+                    | append: current_sort
+                  %}
 
                 {% endif %}
 
 
                 <a
-                  href="{{ all_url }}"
+                  href="{{ all_products_url }}"
                   class="
                     custom-product-grid__collection-option
                     {% if current_collection.handle == 'all' %}
@@ -145,6 +223,7 @@
               {% endif %}
 
 
+
               <!-- SHOPIFY COLLECTIONS -->
 
               {% for shop_collection in collections %}
@@ -155,7 +234,8 @@
 
                     {% assign category_url = shop_collection.url %}
 
-                    <!-- KEEP CURRENT SORT WHEN CHANGING CATEGORY -->
+
+                    <!-- KEEP CURRENT SORT -->
 
                     {% if current_sort != blank and current_sort != 'manual' %}
 
@@ -216,9 +296,9 @@
 
 
 
-        <!-- ================================= -->
+        <!-- ========================================= -->
         <!-- SORT -->
-        <!-- ================================= -->
+        <!-- ========================================= -->
 
         {% if section.settings.enable_sorting %}
 
@@ -230,15 +310,25 @@
 
                 {% assign active_sort_name = 'Populär' %}
 
-                {% for option in current_collection.sort_options %}
 
-                  {% if option.value == current_sort %}
+                {% if current_sort == 'manual' %}
 
-                    {% assign active_sort_name = option.name %}
+                  {% assign active_sort_name = 'Populär' %}
 
-                  {% endif %}
+                {% else %}
 
-                {% endfor %}
+                  {% for option in current_collection.sort_options %}
+
+                    {% if option.value == current_sort %}
+
+                      {% assign active_sort_name = option.name %}
+
+                    {% endif %}
+
+                  {% endfor %}
+
+                {% endif %}
+
 
                 Sortér: {{ active_sort_name }}
 
@@ -251,11 +341,13 @@
                 viewBox="0 0 10 6"
                 fill="none"
               >
+
                 <path
                   d="M1 1L5 5L9 1"
                   stroke="currentColor"
                   stroke-width="1"
                 />
+
               </svg>
 
             </summary>
@@ -266,16 +358,18 @@
 
               {% for option in current_collection.sort_options %}
 
-                <!-- IMPORTANT:
-                     Build sort URL manually.
-                     This guarantees that the current collection
-                     and sort_by parameter work together.
-                -->
 
-                {% assign sort_url = current_collection.url
-                  | append: '?sort_by='
-                  | append: option.value
-                %}
+                {% assign sort_url = current_collection.url %}
+
+
+                {% if option.value != 'manual' %}
+
+                  {% assign sort_url = sort_url
+                    | append: '?sort_by='
+                    | append: option.value
+                  %}
+
+                {% endif %}
 
 
                 <a
@@ -287,11 +381,20 @@
                     {% endif %}
                   "
                   data-ajax-filter
-                  data-sort-value="{{ option.value }}"
                 >
 
                   <span>
-                    {{ option.name }}
+
+                    {% if option.value == 'manual' %}
+
+                      Populär
+
+                    {% else %}
+
+                      {{ option.name }}
+
+                    {% endif %}
+
                   </span>
 
 
@@ -319,22 +422,74 @@
 
 
 
-    <!-- ================================= -->
-    <!-- PRODUCT GRID -->
-    <!-- ================================= -->
+    <!-- ========================================= -->
+    <!-- PRODUCTS -->
+    <!-- ========================================= -->
 
-    {% paginate current_collection.products by products_per_page %}
 
-      {% if current_collection.products.size > 0 %}
+    {% if current_sort == 'manual' and section.settings.manual_products != blank %}
 
-        <div
-          class="
-            custom-product-grid__products
-            custom-product-grid__products--{{ section.settings.desktop_columns }}
-          "
-        >
 
-          {% for product in current_collection.products %}
+      <!-- ========================================= -->
+      <!-- MANUAL PRODUCT ORDER -->
+      <!-- ========================================= -->
+
+      {% assign manual_products_found = 0 %}
+
+
+      <div
+        class="
+          custom-product-grid__products
+          custom-product-grid__products--{{ section.settings.desktop_columns }}
+        "
+      >
+
+
+        {% for product in section.settings.manual_products %}
+
+          {% assign show_manual_product = false %}
+
+
+          {% if product.available %}
+
+
+            <!-- ALL PRODUCTS -->
+
+            {% if current_collection.handle == 'all' %}
+
+              {% assign show_manual_product = true %}
+
+
+            <!-- SPECIFIC COLLECTION -->
+
+            {% else %}
+
+              {% for product_collection in product.collections %}
+
+                {% if product_collection.handle == current_collection.handle %}
+
+                  {% assign show_manual_product = true %}
+
+                  {% break %}
+
+                {% endif %}
+
+              {% endfor %}
+
+            {% endif %}
+
+          {% endif %}
+
+
+
+          {% if show_manual_product %}
+
+            {% assign manual_products_found = manual_products_found | plus: 1 %}
+
+
+            <!-- ================================= -->
+            <!-- PRODUCT CARD -->
+            <!-- ================================= -->
 
             <article class="custom-product-card">
 
@@ -361,7 +516,10 @@
 
                 {% else %}
 
-                  {{ 'product-1' | placeholder_svg_tag: 'custom-product-card__placeholder' }}
+                  {{ 'product-1'
+                    | placeholder_svg_tag:
+                    'custom-product-card__placeholder'
+                  }}
 
                 {% endif %}
 
@@ -407,7 +565,7 @@
               <div class="custom-product-card__content">
 
 
-                <!-- COLLECTION NAME -->
+                <!-- COLLECTION -->
 
                 {% assign product_collection_name = blank %}
                 {% assign product_collection_handle = blank %}
@@ -462,7 +620,8 @@
 
                   <div class="custom-product-card__description">
 
-                    {{ product.description
+                    {{
+                      product.description
                       | strip_html
                       | truncatewords: section.settings.description_words
                     }}
@@ -477,7 +636,10 @@
 
                 {% if section.settings.show_rating %}
 
-                  {% assign rating_value = product.metafields.reviews.rating.value %}
+                  {% assign rating_value =
+                    product.metafields.reviews.rating.value
+                  %}
+
 
                   {% if rating_value != blank %}
 
@@ -485,7 +647,10 @@
 
                       <span class="custom-product-card__stars">
 
-                        {% assign rating_number = rating_value.rating | round %}
+                        {% assign rating_number =
+                          rating_value.rating | round
+                        %}
+
 
                         {% for i in (1..5) %}
 
@@ -503,8 +668,10 @@
                       {% if product.metafields.reviews.rating_count.value != blank %}
 
                         <span class="custom-product-card__review-count">
+
                           {{ product.metafields.reviews.rating_count.value }}
                           recensioner
+
                         </span>
 
                       {% endif %}
@@ -558,82 +725,18 @@
 
             </article>
 
-          {% endfor %}
+          {% endif %}
 
-        </div>
-
-
-
-        <!-- PAGINATION -->
-
-        {% if paginate.pages > 1 %}
-
-          <div class="custom-product-grid__pagination">
-
-            {% if paginate.previous %}
-
-              {% assign previous_url = paginate.previous.url %}
-
-              <a
-                href="{{ previous_url }}"
-                class="custom-product-grid__pagination-arrow"
-                data-ajax-filter
-              >
-                ←
-              </a>
-
-            {% endif %}
+        {% endfor %}
 
 
-            {% for part in paginate.parts %}
-
-              {% if part.is_link %}
-
-                <a
-                  href="{{ part.url }}"
-                  class="custom-product-grid__pagination-number"
-                  data-ajax-filter
-                >
-                  {{ part.title }}
-                </a>
-
-              {% else %}
-
-                <span
-                  class="
-                    custom-product-grid__pagination-number
-                    {% if part.title == paginate.current_page %}
-                      is-current
-                    {% endif %}
-                  "
-                >
-                  {{ part.title }}
-                </span>
-
-              {% endif %}
-
-            {% endfor %}
-
-
-            {% if paginate.next %}
-
-              <a
-                href="{{ paginate.next.url }}"
-                class="custom-product-grid__pagination-arrow"
-                data-ajax-filter
-              >
-                →
-              </a>
-
-            {% endif %}
-
-          </div>
-
-        {% endif %}
+      </div>
 
 
 
-      {% else %}
+      <!-- NO MANUAL PRODUCTS -->
+
+      {% if manual_products_found == 0 %}
 
         <div class="custom-product-grid__empty">
 
@@ -649,7 +752,363 @@
 
       {% endif %}
 
-    {% endpaginate %}
+
+
+    {% else %}
+
+
+      <!-- ========================================= -->
+      <!-- NORMAL SHOPIFY SORTING -->
+      <!-- ========================================= -->
+
+      {% paginate current_collection.products by products_per_page %}
+
+
+        {% if current_collection.products.size > 0 %}
+
+
+          <div
+            class="
+              custom-product-grid__products
+              custom-product-grid__products--{{ section.settings.desktop_columns }}
+            "
+          >
+
+
+            {% for product in current_collection.products %}
+
+
+              <!-- PRODUCT CARD -->
+
+              <article class="custom-product-card">
+
+
+                <!-- IMAGE -->
+
+                <a
+                  href="{{ product.url }}"
+                  class="custom-product-card__image"
+                >
+
+                  {% if product.featured_image %}
+
+                    {{
+                      product.featured_image
+                      | image_url: width: 800
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '300,400,500,600,700,800',
+                        sizes: '(min-width: 990px) 25vw, 50vw',
+                        class: 'custom-product-card__img',
+                        alt: product.featured_image.alt | default: product.title
+                    }}
+
+                  {% else %}
+
+                    {{ 'product-1'
+                      | placeholder_svg_tag:
+                      'custom-product-card__placeholder'
+                    }}
+
+                  {% endif %}
+
+
+                  {% if section.settings.show_badges %}
+
+                    <div class="custom-product-card__badges">
+
+                      {% if product.tags contains 'Bestseller'
+                        or product.tags contains 'BESTSELLER' %}
+
+                        <span class="custom-product-card__badge">
+                          Bestseller
+                        </span>
+
+                      {% elsif product.tags contains 'New'
+                        or product.tags contains 'NEW' %}
+
+                        <span class="custom-product-card__badge">
+                          Ny
+                        </span>
+
+                      {% elsif product.compare_at_price > product.price %}
+
+                        <span class="custom-product-card__badge">
+                          Sale
+                        </span>
+
+                      {% endif %}
+
+                    </div>
+
+                  {% endif %}
+
+                </a>
+
+
+
+                <!-- CONTENT -->
+
+                <div class="custom-product-card__content">
+
+
+                  <!-- COLLECTION -->
+
+                  {% assign product_collection_name = blank %}
+                  {% assign product_collection_handle = blank %}
+
+
+                  {% for product_collection in product.collections %}
+
+                    {% unless product_collection.handle == 'all-collections' %}
+
+                      {% if product_collection.products_count > 0 %}
+
+                        {% assign product_collection_name = product_collection.title %}
+                        {% assign product_collection_handle = product_collection.handle %}
+
+                        {% break %}
+
+                      {% endif %}
+
+                    {% endunless %}
+
+                  {% endfor %}
+
+
+                  {% if section.settings.show_collection_name
+                    and product_collection_name != blank %}
+
+                    <a
+                      href="/collections/{{ product_collection_handle }}"
+                      class="custom-product-card__collection"
+                    >
+                      {{ product_collection_name }}
+                    </a>
+
+                  {% endif %}
+
+
+
+                  <!-- TITLE -->
+
+                  <a
+                    href="{{ product.url }}"
+                    class="custom-product-card__title"
+                  >
+                    {{ product.title }}
+                  </a>
+
+
+
+                  <!-- DESCRIPTION -->
+
+                  {% if section.settings.show_description %}
+
+                    <div class="custom-product-card__description">
+
+                      {{
+                        product.description
+                        | strip_html
+                        | truncatewords: section.settings.description_words
+                      }}
+
+                    </div>
+
+                  {% endif %}
+
+
+
+                  <!-- RATING -->
+
+                  {% if section.settings.show_rating %}
+
+                    {% assign rating_value =
+                      product.metafields.reviews.rating.value
+                    %}
+
+
+                    {% if rating_value != blank %}
+
+                      <div class="custom-product-card__rating">
+
+                        <span class="custom-product-card__stars">
+
+                          {% assign rating_number =
+                            rating_value.rating | round
+                          %}
+
+
+                          {% for i in (1..5) %}
+
+                            {% if i <= rating_number %}
+                              ★
+                            {% else %}
+                              ☆
+                            {% endif %}
+
+                          {% endfor %}
+
+                        </span>
+
+
+                        {% if product.metafields.reviews.rating_count.value != blank %}
+
+                          <span class="custom-product-card__review-count">
+
+                            {{ product.metafields.reviews.rating_count.value }}
+                            recensioner
+
+                          </span>
+
+                        {% endif %}
+
+                      </div>
+
+                    {% endif %}
+
+                  {% endif %}
+
+
+
+                  <!-- PRICE -->
+
+                  <div class="custom-product-card__price">
+
+                    {% if product.compare_at_price > product.price %}
+
+                      <span class="custom-product-card__price-current">
+                        {{ product.price | money }}
+                      </span>
+
+                      <span class="custom-product-card__price-old">
+                        {{ product.compare_at_price | money }}
+                      </span>
+
+                    {% else %}
+
+                      <span class="custom-product-card__price-current">
+                        {{ product.price | money }}
+                      </span>
+
+                    {% endif %}
+
+                  </div>
+
+
+
+                  <!-- TYPE -->
+
+                  {% if section.settings.show_product_type
+                    and product.type != blank %}
+
+                    <div class="custom-product-card__type">
+                      {{ product.type }}
+                    </div>
+
+                  {% endif %}
+
+                </div>
+
+              </article>
+
+
+            {% endfor %}
+
+          </div>
+
+
+
+          <!-- PAGINATION -->
+
+          {% if paginate.pages > 1 %}
+
+            <div class="custom-product-grid__pagination">
+
+
+              {% if paginate.previous %}
+
+                <a
+                  href="{{ paginate.previous.url }}"
+                  class="custom-product-grid__pagination-arrow"
+                  data-ajax-filter
+                >
+                  ←
+                </a>
+
+              {% endif %}
+
+
+              {% for part in paginate.parts %}
+
+                {% if part.is_link %}
+
+                  <a
+                    href="{{ part.url }}"
+                    class="custom-product-grid__pagination-number"
+                    data-ajax-filter
+                  >
+                    {{ part.title }}
+                  </a>
+
+                {% else %}
+
+                  <span
+                    class="
+                      custom-product-grid__pagination-number
+                      {% if part.title == paginate.current_page %}
+                        is-current
+                      {% endif %}
+                    "
+                  >
+                    {{ part.title }}
+                  </span>
+
+                {% endif %}
+
+              {% endfor %}
+
+
+              {% if paginate.next %}
+
+                <a
+                  href="{{ paginate.next.url }}"
+                  class="custom-product-grid__pagination-arrow"
+                  data-ajax-filter
+                >
+                  →
+                </a>
+
+              {% endif %}
+
+
+            </div>
+
+          {% endif %}
+
+
+        {% else %}
+
+
+          <div class="custom-product-grid__empty">
+
+            <h2>
+              {{ section.settings.empty_title }}
+            </h2>
+
+            <p>
+              {{ section.settings.empty_text }}
+            </p>
+
+          </div>
+
+
+        {% endif %}
+
+
+      {% endpaginate %}
+
+    {% endif %}
 
 
 
@@ -669,6 +1128,7 @@
       </div>
 
     {% endif %}
+
 
   </div>
 
@@ -719,6 +1179,7 @@
 #CustomProductGrid-{{ section.id }} .custom-product-grid__count {
   font-size: {{ section.settings.count_font_size }}px;
   color: var(--cpg-text);
+  line-height: 1.4;
 }
 
 
@@ -787,7 +1248,7 @@
 }
 
 
-/* MENU */
+/* DROPDOWN MENU */
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__dropdown-menu {
   position: absolute;
@@ -814,7 +1275,7 @@
 }
 
 
-/* CATEGORY */
+/* CATEGORY OPTION */
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__collection-option {
   display: flex;
@@ -849,6 +1310,7 @@
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__collection-count {
   margin-left: auto;
+
   margin-right: 8px;
 
   color: var(--cpg-muted);
@@ -859,10 +1321,12 @@
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__check {
   font-size: 11px;
+
+  line-height: 1;
 }
 
 
-/* SORT */
+/* SORT OPTION */
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__sort-menu {
   width: 220px;
@@ -955,6 +1419,12 @@
 }
 
 
+#CustomProductGrid-{{ section.id }} .custom-product-card__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+
 /* BADGES */
 
 #CustomProductGrid-{{ section.id }} .custom-product-card__badges {
@@ -1021,6 +1491,11 @@
 }
 
 
+#CustomProductGrid-{{ section.id }} .custom-product-card__collection:hover {
+  text-decoration: underline;
+}
+
+
 /* TITLE */
 
 #CustomProductGrid-{{ section.id }} .custom-product-card__title {
@@ -1078,6 +1553,8 @@
   font-size: 9px;
 
   letter-spacing: 1px;
+
+  white-space: nowrap;
 }
 
 
@@ -1107,6 +1584,8 @@
   color: var(--cpg-text);
 
   font-size: {{ section.settings.price_font_size }}px;
+
+  line-height: 1.3;
 }
 
 
@@ -1134,7 +1613,7 @@
 }
 
 
-/* BOTTOM */
+/* BOTTOM BUTTON */
 
 #CustomProductGrid-{{ section.id }} .custom-product-grid__bottom {
   display: flex;
@@ -1173,6 +1652,33 @@
   letter-spacing: .1em;
 
   text-transform: uppercase;
+}
+
+
+/* EMPTY */
+
+#CustomProductGrid-{{ section.id }} .custom-product-grid__empty {
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+
+#CustomProductGrid-{{ section.id }} .custom-product-grid__empty h2 {
+  margin: 0 0 10px;
+
+  font-size: 22px;
+
+  font-weight: 400;
+}
+
+
+#CustomProductGrid-{{ section.id }} .custom-product-grid__empty p {
+  margin: 0 0 25px;
+
+  color: var(--cpg-muted);
+
+  font-size: 13px;
 }
 
 
@@ -1216,7 +1722,7 @@
 }
 
 
-/* LOADING */
+/* AJAX LOADING */
 
 #CustomProductGrid-{{ section.id }}.is-loading {
   opacity: .5;
@@ -1297,6 +1803,16 @@
     gap: 25px 10px;
   }
 
+
+  #CustomProductGrid-{{ section.id }} .custom-product-card__title {
+    font-size: 13px;
+  }
+
+
+  #CustomProductGrid-{{ section.id }} .custom-product-card__description {
+    font-size: 9px;
+  }
+
 }
 
 </style>
@@ -1307,14 +1823,24 @@
 
 (function () {
 
-  /*
-   * Use a section-specific initialization flag.
-   * This prevents duplicate listeners without
-   * breaking AJAX after the section is replaced.
-   */
-
   const SECTION_ID = '{{ section.id }}';
 
+
+  /*
+   * Prevent duplicate global initialization.
+   */
+
+  if (window.CustomProductGridAjax) {
+    return;
+  }
+
+  window.CustomProductGridAjax = true;
+
+
+
+  /*
+   * GET CURRENT GRID
+   */
 
   function getGrid() {
 
@@ -1325,6 +1851,7 @@
   }
 
 
+
   /*
    * CLOSE DROPDOWNS
    */
@@ -1333,7 +1860,9 @@
 
     const grid = getGrid();
 
-    if (!grid) return;
+    if (!grid) {
+      return;
+    }
 
 
     grid
@@ -1349,41 +1878,47 @@
   }
 
 
+
   /*
-   * AJAX URL
-   *
-   * Adds section_id to the EXACT URL that
-   * contains the category + sort parameters.
+   * CREATE AJAX SECTION URL
    */
 
-  function buildSectionUrl(url) {
+  function getAjaxUrl(url) {
 
-    const parsed = new URL(
+    const parsedUrl = new URL(
       url,
       window.location.origin
     );
 
 
-    parsed.searchParams.set(
+    parsedUrl.searchParams.set(
       'section_id',
       SECTION_ID
     );
 
 
-    return parsed.toString();
+    return parsedUrl.toString();
 
   }
 
 
+
   /*
-   * AJAX LOAD
+   * LOAD FILTER WITH AJAX
    */
 
-  async function loadFilter(url, pushHistory) {
+  async function loadFilter(url, updateHistory) {
 
     const grid = getGrid();
 
-    if (!grid) return;
+    if (!grid) {
+      return;
+    }
+
+
+    if (grid.classList.contains('is-loading')) {
+      return;
+    }
 
 
     grid.classList.add('is-loading');
@@ -1396,21 +1931,19 @@
       /*
        * IMPORTANT:
        *
-       * If URL is:
+       * URL example:
+       *
+       * /collections/glow-therapy
+       *
+       * or:
        *
        * /collections/glow-therapy?sort_by=price-ascending
        *
-       * the AJAX request becomes:
-       *
-       * /collections/glow-therapy
-       * ?sort_by=price-ascending
-       * &section_id=xxxx
-       *
-       * Shopify therefore renders the correct
-       * collection AND correct sorting.
+       * Shopify receives the collection and
+       * sort_by together.
        */
 
-      const ajaxUrl = buildSectionUrl(url);
+      const ajaxUrl = getAjaxUrl(url);
 
 
       const response = await fetch(
@@ -1418,11 +1951,11 @@
         {
           method: 'GET',
 
+          credentials: 'same-origin',
+
           headers: {
             'X-Requested-With': 'XMLHttpRequest'
-          },
-
-          credentials: 'same-origin'
+          }
         }
       );
 
@@ -1441,14 +1974,16 @@
 
       const parser = new DOMParser();
 
-      const doc = parser.parseFromString(
-        html,
-        'text/html'
-      );
+
+      const documentHTML =
+        parser.parseFromString(
+          html,
+          'text/html'
+        );
 
 
       const newGrid =
-        doc.querySelector(
+        documentHTML.querySelector(
           '#CustomProductGrid-' + SECTION_ID
         );
 
@@ -1456,14 +1991,14 @@
       if (!newGrid) {
 
         throw new Error(
-          'New product grid was not found'
+          'Product grid was not found'
         );
 
       }
 
 
       /*
-       * Replace ONLY our section.
+       * Replace ONLY our custom section.
        */
 
       grid.replaceWith(newGrid);
@@ -1473,7 +2008,7 @@
        * Update browser URL.
        */
 
-      if (pushHistory) {
+      if (updateHistory) {
 
         window.history.pushState(
           {
@@ -1491,17 +2026,16 @@
     } catch (error) {
 
       console.error(
-        'Custom Product Grid AJAX error:',
+        'Custom Product Grid AJAX Error:',
         error
       );
 
 
       /*
-       * Fallback only if AJAX fails.
+       * Fallback to normal navigation.
        */
 
       window.location.href = url;
-
 
       return;
 
@@ -1525,8 +2059,8 @@
   /*
    * FILTER CLICK
    *
-   * Event delegation is used so this continues
-   * working after AJAX replaces the section.
+   * Event delegation means this continues
+   * working after AJAX replacement.
    */
 
   document.addEventListener(
@@ -1541,17 +2075,14 @@
         );
 
 
-      if (!link) return;
+      if (!link) {
+        return;
+      }
 
 
       /*
-       * Allow normal browser behavior for:
-       *
-       * Ctrl + click
-       * Cmd + click
-       * Shift + click
-       * Alt + click
-       * Middle click
+       * Allow normal browser behavior for
+       * modifier clicks.
        */
 
       if (
@@ -1569,17 +2100,20 @@
 
       const url = link.href;
 
-      if (!url) return;
+      if (!url) {
+        return;
+      }
 
 
-      const parsedUrl = new URL(
-        url,
-        window.location.origin
-      );
+      const parsedUrl =
+        new URL(
+          url,
+          window.location.origin
+        );
 
 
       /*
-       * Only same-origin URLs.
+       * Same-origin only.
        */
 
       if (
@@ -1615,7 +2149,9 @@
 
       const grid = getGrid();
 
-      if (!grid) return;
+      if (!grid) {
+        return;
+      }
 
 
       if (!grid.contains(event.target)) {
@@ -1669,12 +2205,16 @@
       }
 
 
-      if (!dropdown.open) return;
+      if (!dropdown.open) {
+        return;
+      }
 
 
       const grid = getGrid();
 
-      if (!grid) return;
+      if (!grid) {
+        return;
+      }
 
 
       grid
@@ -1703,7 +2243,7 @@
 
 
   /*
-   * ESC
+   * ESCAPE
    */
 
   document.addEventListener(
@@ -1722,7 +2262,7 @@
 
 
   /*
-   * BACK / FORWARD
+   * BROWSER BACK / FORWARD
    */
 
   window.addEventListener(
@@ -1754,6 +2294,7 @@
 
   "settings": [
 
+
     {
       "type": "header",
       "content": "Custom Class"
@@ -1764,6 +2305,21 @@
       "id": "custom_class",
       "label": "Custom class",
       "default": "custom-product-grid"
+    },
+
+
+    {
+      "type": "header",
+      "content": "Manual Product Sequence"
+    },
+
+    {
+      "type": "product_list",
+      "id": "manual_products",
+      "label": "Select products in display order",
+      "limit": 50,
+
+      "info": "Select your products and drag them into the exact order you want. This order is used when Sortér is set to Populär."
     },
 
 
@@ -1859,6 +2415,7 @@
           "value": "4",
           "label": "4 columns"
         },
+
         {
           "value": "3",
           "label": "3 columns"
@@ -2117,11 +2674,13 @@
 
   ],
 
+
   "presets": [
     {
       "name": "Custom Product Grid"
     }
   ]
+
 }
 
 {% endschema %}
