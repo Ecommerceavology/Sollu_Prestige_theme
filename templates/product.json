@@ -238,7 +238,7 @@
         "heading_style": "h2",
         "content": "<p>Rutiner der virker. Få besked når nye Sollu enheder introduceres. Du kan altid afmelde.</p>",
         "button_text": "Subscribe",
-        "input_bottom_info": "<p>By subscribing, you agree to our terms and privacy policy.</p>",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
