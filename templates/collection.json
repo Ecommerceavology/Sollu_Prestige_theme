@@ -77,6 +77,16 @@
       "name": "Custom Product Grid",
       "settings": {
         "custom_class": "custom-product-grid",
+        "manual_products": [
+          "julie",
+          "mary",
+          "sollu-vibra",
+          "vibra-in-grey",
+          "sollu-ease",
+          "sollu-relief",
+          "sollu-relief-pro",
+          "sollu-aqua-flosser"
+        ],
         "enable_category_dropdown": true,
         "category_label": "Kategorier",
         "show_all_products_option": true,
