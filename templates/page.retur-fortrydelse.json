@@ -1,1 +1,245 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"color_scheme":"","show_title":true,"page_width":"xs"}},"image_with_text_overlay_qfTE8F":{"type":"image-with-text-overlay","blocks":{"subheading_AKaYnW":{"type":"subheading","settings":{"text":"KUNDESERVICE"}},"heading_cGb4MJ":{"type":"heading","settings":{"text":"Retur & Fortrydelse","heading_tag":"h2"}},"richtext_UymBhK":{"type":"richtext","settings":{"content":"<p>Her finder du information om, hvordan du returnerer en vare eller benytter din<br\/>fortrydelsesret. Vi har gjort processen så enkel og gennemskuelig som muligt.<br\/><br\/><\/p>"}}},"block_order":["subheading_AKaYnW","heading_cGb4MJ","richtext_UymBhK"],"name":"Hero section","settings":{"custom_class":"Hero_sec pro_hero_sec faq_hero_sec","color_scheme":"scheme-3","image_size":"sm","image":"shopify:\/\/shop_images\/Section_3.png","allow_transparent_header":false,"reveal_on_scroll":true,"remove_vertical_spacing":true,"content_width":"md","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center-start sm:text-start","overlay_color":"#000000","overlay_opacity":20}},"multi_column_kNa98H":{"type":"multi-column","blocks":{"image_with_text_84qLBd":{"type":"image_with_text","settings":{"title":"VIGTIG BETINGELSE","heading_tag":"h3","content":"<p>Varen skal returneres i original, ubrudt emballage, og den må ikke være taget i brug, da dette forringer salgsværdien væsentligt, især for hygiejneprodukter.<\/p>","link_url":"","link_text":""}}},"block_order":["image_with_text_84qLBd"],"name":"t:sections.multi_column.presets.multi_column.name","settings":{"custom_class":"retur_Returns_Cancellations","color_scheme":"","separate_section_with_border":true,"columns_per_row":3,"stack_on_mobile":false,"overlap_image":false,"content_alignment":"start","text_alignment":"start","spacing":"md","show_count_number":false,"count_number_size":11,"count_number_color":"#B18A50","column_heading_size":24,"column_heading_color":"#000000","column_content_size":16,"column_content_color":"#000000","subheading":"","title":"14 dages fortrydelsesret","heading_style":"h2","content":"<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos Sollu.dk. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.<br\/><br\/>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring (f.eks. via e-mail). Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.<br\/><br\/><\/p>"}},"multi_column_G9thhx":{"type":"multi-column","blocks":{"image_with_text_4fJRV8":{"type":"image_with_text","settings":{"title":"Kontakt Os","heading_tag":"h3","content":"<p>Send en e-mail til vores kundeservice med dit ordrenummer og oplys, at du ønsker at returnere varen. Vi sender dig herefter en returlabel.<\/p>","link_url":"","link_text":""}},"image_with_text_RHNKLG":{"type":"image_with_text","settings":{"title":"Pak Varen","heading_tag":"h3","content":"<p>Sørg for, at varen er forsvarligt pakket ind i original emballage. Vedlæg en kopi af<br\/>ordrebekræftelsen eller følgesedlen i pakken.<\/p>","link_url":"","link_text":""}},"image_with_text_zQGCD8":{"type":"image_with_text","settings":{"title":"Indlever & Vent","heading_tag":"h3","content":"<p>Sæt returlabelen på pakken og indlever den i din nærmeste pakkeshop. Vi refunderer beløbet senest 14 dage efter modtagelse af returvaren.<\/p>","link_url":"","link_text":""}}},"block_order":["image_with_text_4fJRV8","image_with_text_RHNKLG","image_with_text_zQGCD8"],"name":"t:sections.multi_column.presets.multi_column.name","settings":{"custom_class":"Retur_multi_sec","color_scheme":"","separate_section_with_border":true,"columns_per_row":3,"stack_on_mobile":false,"overlap_image":false,"content_alignment":"start","text_alignment":"start","spacing":"md","show_count_number":true,"count_number_size":11,"count_number_color":"#b18a50","column_heading_size":24,"column_heading_color":"#000000","column_content_size":16,"column_content_color":"#000000","subheading":"","title":"","heading_style":"h2","content":""}},"rich_text_kR7aJb":{"type":"rich-text","blocks":{"heading_cRwp9X":{"type":"heading","settings":{"text":"Tilbagebetaling","heading_tag":"h1","custom_class":""}},"richtext_Ey9dhQ":{"type":"richtext","settings":{"content":"<p>Hvis du fortryder dit køb, får du det beløb, du har indbetalt til os, tilbage. I tilfælde af en værdiforringelse, som du hæfter for, fratrækkes denne købsbeløbet. Vi refunderer alle betalinger modtaget fra dig, herunder leveringsomkostninger (dog ikke ekstra omkostninger som følge af dit eget valg af en anden leveringsform end den billigste form for standardlevering, som vi tilbyder).<br\/><br\/><\/p>","custom_class":""}},"heading_3xXJ9e":{"type":"heading","settings":{"text":"Returadresse","heading_tag":"h1","custom_class":""}},"richtext_bhLCgk":{"type":"richtext","settings":{"content":"<p>Sollu.dk Retur<br\/>Wellnessvej 42<br\/>1234 København K<br\/>Danmark<\/p>","custom_class":""}}},"block_order":["heading_cRwp9X","richtext_Ey9dhQ","heading_3xXJ9e","richtext_bhLCgk"],"name":"t:sections.rich_text.presets.rich_text.name","settings":{"color_scheme":"","custom_class":"retur_info_sec","separate_section_with_border":true,"content_width":"sm","text_position":"start","remove_vertical_spacing":false}},"newsletter_pxN7Q4":{"type":"newsletter","settings":{"custom_class":"Newsletter_sec pro_newsletter","color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"md","subheading":"Nyhedsbrev","title":"Tilmeld dig og få 15% på dinførste ordre","heading_style":"h2","content":"<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.<\/p>","button_text":"Tilmeld","input_bottom_info":"<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik<\/a>. Vi deler aldrig din e-mail.<\/p>","overlay_color":"#f5f0e8","overlay_opacity":100}}},"order":["main","image_with_text_overlay_qfTE8F","multi_column_kNa98H","multi_column_G9thhx","rich_text_kR7aJb","newsletter_pxN7Q4"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "image_with_text_overlay_qfTE8F": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_AKaYnW": {
+          "type": "subheading",
+          "settings": {
+            "text": "KUNDESERVICE"
+          }
+        },
+        "heading_cGb4MJ": {
+          "type": "heading",
+          "settings": {
+            "text": "Retur & Fortrydelse",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_UymBhK": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Her finder du information om, hvordan du returnerer en vare eller benytter din<br/>fortrydelsesret. Vi har gjort processen så enkel og gennemskuelig som muligt.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_AKaYnW",
+        "heading_cGb4MJ",
+        "richtext_UymBhK"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_3.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "multi_column_kNa98H": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_84qLBd": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "VIGTIG BETINGELSE",
+            "heading_tag": "h3",
+            "content": "<p>Varen skal returneres i original, ubrudt emballage, og den må ikke være taget i brug, da dette forringer salgsværdien væsentligt, især for hygiejneprodukter.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_84qLBd"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "custom_class": "retur_Returns_Cancellations",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "show_count_number": false,
+        "count_number_size": 11,
+        "count_number_color": "#b18a50",
+        "column_heading_size": 24,
+        "column_heading_color": "#000000",
+        "column_content_size": 16,
+        "column_content_color": "#000000",
+        "subheading": "",
+        "title": "14 dages fortrydelsesret",
+        "heading_style": "h2",
+        "content": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos Sollu.dk. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.<br/><br/>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring (f.eks. via e-mail). Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.<br/><br/></p>"
+      }
+    },
+    "multi_column_G9thhx": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_4fJRV8": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Kontakt Os",
+            "heading_tag": "h3",
+            "content": "<p>Send en e-mail til vores kundeservice med dit ordrenummer og oplys, at du ønsker at returnere varen. Vi sender dig herefter en returlabel.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_RHNKLG": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Pak Varen",
+            "heading_tag": "h3",
+            "content": "<p>Sørg for, at varen er forsvarligt pakket ind i original emballage. Vedlæg en kopi af<br/>ordrebekræftelsen eller følgesedlen i pakken.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_zQGCD8": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Indlever & Vent",
+            "heading_tag": "h3",
+            "content": "<p>Sæt returlabelen på pakken og indlever den i din nærmeste pakkeshop. Vi refunderer beløbet senest 14 dage efter modtagelse af returvaren.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_4fJRV8",
+        "image_with_text_RHNKLG",
+        "image_with_text_zQGCD8"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "custom_class": "Retur_multi_sec",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "show_count_number": true,
+        "count_number_size": 11,
+        "count_number_color": "#b18a50",
+        "column_heading_size": 24,
+        "column_heading_color": "#000000",
+        "column_content_size": 16,
+        "column_content_color": "#000000",
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "rich_text_kR7aJb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cRwp9X": {
+          "type": "heading",
+          "settings": {
+            "text": "Tilbagebetaling",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_Ey9dhQ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Hvis du fortryder dit køb, får du det beløb, du har indbetalt til os, tilbage. I tilfælde af en værdiforringelse, som du hæfter for, fratrækkes denne købsbeløbet. Vi refunderer alle betalinger modtaget fra dig, herunder leveringsomkostninger (dog ikke ekstra omkostninger som følge af dit eget valg af en anden leveringsform end den billigste form for standardlevering, som vi tilbyder).<br/><br/></p>",
+            "custom_class": ""
+          }
+        },
+        "heading_3xXJ9e": {
+          "type": "heading",
+          "settings": {
+            "text": "Returadresse",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_bhLCgk": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Sollu.dk Retur<br/>Wellnessvej 42<br/>1234 København K<br/>Danmark</p>",
+            "custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_cRwp9X",
+        "richtext_Ey9dhQ",
+        "heading_3xXJ9e",
+        "richtext_bhLCgk"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "custom_class": "retur_info_sec",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "newsletter_pxN7Q4": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec pro_newsletter",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 10% på din førsteordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner der virker. Få besked når nye Sollu enheder introduceres. Du kan altid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_qfTE8F",
+    "multi_column_kNa98H",
+    "multi_column_G9thhx",
+    "rich_text_kR7aJb",
+    "newsletter_pxN7Q4"
+  ]
+}
