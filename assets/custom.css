@@ -2880,6 +2880,10 @@ span.custom-product-card__price-current{
     padding-right: 32px !important;
     margin: 0px auto !important;
 }
+section#shopify-pc__banner {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 
 /* //responsive  */
