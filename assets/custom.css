@@ -3377,8 +3377,11 @@ nav.header__secondary-nav {
     gap: 7px;
 }
 
-nav.header__primary-nav.header__primary-nav--center button.md\:hidden {
+nav.header__primary-nav button.md\:hidden {
     display: block;
+}
+nav.header__primary-nav ul.contents.unstyled-list.md-max\:hidden {
+    display: none;
 }
 }
 
