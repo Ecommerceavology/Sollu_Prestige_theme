@@ -2901,7 +2901,7 @@ section#shopify-pc__banner p {
   line-height: 22.1px;
   font-weight: 300;
 }
-section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
+section#shopify-pc__banner button#shopify-pc__banner__btn-accept {
     min-width: 170px!important;
     min-height: 46px!important;
     color: #fff!important;
@@ -2913,12 +2913,32 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopif
     transition: all .3s ease!important;
     max-width: 160px;
 }
-section#shopify-pc__banner button#shopify-pc__banner__btn-accept:hover,
-section#shopify-pc__banner button#shopify-pc__banner__btn-decline:hover{
+section#shopify-pc__banner button#shopify-pc__banner__btn-decline{
+     min-width: 170px!important;
+    min-height: 46px!important;
+    text-align: center!important;
+    font-size: 12px!important;
+    letter-spacing: 1.68px!important;
+    font-weight: 400!important;
+    text-transform: uppercase!important;
+    transition: all .3s ease!important;
+    max-width: 160px;
     border: 1px solid #2a2420;
     background: transparent;
     color: #2a2420 !important;
 }
+section#shopify-pc__banner button#shopify-pc__banner__btn-accept:hover
+{
+    border: 1px solid #2a2420;
+    background: transparent;
+    color: #2a2420 !important;
+}
+section#shopify-pc__banner button#shopify-pc__banner__btn-decline:hover{
+    border: none;
+    background: #2a2420;
+    color: #fff !important;
+}
+
 /* section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
     padding: 0;
     margin: 0;
