@@ -2919,7 +2919,10 @@ button#shopify-pc__banner__btn-decline:hover{
     background: transparent;
     color: #2a2420 !important;
 }
-
+button#shopify-pc__banner__btn-manage-prefs {
+    padding: 0;
+    margin: 0;
+}
 
 
 /* //responsive  */
