@@ -2910,7 +2910,7 @@ span.custom-product-card__price-current{
 
 @media (max-width: 1199px) {
     nav.header__primary-nav.header__primary-nav--center {
-        gap: 20px !important;
+        gap: 15px !important;
     }
 
     .Hero_sec .content p.h2 {
