@@ -2884,6 +2884,16 @@ section#shopify-pc__banner {
     padding-left: 0;
     padding-right: 0;
 }
+h2#shopify-pc__banner__body-title {
+    color: #2a2420;
+    text-align: left;
+    font-size: 36px;
+    line-height: 50.6px;
+    letter-spacing: .46px;
+    font-weight: 300!important;
+    margin-top: 11px!important;
+    text-transform: unset;
+}
 
 
 /* //responsive  */
