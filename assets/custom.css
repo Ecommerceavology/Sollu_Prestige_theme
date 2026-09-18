@@ -3371,7 +3371,10 @@ nav.header__secondary-nav {
         padding: 60px 0 !important;
     }
     nav.header__primary-nav.header__primary-nav--center {
-    gap: 6px!important;
+    gap: 7px!important;
+}
+nav.header__secondary-nav {
+    gap: 7px;
 }
 }
 
