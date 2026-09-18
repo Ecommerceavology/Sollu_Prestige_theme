@@ -2919,10 +2919,10 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-decline:hover{
     background: transparent;
     color: #2a2420 !important;
 }
-section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
+/* section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
     padding: 0;
     margin: 0;
-}
+} */
 section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs:hover{
     opacity: 0.5;
 }
