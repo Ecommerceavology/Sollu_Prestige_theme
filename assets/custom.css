@@ -6585,6 +6585,15 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 }
 
 @media (max-width: 480px) {
+    section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
+    margin: 0;
+    padding: 0 18px 0 0!important;
+    max-width: 100%;
+}
+section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
+   
+    max-width: 100%;
+}
     .Hero_sec .content {
         padding: 40px 16px !important;
     }
