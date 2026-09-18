@@ -2901,17 +2901,17 @@ section#shopify-pc__banner p {
   line-height: 22.1px;
   font-weight: 300;
 }
-section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
-section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
-    min-width: 180px!important;
-    min-height: 52px!important;
-    color: #ffffff !important;
+section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
+    min-width: 170px!important;
+    min-height: 46px!important;
+    color: #fff!important;
     text-align: center!important;
     font-size: 12px!important;
     letter-spacing: 1.68px!important;
     font-weight: 400!important;
     text-transform: uppercase!important;
     transition: all .3s ease!important;
+    max-width: 160px;
 }
 section#shopify-pc__banner button#shopify-pc__banner__btn-accept:hover,
 section#shopify-pc__banner button#shopify-pc__banner__btn-decline:hover{
