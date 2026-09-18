@@ -2963,7 +2963,12 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     gap: 79px;
 }
 
-
+.Cate_pro_sec p.h6 {
+    letter-spacing: 1px;
+    text-transform: unset !important;
+    line-height: normal;
+    margin-top: 7px;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
