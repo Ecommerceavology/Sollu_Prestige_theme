@@ -2873,7 +2873,13 @@ span.custom-product-card__price-current{
     height: 40px;
 }
 
-
+.shopify-pc__banner__wrapper {
+    width: 100% !important;
+    max-width: 1200px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    margin: 0px auto !important;
+}
 
 
 /* //responsive  */
