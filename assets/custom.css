@@ -2941,7 +2941,7 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-decline:hover{
 
 section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
     margin: 0;
-    padding: 0 0 0 18px !important;
+    padding: 0 18px 0 0!important;
     max-width: 100px;
 }
 section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs:hover{
@@ -2953,6 +2953,10 @@ section#shopify-pc__banner p a{
 .shopify-pc__banner__body {
     margin: 0 !important;
     width: 100%;
+}
+
+.shopify-pc__banner__wrapper>div {
+    min-width: unset;
 }
 /* //responsive  */
 @media (max-width: 1300px) {
