@@ -3627,8 +3627,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .about_sec multi-column.multi-column {
     grid-template-columns: repeat(2,1fr)!important;
-    grid-template-rows: repeat(2, 1fr);
-    }
+    grid-template-rows: repeat(2,1fr);
+    padding: 0;
+}
 
     .about_sec .multi-column__item.snap-center.group {
     padding: 28px 25px!important;
