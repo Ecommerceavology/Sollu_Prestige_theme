@@ -3390,7 +3390,7 @@ x-header.header.Header_sec {
     .Pro_content_tabs_sec {
         padding: 60px 0 !important;
     }
-    nav.header__primary-nav {
+    /* nav.header__primary-nav {
     gap: 7px!important;
     justify-content: start;
 }
@@ -3407,7 +3407,7 @@ nav.header__primary-nav ul.contents.md-max\:hidden {
 x-header.header.Header_sec {
     gap: 10px;
     grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
-}
+} */
 }
 
 @media screen and (max-width: 1024px) {
