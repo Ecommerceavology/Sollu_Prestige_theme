@@ -2917,7 +2917,7 @@ button#shopify-pc__banner__btn-accept:hover,
 button#shopify-pc__banner__btn-decline:hover{
     border: 1px solid #2a2420;
     background: transparent;
-    color: #2a2420;
+    color: #2a2420 !important;
 }
 
 
