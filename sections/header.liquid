@@ -13,50 +13,75 @@
     z-index: 4;
   }
 
-  @media screen and (min-width: 700px) {
+  /* =========================================================
+     DESKTOP HEADER
+     ========================================================= */
+
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+
     #shopify-section-{{ section.id }} {
       --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
     }
+
   }
 
+
   @media screen and (min-width: 1000px) {
+
     #shopify-section-{{ section.id }} {
+
       {%- case section.settings.layout -%}
 
         {%- when 'logo_left_navigation_inline' -%}
+
           --header-grid: "logo primary-nav secondary-nav" / auto minmax(0, 1fr) auto;
 
         {%- when 'logo_left_navigation_center' -%}
+
           --header-grid: "logo primary-nav secondary-nav" / minmax(max-content, 1fr) auto minmax(max-content, 1fr);
 
         {%- when 'logo_center_navigation_below' -%}
+
           --header-grid: ". logo secondary-nav" "primary-nav primary-nav primary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
 
       {%- endcase -%}
+
     }
+
   }
 
+
   {%- if section.settings.enable_sticky -%}
+
     #shopify-section-{{ section.id }} {
       position: sticky;
       top: 0;
     }
 
     .shopify-section--announcement-bar ~ #shopify-section-{{ section.id }} {
-      top: calc(var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px));
+      top: calc(
+        var(--announcement-bar-is-sticky, 0) *
+        var(--announcement-bar-height, 0px)
+      );
     }
+
   {%- endif -%}
 
+
   {%- if section.settings.logo != blank -%}
+
     #shopify-section-{{ section.id }} {
       --header-logo-width: {{ section.settings.logo_mobile_max_width }}px;
     }
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+
       #shopify-section-{{ section.id }} {
         --header-logo-width: {{ section.settings.logo_max_width }}px;
       }
+
     }
+
   {%- endif -%}
 
 
@@ -106,7 +131,7 @@
 
 
   /* =========================================================
-     MOBILE ONLY
+     MOBILE / HAMBURGER HEADER
      ========================================================= */
 
   .mobile-search-icon,
@@ -118,11 +143,12 @@
     display: none;
   }
 
-  @media screen and (max-width: 699px) {
+
+  @media screen and (max-width: {{ section.settings.mobile_breakpoint | minus: 1 }}px) {
 
     /*
      * SEARCH
-     * Mobile = original search icon
+     * Show icon on mobile
      */
     #shopify-section-{{ section.id }} .mobile-search-icon {
       display: inline-flex;
@@ -137,7 +163,7 @@
 
     /*
      * CART
-     * Mobile = original cart icon
+     * Show icon on mobile
      */
     #shopify-section-{{ section.id }} .mobile-cart-icon {
       display: inline-flex;
@@ -156,7 +182,7 @@
 
     /*
      * ACCOUNT
-     * Remove KONTO from right side
+     * Remove account from right side
      */
     #shopify-section-{{ section.id }} .mobile-account-header {
       display: none !important;
@@ -165,7 +191,7 @@
 
     /*
      * ACCOUNT
-     * Show KONTO inside hamburger menu
+     * Show inside hamburger menu
      */
     .mobile-account-menu-item {
       display: list-item;
@@ -176,6 +202,40 @@
       text-decoration: none;
       color: inherit;
     }
+
+  }
+
+
+  /* =========================================================
+     DESKTOP DEFAULT STATES
+     ========================================================= */
+
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-search-text {
+      display: inline-flex;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: none;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-text {
+      display: inline-flex;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-count {
+      display: inline-flex;
+    }
+
+    .mobile-account-menu-item {
+      display: none !important;
+    }
+
   }
 </style>
 
@@ -188,6 +248,7 @@
     {% endif %}
     class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }} {{ section.settings.custom_class | strip }}"
   >
+
 
     {%- comment -%}
       ==========================================================
@@ -208,7 +269,9 @@
           {{ section.settings.logo_max_width | times: 3 | at_most: section.settings.logo.width }}
         {%- endcapture -%}
 
-        <span class="sr-only">{{ shop.name }}</span>
+        <span class="sr-only">
+          {{ shop.name }}
+        </span>
 
         {%- assign alt_text = section.settings.logo.alt | default: shop.name -%}
 
@@ -222,6 +285,7 @@
             class: 'header__logo-image'
         -}}
 
+
         {%- if section.settings.transparent_logo -%}
 
           {{-
@@ -234,6 +298,7 @@
           -}}
 
         {%- endif -%}
+
 
       {%- else -%}
 
@@ -258,7 +323,10 @@
 
     {%- else -%}
 
-      <a href="{{ routes.root_url }}" class="header__logo">
+      <a
+        href="{{ routes.root_url }}"
+        class="header__logo"
+      >
         {{ logo_content }}
       </a>
 
@@ -274,12 +342,14 @@
     {%- assign menu = section.settings.menu -%}
     {%- assign sidebar_menu = section.settings.sidebar_menu -%}
 
+
     {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
 
       <nav
         class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}"
         aria-label="{{ 'header.general.primary_navigation' | t | escape }}"
       >
+
 
         <button
           type="button"
@@ -305,20 +375,30 @@
             {%- for link in menu.links -%}
 
               {% liquid
+
                 assign link_title_downcase = link.title | strip | downcase
+
                 assign mega_menu_block = ''
 
                 for block in section.blocks
+
                   assign menu_item_downcase = block.settings.menu_item | strip | downcase
 
                   if menu_item_downcase == link_title_downcase
+
                     assign mega_menu_block = block
+
                     break
+
                   endif
+
                 endfor
+
               %}
 
+
               <li class="header__primary-nav-item">
+
 
                 {%- if link.levels == 0 and mega_menu_block == '' -%}
 
@@ -333,7 +413,9 @@
                     {{- link.title -}}
                   </a>
 
+
                 {%- else -%}
+
 
                   {%- capture disclosure_content -%}
 
@@ -346,7 +428,9 @@
                         {% endif %}
                         data-title="{{ link.title | escape }}"
                       >
+
                         {{- link.title -}}
+
                       </summary>
 
 
@@ -356,6 +440,7 @@
                           link: link,
                           block: mega_menu_block
                         -%}
+
 
                       {%- else -%}
 
@@ -379,6 +464,7 @@
                                 >
                                   {{ sub_link.title }}
                                 </a>
+
 
                               {%- else -%}
 
@@ -464,6 +550,7 @@
                       {{- disclosure_content -}}
                     </mega-menu-disclosure>
 
+
                   {%- else -%}
 
                     <dropdown-menu-disclosure
@@ -474,6 +561,7 @@
                     </dropdown-menu-disclosure>
 
                   {%- endif -%}
+
 
                 {%- endif -%}
 
@@ -502,21 +590,30 @@
     >
 
       {%- liquid
+
         if section.settings.show_country_selector and localization.available_countries.size > 1
+
           assign show_country_selector = true
+
         endif
 
+
         if section.settings.show_locale_selector and localization.available_languages.size > 1
+
           assign show_locale_selector = true
+
         endif
+
       -%}
 
 
       <ul class="contents unstyled-list">
 
+
         {%- if show_country_selector or show_locale_selector -%}
 
           <li class="localization-selectors md-max:hidden">
+
 
             {%- if show_country_selector -%}
 
@@ -584,18 +681,25 @@
               </span>
 
 
-              <!-- Desktop Text -->
+              <!-- Desktop text -->
+
               <span class="custom-header-label mobile-search-text">
                 {{ section.settings.search_text }}
               </span>
 
 
-              <!-- Mobile Icon -->
+              <!-- Mobile icon -->
+
               <span
                 class="mobile-search-icon"
                 aria-hidden="true"
               >
-                {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
+
+                {%- render 'icon',
+                  with: 'search',
+                  class: 'header__nav-icon'
+                -%}
+
               </span>
 
             </a>
@@ -653,25 +757,34 @@
             </span>
 
 
-            <!-- Desktop Text -->
+            <!-- Desktop text -->
+
             <span class="custom-header-label mobile-cart-text">
               {{ section.settings.cart_text }}
             </span>
 
 
             <span class="custom-cart-count mobile-cart-count">
+
               <cart-count>
                 {{ cart.item_count }}
               </cart-count>
+
             </span>
 
 
-            <!-- Mobile Icon -->
+            <!-- Mobile icon -->
+
             <span
               class="mobile-cart-icon"
               aria-hidden="true"
             >
-              {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
+
+              {%- render 'icon',
+                with: 'cart',
+                class: 'header__nav-icon'
+              -%}
+
             </span>
 
 
@@ -709,6 +822,7 @@
 
     {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
 
+
     {%- if sidebar_menu.links.size > 0 -%}
 
       {%- render 'header-sidebar',
@@ -742,9 +856,12 @@
 
     function addMobileAccountLink() {
 
-      if (window.innerWidth > 699) {
+      var breakpoint = {{ section.settings.mobile_breakpoint }};
+
+      if (window.innerWidth >= breakpoint) {
         return;
       }
+
 
       var sidebar = document.getElementById('sidebar-menu');
 
@@ -752,18 +869,22 @@
         return;
       }
 
+
       /*
-       * Prevent duplicate KONTO links
+       * Prevent duplicate account links
        */
+
       if (sidebar.querySelector('[data-mobile-account-link]')) {
         return;
       }
+
 
       var menuList = sidebar.querySelector('ul');
 
       if (!menuList) {
         return;
       }
+
 
       var accountItem = document.createElement('li');
 
@@ -784,6 +905,7 @@
 
 
       menuList.appendChild(accountItem);
+
     }
 
 
@@ -791,9 +913,20 @@
 
       addMobileAccountLink();
 
-      setTimeout(addMobileAccountLink, 300);
-      setTimeout(addMobileAccountLink, 800);
-      setTimeout(addMobileAccountLink, 1500);
+      setTimeout(
+        addMobileAccountLink,
+        300
+      );
+
+      setTimeout(
+        addMobileAccountLink,
+        800
+      );
+
+      setTimeout(
+        addMobileAccountLink,
+        1500
+      );
 
     }
 
@@ -813,33 +946,49 @@
 
 
     /*
-     * Watch for Shopify/theme drawer changes.
+     * Watch for mobile drawer creation/update.
      */
-    var observer = new MutationObserver(function () {
 
-      if (window.innerWidth <= 699) {
-        addMobileAccountLink();
+    var observer = new MutationObserver(
+      function () {
+
+        var breakpoint =
+          {{ section.settings.mobile_breakpoint }};
+
+        if (window.innerWidth < breakpoint) {
+          addMobileAccountLink();
+        }
+
       }
+    );
 
-    });
 
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
+    observer.observe(
+      document.body,
+      {
+        childList: true,
+        subtree: true
+      }
+    );
 
 
     /*
-     * Handle resize.
+     * Handle screen resize.
      */
-    window.addEventListener('resize', function () {
 
-      if (window.innerWidth <= 699) {
-        addMobileAccountLink();
+    window.addEventListener(
+      'resize',
+      function () {
+
+        var breakpoint =
+          {{ section.settings.mobile_breakpoint }};
+
+        if (window.innerWidth < breakpoint) {
+          addMobileAccountLink();
+        }
+
       }
-
-    });
+    );
 
   })();
 </script>
@@ -882,6 +1031,18 @@
     },
 
     {
+      "type": "range",
+      "id": "mobile_breakpoint",
+      "label": "Hamburger menu starts at",
+      "info": "Below this screen width, the hamburger/mobile header layout will be used.",
+      "min": 700,
+      "max": 1500,
+      "step": 10,
+      "unit": "px",
+      "default": 1000
+    },
+
+    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:global.colors.scheme",
@@ -917,6 +1078,7 @@
       "default": false
     },
 
+
     {
       "type": "header",
       "content": "t:sections.header.logo_category"
@@ -951,6 +1113,7 @@
       "default": 100
     },
 
+
     {
       "type": "header",
       "content": "t:sections.header.navigation_category"
@@ -981,6 +1144,7 @@
       "id": "menu_open_trigger",
       "label": "t:sections.header.menu_open_trigger",
       "info": "t:sections.header.menu_open_trigger_info",
+
       "options": [
         {
           "value": "hover",
@@ -991,6 +1155,7 @@
           "label": "t:sections.header.menu_open_trigger_options.click"
         }
       ],
+
       "default": "hover"
     },
 
@@ -998,6 +1163,7 @@
       "type": "select",
       "id": "menu_text_font",
       "label": "t:sections.header.menu_text_font",
+
       "options": [
         {
           "value": "heading",
@@ -1008,6 +1174,7 @@
           "label": "t:sections.header.menu_text_font_options.body"
         }
       ],
+
       "default": "heading"
     },
 
@@ -1017,6 +1184,7 @@
       "label": "t:sections.header.enable_search",
       "default": true
     },
+
 
     {
       "type": "header",
@@ -1034,6 +1202,7 @@
       "type": "select",
       "id": "sidebar_text_font",
       "label": "t:sections.header.sidebar_text_font",
+
       "options": [
         {
           "value": "heading",
@@ -1044,6 +1213,7 @@
           "label": "t:sections.header.sidebar_text_font_options.body"
         }
       ],
+
       "default": "heading"
     },
 
@@ -1061,6 +1231,7 @@
       "default": false
     },
 
+
     {
       "type": "header",
       "content": "t:sections.header.desktop_category"
@@ -1070,6 +1241,7 @@
       "type": "select",
       "id": "layout",
       "label": "t:sections.header.layout",
+
       "options": [
         {
           "value": "logo_left_navigation_inline",
@@ -1092,6 +1264,7 @@
           "label": "t:sections.header.layout_options.drawer"
         }
       ],
+
       "default": "logo_left_navigation_inline"
     },
 
@@ -1101,6 +1274,7 @@
       "label": "t:sections.header.show_icons",
       "default": false
     },
+
 
     {
       "type": "header",
@@ -1131,6 +1305,7 @@
       "visible_if": "{{ section.settings.show_country_selector }}"
     },
 
+
     {
       "type": "header",
       "content": "t:global.localization.language_selector_category",
@@ -1143,6 +1318,7 @@
       "label": "t:global.localization.show_locale_selector",
       "default": false
     },
+
 
     {
       "type": "header",
