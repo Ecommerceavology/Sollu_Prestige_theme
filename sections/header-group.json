@@ -68,6 +68,7 @@
         "search_text": "SØGSØG",
         "account_text": "KONTO",
         "cart_text": "INDKØBSKURVKURV",
+        "mobile_breakpoint": 1100,
         "color_scheme": "schema-2",
         "enable_sticky": true,
         "hide_on_scroll": false,
