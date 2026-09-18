@@ -139,6 +139,36 @@
             "target_id": "Formål",
             "text": "<p>Oplysningerne bruges til at identificere dig som bruger og vise dig de annoncer, som vil have størst sandsynlighed for at være relevante for dig, at registrere dine køb og betalinger, samt at kunne levere de services, du har efterspurgt, som f.eks. at fremsende et nyhedsbrev. Herudover anvender vi oplysningerne til at optimere vores services og indhold.<br/><br/></p>"
           }
+        },
+        "navigation_item_E6ga4c": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Periode for opbevaring",
+            "target_id": "Periode"
+          }
+        },
+        "content_block_MUwm3E": {
+          "type": "content_block",
+          "settings": {
+            "heading": "Periode for opbevaring",
+            "target_id": "Periode",
+            "text": "<p>Oplysningerne opbevares i det tidsrum, der er tilladt i henhold til lovgivningen, og vi sletter dem, når de ikke længere er nødvendige. Perioden afhænger af karakteren af oplysningen og baggrunden for opbevaring. Det er derfor ikke muligt at angive en generel tidsramme for, hvornår informationer slettes.</p>"
+          }
+        },
+        "navigation_item_4izrba": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Formål",
+            "target_id": "Formål"
+          }
+        },
+        "content_block_hNaeBA": {
+          "type": "content_block",
+          "settings": {
+            "heading": "Formål",
+            "target_id": "Formål",
+            "text": "<p>Oplysningerne bruges til at identificere dig som bruger og vise dig de annoncer, som vil have størst sandsynlighed for at være relevante for dig, at registrere dine køb og betalinger, samt at kunne levere de services, du har efterspurgt, som f.eks. at fremsende et nyhedsbrev. Herudover anvender vi oplysningerne til at optimere vores services og indhold.<br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -151,7 +181,11 @@
         "navigation_item_Viin39",
         "content_block_4iTFFY",
         "navigation_item_qeErXk",
-        "content_block_UJkW6b"
+        "content_block_UJkW6b",
+        "navigation_item_E6ga4c",
+        "content_block_MUwm3E",
+        "navigation_item_4izrba",
+        "content_block_hNaeBA"
       ],
       "name": "Custom Sidebar Navigation",
       "settings": {
