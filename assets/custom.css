@@ -124,7 +124,7 @@ x-header.header {
     text-transform: uppercase;
 }
 nav.header__primary-nav.header__primary-nav--center {
-    gap: 30px !important;
+    gap: 20px !important;
 }
 h1.header__logo {
     max-width: 109px;
