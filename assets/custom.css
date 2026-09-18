@@ -3381,6 +3381,16 @@ x-header.header.Header_sec {
     gap: 10px;
     grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
 }
+
+ .shopify-pc__banner__wrapper {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
+
+    h2#shopify-pc__banner__body-title {
+        font-size: 34px;
+        line-height: 47px;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -3628,6 +3638,30 @@ x-header.header.Header_sec {
 
     .Pro_content_tabs_sec .content-tabs::part(tab-list) {
         gap: 20px !important;
+    }
+
+    .shopify-pc__banner__wrapper {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    h2#shopify-pc__banner__body-title {
+        font-size: 32px;
+        line-height: 44px;
+        margin-top: 8px !important;
+    }
+
+    section#shopify-pc__banner p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
+    section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
+        min-width: 160px !important;
+        min-height: 50px !important;
+        font-size: 11px !important;
+        letter-spacing: 1.5px !important;
     }
     
 }
