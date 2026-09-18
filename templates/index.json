@@ -81,6 +81,7 @@
         "image_with_text_x4ATGF": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify://shop_images/download_6.svg",
             "title": "Fri fragt over 499 kr.",
             "heading_tag": "h3",
             "content": "<p>GLS eller PostNord · 1–2 hverdage</p>",
@@ -91,6 +92,7 @@
         "image_with_text_LGAWkj": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify://shop_images/Returned.svg",
             "title": "14 dages fortrydelsesret",
             "heading_tag": "h3",
             "content": "<p>Returnér uden begrundelse</p>",
@@ -101,6 +103,7 @@
         "image_with_text_MTkne8": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify://shop_images/warranty.svg",
             "title": "2 års reklamationsret",
             "heading_tag": "h3",
             "content": "<p>CE-godkendte enheder</p>",
@@ -111,6 +114,7 @@
         "image_with_text_87cAUd": {
           "type": "image_with_text",
           "settings": {
+            "image": "shopify://shop_images/download_2.svg",
             "title": "Dansk kundeservice",
             "heading_tag": "h3",
             "content": "<p>Svar inden for én hverdag</p>",
