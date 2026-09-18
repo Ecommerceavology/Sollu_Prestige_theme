@@ -2979,14 +2979,14 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     position: relative;
 }
 
-.All_pro_sec .product-card__media::before {
+.All_pro_sec .product-card__media:before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 164.97px;
-    background: linear-gradient(0deg, #2a2420, #2a242000);
+    height: 114.97px;
+    background: linear-gradient(0deg,#2a2420,#2a242000);
     border-radius: inherit;
     z-index: 2;
     pointer-events: none;
