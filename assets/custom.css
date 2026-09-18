@@ -3538,6 +3538,9 @@ nav.header__secondary-nav {
     .Pro_content_tabs_sec .content-tabs::part(tab-list) {
         gap: 20px !important;
     }
+    nav.header__primary-nav.header__primary-nav--center {
+    gap: 5px!important;
+}
 }
 
 @media (max-width: 991px) {
