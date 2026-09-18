@@ -636,7 +636,7 @@ h1.header__logo {
     line-height: 20.8px;
     font-weight: 300;
     letter-spacing: .6px;
-    text-transform: capitalize !important;
+    text-transform: lowercase !important;
     margin-bottom: 10px;
 }
 .All_pro_sec .product-list__item {
