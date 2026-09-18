@@ -2903,7 +2903,7 @@ section#shopify-pc__banner p {
 }
 button#shopify-pc__banner__btn-accept,
 button#shopify-pc__banner__btn-decline {
-    min-width: 250px!important;
+    min-width: 180px!important;
     min-height: 52px!important;
     color: #ffffff !important;
     text-align: center!important;
