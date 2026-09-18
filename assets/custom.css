@@ -3383,6 +3383,10 @@ nav.header__primary-nav button.md\:hidden {
 nav.header__primary-nav ul.contents.unstyled-list.md-max\:hidden {
     display: none;
 }
+x-header.header.Header_sec {
+    gap: 10px;
+    grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
+}
 }
 
 @media screen and (max-width: 1024px) {
