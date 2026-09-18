@@ -7424,6 +7424,31 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 }
 
+@media (max-width: 350px){
+     .shopify-pc__banner__wrapper {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    h2#shopify-pc__banner__body-title {
+        font-size: 23px;
+        line-height: 31px;
+    }
+
+    section#shopify-pc__banner p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
+    section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
+        min-width: 125px !important;
+        min-height: 44px !important;
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+    }
+}
+
 @media (max-width: 350px) {
 .custom-product-grid .custom-product-grid__controls {
     flex-direction: column;
