@@ -2950,14 +2950,21 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs:hover{
 section#shopify-pc__banner p a{
      opacity: 0.5;
 }
-.shopify-pc__banner__body {
+section#shopify-pc__banner .shopify-pc__banner__body {
     margin: 0 !important;
     width: 100%;
 }
 
-.shopify-pc__banner__wrapper>div {
+section#shopify-pc__banner .shopify-pc__banner__wrapper>div {
     min-width: unset;
 }
+section#shopify-pc__banner .shopify-pc__banner__wrapper {
+    flex-direction: row;
+    gap: 79px;
+}
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
