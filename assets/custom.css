@@ -2894,6 +2894,13 @@ h2#shopify-pc__banner__body-title {
     margin-top: 11px!important;
     text-transform: unset;
 }
+section#shopify-pc__banner p {
+    color: #8c8278;
+    text-align: left;
+    font-size: 15px;
+    line-height: 26.25px;
+    font-weight: 300;
+}
 
 
 /* //responsive  */
