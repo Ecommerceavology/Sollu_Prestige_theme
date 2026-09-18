@@ -24,20 +24,20 @@
         "subheading_WGVnmV": {
           "type": "subheading",
           "settings": {
-            "text": "JURIDISK INFORMATION"
+            "text": ""
           }
         },
         "heading_9WkpH8": {
           "type": "heading",
           "settings": {
-            "text": "Handelsbetingelser",
+            "text": "Politik om beskyttelse af persondata",
             "heading_tag": "h2"
           }
         },
         "richtext_wci3UM": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Her finder du de juridiske vilkår og betingelser for handel på Sollu.dk. Vi anbefaler, at du læser dem grundigt igennem, før du foretager et køb.</p>"
+            "content": "<p>Cookie- og privatlivspolitik hos SognoSleep</p>"
           }
         }
       },
@@ -68,76 +68,76 @@
         "navigation_item_UW9HA4": {
           "type": "navigation_item",
           "settings": {
-            "label": "Generelt",
-            "target_id": "general"
+            "label": "Introduktion",
+            "target_id": "Introduktion"
           }
         },
         "content_block_bMKwPX": {
           "type": "content_block",
           "settings": {
-            "heading": "1. Generelle oplysninger",
-            "target_id": "general",
-            "text": "<ul><li>Sollu ApS</li><li>CVR: 12345678</li><li>Bredgade 10, 1260 København K</li><li>Email: kontakt@sollu.dk</li><li>Telefon: +45 12 34 56 78</li></ul>"
+            "heading": "Introduktion",
+            "target_id": "Introduktion",
+            "text": "<p>Når du besøger vores website indsamles der oplysninger om dig, som bruges til at tilpasse og forbedre vores indhold og til at øge værdien af de annoncer, der vises på siden. Hvis du ikke ønsker, at der indsamles oplysninger, bør du slette dine cookies (se vejledning) og undlade videre brug af websitet. Nedenfor har vi uddybet, hvilke informationer der indsamles, deres formål og hvilke tredjeparter, der har adgang til dem.</p>"
           }
         },
         "navigation_item_Y6jFWW": {
           "type": "navigation_item",
           "settings": {
-            "label": "Betaling",
-            "target_id": "betaling"
+            "label": "Cookies",
+            "target_id": "Cookies"
           }
         },
         "content_block_hWzHAJ": {
           "type": "content_block",
           "settings": {
-            "heading": "2. Betaling",
-            "target_id": "betaling",
-            "text": "<p>På Sollu.dk kan der betales med:</p><ul><li>Dankort / VISA-Dankort</li><li>MasterCard</li><li>MobilePay</li><li>Apple Pay</li></ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager. Der tages ikke gebyr ved betaling på Sollu.dk.</p>"
+            "heading": "Cookies",
+            "target_id": "Cookies",
+            "text": "<p>Websitet anvender \"cookies\", der er en tekstfil, som gemmes på din computer, mobil el. tilsvarende med det formål at genkende den, huske indstillinger, udføre statistik og målrette annoncer. Cookies kan ikke indeholde skadelig kode som f.eks. virus. <br/><br/>Det er muligt at slette eller blokere for cookies. Se vejledning: http://minecookies.org/cookiehandtering<br/><br/>Hvis du sletter eller blokerer cookies vil annoncer kunne blive mindre relevante for dig og optræde hyppigere. Du kan desuden risikere at websitet ikke fungerer optimalt samt at der er indhold, du ikke kan få adgang til.<br/><br/></p>"
           }
         },
         "navigation_item_YwBCwW": {
           "type": "navigation_item",
           "settings": {
-            "label": "Levering",
-            "target_id": "levering"
+            "label": "Generelt",
+            "target_id": "Generelt"
           }
         },
         "content_block_jTiYJt": {
           "type": "content_block",
           "settings": {
-            "heading": "3. Levering",
-            "target_id": "levering",
-            "text": "<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.</p><p>Vi sender varer med GLS og PostNord. Fragtprisen oplyses ved kassen inden godkendelse af ordren. Ved køb over 1000 DKK tilbydes gratis levering til pakkeshop.</p>"
+            "heading": "Generelt",
+            "target_id": "Generelt",
+            "text": "<p>Personoplysninger er alle slags informationer, der i et eller andet omfang kan henføres til dig. Når du benytter vores website indsamler og behandler vi en række sådanne informationer. Det sker f.eks. ved alm. tilgang af indhold, hvis du tilmelder dig vores nyhedsbrev, deltager i konkurrencer eller undersøgelser, registrerer dig som bruger eller abonnent, øvrig brug af services eller foretager køb via websitet.<br/><br/>Vi indsamler og behandler typisk følgende typer af oplysninger: Et unikt ID og tekniske oplysninger om din computer, tablet eller mobiltelefon, dit IP-nummer, geografisk placering, samt hvilke sider du klikker på (interesser). I det omfang du selv giver eksplicit samtykke hertil og selv indtaster informationerne behandles desuden: Navn, telefonnummer, e-mail, adresse og betalingsoplysninger. Det vil typisk være i forbindelse med oprettelse af login eller ved køb.<br/><br/></p>"
           }
         },
         "navigation_item_Viin39": {
           "type": "navigation_item",
           "settings": {
-            "label": "Fortrydelsesret",
-            "target_id": "fortrydelsesret"
+            "label": "Sikkerhed",
+            "target_id": "Sikkerhed"
           }
         },
         "content_block_4iTFFY": {
           "type": "content_block",
           "settings": {
-            "heading": "4. Fortrydelsesret",
-            "target_id": "fortrydelsesret",
-            "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.</p><p>Du skal inden 14 dage fra modtagelse give os meddelelse om, at du ønsker at fortryde dit køb. Meddelelsen skal gives ved at sende en mail til kontakt@sollu.dk eller ved at benytte standardfortrydelsesformularen.</p><p>Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig meddelelse om dette.</p>"
+            "heading": "Sikkerhed",
+            "target_id": "Sikkerhed",
+            "text": "<p>Vi behandler dine personoplysninger sikkert og fortroligt i overensstemmelse med gældende lovgivning, herunder persondataforordningen og databeskyttelsesloven. Dine oplysninger vil alene blive anvendt til det formål, de er indsamlet til, og vil blive slettet, når dette formål er opfyldt eller ikke længere relevant. Vi har truffet tekniske og organisatoriske foranstaltninger mod, at dine oplysninger hændeligt eller ulovligt bliver slettet, offentliggjort, fortabt, forringet eller kommer til uvedkommendes kendskab, misbruges eller i øvrigt behandles i strid med lovgivningen.<br/><br/></p>"
           }
         },
         "navigation_item_qeErXk": {
           "type": "navigation_item",
           "settings": {
-            "label": "Reklamationsret",
-            "target_id": "reklamationsret"
+            "label": "Formål",
+            "target_id": "Formål"
           }
         },
         "content_block_UJkW6b": {
           "type": "content_block",
           "settings": {
-            "heading": "5. Reklamationsret",
-            "target_id": "reklamationsret",
-            "text": "<p>Købelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsret.</p><p>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af produktet eller anden skadeforvoldende adfærd.</p><p>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>"
+            "heading": "Formål",
+            "target_id": "Formål",
+            "text": "<p>Oplysningerne bruges til at identificere dig som bruger og vise dig de annoncer, som vil have størst sandsynlighed for at være relevante for dig, at registrere dine køb og betalinger, samt at kunne levere de services, du har efterspurgt, som f.eks. at fremsende et nyhedsbrev. Herudover anvender vi oplysningerne til at optimere vores services og indhold.<br/><br/></p>"
           }
         }
       },
