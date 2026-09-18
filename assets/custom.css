@@ -366,7 +366,7 @@ h1.header__logo {
     height: 100%!important;
     width: 100%!important;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .Step_sec .section-stack .multi-column__item {
     gap: 26px;
