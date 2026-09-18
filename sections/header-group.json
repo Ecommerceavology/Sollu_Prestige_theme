@@ -65,6 +65,9 @@
       "type": "header",
       "settings": {
         "custom_class": "Header_sec",
+        "search_text": "SØGSØG",
+        "account_text": "KONTO",
+        "cart_text": "INDKØBSKURVKURV",
         "color_scheme": "schema-2",
         "enable_sticky": true,
         "hide_on_scroll": false,
