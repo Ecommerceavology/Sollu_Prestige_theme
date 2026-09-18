@@ -2913,6 +2913,13 @@ button#shopify-pc__banner__btn-decline {
     text-transform: uppercase!important;
     transition: all .3s ease!important;
 }
+button#shopify-pc__banner__btn-accept:hover,
+button#shopify-pc__banner__btn-decline:hover{
+    border: 1px solid var(--cpg-text);
+    background: transparent;
+}
+
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
