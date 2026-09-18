@@ -3311,6 +3311,26 @@ nav.header__secondary-nav {
     gap: 10px;
 }
 }
+@media (max-width: 1200px) {
+nav.header__primary-nav {
+    gap: 7px!important;
+    justify-content: start;
+}
+nav.header__secondary-nav {
+    gap: 7px;
+}
+
+nav.header__primary-nav button.md\:hidden {
+    display: block;
+}
+nav.header__primary-nav ul.contents.md-max\:hidden {
+    display: none;
+}
+x-header.header.Header_sec {
+    gap: 10px;
+    grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
+}
+}
 
 @media (max-width: 1100px) {
     .About_Sec_1 .prose.text-center,
