@@ -2923,7 +2923,9 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs {
     padding: 0;
     margin: 0;
 }
-
+section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs:hover{
+    opacity: 0.5;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
