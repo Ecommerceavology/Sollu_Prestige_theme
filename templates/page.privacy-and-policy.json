@@ -158,16 +158,16 @@
         "navigation_item_4izrba": {
           "type": "navigation_item",
           "settings": {
-            "label": "Formål",
-            "target_id": "Formål"
+            "label": "Videregivelse af oplysninger",
+            "target_id": "Videregivelse"
           }
         },
         "content_block_hNaeBA": {
           "type": "content_block",
           "settings": {
-            "heading": "Formål",
-            "target_id": "Formål",
-            "text": "<p>Oplysningerne bruges til at identificere dig som bruger og vise dig de annoncer, som vil have størst sandsynlighed for at være relevante for dig, at registrere dine køb og betalinger, samt at kunne levere de services, du har efterspurgt, som f.eks. at fremsende et nyhedsbrev. Herudover anvender vi oplysningerne til at optimere vores services og indhold.<br/><br/></p>"
+            "heading": "Videregivelse af oplysninger",
+            "target_id": "Videregivelse",
+            "text": "<p>Data om din brug af websitet, hvilke annoncer, du modtager og evt. klikker på, geografisk placering, køn og alderssegment m.v. videregives til tredjeparter i det omfang disse oplysninger er kendt. Du kan se hvilke tredjeparter, der er tale om, i afsnittet om \"Cookies\" ovenfor. Oplysningerne anvendes til målretning af annoncering.<br/><br/>Vi benytter herudover en række tredjeparter til opbevaring og behandling af data. Disse behandler udelukkende oplysninger på vores vegne og må ikke anvende dem til egne formål.<br/><br/>Videregivelse af personoplysninger som navn og e-mail m.v. vil kun ske, hvis du giver samtykke til det. Vi anvender kun databehandlere i EU eller i lande, der kan give dine oplysninger en tilstrækkelig beskyttelse.<br/><br/></p>"
           }
         }
       },
