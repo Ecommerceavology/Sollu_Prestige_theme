@@ -3389,10 +3389,6 @@ x-header.header.Header_sec {
         padding-right: 28px !important;
     }
 
-    h2#shopify-pc__banner__body-title {
-        font-size: 34px;
-        line-height: 47px;
-    }
 }
 
 @media (max-width: 1100px) {
@@ -3647,11 +3643,7 @@ x-header.header.Header_sec {
         padding-right: 24px !important;
     }
 
-    h2#shopify-pc__banner__body-title {
-        font-size: 32px;
-        line-height: 44px;
-        margin-top: 8px !important;
-    }
+
 
     section#shopify-pc__banner p {
         font-size: 14px;
@@ -5609,12 +5601,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         padding-right: 20px !important;
     }
 
-    h2#shopify-pc__banner__body-title {
-        font-size: 28px;
-        line-height: 38px;
-        letter-spacing: .3px;
-        margin-top: 6px !important;
-    }
+
 
     section#shopify-pc__banner p {
         font-size: 14px;
@@ -6544,11 +6531,6 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         padding-right: 16px !important;
     }
 
-    h2#shopify-pc__banner__body-title {
-        font-size: 25px;
-        line-height: 34px;
-        letter-spacing: .2px;
-    }
 
     section#shopify-pc__banner p {
         font-size: 13px;
@@ -7432,10 +7414,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         padding-right: 14px !important;
     }
 
-    h2#shopify-pc__banner__body-title {
-        font-size: 23px;
-        line-height: 31px;
-    }
+
 
     section#shopify-pc__banner p {
         font-size: 12px;
