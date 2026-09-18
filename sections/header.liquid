@@ -13,6 +13,11 @@
     z-index: 4;
   }
 
+
+  /* ==========================================================
+     HEADER PADDING
+     ========================================================== */
+
   @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} {
       --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
@@ -21,7 +26,7 @@
 
 
   /* ==========================================================
-     HEADER GRID
+     CUSTOM BREAKPOINT - DESKTOP GRID
      ========================================================== */
 
   @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
@@ -66,7 +71,7 @@
 
 
   /* ==========================================================
-     LOGO
+     LOGO WIDTH
      ========================================================== */
 
   {%- if section.settings.logo != blank -%}
@@ -140,182 +145,285 @@
 
 
   /* ==========================================================
-     DEFAULT = HAMBURGER VIEW
+     DEFAULT HAMBURGER VIEW
      
-     This is important because the theme's own md classes
-     use fixed breakpoints.
+     Below the custom breakpoint.
      ========================================================== */
 
   #shopify-section-{{ section.id }} .header-hamburger-button {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
   }
 
   #shopify-section-{{ section.id }} .header-desktop-navigation {
+    display: none !important;
+  }
+
+
+  /* ==========================================================
+     MOBILE SEARCH / CART ICON DEFAULT
+     ========================================================== */
+
+  #shopify-section-{{ section.id }} .mobile-search-icon,
+  #shopify-section-{{ section.id }} .mobile-cart-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .mobile-search-text,
+  #shopify-section-{{ section.id }} .mobile-cart-text,
+  #shopify-section-{{ section.id }} .mobile-cart-count {
     display: none;
+  }
+
+
+  /* ==========================================================
+     ACCOUNT DEFAULT
+     
+     Hidden from right side in hamburger mode.
+     ========================================================== */
+
+  #shopify-section-{{ section.id }} .mobile-account-header {
+    display: none !important;
+  }
+
+
+  /* ==========================================================
+     MOBILE SIDEBAR ACCOUNT
+     ========================================================== */
+
+  #shopify-section-{{ section.id }} .mobile-account-menu-item {
+    display: list-item !important;
+  }
+
+  #shopify-section-{{ section.id }} .mobile-account-menu-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+  /* ==========================================================
+     HAMBURGER VIEW
+     
+     Everything BELOW the selected breakpoint.
+     ========================================================== */
+
+  @media screen and (max-width: {{ section.settings.menu_breakpoint | minus: 1 }}px) {
+
+    /*
+     * Hamburger visible
+     */
+
+    #shopify-section-{{ section.id }} .header-hamburger-button {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+
+    /*
+     * Desktop navigation hidden
+     */
+
+    #shopify-section-{{ section.id }} .header-desktop-navigation {
+      display: none !important;
+      visibility: hidden !important;
+    }
+
+
+    /*
+     * Secondary navigation visible
+     */
+
+    #shopify-section-{{ section.id }} .header__secondary-nav {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      grid-area: secondary-nav !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+    }
+
+
+    /*
+     * Secondary nav list
+     */
+
+    #shopify-section-{{ section.id }} .header__secondary-nav > ul {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+
+    /*
+     * Search
+     */
+
+    #shopify-section-{{ section.id }} .header__search-link {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    #shopify-section-{{ section.id }} .header__search-link > a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-search-text {
+      display: none !important;
+    }
+
+
+    /*
+     * Cart
+     */
+
+    #shopify-section-{{ section.id }} .header__cart-link {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    #shopify-section-{{ section.id }} .header__cart-link > a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-text,
+    #shopify-section-{{ section.id }} .mobile-cart-count {
+      display: none !important;
+    }
+
+
+    /*
+     * Account removed from right side
+     */
+
+    #shopify-section-{{ section.id }} .mobile-account-header {
+      display: none !important;
+    }
+
+
+    /*
+     * Localization hidden in hamburger mode
+     */
+
+    #shopify-section-{{ section.id }} .localization-selectors {
+      display: none !important;
+    }
+
   }
 
 
   /* ==========================================================
      DESKTOP VIEW
      
-     Starts exactly at the breakpoint selected in Theme Editor.
+     Everything AT OR ABOVE selected breakpoint.
      ========================================================== */
 
   @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
 
     /*
-     * Hide hamburger completely
+     * Hamburger hidden
      */
+
     #shopify-section-{{ section.id }} .header-hamburger-button {
       display: none !important;
+      visibility: hidden !important;
     }
 
+
     /*
-     * Show desktop navigation
+     * Desktop navigation visible
      */
+
     #shopify-section-{{ section.id }} .header-desktop-navigation {
-      display: contents;
+      display: contents !important;
+      visibility: visible !important;
     }
+
+
+    /*
+     * Secondary navigation
+     */
+
+    #shopify-section-{{ section.id }} .header__secondary-nav {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      grid-area: secondary-nav !important;
+    }
+
 
     /*
      * Desktop Search text
      */
+
     #shopify-section-{{ section.id }} .mobile-search-text {
       display: inline-flex !important;
     }
+
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: none !important;
+    }
+
 
     /*
      * Desktop Cart text
      */
+
     #shopify-section-{{ section.id }} .mobile-cart-text {
       display: inline-flex !important;
     }
 
-    /*
-     * Desktop Cart count
-     */
     #shopify-section-{{ section.id }} .mobile-cart-count {
       display: inline-flex !important;
     }
 
-    /*
-     * Hide mobile icons on desktop
-     */
-    #shopify-section-{{ section.id }} .mobile-search-icon,
     #shopify-section-{{ section.id }} .mobile-cart-icon {
       display: none !important;
     }
 
-    /*
-     * Account visible on desktop
-     */
-    #shopify-section-{{ section.id }} .mobile-account-header {
-      display: list-item !important;
-    }
 
     /*
-     * Account menu item is never shown outside hamburger menu
+     * Desktop Account
      */
+
+    #shopify-section-{{ section.id }} .mobile-account-header {
+      display: list-item !important;
+      visibility: visible !important;
+    }
+
+
+    /*
+     * Account inside mobile menu hidden
+     */
+
     #shopify-section-{{ section.id }} .mobile-account-menu-item {
       display: none !important;
     }
 
-  }
-
-
-  /* ==========================================================
-     HAMBURGER / MOBILE VIEW
-     
-     Below selected breakpoint.
-     ========================================================== */
-
-  @media screen and (max-width: {{ section.settings.menu_breakpoint | minus: 1 }}px) {
-
-    /*
-     * Make sure hamburger is visible
-     */
-    #shopify-section-{{ section.id }} .header-hamburger-button {
-      display: flex !important;
-    }
-
-    /*
-     * Make sure desktop navigation is hidden
-     */
-    #shopify-section-{{ section.id }} .header-desktop-navigation {
-      display: none !important;
-    }
-
-
-    /*
-     * SEARCH ICON
-     */
-
-    #shopify-section-{{ section.id }} .mobile-search-text {
-      display: none !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    /*
-     * CART ICON
-     */
-
-    #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: none !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: none !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    /*
-     * ACCOUNT
-     *
-     * Remove from right side.
-     */
-
-    #shopify-section-{{ section.id }} .mobile-account-header {
-      display: none !important;
-    }
-
-
-    /*
-     * ACCOUNT INSIDE HAMBURGER MENU
-     */
-
-    #shopify-section-{{ section.id }} .mobile-account-menu-item {
-      display: list-item !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-account-menu-item a {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
-  }
-
-
-  /* ==========================================================
-     MOBILE ACCOUNT ITEM
-     ========================================================== */
-
-  .mobile-account-menu-item {
-    display: none;
   }
 </style>
 
@@ -328,6 +436,7 @@
     {% endif %}
     class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }} {{ section.settings.custom_class | strip }}"
   >
+
 
     {%- comment -%}
       ==========================================================
@@ -419,6 +528,7 @@
     {%- assign menu = section.settings.menu -%}
     {%- assign sidebar_menu = section.settings.sidebar_menu -%}
 
+
     {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
 
       <nav
@@ -426,7 +536,10 @@
         aria-label="{{ 'header.general.primary_navigation' | t | escape }}"
       >
 
-        <!-- HAMBURGER -->
+
+        <!-- ===================================================
+             HAMBURGER
+             =================================================== -->
 
         <button
           type="button"
@@ -446,11 +559,11 @@
         </button>
 
 
-        <!-- DESKTOP NAVIGATION -->
+        <!-- ===================================================
+             DESKTOP NAVIGATION
+             =================================================== -->
 
-        <ul
-          class="contents unstyled-list header-desktop-navigation"
-        >
+        <ul class="contents unstyled-list header-desktop-navigation">
 
           {%- for link in menu.links -%}
 
@@ -459,14 +572,19 @@
               assign mega_menu_block = ''
 
               for block in section.blocks
+
                 assign menu_item_downcase = block.settings.menu_item | strip | downcase
 
                 if menu_item_downcase == link_title_downcase
+
                   assign mega_menu_block = block
                   break
+
                 endif
+
               endfor
             %}
+
 
             <li class="header__primary-nav-item">
 
@@ -483,7 +601,9 @@
                   {{- link.title -}}
                 </a>
 
+
               {%- else -%}
+
 
                 {%- capture disclosure_content -%}
 
@@ -507,6 +627,7 @@
                         block: mega_menu_block
                       -%}
 
+
                     {%- else -%}
 
                       <ul
@@ -529,6 +650,7 @@
                               >
                                 {{ sub_link.title }}
                               </a>
+
 
                             {%- else -%}
 
@@ -614,6 +736,7 @@
                     {{- disclosure_content -}}
                   </mega-menu-disclosure>
 
+
                 {%- else -%}
 
                   <dropdown-menu-disclosure
@@ -650,6 +773,7 @@
     >
 
       {%- liquid
+
         if section.settings.show_country_selector and localization.available_countries.size > 1
           assign show_country_selector = true
         endif
@@ -657,15 +781,20 @@
         if section.settings.show_locale_selector and localization.available_languages.size > 1
           assign show_locale_selector = true
         endif
+
       -%}
 
 
       <ul class="contents unstyled-list">
 
 
+        {%- comment -%}
+          COUNTRY / LANGUAGE
+        {%- endcomment -%}
+
         {%- if show_country_selector or show_locale_selector -%}
 
-          <li class="localization-selectors md-max:hidden">
+          <li class="localization-selectors">
 
             {%- if show_country_selector -%}
 
@@ -723,7 +852,7 @@
               </span>
 
 
-              <!-- HAMBURGER VIEW ICON -->
+              <!-- HAMBURGER SEARCH ICON -->
 
               <span
                 class="mobile-search-icon"
@@ -747,8 +876,6 @@
         {%- comment -%}
           ========================================================
           ACCOUNT
-          Desktop only in right side.
-          Mobile moved into hamburger menu.
           ========================================================
         {%- endcomment -%}
 
@@ -794,21 +921,25 @@
             </span>
 
 
-            <!-- DESKTOP CART TEXT -->
+            <!-- DESKTOP TEXT -->
 
             <span class="custom-header-label mobile-cart-text">
               {{ section.settings.cart_text | escape }}
             </span>
 
 
+            <!-- DESKTOP CART COUNT -->
+
             <span class="custom-cart-count mobile-cart-count">
+
               <cart-count>
                 {{ cart.item_count }}
               </cart-count>
+
             </span>
 
 
-            <!-- HAMBURGER VIEW CART ICON -->
+            <!-- HAMBURGER CART ICON -->
 
             <span
               class="mobile-cart-icon"
@@ -837,7 +968,9 @@
 
 
     {%- comment -%}
+      ==========================================================
       SEARCH DRAWER
+      ==========================================================
     {%- endcomment -%}
 
     {%- if section.settings.enable_search -%}
@@ -848,7 +981,9 @@
 
 
     {%- comment -%}
+      ==========================================================
       MOBILE SIDEBAR
+      ==========================================================
     {%- endcomment -%}
 
     {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
@@ -871,11 +1006,9 @@
 
 <script>
 
-  /*
-   * ==========================================================
-   * HEADER HEIGHT
-   * ==========================================================
-   */
+  /* ==========================================================
+     HEADER HEIGHT
+     ========================================================== */
 
   document.documentElement.style.setProperty(
     '--header-height',
@@ -883,21 +1016,28 @@
   );
 
 
-  /*
-   * ==========================================================
-   * MOBILE KONTO
-   * ==========================================================
-   */
+  /* ==========================================================
+     MOBILE KONTO
+     ========================================================== */
 
   (function () {
 
     function addMobileAccountLink() {
+
+      /*
+       * Only run below selected hamburger breakpoint.
+       */
 
       if (
         window.innerWidth >= {{ section.settings.menu_breakpoint }}
       ) {
         return;
       }
+
+
+      /*
+       * Find mobile sidebar.
+       */
 
       var sidebar =
         document.getElementById('sidebar-menu');
@@ -908,7 +1048,7 @@
 
 
       /*
-       * Prevent duplicate account link
+       * Prevent duplicate KONTO.
        */
 
       if (
@@ -921,7 +1061,7 @@
 
 
       /*
-       * Find sidebar menu list
+       * Find menu list.
        */
 
       var menuList =
@@ -933,23 +1073,25 @@
 
 
       /*
-       * Create account item
+       * Create account item.
        */
 
       var accountItem =
         document.createElement('li');
+
 
       accountItem.setAttribute(
         'data-mobile-account-link',
         'true'
       );
 
+
       accountItem.className =
         'mobile-account-menu-item';
 
 
       /*
-       * Account link
+       * Use Theme Editor account text.
        */
 
       accountItem.innerHTML = `
@@ -960,7 +1102,7 @@
 
 
       /*
-       * Add to end of menu
+       * Add account at bottom of menu.
        */
 
       menuList.appendChild(accountItem);
@@ -1007,7 +1149,7 @@
 
 
     /*
-     * Watch drawer changes
+     * Watch for Shopify drawer creation.
      */
 
     var observer =
@@ -1037,7 +1179,7 @@
 
 
     /*
-     * Handle resizing
+     * Handle resize.
      */
 
     window.addEventListener(
