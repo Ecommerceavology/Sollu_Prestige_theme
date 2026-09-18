@@ -13,24 +13,13 @@
     z-index: 4;
   }
 
-
-  /* ==========================================================
-     HEADER PADDING
-     ========================================================== */
-
   @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} {
       --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
     }
   }
 
-
-  /* ==========================================================
-     CUSTOM BREAKPOINT - DESKTOP GRID
-     ========================================================== */
-
-  @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
-
+  @media screen and (min-width: 1000px) {
     #shopify-section-{{ section.id }} {
       {%- case section.settings.layout -%}
 
@@ -45,55 +34,35 @@
 
       {%- endcase -%}
     }
-
   }
 
-
-  /* ==========================================================
-     STICKY HEADER
-     ========================================================== */
-
   {%- if section.settings.enable_sticky -%}
-
     #shopify-section-{{ section.id }} {
       position: sticky;
       top: 0;
     }
 
     .shopify-section--announcement-bar ~ #shopify-section-{{ section.id }} {
-      top: calc(
-        var(--announcement-bar-is-sticky, 0)
-        * var(--announcement-bar-height, 0px)
-      );
+      top: calc(var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px));
     }
-
   {%- endif -%}
 
-
-  /* ==========================================================
-     LOGO WIDTH
-     ========================================================== */
-
   {%- if section.settings.logo != blank -%}
-
     #shopify-section-{{ section.id }} {
       --header-logo-width: {{ section.settings.logo_mobile_max_width }}px;
     }
 
-    @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
-
+    @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
         --header-logo-width: {{ section.settings.logo_max_width }}px;
       }
-
     }
-
   {%- endif -%}
 
 
-  /* ==========================================================
+  /* =========================================================
      CUSTOM HEADER TEXT
-     ========================================================== */
+     ========================================================= */
 
   #shopify-section-{{ section.id }} .custom-header-link {
     display: inline-flex;
@@ -108,14 +77,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
-
     letter-spacing: 0.14em;
     text-transform: uppercase;
-
     white-space: nowrap;
   }
 
@@ -123,19 +89,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-width: 18px;
     height: 18px;
-
     margin-left: 7px;
     padding: 0 4px;
-
     border: 1px solid currentColor;
-
     font-size: 10px;
     font-weight: 400;
     line-height: 1;
-
     letter-spacing: 0;
   }
 
@@ -144,286 +105,77 @@
   }
 
 
-  /* ==========================================================
-     DEFAULT HAMBURGER VIEW
-     
-     Below the custom breakpoint.
-     ========================================================== */
+  /* =========================================================
+     MOBILE ONLY
+     ========================================================= */
 
-  #shopify-section-{{ section.id }} .header-hamburger-button {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #shopify-section-{{ section.id }} .header-desktop-navigation {
-    display: none !important;
-  }
-
-
-  /* ==========================================================
-     MOBILE SEARCH / CART ICON DEFAULT
-     ========================================================== */
-
-  #shopify-section-{{ section.id }} .mobile-search-icon,
-  #shopify-section-{{ section.id }} .mobile-cart-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #shopify-section-{{ section.id }} .mobile-search-text,
-  #shopify-section-{{ section.id }} .mobile-cart-text,
-  #shopify-section-{{ section.id }} .mobile-cart-count {
+  .mobile-search-icon,
+  .mobile-cart-icon {
     display: none;
   }
 
-
-  /* ==========================================================
-     ACCOUNT DEFAULT
-     
-     Hidden from right side in hamburger mode.
-     ========================================================== */
-
-  #shopify-section-{{ section.id }} .mobile-account-header {
-    display: none !important;
+  .mobile-account-menu-item {
+    display: none;
   }
 
-
-  /* ==========================================================
-     MOBILE SIDEBAR ACCOUNT
-     ========================================================== */
-
-  #shopify-section-{{ section.id }} .mobile-account-menu-item {
-    display: list-item !important;
-  }
-
-  #shopify-section-{{ section.id }} .mobile-account-menu-item a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-  }
-
-
-  /* ==========================================================
-     HAMBURGER VIEW
-     
-     Everything BELOW the selected breakpoint.
-     ========================================================== */
-
-  @media screen and (max-width: {{ section.settings.menu_breakpoint | minus: 1 }}px) {
+  @media screen and (max-width: 699px) {
 
     /*
-     * Hamburger visible
+     * SEARCH
+     * Mobile = original search icon
      */
-
-    #shopify-section-{{ section.id }} .header-hamburger-button {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-
-    /*
-     * Desktop navigation hidden
-     */
-
-    #shopify-section-{{ section.id }} .header-desktop-navigation {
-      display: none !important;
-      visibility: hidden !important;
-    }
-
-
-    /*
-     * Secondary navigation visible
-     */
-
-    #shopify-section-{{ section.id }} .header__secondary-nav {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      grid-area: secondary-nav !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-    }
-
-
-    /*
-     * Secondary nav list
-     */
-
-    #shopify-section-{{ section.id }} .header__secondary-nav > ul {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-
-    /*
-     * Search
-     */
-
-    #shopify-section-{{ section.id }} .header__search-link {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-    #shopify-section-{{ section.id }} .header__search-link > a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
     #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: inline-flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #shopify-section-{{ section.id }} .mobile-search-text {
-      display: none !important;
+      display: none;
     }
 
 
     /*
-     * Cart
+     * CART
+     * Mobile = original cart icon
      */
-
-    #shopify-section-{{ section.id }} .header__cart-link {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-    #shopify-section-{{ section.id }} .header__cart-link > a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
     #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: inline-flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    #shopify-section-{{ section.id }} .mobile-cart-text,
-    #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: none !important;
-    }
-
-
-    /*
-     * Account removed from right side
-     */
-
-    #shopify-section-{{ section.id }} .mobile-account-header {
-      display: none !important;
-    }
-
-
-    /*
-     * Localization hidden in hamburger mode
-     */
-
-    #shopify-section-{{ section.id }} .localization-selectors {
-      display: none !important;
-    }
-
-  }
-
-
-  /* ==========================================================
-     DESKTOP VIEW
-     
-     Everything AT OR ABOVE selected breakpoint.
-     ========================================================== */
-
-  @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
-
-    /*
-     * Hamburger hidden
-     */
-
-    #shopify-section-{{ section.id }} .header-hamburger-button {
-      display: none !important;
-      visibility: hidden !important;
-    }
-
-
-    /*
-     * Desktop navigation visible
-     */
-
-    #shopify-section-{{ section.id }} .header-desktop-navigation {
-      display: contents !important;
-      visibility: visible !important;
-    }
-
-
-    /*
-     * Secondary navigation
-     */
-
-    #shopify-section-{{ section.id }} .header__secondary-nav {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      grid-area: secondary-nav !important;
-    }
-
-
-    /*
-     * Desktop Search text
-     */
-
-    #shopify-section-{{ section.id }} .mobile-search-text {
-      display: inline-flex !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: none !important;
-    }
-
-
-    /*
-     * Desktop Cart text
-     */
 
     #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: inline-flex !important;
+      display: none;
     }
 
     #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: inline-flex !important;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: none !important;
+      display: none;
     }
 
 
     /*
-     * Desktop Account
+     * ACCOUNT
+     * Remove KONTO from right side
      */
-
     #shopify-section-{{ section.id }} .mobile-account-header {
-      display: list-item !important;
-      visibility: visible !important;
+      display: none !important;
     }
 
 
     /*
-     * Account inside mobile menu hidden
+     * ACCOUNT
+     * Show KONTO inside hamburger menu
      */
-
-    #shopify-section-{{ section.id }} .mobile-account-menu-item {
-      display: none !important;
+    .mobile-account-menu-item {
+      display: list-item;
     }
 
+    .mobile-account-menu-item a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
   }
 </style>
 
@@ -436,7 +188,6 @@
     {% endif %}
     class="header color-scheme color-scheme--{{ section.settings.color_scheme.id }} {{ section.settings.custom_class | strip }}"
   >
-
 
     {%- comment -%}
       ==========================================================
@@ -457,9 +208,7 @@
           {{ section.settings.logo_max_width | times: 3 | at_most: section.settings.logo.width }}
         {%- endcapture -%}
 
-        <span class="sr-only">
-          {{ shop.name }}
-        </span>
+        <span class="sr-only">{{ shop.name }}</span>
 
         {%- assign alt_text = section.settings.logo.alt | default: shop.name -%}
 
@@ -509,10 +258,7 @@
 
     {%- else -%}
 
-      <a
-        href="{{ routes.root_url }}"
-        class="header__logo"
-      >
+      <a href="{{ routes.root_url }}" class="header__logo">
         {{ logo_content }}
       </a>
 
@@ -528,233 +274,216 @@
     {%- assign menu = section.settings.menu -%}
     {%- assign sidebar_menu = section.settings.sidebar_menu -%}
 
-
     {%- if menu.links.size > 0 or sidebar_menu.links.size > 0 -%}
 
       <nav
-        class="header__primary-nav"
+        class="header__primary-nav {% if section.settings.layout == 'logo_center_navigation_below' or section.settings.layout == 'logo_left_navigation_center' %}header__primary-nav--center{% endif %}"
         aria-label="{{ 'header.general.primary_navigation' | t | escape }}"
       >
-
-
-        <!-- ===================================================
-             HAMBURGER
-             =================================================== -->
 
         <button
           type="button"
           aria-controls="sidebar-menu"
-          class="header-hamburger-button"
+          {% unless section.settings.layout == 'drawer' %}
+            class="md:hidden"
+          {% endunless %}
         >
 
           <span class="sr-only">
             {{ 'header.general.menu' | t }}
           </span>
 
-          {%- render 'icon',
-            with: 'hamburger',
-            class: 'header__nav-icon'
-          -%}
+          {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
 
         </button>
 
 
-        <!-- ===================================================
-             DESKTOP NAVIGATION
-             =================================================== -->
+        {%- if menu.links.size > 0 and section.settings.layout != 'drawer' -%}
 
-        <ul class="contents unstyled-list header-desktop-navigation">
+          <ul class="contents unstyled-list md-max:hidden">
 
-          {%- for link in menu.links -%}
+            {%- for link in menu.links -%}
 
-            {% liquid
-              assign link_title_downcase = link.title | strip | downcase
-              assign mega_menu_block = ''
+              {% liquid
+                assign link_title_downcase = link.title | strip | downcase
+                assign mega_menu_block = ''
 
-              for block in section.blocks
+                for block in section.blocks
+                  assign menu_item_downcase = block.settings.menu_item | strip | downcase
 
-                assign menu_item_downcase = block.settings.menu_item | strip | downcase
+                  if menu_item_downcase == link_title_downcase
+                    assign mega_menu_block = block
+                    break
+                  endif
+                endfor
+              %}
 
-                if menu_item_downcase == link_title_downcase
+              <li class="header__primary-nav-item">
 
-                  assign mega_menu_block = block
-                  break
+                {%- if link.levels == 0 and mega_menu_block == '' -%}
 
-                endif
-
-              endfor
-            %}
-
-
-            <li class="header__primary-nav-item">
-
-              {%- if link.levels == 0 and mega_menu_block == '' -%}
-
-                <a
-                  href="{{ link.url }}"
-                  data-title="{{ link.title | escape }}"
-                  class="block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}"
-                  {% if link.current %}
-                    aria-current="page"
-                  {% endif %}
-                >
-                  {{- link.title -}}
-                </a>
-
-
-              {%- else -%}
-
-
-                {%- capture disclosure_content -%}
-
-                  <details class="header__menu-disclosure">
-
-                    <summary
-                      data-follow-link="{{ link.url }}"
-                      {% if section.settings.menu_text_font == 'heading' %}
-                        class="h6"
-                      {% endif %}
-                      data-title="{{ link.title | escape }}"
-                    >
-                      {{- link.title -}}
-                    </summary>
-
-
-                    {%- if mega_menu_block != '' -%}
-
-                      {%- render 'mega-menu',
-                        link: link,
-                        block: mega_menu_block
-                      -%}
-
-
-                    {%- else -%}
-
-                      <ul
-                        class="header__dropdown-menu {% if link.levels <= 1 %}header__dropdown-menu--restrictable{% endif %} unstyled-list"
-                        role="list"
-                      >
-
-                        {%- for sub_link in link.links -%}
-
-                          <li>
-
-                            {%- if sub_link.levels == 0 -%}
-
-                              <a
-                                href="{{ sub_link.url }}"
-                                class="link-faded-reverse"
-                                {% if sub_link.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ sub_link.title }}
-                              </a>
-
-
-                            {%- else -%}
-
-                              <dropdown-menu-disclosure
-                                follow-summary-link
-                                trigger="{{ section.settings.menu_open_trigger }}"
-                                class="contents"
-                              >
-
-                                <details class="header__menu-disclosure">
-
-                                  <summary
-                                    data-follow-link="{{ sub_link.url }}"
-                                    class="link-faded-reverse"
-                                  >
-
-                                    <div class="h-stack gap-4 justify-between">
-
-                                      {{- sub_link.title -}}
-
-                                      {%- render 'icon',
-                                        with: 'arrow-right',
-                                        width: 8,
-                                        direction_aware: true
-                                      -%}
-
-                                    </div>
-
-                                  </summary>
-
-
-                                  <ul
-                                    class="header__dropdown-menu unstyled-list"
-                                    role="list"
-                                  >
-
-                                    {%- for sub_sub_link in sub_link.links -%}
-
-                                      <li>
-
-                                        <a
-                                          href="{{ sub_sub_link.url }}"
-                                          class="link-faded-reverse"
-                                          {% if sub_sub_link.current %}
-                                            aria-current="page"
-                                          {% endif %}
-                                        >
-                                          {{ sub_sub_link.title }}
-                                        </a>
-
-                                      </li>
-
-                                    {%- endfor -%}
-
-                                  </ul>
-
-                                </details>
-
-                              </dropdown-menu-disclosure>
-
-                            {%- endif -%}
-
-                          </li>
-
-                        {%- endfor -%}
-
-                      </ul>
-
-                    {%- endif -%}
-
-                  </details>
-
-                {%- endcapture -%}
-
-
-                {%- if mega_menu_block != '' -%}
-
-                  <mega-menu-disclosure
-                    follow-summary-link
-                    trigger="{{ section.settings.menu_open_trigger }}"
-                    class="contents"
+                  <a
+                    href="{{ link.url }}"
+                    data-title="{{ link.title | escape }}"
+                    class="block {% if section.settings.menu_text_font == 'heading' %}h6{% endif %}"
+                    {% if link.current %}
+                      aria-current="page"
+                    {% endif %}
                   >
-                    {{- disclosure_content -}}
-                  </mega-menu-disclosure>
-
+                    {{- link.title -}}
+                  </a>
 
                 {%- else -%}
 
-                  <dropdown-menu-disclosure
-                    follow-summary-link
-                    trigger="{{ section.settings.menu_open_trigger }}"
-                  >
-                    {{- disclosure_content -}}
-                  </dropdown-menu-disclosure>
+                  {%- capture disclosure_content -%}
+
+                    <details class="header__menu-disclosure">
+
+                      <summary
+                        data-follow-link="{{ link.url }}"
+                        {% if section.settings.menu_text_font == 'heading' %}
+                          class="h6"
+                        {% endif %}
+                        data-title="{{ link.title | escape }}"
+                      >
+                        {{- link.title -}}
+                      </summary>
+
+
+                      {%- if mega_menu_block != '' -%}
+
+                        {%- render 'mega-menu',
+                          link: link,
+                          block: mega_menu_block
+                        -%}
+
+                      {%- else -%}
+
+                        <ul
+                          class="header__dropdown-menu {% if link.levels <= 1 %}header__dropdown-menu--restrictable{% endif %} unstyled-list"
+                          role="list"
+                        >
+
+                          {%- for sub_link in link.links -%}
+
+                            <li>
+
+                              {%- if sub_link.levels == 0 -%}
+
+                                <a
+                                  href="{{ sub_link.url }}"
+                                  class="link-faded-reverse"
+                                  {% if sub_link.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ sub_link.title }}
+                                </a>
+
+                              {%- else -%}
+
+                                <dropdown-menu-disclosure
+                                  follow-summary-link
+                                  trigger="{{ section.settings.menu_open_trigger }}"
+                                  class="contents"
+                                >
+
+                                  <details class="header__menu-disclosure">
+
+                                    <summary
+                                      data-follow-link="{{ sub_link.url }}"
+                                      class="link-faded-reverse"
+                                    >
+
+                                      <div class="h-stack gap-4 justify-between">
+
+                                        {{- sub_link.title -}}
+
+                                        {%- render 'icon',
+                                          with: 'arrow-right',
+                                          width: 8,
+                                          direction_aware: true
+                                        -%}
+
+                                      </div>
+
+                                    </summary>
+
+
+                                    <ul
+                                      class="header__dropdown-menu unstyled-list"
+                                      role="list"
+                                    >
+
+                                      {%- for sub_sub_link in sub_link.links -%}
+
+                                        <li>
+
+                                          <a
+                                            href="{{ sub_sub_link.url }}"
+                                            class="link-faded-reverse"
+                                            {% if sub_sub_link.current %}
+                                              aria-current="page"
+                                            {% endif %}
+                                          >
+                                            {{ sub_sub_link.title }}
+                                          </a>
+
+                                        </li>
+
+                                      {%- endfor -%}
+
+                                    </ul>
+
+                                  </details>
+
+                                </dropdown-menu-disclosure>
+
+                              {%- endif -%}
+
+                            </li>
+
+                          {%- endfor -%}
+
+                        </ul>
+
+                      {%- endif -%}
+
+                    </details>
+
+                  {%- endcapture -%}
+
+
+                  {%- if mega_menu_block != '' -%}
+
+                    <mega-menu-disclosure
+                      follow-summary-link
+                      trigger="{{ section.settings.menu_open_trigger }}"
+                      class="contents"
+                    >
+                      {{- disclosure_content -}}
+                    </mega-menu-disclosure>
+
+                  {%- else -%}
+
+                    <dropdown-menu-disclosure
+                      follow-summary-link
+                      trigger="{{ section.settings.menu_open_trigger }}"
+                    >
+                      {{- disclosure_content -}}
+                    </dropdown-menu-disclosure>
+
+                  {%- endif -%}
 
                 {%- endif -%}
 
-              {%- endif -%}
+              </li>
 
-            </li>
+            {%- endfor -%}
 
-          {%- endfor -%}
+          </ul>
 
-        </ul>
+        {%- endif -%}
 
       </nav>
 
@@ -773,7 +502,6 @@
     >
 
       {%- liquid
-
         if section.settings.show_country_selector and localization.available_countries.size > 1
           assign show_country_selector = true
         endif
@@ -781,20 +509,14 @@
         if section.settings.show_locale_selector and localization.available_languages.size > 1
           assign show_locale_selector = true
         endif
-
       -%}
 
 
       <ul class="contents unstyled-list">
 
-
-        {%- comment -%}
-          COUNTRY / LANGUAGE
-        {%- endcomment -%}
-
         {%- if show_country_selector or show_locale_selector -%}
 
-          <li class="localization-selectors">
+          <li class="localization-selectors md-max:hidden">
 
             {%- if show_country_selector -%}
 
@@ -825,6 +547,23 @@
 
 
         {%- comment -%}
+          APP BLOCKS
+        {%- endcomment -%}
+
+        {%- for block in section.blocks -%}
+
+          {%- if block.type == '@app' -%}
+
+            <li>
+              {%- render block -%}
+            </li>
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
+
+        {%- comment -%}
           ========================================================
           SEARCH
           ========================================================
@@ -845,25 +584,18 @@
               </span>
 
 
-              <!-- DESKTOP TEXT -->
-
+              <!-- Desktop Text -->
               <span class="custom-header-label mobile-search-text">
-                {{ section.settings.search_text | escape }}
+                {{ section.settings.search_text }}
               </span>
 
 
-              <!-- HAMBURGER SEARCH ICON -->
-
+              <!-- Mobile Icon -->
               <span
                 class="mobile-search-icon"
                 aria-hidden="true"
               >
-
-                {%- render 'icon',
-                  with: 'search',
-                  class: 'header__nav-icon'
-                -%}
-
+                {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
               </span>
 
             </a>
@@ -889,7 +621,7 @@
             >
 
               <span class="custom-header-label">
-                {{ section.settings.account_text | escape }}
+                {{ section.settings.account_text }}
               </span>
 
             </a>
@@ -921,36 +653,25 @@
             </span>
 
 
-            <!-- DESKTOP TEXT -->
-
+            <!-- Desktop Text -->
             <span class="custom-header-label mobile-cart-text">
-              {{ section.settings.cart_text | escape }}
+              {{ section.settings.cart_text }}
             </span>
 
 
-            <!-- DESKTOP CART COUNT -->
-
             <span class="custom-cart-count mobile-cart-count">
-
               <cart-count>
                 {{ cart.item_count }}
               </cart-count>
-
             </span>
 
 
-            <!-- HAMBURGER CART ICON -->
-
+            <!-- Mobile Icon -->
             <span
               class="mobile-cart-icon"
               aria-hidden="true"
             >
-
-              {%- render 'icon',
-                with: 'cart',
-                class: 'header__nav-icon'
-              -%}
-
+              {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
             </span>
 
 
@@ -1005,94 +726,55 @@
 
 
 <script>
-
-  /* ==========================================================
-     HEADER HEIGHT
-     ========================================================== */
-
   document.documentElement.style.setProperty(
     '--header-height',
     `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
   );
 
 
-  /* ==========================================================
-     MOBILE KONTO
-     ========================================================== */
+  /*
+   * ==========================================================
+   * MOBILE KONTO LINK
+   * ==========================================================
+   */
 
   (function () {
 
     function addMobileAccountLink() {
 
-      /*
-       * Only run below selected hamburger breakpoint.
-       */
-
-      if (
-        window.innerWidth >= {{ section.settings.menu_breakpoint }}
-      ) {
+      if (window.innerWidth > 699) {
         return;
       }
 
-
-      /*
-       * Find mobile sidebar.
-       */
-
-      var sidebar =
-        document.getElementById('sidebar-menu');
+      var sidebar = document.getElementById('sidebar-menu');
 
       if (!sidebar) {
         return;
       }
 
-
       /*
-       * Prevent duplicate KONTO.
+       * Prevent duplicate KONTO links
        */
-
-      if (
-        sidebar.querySelector(
-          '[data-mobile-account-link]'
-        )
-      ) {
+      if (sidebar.querySelector('[data-mobile-account-link]')) {
         return;
       }
 
-
-      /*
-       * Find menu list.
-       */
-
-      var menuList =
-        sidebar.querySelector('ul');
+      var menuList = sidebar.querySelector('ul');
 
       if (!menuList) {
         return;
       }
 
-
-      /*
-       * Create account item.
-       */
-
-      var accountItem =
-        document.createElement('li');
-
+      var accountItem = document.createElement('li');
 
       accountItem.setAttribute(
         'data-mobile-account-link',
         'true'
       );
 
-
       accountItem.className =
         'mobile-account-menu-item';
 
-
-      /*
-       * Use Theme Editor account text.
-       */
 
       accountItem.innerHTML = `
         <a href="{{ routes.account_url }}">
@@ -1101,12 +783,7 @@
       `;
 
 
-      /*
-       * Add account at bottom of menu.
-       */
-
       menuList.appendChild(accountItem);
-
     }
 
 
@@ -1114,27 +791,14 @@
 
       addMobileAccountLink();
 
-      setTimeout(
-        addMobileAccountLink,
-        300
-      );
-
-      setTimeout(
-        addMobileAccountLink,
-        800
-      );
-
-      setTimeout(
-        addMobileAccountLink,
-        1500
-      );
+      setTimeout(addMobileAccountLink, 300);
+      setTimeout(addMobileAccountLink, 800);
+      setTimeout(addMobileAccountLink, 1500);
 
     }
 
 
-    if (
-      document.readyState === 'loading'
-    ) {
+    if (document.readyState === 'loading') {
 
       document.addEventListener(
         'DOMContentLoaded',
@@ -1149,57 +813,35 @@
 
 
     /*
-     * Watch for Shopify drawer creation.
+     * Watch for Shopify/theme drawer changes.
      */
+    var observer = new MutationObserver(function () {
 
-    var observer =
-      new MutationObserver(
-        function () {
-
-          if (
-            window.innerWidth <
-            {{ section.settings.menu_breakpoint }}
-          ) {
-
-            addMobileAccountLink();
-
-          }
-
-        }
-      );
-
-
-    observer.observe(
-      document.body,
-      {
-        childList: true,
-        subtree: true
+      if (window.innerWidth <= 699) {
+        addMobileAccountLink();
       }
-    );
+
+    });
+
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
 
 
     /*
      * Handle resize.
      */
+    window.addEventListener('resize', function () {
 
-    window.addEventListener(
-      'resize',
-      function () {
-
-        if (
-          window.innerWidth <
-          {{ section.settings.menu_breakpoint }}
-        ) {
-
-          addMobileAccountLink();
-
-        }
-
+      if (window.innerWidth <= 699) {
+        addMobileAccountLink();
       }
-    );
+
+    });
 
   })();
-
 </script>
 
 
@@ -1237,18 +879,6 @@
       "id": "cart_text",
       "label": "Cart text",
       "default": "KURV"
-    },
-
-    {
-      "type": "range",
-      "id": "menu_breakpoint",
-      "label": "Hamburger menu breakpoint",
-      "info": "Choose the screen width at which the hamburger menu starts.",
-      "min": 700,
-      "max": 1400,
-      "step": 10,
-      "unit": "px",
-      "default": 1000
     },
 
     {
@@ -1351,7 +981,6 @@
       "id": "menu_open_trigger",
       "label": "t:sections.header.menu_open_trigger",
       "info": "t:sections.header.menu_open_trigger_info",
-
       "options": [
         {
           "value": "hover",
@@ -1362,7 +991,6 @@
           "label": "t:sections.header.menu_open_trigger_options.click"
         }
       ],
-
       "default": "hover"
     },
 
@@ -1370,7 +998,6 @@
       "type": "select",
       "id": "menu_text_font",
       "label": "t:sections.header.menu_text_font",
-
       "options": [
         {
           "value": "heading",
@@ -1381,7 +1008,6 @@
           "label": "t:sections.header.menu_text_font_options.body"
         }
       ],
-
       "default": "heading"
     },
 
@@ -1408,7 +1034,6 @@
       "type": "select",
       "id": "sidebar_text_font",
       "label": "t:sections.header.sidebar_text_font",
-
       "options": [
         {
           "value": "heading",
@@ -1419,7 +1044,6 @@
           "label": "t:sections.header.sidebar_text_font_options.body"
         }
       ],
-
       "default": "heading"
     },
 
@@ -1446,7 +1070,6 @@
       "type": "select",
       "id": "layout",
       "label": "t:sections.header.layout",
-
       "options": [
         {
           "value": "logo_left_navigation_inline",
@@ -1469,7 +1092,6 @@
           "label": "t:sections.header.layout_options.drawer"
         }
       ],
-
       "default": "logo_left_navigation_inline"
     },
 
