@@ -2929,6 +2929,10 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-manage-prefs:hover{
 section#shopify-pc__banner p a{
      opacity: 0.5;
 }
+.shopify-pc__banner__body {
+    margin: 0 !important;
+    width: 100%;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
