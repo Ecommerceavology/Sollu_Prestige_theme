@@ -247,9 +247,9 @@ h1.header__logo {
     gap: 0 !important;
 }
 .about_sec .multi-column__item.snap-center.group {
-    /* border-left: 1px solid #cfcfcf; */
     padding: 34px 44px!important;
     border-right: 1px solid #cfcfcf;
+    gap: 25px;
 }
 
 
