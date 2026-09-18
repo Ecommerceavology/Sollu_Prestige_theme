@@ -3401,6 +3401,9 @@ nav.header__secondary-nav {
 }
 }
 @media (max-width: 1200px) {
+    section#shopify-pc__banner .shopify-pc__banner__wrapper {
+        gap: 60px;
+    }
 nav.header__primary-nav {
     gap: 7px!important;
     justify-content: start;
@@ -3506,6 +3509,9 @@ x-header.header.Header_sec {
 }
 
 @media screen and (max-width: 1024px) {
+    section#shopify-pc__banner .shopify-pc__banner__wrapper {
+        gap: 45px;
+    }
     .sidebar_content_sec .sidebar-content-navigation__content-block:first-child ul li,
     .sidebar_content_sec .sidebar-content-navigation__content-block:nth-child(2) .sidebar-content-navigation__text.rte ul li {
         font-size: 15px !important;
@@ -4456,6 +4462,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 }
 
 @media (max-width: 767px) {
+    section#shopify-pc__banner .shopify-pc__banner__wrapper {
+        flex-direction: column;
+        gap: 25px;
+    }
     .announcement-bar.color-scheme.color-scheme--scheme-3 p {
         font-size: 9px;
         letter-spacing: 1.1px;
@@ -5658,6 +5668,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 }
 
 @media (max-width: 575px) {
+     section#shopify-pc__banner .shopify-pc__banner__wrapper {
+        gap: 20px;
+    }
     .announcement-bar.color-scheme.color-scheme--scheme-3 p {
         font-size: 8px;
         letter-spacing: .9px;
