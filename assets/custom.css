@@ -2867,6 +2867,10 @@ span.custom-product-card__price-current{
     display: none;
 }
 
+.about_sec .multi-column__item.snap-center.group img{
+    margin: 0 auto;
+}
+
 
 
 
