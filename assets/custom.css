@@ -3645,10 +3645,6 @@ x-header.header.Header_sec {
 
 
 
-    section#shopify-pc__banner p {
-        font-size: 14px;
-        line-height: 24px;
-    }
 
     section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
     section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
@@ -5603,10 +5599,6 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
 
 
-    section#shopify-pc__banner p {
-        font-size: 14px;
-        line-height: 22px;
-    }
 
     section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
     section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
@@ -6532,10 +6524,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
 
-    section#shopify-pc__banner p {
-        font-size: 13px;
-        line-height: 21px;
-    }
+
 
     section#shopify-pc__banner button#shopify-pc__banner__btn-accept,
     section#shopify-pc__banner button#shopify-pc__banner__btn-decline {
