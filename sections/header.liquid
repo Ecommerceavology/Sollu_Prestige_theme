@@ -19,16 +19,13 @@
     }
   }
 
-  /*
-   * ==========================================================
-   * DYNAMIC DESKTOP / HAMBURGER BREAKPOINT
-   *
-   * The breakpoint is controlled from Theme Editor:
-   * section.settings.menu_breakpoint
-   * ==========================================================
-   */
+
+  /* ==========================================================
+     HEADER GRID
+     ========================================================== */
 
   @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
+
     #shopify-section-{{ section.id }} {
       {%- case section.settings.layout -%}
 
@@ -43,18 +40,34 @@
 
       {%- endcase -%}
     }
+
   }
 
+
+  /* ==========================================================
+     STICKY HEADER
+     ========================================================== */
+
   {%- if section.settings.enable_sticky -%}
+
     #shopify-section-{{ section.id }} {
       position: sticky;
       top: 0;
     }
 
     .shopify-section--announcement-bar ~ #shopify-section-{{ section.id }} {
-      top: calc(var(--announcement-bar-is-sticky, 0) * var(--announcement-bar-height, 0px));
+      top: calc(
+        var(--announcement-bar-is-sticky, 0)
+        * var(--announcement-bar-height, 0px)
+      );
     }
+
   {%- endif -%}
+
+
+  /* ==========================================================
+     LOGO
+     ========================================================== */
 
   {%- if section.settings.logo != blank -%}
 
@@ -63,9 +76,11 @@
     }
 
     @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
+
       #shopify-section-{{ section.id }} {
         --header-logo-width: {{ section.settings.logo_max_width }}px;
       }
+
     }
 
   {%- endif -%}
@@ -88,11 +103,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     font-size: 12px;
     font-weight: 400;
     line-height: 1;
+
     letter-spacing: 0.14em;
     text-transform: uppercase;
+
     white-space: nowrap;
   }
 
@@ -100,14 +118,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     min-width: 18px;
     height: 18px;
+
     margin-left: 7px;
     padding: 0 4px;
+
     border: 1px solid currentColor;
+
     font-size: 10px;
     font-weight: 400;
     line-height: 1;
+
     letter-spacing: 0;
   }
 
@@ -117,66 +140,152 @@
 
 
   /* ==========================================================
-     MOBILE / HAMBURGER VIEW
+     DEFAULT = HAMBURGER VIEW
+     
+     This is important because the theme's own md classes
+     use fixed breakpoints.
      ========================================================== */
 
-  .mobile-search-icon,
-  .mobile-cart-icon {
+  #shopify-section-{{ section.id }} .header-hamburger-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .header-desktop-navigation {
     display: none;
   }
 
-  .mobile-account-menu-item {
-    display: none;
+
+  /* ==========================================================
+     DESKTOP VIEW
+     
+     Starts exactly at the breakpoint selected in Theme Editor.
+     ========================================================== */
+
+  @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
+
+    /*
+     * Hide hamburger completely
+     */
+    #shopify-section-{{ section.id }} .header-hamburger-button {
+      display: none !important;
+    }
+
+    /*
+     * Show desktop navigation
+     */
+    #shopify-section-{{ section.id }} .header-desktop-navigation {
+      display: contents;
+    }
+
+    /*
+     * Desktop Search text
+     */
+    #shopify-section-{{ section.id }} .mobile-search-text {
+      display: inline-flex !important;
+    }
+
+    /*
+     * Desktop Cart text
+     */
+    #shopify-section-{{ section.id }} .mobile-cart-text {
+      display: inline-flex !important;
+    }
+
+    /*
+     * Desktop Cart count
+     */
+    #shopify-section-{{ section.id }} .mobile-cart-count {
+      display: inline-flex !important;
+    }
+
+    /*
+     * Hide mobile icons on desktop
+     */
+    #shopify-section-{{ section.id }} .mobile-search-icon,
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: none !important;
+    }
+
+    /*
+     * Account visible on desktop
+     */
+    #shopify-section-{{ section.id }} .mobile-account-header {
+      display: list-item !important;
+    }
+
+    /*
+     * Account menu item is never shown outside hamburger menu
+     */
+    #shopify-section-{{ section.id }} .mobile-account-menu-item {
+      display: none !important;
+    }
+
   }
 
+
+  /* ==========================================================
+     HAMBURGER / MOBILE VIEW
+     
+     Below selected breakpoint.
+     ========================================================== */
 
   @media screen and (max-width: {{ section.settings.menu_breakpoint | minus: 1 }}px) {
 
     /*
-     * ========================================================
-     * SEARCH
-     * Hamburger/mobile view = original search icon
-     * ========================================================
+     * Make sure hamburger is visible
      */
-
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    #shopify-section-{{ section.id }} .header-hamburger-button {
+      display: flex !important;
     }
 
-    #shopify-section-{{ section.id }} .mobile-search-text {
-      display: none;
+    /*
+     * Make sure desktop navigation is hidden
+     */
+    #shopify-section-{{ section.id }} .header-desktop-navigation {
+      display: none !important;
     }
 
 
     /*
-     * ========================================================
-     * CART
-     * Hamburger/mobile view = original cart icon
-     * ========================================================
+     * SEARCH ICON
      */
 
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: inline-flex;
+    #shopify-section-{{ section.id }} .mobile-search-text {
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: inline-flex !important;
       align-items: center;
       justify-content: center;
     }
 
+
+    /*
+     * CART ICON
+     */
+
     #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: none;
+      display: none !important;
     }
 
     #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: none;
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
     }
 
 
     /*
-     * ========================================================
      * ACCOUNT
-     * Remove from right side
-     * ========================================================
+     *
+     * Remove from right side.
      */
 
     #shopify-section-{{ section.id }} .mobile-account-header {
@@ -185,50 +294,28 @@
 
 
     /*
-     * ========================================================
      * ACCOUNT INSIDE HAMBURGER MENU
-     * ========================================================
      */
 
-    .mobile-account-menu-item {
-      display: list-item;
+    #shopify-section-{{ section.id }} .mobile-account-menu-item {
+      display: list-item !important;
     }
 
-    .mobile-account-menu-item a {
+    #shopify-section-{{ section.id }} .mobile-account-menu-item a {
       display: block;
       text-decoration: none;
       color: inherit;
     }
+
   }
 
 
-  /*
-   * ==========================================================
-   * DESKTOP VIEW
-   * ==========================================================
-   */
+  /* ==========================================================
+     MOBILE ACCOUNT ITEM
+     ========================================================== */
 
-  @media screen and (min-width: {{ section.settings.menu_breakpoint }}px) {
-
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: none;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-search-text {
-      display: inline-flex;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: none;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: inline-flex;
-    }
-
-    #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: inline-flex;
-    }
+  .mobile-account-menu-item {
+    display: none;
   }
 </style>
 
@@ -261,7 +348,9 @@
           {{ section.settings.logo_max_width | times: 3 | at_most: section.settings.logo.width }}
         {%- endcapture -%}
 
-        <span class="sr-only">{{ shop.name }}</span>
+        <span class="sr-only">
+          {{ shop.name }}
+        </span>
 
         {%- assign alt_text = section.settings.logo.alt | default: shop.name -%}
 
@@ -311,7 +400,10 @@
 
     {%- else -%}
 
-      <a href="{{ routes.root_url }}" class="header__logo">
+      <a
+        href="{{ routes.root_url }}"
+        class="header__logo"
+      >
         {{ logo_content }}
       </a>
 
@@ -334,7 +426,8 @@
         aria-label="{{ 'header.general.primary_navigation' | t | escape }}"
       >
 
-        <!-- Hamburger -->
+        <!-- HAMBURGER -->
+
         <button
           type="button"
           aria-controls="sidebar-menu"
@@ -345,12 +438,16 @@
             {{ 'header.general.menu' | t }}
           </span>
 
-          {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
+          {%- render 'icon',
+            with: 'hamburger',
+            class: 'header__nav-icon'
+          -%}
 
         </button>
 
 
-        <!-- Desktop Navigation -->
+        <!-- DESKTOP NAVIGATION -->
+
         <ul
           class="contents unstyled-list header-desktop-navigation"
         >
@@ -565,6 +662,7 @@
 
       <ul class="contents unstyled-list">
 
+
         {%- if show_country_selector or show_locale_selector -%}
 
           <li class="localization-selectors md-max:hidden">
@@ -597,21 +695,10 @@
         {%- endif -%}
 
 
-        {%- for block in section.blocks -%}
-
-          {%- if block.type == '@app' -%}
-
-            <li>
-              {%- render block -%}
-            </li>
-
-          {%- endif -%}
-
-        {%- endfor -%}
-
-
         {%- comment -%}
+          ========================================================
           SEARCH
+          ========================================================
         {%- endcomment -%}
 
         {%- if section.settings.enable_search -%}
@@ -629,18 +716,25 @@
               </span>
 
 
-              <!-- Desktop -->
+              <!-- DESKTOP TEXT -->
+
               <span class="custom-header-label mobile-search-text">
-                {{ section.settings.search_text }}
+                {{ section.settings.search_text | escape }}
               </span>
 
 
-              <!-- Hamburger / Mobile -->
+              <!-- HAMBURGER VIEW ICON -->
+
               <span
                 class="mobile-search-icon"
                 aria-hidden="true"
               >
-                {%- render 'icon' with 'search', class: 'header__nav-icon' -%}
+
+                {%- render 'icon',
+                  with: 'search',
+                  class: 'header__nav-icon'
+                -%}
+
               </span>
 
             </a>
@@ -651,7 +745,11 @@
 
 
         {%- comment -%}
+          ========================================================
           ACCOUNT
+          Desktop only in right side.
+          Mobile moved into hamburger menu.
+          ========================================================
         {%- endcomment -%}
 
         {%- if shop.customer_accounts_enabled -%}
@@ -664,7 +762,7 @@
             >
 
               <span class="custom-header-label">
-                {{ section.settings.account_text }}
+                {{ section.settings.account_text | escape }}
               </span>
 
             </a>
@@ -675,7 +773,9 @@
 
 
         {%- comment -%}
+          ========================================================
           CART
+          ========================================================
         {%- endcomment -%}
 
         <li class="relative header__cart-link">
@@ -694,10 +794,12 @@
             </span>
 
 
-            <!-- Desktop -->
+            <!-- DESKTOP CART TEXT -->
+
             <span class="custom-header-label mobile-cart-text">
-              {{ section.settings.cart_text }}
+              {{ section.settings.cart_text | escape }}
             </span>
+
 
             <span class="custom-cart-count mobile-cart-count">
               <cart-count>
@@ -706,12 +808,18 @@
             </span>
 
 
-            <!-- Hamburger / Mobile -->
+            <!-- HAMBURGER VIEW CART ICON -->
+
             <span
               class="mobile-cart-icon"
               aria-hidden="true"
             >
-              {%- render 'icon' with 'cart', class: 'header__nav-icon' -%}
+
+              {%- render 'icon',
+                with: 'cart',
+                class: 'header__nav-icon'
+              -%}
+
             </span>
 
 
@@ -762,6 +870,13 @@
 
 
 <script>
+
+  /*
+   * ==========================================================
+   * HEADER HEIGHT
+   * ==========================================================
+   */
+
   document.documentElement.style.setProperty(
     '--header-height',
     `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
@@ -770,7 +885,7 @@
 
   /*
    * ==========================================================
-   * MOBILE KONTO LINK
+   * MOBILE KONTO
    * ==========================================================
    */
 
@@ -784,28 +899,45 @@
         return;
       }
 
-      var sidebar = document.getElementById('sidebar-menu');
+      var sidebar =
+        document.getElementById('sidebar-menu');
 
       if (!sidebar) {
         return;
       }
 
+
       /*
-       * Prevent duplicate KONTO
+       * Prevent duplicate account link
        */
+
       if (
-        sidebar.querySelector('[data-mobile-account-link]')
+        sidebar.querySelector(
+          '[data-mobile-account-link]'
+        )
       ) {
         return;
       }
 
-      var menuList = sidebar.querySelector('ul');
+
+      /*
+       * Find sidebar menu list
+       */
+
+      var menuList =
+        sidebar.querySelector('ul');
 
       if (!menuList) {
         return;
       }
 
-      var accountItem = document.createElement('li');
+
+      /*
+       * Create account item
+       */
+
+      var accountItem =
+        document.createElement('li');
 
       accountItem.setAttribute(
         'data-mobile-account-link',
@@ -816,6 +948,10 @@
         'mobile-account-menu-item';
 
 
+      /*
+       * Account link
+       */
+
       accountItem.innerHTML = `
         <a href="{{ routes.account_url }}">
           {{ section.settings.account_text | escape }}
@@ -823,7 +959,12 @@
       `;
 
 
+      /*
+       * Add to end of menu
+       */
+
       menuList.appendChild(accountItem);
+
     }
 
 
@@ -849,7 +990,9 @@
     }
 
 
-    if (document.readyState === 'loading') {
+    if (
+      document.readyState === 'loading'
+    ) {
 
       document.addEventListener(
         'DOMContentLoaded',
@@ -864,22 +1007,24 @@
 
 
     /*
-     * Watch for drawer creation / changes.
+     * Watch drawer changes
      */
-    var observer = new MutationObserver(
-      function () {
 
-        if (
-          window.innerWidth <
-          {{ section.settings.menu_breakpoint }}
-        ) {
+    var observer =
+      new MutationObserver(
+        function () {
 
-          addMobileAccountLink();
+          if (
+            window.innerWidth <
+            {{ section.settings.menu_breakpoint }}
+          ) {
+
+            addMobileAccountLink();
+
+          }
 
         }
-
-      }
-    );
+      );
 
 
     observer.observe(
@@ -892,8 +1037,9 @@
 
 
     /*
-     * Handle resize.
+     * Handle resizing
      */
+
     window.addEventListener(
       'resize',
       function () {
@@ -911,6 +1057,7 @@
     );
 
   })();
+
 </script>
 
 
