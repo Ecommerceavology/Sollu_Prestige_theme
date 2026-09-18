@@ -13,11 +13,12 @@
     z-index: 4;
   }
 
+
   /* =========================================================
-     DESKTOP HEADER
+     DESKTOP HEADER PADDING
      ========================================================= */
 
-  @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint | remove: 'px' }}px) {
 
     #shopify-section-{{ section.id }} {
       --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
@@ -26,6 +27,10 @@
   }
 
 
+  /* =========================================================
+     DESKTOP HEADER GRID
+     ========================================================= */
+
   @media screen and (min-width: 1000px) {
 
     #shopify-section-{{ section.id }} {
@@ -33,15 +38,12 @@
       {%- case section.settings.layout -%}
 
         {%- when 'logo_left_navigation_inline' -%}
-
           --header-grid: "logo primary-nav secondary-nav" / auto minmax(0, 1fr) auto;
 
         {%- when 'logo_left_navigation_center' -%}
-
           --header-grid: "logo primary-nav secondary-nav" / minmax(max-content, 1fr) auto minmax(max-content, 1fr);
 
         {%- when 'logo_center_navigation_below' -%}
-
           --header-grid: ". logo secondary-nav" "primary-nav primary-nav primary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
 
       {%- endcase -%}
@@ -50,6 +52,10 @@
 
   }
 
+
+  /* =========================================================
+     STICKY HEADER
+     ========================================================= */
 
   {%- if section.settings.enable_sticky -%}
 
@@ -68,13 +74,17 @@
   {%- endif -%}
 
 
+  /* =========================================================
+     LOGO
+     ========================================================= */
+
   {%- if section.settings.logo != blank -%}
 
     #shopify-section-{{ section.id }} {
       --header-logo-width: {{ section.settings.logo_mobile_max_width }}px;
     }
 
-    @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+    @media screen and (min-width: {{ section.settings.mobile_breakpoint | remove: 'px' }}px) {
 
       #shopify-section-{{ section.id }} {
         --header-logo-width: {{ section.settings.logo_max_width }}px;
@@ -131,108 +141,189 @@
 
 
   /* =========================================================
-     MOBILE / HAMBURGER HEADER
+     DEFAULT ICON STATES
      ========================================================= */
 
-  .mobile-search-icon,
-  .mobile-cart-icon {
+  #shopify-section-{{ section.id }} .mobile-search-icon {
     display: none;
   }
 
-  .mobile-account-menu-item {
+  #shopify-section-{{ section.id }} .mobile-cart-icon {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .mobile-account-menu-item {
     display: none;
   }
 
 
-  @media screen and (max-width: {{ section.settings.mobile_breakpoint | minus: 1 }}px) {
+  /* =========================================================
+     CUSTOM HAMBURGER BREAKPOINT
+     
+     Example:
+     1100px = hamburger below 1100px
+     ========================================================= */
 
-    /*
-     * SEARCH
-     * Show icon on mobile
-     */
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+  @media screen and (max-width: {{ section.settings.mobile_breakpoint | remove: 'px' | minus: 1 }}px) {
+
+
+    /* ---------------------------------------------------------
+       HAMBURGER
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .custom-hamburger-button {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
+
+
+    /* ---------------------------------------------------------
+       DESKTOP NAVIGATION
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .custom-desktop-navigation {
+      display: none !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       SEARCH
+       Text OFF
+       Icon ON
+       --------------------------------------------------------- */
 
     #shopify-section-{{ section.id }} .mobile-search-text {
-      display: none;
+      display: none !important;
     }
 
-
-    /*
-     * CART
-     * Show icon on mobile
-     */
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: inline-flex;
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: inline-flex !important;
       align-items: center;
       justify-content: center;
     }
 
-    #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: none;
-    }
 
-    #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: none;
-    }
+    /* ---------------------------------------------------------
+       ACCOUNT
+       Hide from header right side
+       --------------------------------------------------------- */
 
-
-    /*
-     * ACCOUNT
-     * Remove account from right side
-     */
     #shopify-section-{{ section.id }} .mobile-account-header {
       display: none !important;
     }
 
 
-    /*
-     * ACCOUNT
-     * Show inside hamburger menu
-     */
-    .mobile-account-menu-item {
-      display: list-item;
+    /* ---------------------------------------------------------
+       CART
+       Text OFF
+       Count OFF
+       Icon ON
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .mobile-cart-text {
+      display: none !important;
     }
 
-    .mobile-account-menu-item a {
+    #shopify-section-{{ section.id }} .mobile-cart-count {
+      display: none !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* ---------------------------------------------------------
+       ACCOUNT INSIDE HAMBURGER MENU
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .mobile-account-menu-item {
+      display: list-item !important;
+    }
+
+    #shopify-section-{{ section.id }} .mobile-account-menu-item a {
       display: block;
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
   }
 
 
   /* =========================================================
-     DESKTOP DEFAULT STATES
+     DESKTOP
      ========================================================= */
 
-  @media screen and (min-width: {{ section.settings.mobile_breakpoint }}px) {
+  @media screen and (min-width: {{ section.settings.mobile_breakpoint | remove: 'px' }}px) {
 
-    #shopify-section-{{ section.id }} .mobile-search-icon {
-      display: none;
+
+    /* ---------------------------------------------------------
+       HAMBURGER OFF
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .custom-hamburger-button {
+      display: none !important;
     }
+
+
+    /* ---------------------------------------------------------
+       DESKTOP NAVIGATION ON
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .custom-desktop-navigation {
+      display: flex !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       SEARCH TEXT ON
+       SEARCH ICON OFF
+       --------------------------------------------------------- */
 
     #shopify-section-{{ section.id }} .mobile-search-text {
-      display: inline-flex;
+      display: inline-flex !important;
     }
 
-    #shopify-section-{{ section.id }} .mobile-cart-icon {
-      display: none;
+    #shopify-section-{{ section.id }} .mobile-search-icon {
+      display: none !important;
     }
+
+
+    /* ---------------------------------------------------------
+       ACCOUNT ON DESKTOP
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .mobile-account-header {
+      display: list-item;
+    }
+
+
+    /* ---------------------------------------------------------
+       CART TEXT ON
+       CART ICON OFF
+       --------------------------------------------------------- */
 
     #shopify-section-{{ section.id }} .mobile-cart-text {
-      display: inline-flex;
+      display: inline-flex !important;
     }
 
     #shopify-section-{{ section.id }} .mobile-cart-count {
-      display: inline-flex;
+      display: inline-flex !important;
     }
 
-    .mobile-account-menu-item {
+    #shopify-section-{{ section.id }} .mobile-cart-icon {
+      display: none !important;
+    }
+
+
+    /* ---------------------------------------------------------
+       MOBILE ACCOUNT ITEM OFF
+       --------------------------------------------------------- */
+
+    #shopify-section-{{ section.id }} .mobile-account-menu-item {
       display: none !important;
     }
 
@@ -351,49 +442,54 @@
       >
 
 
+        {%- comment -%}
+          ======================================================
+          HAMBURGER BUTTON
+          ======================================================
+        {%- endcomment -%}
+
         <button
           type="button"
           aria-controls="sidebar-menu"
-          {% unless section.settings.layout == 'drawer' %}
-            class="md:hidden"
-          {% endunless %}
+          class="custom-hamburger-button"
         >
 
           <span class="sr-only">
             {{ 'header.general.menu' | t }}
           </span>
 
-          {%- render 'icon' with 'hamburger', class: 'header__nav-icon' -%}
+          {%- render 'icon',
+            with: 'hamburger',
+            class: 'header__nav-icon'
+          -%}
 
         </button>
 
 
-        {%- if menu.links.size > 0 and section.settings.layout != 'drawer' -%}
+        {%- comment -%}
+          ======================================================
+          DESKTOP NAVIGATION
+          ======================================================
+        {%- endcomment -%}
 
-          <ul class="contents unstyled-list md-max:hidden">
+        {%- if menu.links.size > 0 -%}
+
+          <ul class="contents unstyled-list custom-desktop-navigation">
 
             {%- for link in menu.links -%}
 
               {% liquid
-
                 assign link_title_downcase = link.title | strip | downcase
-
                 assign mega_menu_block = ''
 
                 for block in section.blocks
-
                   assign menu_item_downcase = block.settings.menu_item | strip | downcase
 
                   if menu_item_downcase == link_title_downcase
-
                     assign mega_menu_block = block
-
                     break
-
                   endif
-
                 endfor
-
               %}
 
 
@@ -590,20 +686,13 @@
     >
 
       {%- liquid
-
         if section.settings.show_country_selector and localization.available_countries.size > 1
-
           assign show_country_selector = true
-
         endif
-
 
         if section.settings.show_locale_selector and localization.available_languages.size > 1
-
           assign show_locale_selector = true
-
         endif
-
       -%}
 
 
@@ -613,7 +702,6 @@
         {%- if show_country_selector or show_locale_selector -%}
 
           <li class="localization-selectors md-max:hidden">
-
 
             {%- if show_country_selector -%}
 
@@ -644,7 +732,9 @@
 
 
         {%- comment -%}
+          ========================================================
           APP BLOCKS
+          ========================================================
         {%- endcomment -%}
 
         {%- for block in section.blocks -%}
@@ -681,14 +771,14 @@
               </span>
 
 
-              <!-- Desktop text -->
+              <!-- DESKTOP TEXT -->
 
               <span class="custom-header-label mobile-search-text">
                 {{ section.settings.search_text }}
               </span>
 
 
-              <!-- Mobile icon -->
+              <!-- MOBILE ICON -->
 
               <span
                 class="mobile-search-icon"
@@ -757,12 +847,14 @@
             </span>
 
 
-            <!-- Desktop text -->
+            <!-- DESKTOP TEXT -->
 
             <span class="custom-header-label mobile-cart-text">
               {{ section.settings.cart_text }}
             </span>
 
+
+            <!-- DESKTOP CART COUNT -->
 
             <span class="custom-cart-count mobile-cart-count">
 
@@ -773,7 +865,7 @@
             </span>
 
 
-            <!-- Mobile icon -->
+            <!-- MOBILE ICON -->
 
             <span
               class="mobile-cart-icon"
@@ -822,7 +914,6 @@
 
     {%- assign sidebar_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
 
-
     {%- if sidebar_menu.links.size > 0 -%}
 
       {%- render 'header-sidebar',
@@ -840,30 +931,59 @@
 
 
 <script>
-  document.documentElement.style.setProperty(
-    '--header-height',
-    `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`
-  );
 
-
-  /*
-   * ==========================================================
-   * MOBILE KONTO LINK
-   * ==========================================================
-   */
+  /* ==========================================================
+     HEADER HEIGHT
+     ========================================================== */
 
   (function () {
 
+    var headerSection = document.getElementById(
+      'shopify-section-{{ section.id }}'
+    );
+
+    if (headerSection) {
+
+      document.documentElement.style.setProperty(
+        '--header-height',
+        headerSection.clientHeight.toFixed(2) + 'px'
+      );
+
+    }
+
+  })();
+
+
+  /* ==========================================================
+     MOBILE ACCOUNT LINK
+     ========================================================== */
+
+  (function () {
+
+    var breakpoint = parseInt(
+      '{{ section.settings.mobile_breakpoint | remove: "px" }}',
+      10
+    );
+
+
     function addMobileAccountLink() {
 
-      var breakpoint = {{ section.settings.mobile_breakpoint }};
+      /*
+       * Only run below custom breakpoint.
+       */
 
       if (window.innerWidth >= breakpoint) {
         return;
       }
 
 
-      var sidebar = document.getElementById('sidebar-menu');
+      /*
+       * Find mobile sidebar.
+       */
+
+      var sidebar = document.getElementById(
+        'sidebar-menu'
+      );
 
       if (!sidebar) {
         return;
@@ -871,13 +991,21 @@
 
 
       /*
-       * Prevent duplicate account links
+       * Prevent duplicate account links.
        */
 
-      if (sidebar.querySelector('[data-mobile-account-link]')) {
+      if (
+        sidebar.querySelector(
+          '[data-mobile-account-link]'
+        )
+      ) {
         return;
       }
 
+
+      /*
+       * Find menu list.
+       */
 
       var menuList = sidebar.querySelector('ul');
 
@@ -886,12 +1014,19 @@
       }
 
 
-      var accountItem = document.createElement('li');
+      /*
+       * Create account item.
+       */
+
+      var accountItem =
+        document.createElement('li');
+
 
       accountItem.setAttribute(
         'data-mobile-account-link',
         'true'
       );
+
 
       accountItem.className =
         'mobile-account-menu-item';
@@ -904,7 +1039,13 @@
       `;
 
 
-      menuList.appendChild(accountItem);
+      /*
+       * Add account at bottom.
+       */
+
+      menuList.appendChild(
+        accountItem
+      );
 
     }
 
@@ -931,7 +1072,13 @@
     }
 
 
-    if (document.readyState === 'loading') {
+    /*
+     * DOM ready.
+     */
+
+    if (
+      document.readyState === 'loading'
+    ) {
 
       document.addEventListener(
         'DOMContentLoaded',
@@ -946,21 +1093,23 @@
 
 
     /*
-     * Watch for mobile drawer creation/update.
+     * Watch for drawer creation.
      */
 
-    var observer = new MutationObserver(
-      function () {
+    var observer =
+      new MutationObserver(
+        function () {
 
-        var breakpoint =
-          {{ section.settings.mobile_breakpoint }};
+          if (
+            window.innerWidth < breakpoint
+          ) {
 
-        if (window.innerWidth < breakpoint) {
-          addMobileAccountLink();
+            addMobileAccountLink();
+
+          }
+
         }
-
-      }
-    );
+      );
 
 
     observer.observe(
@@ -973,24 +1122,26 @@
 
 
     /*
-     * Handle screen resize.
+     * Resize.
      */
 
     window.addEventListener(
       'resize',
       function () {
 
-        var breakpoint =
-          {{ section.settings.mobile_breakpoint }};
+        if (
+          window.innerWidth < breakpoint
+        ) {
 
-        if (window.innerWidth < breakpoint) {
           addMobileAccountLink();
+
         }
 
       }
     );
 
   })();
+
 </script>
 
 
@@ -1031,15 +1182,11 @@
     },
 
     {
-      "type": "range",
+      "type": "text",
       "id": "mobile_breakpoint",
       "label": "Hamburger menu starts at",
-      "info": "Below this screen width, the hamburger/mobile header layout will be used.",
-      "min": 700,
-      "max": 1500,
-      "step": 10,
-      "unit": "px",
-      "default": 1000
+      "info": "Enter the screen width manually, for example 1100px or 1030px.",
+      "default": "1100px"
     },
 
     {
@@ -1345,6 +1492,7 @@
     }
 
   ],
+
 
   "blocks": [
 
