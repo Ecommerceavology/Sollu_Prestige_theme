@@ -3376,6 +3376,10 @@ nav.header__secondary-nav {
 nav.header__secondary-nav {
     gap: 7px;
 }
+
+nav.header__primary-nav.header__primary-nav--center button.md\:hidden {
+    display: block;
+}
 }
 
 @media screen and (max-width: 1024px) {
