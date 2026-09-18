@@ -480,7 +480,7 @@
             "image": "shopify://shop_images/Rens_huden.png",
             "title": "Rens huden",
             "heading_tag": "h4",
-            "content": "<p>Start på ren, tør hud. Ingen creme under behandlingen— lyset skal have fri adgang.</p>",
+            "content": "<p>Start på ren, tør hud. Ingen creme før behandlingen</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -489,9 +489,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/Link_8.png",
-            "title": "Ti minutter",
+            "title": "10 minutter",
             "heading_tag": "h4",
-            "content": "<p>Vælg program og læn dig tilbage. Enheden slukkerselv, når behandlingen er færdig.</p>",
+            "content": "<p>Vælg program og læn dig tilbage. Enheden slukker selv, når behandlingen er færdig.</p>",
             "link_url": "",
             "link_text": ""
           }
