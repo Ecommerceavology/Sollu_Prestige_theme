@@ -2888,11 +2888,11 @@ h2#shopify-pc__banner__body-title {
     
     color: #b8965a;
   text-align: left;
-  font-family: "Jost-Regular", sans-serif;
   font-size: 11px;
   letter-spacing: 2.2px;
   font-weight: 400;
   text-transform: uppercase;
+  line-height: normal !important;
 }
 section#shopify-pc__banner p {
     color: #8c8278;
