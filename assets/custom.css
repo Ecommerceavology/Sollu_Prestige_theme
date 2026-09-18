@@ -3305,6 +3305,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     x-header.header.color-scheme.color-scheme--scheme-2.Header_sec {
     gap: 10px;
 }
+nav.header__secondary-nav {
+    gap: 10px;
+}
 }
 
 @media (max-width: 1100px) {
