@@ -3302,6 +3302,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Pro_content_tabs_sec .content-tabs::part(tab-list) {
         gap: 25px !important;
     }
+    x-header.header.color-scheme.color-scheme--scheme-2.Header_sec {
+    gap: 10px;
+}
 }
 
 @media (max-width: 1100px) {
