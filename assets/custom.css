@@ -3370,8 +3370,9 @@ nav.header__secondary-nav {
     .Pro_content_tabs_sec {
         padding: 60px 0 !important;
     }
-    nav.header__primary-nav.header__primary-nav--center {
+    nav.header__primary-nav {
     gap: 7px!important;
+    justify-content: start;
 }
 nav.header__secondary-nav {
     gap: 7px;
@@ -3380,7 +3381,7 @@ nav.header__secondary-nav {
 nav.header__primary-nav button.md\:hidden {
     display: block;
 }
-nav.header__primary-nav ul.contents.unstyled-list.md-max\:hidden {
+nav.header__primary-nav ul.contents.md-max\:hidden {
     display: none;
 }
 x-header.header.Header_sec {
