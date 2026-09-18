@@ -2901,7 +2901,18 @@ section#shopify-pc__banner p {
     line-height: 26.25px;
     font-weight: 300;
 }
-
+button#shopify-pc__banner__btn-accept,
+button#shopify-pc__banner__btn-decline {
+    min-width: 250px!important;
+    min-height: 52px!important;
+    color: #ffffff !important;
+    text-align: center!important;
+    font-size: 12px!important;
+    letter-spacing: 1.68px!important;
+    font-weight: 400!important;
+    text-transform: uppercase!important;
+    transition: all .3s ease!important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
