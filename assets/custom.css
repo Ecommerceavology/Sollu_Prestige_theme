@@ -2885,14 +2885,14 @@ section#shopify-pc__banner {
     padding-right: 0;
 }
 h2#shopify-pc__banner__body-title {
-    color: #2a2420;
-    text-align: left;
-    font-size: 36px;
-    line-height: 50.6px;
-    letter-spacing: .46px;
-    font-weight: 300!important;
-    margin-top: 11px!important;
-    text-transform: unset;
+    
+    color: #b8965a;
+  text-align: left;
+  font-family: "Jost-Regular", sans-serif;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 section#shopify-pc__banner p {
     color: #8c8278;
