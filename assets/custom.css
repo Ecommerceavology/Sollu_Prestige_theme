@@ -5493,8 +5493,8 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     width: 100% !important;
     max-width: 100% !important;
 }
-.header__secondary-nav span.custom-header-label.mobile-search-text {
-    font-size: 10px;
+.header__secondary-nav a span {
+    font-size: 10px !important;
 }
 }
 
