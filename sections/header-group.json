@@ -19,12 +19,25 @@
           "settings": {
             "text": "Announce something here"
           }
+        },
+        "message_PKgiFm": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
+        },
+        "message_YTRDYW": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
         }
       },
       "block_order": [
-        "message_abT9BH"
+        "message_abT9BH",
+        "message_PKgiFm",
+        "message_YTRDYW"
       ],
-      "disabled": true,
       "name": "t:sections.announcement_bar.name",
       "settings": {
         "color_scheme": "",
