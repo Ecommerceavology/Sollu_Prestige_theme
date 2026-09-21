@@ -91,7 +91,9 @@
       ],
       "name": "Custom Announcement Bar",
       "settings": {
-        "item_gap": 30,
+        "slide_direction": "left",
+        "change_time": 5,
+        "animation_speed": 200,
         "padding_vertical": 12,
         "bg_color": "#2a2420",
         "text_color": "#faf7f2"
