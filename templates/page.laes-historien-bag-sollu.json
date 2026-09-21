@@ -92,7 +92,7 @@
       ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
-        "custom_class": "",
+        "custom_class": "Sollu_story",
         "show_feature_list": false,
         "feature_1_text": "<p>Hurtig og venlig kundeservice</p>",
         "feature_1_icon": "check_circle",
