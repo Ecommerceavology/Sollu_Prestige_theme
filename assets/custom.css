@@ -3102,6 +3102,19 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding: 120px 0;
     background: #faf7f2!important;
 }
+.Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+    width: 100%!important;
+    max-width: 1200px!important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
