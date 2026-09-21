@@ -3112,6 +3112,11 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     align-items: center;
     justify-content: center;
 }
+.Sollu_story .prose.text-center.sm\:text-start {
+    width: 100%;
+    max-width: 45%;
+    padding: 0 !important;
+}
 
 
 
