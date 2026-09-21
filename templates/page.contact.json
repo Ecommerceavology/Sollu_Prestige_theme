@@ -68,6 +68,14 @@
     "contact-form": {
       "type": "contact",
       "blocks": {
+        "text_ERqrpE": {
+          "type": "text",
+          "settings": {
+            "title": "Ordrenummer(valgfrit)",
+            "use_long_text": false,
+            "required": false
+          }
+        },
         "right_richtext_KpeGzJ": {
           "type": "right_richtext",
           "settings": {
@@ -90,6 +98,7 @@
         }
       },
       "block_order": [
+        "text_ERqrpE",
         "right_richtext_KpeGzJ",
         "dropdown_6Pzcwp",
         "richtext_mHhEMR"
