@@ -1602,7 +1602,7 @@ span.custom-product-card__price-current {
     color: #2a2420 !IMPORTANT;
 
     
-    font-size: 12px !important;
+    font-size: 15px !important;
     line-height: 16px !important;
     letter-spacing: 0.6px !important;
     font-weight: 700 !important;
@@ -5237,7 +5237,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .Contact_info_sec p.h3.multi-column__heading {
-        font-size: 11px !important;
+        font-size: 13px !important;
         line-height: 15px !important;
         letter-spacing: 0.5px !important;
     }
@@ -7237,7 +7237,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .Contact_info_sec p.h3.multi-column__heading {
-        font-size: 10px !important;
+        font-size: 11px !important;
         line-height: 14px !important;
         letter-spacing: 0.4px !important;
     }
