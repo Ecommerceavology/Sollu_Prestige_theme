@@ -68,14 +68,6 @@
     "contact-form": {
       "type": "contact",
       "blocks": {
-        "text_jWPM3M": {
-          "type": "text",
-          "settings": {
-            "title": "“Vi bruger dine oplysninger til at besvare din henvendelse. Læsmere i vores privatlivspolitik.”",
-            "use_long_text": true,
-            "required": false
-          }
-        },
         "dropdown_6Pzcwp": {
           "type": "dropdown",
           "settings": {
@@ -83,11 +75,17 @@
             "values": "Min ordre,Fortrydelse eller retur,Reklamation , Andet",
             "required": true
           }
+        },
+        "richtext_mHhEMR": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Add your text here.</p>"
+          }
         }
       },
       "block_order": [
-        "text_jWPM3M",
-        "dropdown_6Pzcwp"
+        "dropdown_6Pzcwp",
+        "richtext_mHhEMR"
       ],
       "settings": {
         "custom_class": "cst_contact_sec",

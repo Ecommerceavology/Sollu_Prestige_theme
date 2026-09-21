@@ -1,4 +1,3 @@
-```liquid
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
 <style>
@@ -73,21 +72,22 @@
     border-color: {{ section.settings.input_border_color }};
   }
 
-  /* TEXT EDITOR BLOCK */
+  /* TEXT EDITOR / PRIVACY TEXT */
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor {
     width: 100%;
+    margin-top: 14px;
     color: {{ section.settings.form_description_color }};
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor p {
-    margin: 0 0 10px;
+    margin: 0;
   }
 
-  #shopify-section-{{ section.id }} .contact-designer__text-editor p:last-child {
-    margin-bottom: 0;
+  #shopify-section-{{ section.id }} .contact-designer__text-editor p + p {
+    margin-top: 8px;
   }
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor strong {
@@ -103,21 +103,25 @@
     text-decoration: underline;
   }
 
+  #shopify-section-{{ section.id }} .contact-designer__text-editor a:hover {
+    text-decoration: none;
+  }
+
   #shopify-section-{{ section.id }} .contact-designer__text-editor ul,
   #shopify-section-{{ section.id }} .contact-designer__text-editor ol {
-    margin: 10px 0;
+    margin: 8px 0;
     padding-left: 20px;
   }
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor li {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor h1,
   #shopify-section-{{ section.id }} .contact-designer__text-editor h2,
   #shopify-section-{{ section.id }} .contact-designer__text-editor h3,
   #shopify-section-{{ section.id }} .contact-designer__text-editor h4 {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     color: {{ section.settings.form_heading_color }};
   }
 
@@ -299,7 +303,7 @@
     }
 
     #shopify-section-{{ section.id }} .contact-designer__text-editor {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 </style>
@@ -314,6 +318,7 @@
 
     <div class="contact-designer__grid">
 
+
       {%- comment -%}
         LEFT SIDE - FORM
       {%- endcomment -%}
@@ -323,15 +328,20 @@
         <div class="contact-designer__form-header">
 
           {%- if section.settings.form_heading != blank -%}
+
             <h2 class="contact-designer__form-heading">
               {{ section.settings.form_heading }}
             </h2>
+
           {%- endif -%}
 
+
           {%- if section.settings.form_description != blank -%}
+
             <div class="contact-designer__form-description">
               {{ section.settings.form_description }}
             </div>
+
           {%- endif -%}
 
         </div>
@@ -414,31 +424,39 @@
             </div>
 
 
+            {%- comment -%}
+              CUSTOM FORM BLOCKS
+
+              Only Text field and Dropdown blocks are rendered here.
+              Text editor blocks are intentionally rendered after
+              the submit button.
+            {%- endcomment -%}
+
             {%- for block in section.blocks -%}
 
-              {%- assign field_title = block.settings.title -%}
+              {%- if block.type == 'text' -%}
 
-              {%- if field_title == blank -%}
+                {%- assign field_title = block.settings.title -%}
 
-                {%- capture field_title -%}
-                  Custom field {% increment custom_field %}
+                {%- if field_title == blank -%}
+
+                  {%- capture field_title -%}
+                    Custom field {% increment custom_field %}
+                  {%- endcapture -%}
+
+                {%- endif -%}
+
+
+                {%- capture name -%}
+                  contact[{{ field_title | escape }}]
                 {%- endcapture -%}
 
-              {%- endif -%}
-
-
-              {%- capture name -%}
-                contact[{{ field_title | escape }}]
-              {%- endcapture -%}
-
-
-              {%- if block.type == 'text' -%}
 
                 {%- if block.settings.use_long_text -%}
 
                   {%- render 'input',
                     name: name,
-                    label: block.settings.title,
+                    label: field_title,
                     required: block.settings.required,
                     multiline: 4
                   -%}
@@ -448,7 +466,7 @@
                   {%- render 'input',
                     type: 'text',
                     name: name,
-                    label: block.settings.title,
+                    label: field_title,
                     required: block.settings.required
                   -%}
 
@@ -459,24 +477,19 @@
 
                 {%- assign values = block.settings.values | split: ',' -%}
 
+
+                {%- capture dropdown_name -%}
+                  contact[{{ block.settings.title | escape }}]
+                {%- endcapture -%}
+
+
                 {%- render 'select',
                   option_values: values,
                   show_empty_value: true,
-                  name: name,
+                  name: dropdown_name,
                   label: block.settings.title,
                   required: block.settings.required
                 -%}
-
-
-              {%- elsif block.type == 'richtext' -%}
-
-                {%- if block.settings.content != blank -%}
-
-                  <div class="contact-designer__text-editor">
-                    {{ block.settings.content }}
-                  </div>
-
-                {%- endif -%}
 
               {%- endif -%}
 
@@ -500,6 +513,10 @@
           </div>
 
 
+          {%- comment -%}
+            SUBMIT BUTTON
+          {%- endcomment -%}
+
           <div class="contact-designer__submit">
 
             {%- assign button_content = section.settings.button_text -%}
@@ -508,12 +525,37 @@
               {%- assign button_content = 'contact.form.submit' | t -%}
             {%- endif -%}
 
+
             {%- render 'button',
               content: button_content,
               type: 'submit'
             -%}
 
           </div>
+
+
+          {%- comment -%}
+            TEXT EDITOR BLOCKS
+
+            These blocks are always displayed BELOW the submit button.
+            They are NOT part of the form fields.
+          {%- endcomment -%}
+
+          {%- for block in section.blocks -%}
+
+            {%- if block.type == 'richtext' and block.settings.content != blank -%}
+
+              <div
+                class="contact-designer__text-editor"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.content }}
+              </div>
+
+            {%- endif -%}
+
+          {%- endfor -%}
+
 
         {%- endform -%}
 
@@ -549,6 +591,7 @@
 
 
         <div class="contact-designer__items">
+
 
           {%- if section.settings.show_email -%}
 
@@ -726,6 +769,7 @@
             </div>
 
           {%- endif -%}
+
 
         </div>
 
@@ -1294,7 +1338,7 @@
           "type": "richtext",
           "id": "content",
           "label": "Content",
-          "default": "<p>Add your text here.</p>"
+          "default": "<p>Vi bruger dine oplysninger til at besvare din henvendelse. Læs mere i vores privatlivspolitik.</p>"
         }
       ]
     }
@@ -1310,4 +1354,3 @@
   ]
 }
 {% endschema %}
-```
