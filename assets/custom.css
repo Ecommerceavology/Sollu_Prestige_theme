@@ -3011,6 +3011,10 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     pointer-events: none;
 }
 
+.contac_hero_sec li.image-with-text-feature-list__item {
+    align-items: center !important;
+}
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
