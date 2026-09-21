@@ -154,7 +154,7 @@
           "settings": {
             "title": "30 dages fortrydelsesret",
             "heading_tag": "h3",
-            "content": "<p>Du har 30 dages fortrydelsesret fra den dag, du modtager din vare, og du må gerne afprøve produktet. Skriv til os på kontakt@sollu.dk med dit ordrenummer. Ved fortrydelse betaler du selv returfragten. Læs mere under Retur & Fortrydelse.”<br/><br/></p>",
+            "content": "<p>Du har 30 dages fortrydelsesret fra den dag, du modtager din vare, og du må gerne afprøve produktet. Skriv til os på <a href=\"mailto:kontakt@sollu.dk\" title=\"mailto:kontakt@sollu.dk\">kontakt@sollu.dk</a> med dit ordrenummer. Ved fortrydelse betaler du selv returfragten. Læs mere under Retur & Fortrydelse.”<br/><br/></p>",
             "link_url": "",
             "link_text": ""
           }
