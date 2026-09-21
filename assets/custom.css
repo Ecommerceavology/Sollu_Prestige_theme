@@ -3080,6 +3080,12 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     scale: none !important;
 }
 
+.cst_contact_sec .contact-designer__text-editor p {
+    color: #8c8278!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+    font-weight: 400!important;
+}
 
 
 /* //responsive  */
