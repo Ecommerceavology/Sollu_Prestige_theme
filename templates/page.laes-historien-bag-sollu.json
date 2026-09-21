@@ -61,10 +61,58 @@
         "overlay_color": "#000000",
         "overlay_opacity": 20
       }
+    },
+    "image_with_text_gg3XD4": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_zTXfJM": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_4fTE9d": {
+          "type": "heading",
+          "settings": {
+            "text": "Image with text",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_YiEykK": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Sollu er stiftet ud af beundring for de rutiner, mange kvinder passer hver eneste dag. Om morgenen for at gøre sig klar til arbejdsdagen. Når de kommer hjem. Og inden sengetid. Rutiner for både krop og hud, for det man spiser og drikker, og for træningen derhjemme.</p><p>Jeg har set det tæt på hos min hustru. Sollu er skabt til hende og til alle, der har egne rutiner for at passe på sig selv.</p><p>Vi er nye og bygger Sollu ét produkt ad gangen. Vi lover ikke mere, end vi kan holde. Vi udvælger produkter med omtanke, så dine rutiner kan give dig de resultater, du går efter.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_zTXfJM",
+        "heading_4fTE9d",
+        "richtext_YiEykK"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "custom_class": "",
+        "show_feature_list": false,
+        "feature_1_text": "<p>Hurtig og venlig kundeservice</p>",
+        "feature_1_icon": "check_circle",
+        "feature_2_text": "<p>Ekspertrådgivning om produkter</p>",
+        "feature_2_icon": "check_circle",
+        "feature_3_text": "<p>Vi svarer inden for 24 timer på hverdage</p>",
+        "feature_3_icon": "check_circle",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/Sollu_Products_2.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
     }
   },
   "order": [
     "main",
-    "image_with_text_overlay_ihHBAP"
+    "image_with_text_overlay_ihHBAP",
+    "image_with_text_gg3XD4"
   ]
 }
