@@ -3015,7 +3015,10 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     align-items: center !important;
 }
 
-
+.contact-designer__right-text-editor {
+    padding-top: 20px;
+    border-top: 1px solid #8c8278;
+}
 
 .cst_contact_sec .contact-designer__right-text-editor p {
     font-size: 17px;
