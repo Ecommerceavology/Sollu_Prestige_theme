@@ -3027,6 +3027,19 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     line-height: 30px!important;
     font-weight: 400!important;
 }
+
+.returned_and_cancel {
+    background: #faf7f2!important;
+    padding: 48px 0!important;
+    border-top: 1px solid #e8dfd8!important;
+}
+
+
+
+
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
