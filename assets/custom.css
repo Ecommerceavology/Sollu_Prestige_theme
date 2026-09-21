@@ -3023,6 +3023,13 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 400;
 }
 
+.contact-designer__right-text-editor p {
+    font-size: 17px;
+    color: #8c8278!important;
+    text-align: left!important;
+    line-height: 20px!important;
+    font-weight: 400!important;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
