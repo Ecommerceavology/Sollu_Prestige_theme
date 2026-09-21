@@ -3015,15 +3015,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     align-items: center !important;
 }
 
-.cst_contact_sec .contact-designer__text-editor p {
-    color: #8c8278;
-    text-align: left;
-    font-size: 15px;
-    line-height: 25px;
-    font-weight: 400;
-}
 
-.contact-designer__right-text-editor p {
+
+.cst_contact_sec .contact-designer__right-text-editor p {
     font-size: 17px;
     color: #8c8278!important;
     text-align: left!important;
