@@ -3177,7 +3177,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .contact-designer__field-help {
     font-style: italic;
 }
-span.custom-announcement-bar__item:first-child::before {
+.custom-announcement-bar__item::before {
     content: "";
     display: inline-block;
     width: 20px;
