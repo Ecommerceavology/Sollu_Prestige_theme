@@ -3177,6 +3177,15 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .contact-designer__field-help {
     font-style: italic;
 }
+span.custom-announcement-bar__item:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+    background: url("https://flagcdn.com/w40/dk.png") center / cover no-repeat;
+    vertical-align: middle;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
