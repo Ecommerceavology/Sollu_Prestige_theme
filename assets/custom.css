@@ -1588,10 +1588,10 @@ span.custom-product-card__price-current {
     border-top: 1px solid #e8dfd8 !important;
 }
 .Contact_info_sec .container {
-    width: 100%;
+        width: 100%!important;
     max-width: 1200px!important;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0 auto!important;
+    padding: 0 32px!important;
 }
 .Contact_info_sec .multi-column__item.snap-center.group {
     display: flex;
