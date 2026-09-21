@@ -130,6 +130,7 @@
         "image_with_text_MTkne8",
         "image_with_text_87cAUd"
       ],
+      "disabled": true,
       "name": "About section",
       "settings": {
         "custom_class": "about_sec",
