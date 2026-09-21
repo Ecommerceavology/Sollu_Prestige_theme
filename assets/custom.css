@@ -3128,7 +3128,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     box-shadow: 0 8px 10px -6px #0000001a,0 20px 25px -5px #0000001a;
     max-width: 47%;
 }
-
+.Sollu_story picture img{
+    border-radius: 8px;
+}
 
 
 
