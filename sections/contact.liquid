@@ -72,7 +72,7 @@
     border-color: {{ section.settings.input_border_color }};
   }
 
-  /* TEXT EDITOR / PRIVACY TEXT */
+  /* LEFT TEXT EDITOR */
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor {
     width: 100%;
@@ -266,6 +266,58 @@
     margin: 0;
   }
 
+  /* RIGHT SIDE TEXT EDITOR */
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor {
+    margin-top: 35px;
+    color: {{ section.settings.info_description_color }};
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor p + p {
+    margin-top: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor strong {
+    font-weight: 600;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor em {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor a:hover {
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor ul,
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor ol {
+    margin: 8px 0;
+    padding-left: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor li {
+    margin-bottom: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor h1,
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor h2,
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor h3,
+  #shopify-section-{{ section.id }} .contact-designer__right-text-editor h4 {
+    margin: 0 0 8px;
+    color: {{ section.settings.info_heading_color }};
+  }
+
   /* MESSAGES */
 
   #shopify-section-{{ section.id }} .contact-designer__messages {
@@ -303,6 +355,11 @@
     }
 
     #shopify-section-{{ section.id }} .contact-designer__text-editor {
+      font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__right-text-editor {
+      margin-top: 25px;
       font-size: 12px;
     }
   }
@@ -427,9 +484,10 @@
             {%- comment -%}
               CUSTOM FORM BLOCKS
 
-              Only Text field and Dropdown blocks are rendered here.
-              Text editor blocks are intentionally rendered after
-              the submit button.
+              Text fields and dropdowns are displayed inside
+              the form fields area.
+
+              Richtext blocks are handled separately below.
             {%- endcomment -%}
 
             {%- for block in section.blocks -%}
@@ -535,10 +593,9 @@
 
 
           {%- comment -%}
-            TEXT EDITOR BLOCKS
+            LEFT SIDE TEXT EDITOR
 
-            These blocks are always displayed BELOW the submit button.
-            They are NOT part of the form fields.
+            This is displayed directly below the submit button.
           {%- endcomment -%}
 
           {%- for block in section.blocks -%}
@@ -772,6 +829,28 @@
 
 
         </div>
+
+
+        {%- comment -%}
+          RIGHT SIDE TEXT EDITOR
+
+          This is displayed below Email, Phone and Address.
+        {%- endcomment -%}
+
+        {%- for block in section.blocks -%}
+
+          {%- if block.type == 'right_richtext' and block.settings.content != blank -%}
+
+            <div
+              class="contact-designer__right-text-editor"
+              {{ block.shopify_attributes }}
+            >
+              {{ block.settings.content }}
+            </div>
+
+          {%- endif -%}
+
+        {%- endfor -%}
 
       </div>
 
@@ -1339,6 +1418,19 @@
           "id": "content",
           "label": "Content",
           "default": "<p>Vi bruger dine oplysninger til at besvare din henvendelse. Læs mere i vores privatlivspolitik.</p>"
+        }
+      ]
+    },
+
+    {
+      "type": "right_richtext",
+      "name": "Right side text editor",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Sollu har ingen fysisk butik. Kontakt os, før du sender en vare retur.</p>"
         }
       ]
     }
