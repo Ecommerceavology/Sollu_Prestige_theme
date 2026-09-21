@@ -48,7 +48,7 @@
       ],
       "name": "Hero section",
       "settings": {
-        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec sollu_story_banner",
         "color_scheme": "scheme-3",
         "image_size": "sm",
         "image": "shopify://shop_images/SolluEase_top_49fe84c3-d93a-41d0-9049-c1358c6c27c8.jpg",
