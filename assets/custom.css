@@ -3110,7 +3110,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding-right: 32px!important;
     display: flex!important;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
 }
 .Sollu_story .prose.text-center.sm\:text-start {

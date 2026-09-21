@@ -83,12 +83,19 @@
           "settings": {
             "content": "<p>Sollu er stiftet ud af beundring for de rutiner, mange kvinder passer hver eneste dag. Om morgenen for at gøre sig klar til arbejdsdagen. Når de kommer hjem. Og inden sengetid. Rutiner for både krop og hud, for det man spiser og drikker, og for træningen derhjemme.</p><p>Jeg har set det tæt på hos min hustru. Sollu er skabt til hende og til alle, der har egne rutiner for at passe på sig selv.</p><p>Vi er nye og bygger Sollu ét produkt ad gangen. Vi lover ikke mere, end vi kan holde. Vi udvælger produkter med omtanke, så dine rutiner kan give dig de resultater, du går efter.<br/><br/></p>"
           }
+        },
+        "richtext_PAJf6L": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Kasper Joseph Brand, stifter af Sollu</p>"
+          }
         }
       },
       "block_order": [
         "subheading_zTXfJM",
         "heading_4fTE9d",
-        "richtext_YiEykK"
+        "richtext_YiEykK",
+        "richtext_PAJf6L"
       ],
       "name": "t:sections.image_with_text.presets.image_with_text.name",
       "settings": {
