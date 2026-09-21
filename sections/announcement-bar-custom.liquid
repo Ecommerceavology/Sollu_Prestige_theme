@@ -27,9 +27,6 @@
   .custom-announcement-bar__slider {
     width: 100%;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 18px;
   }
 
@@ -42,20 +39,26 @@
     line-height: 1.3;
     text-align: center;
     white-space: nowrap;
-    margin: 0;
+
     position: absolute;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      transform 0.6s ease,
-      opacity 0.6s ease;
+    left: 50%;
+
     width: 100%;
     box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    transition:
+      transform {{ section.settings.animation_speed }}ms ease,
+      opacity {{ section.settings.animation_speed }}ms ease,
+      visibility {{ section.settings.animation_speed }}ms ease;
   }
 
   .custom-announcement-bar__item.is-active {
@@ -64,29 +67,12 @@
     transform: translate(-50%, -50%);
   }
 
-  /* LEFT DIRECTION */
-  .custom-announcement-bar__item.is-enter-left {
-    transform: translate(calc(-50% + 100%), -50%);
-  }
-
-  .custom-announcement-bar__item.is-exit-left {
-    transform: translate(calc(-50% - 100%), -50%);
-  }
-
-  /* RIGHT DIRECTION */
-  .custom-announcement-bar__item.is-enter-right {
-    transform: translate(calc(-50% - 100%), -50%);
-  }
-
-  .custom-announcement-bar__item.is-exit-right {
-    transform: translate(calc(-50% + 100%), -50%);
-  }
-
   /* =========================
      TABLET
      ========================= */
 
   @media screen and (max-width: 989px) {
+
     .custom-announcement-bar {
       padding-left: 14px;
       padding-right: 14px;
@@ -96,6 +82,7 @@
       font-size: 10px;
       letter-spacing: 1.5px;
     }
+
   }
 
   /* =========================
@@ -103,6 +90,7 @@
      ========================= */
 
   @media screen and (max-width: 749px) {
+
     .custom-announcement-bar {
       padding-left: 12px;
       padding-right: 12px;
@@ -116,6 +104,7 @@
       line-height: 1.4;
       white-space: normal;
     }
+
   }
 
   /* =========================
@@ -123,6 +112,7 @@
      ========================= */
 
   @media screen and (max-width: 480px) {
+
     .custom-announcement-bar {
       padding-left: 10px;
       padding-right: 10px;
@@ -134,14 +124,16 @@
       font-size: 8px;
       letter-spacing: 1px;
     }
+
   }
 {%- endstyle -%}
 
 
 <div
-  class="custom-announcement-bar"
   id="CustomAnnouncementBar-{{ section.id }}"
-  data-speed="{{ section.settings.slide_speed }}"
+  class="custom-announcement-bar"
+  data-change-time="{{ section.settings.change_time }}"
+  data-animation-speed="{{ section.settings.animation_speed }}"
   data-direction="{{ section.settings.slide_direction }}"
 >
 
@@ -169,350 +161,372 @@
 
 
 <script>
-  (function () {
+(function() {
 
-    function initAnnouncementBar(sectionId) {
+  function initAnnouncementBar() {
 
-      const bar = document.getElementById('CustomAnnouncementBar-' + sectionId);
+    const bar = document.getElementById(
+      'CustomAnnouncementBar-{{ section.id }}'
+    );
 
-      if (!bar) return;
+    if (!bar) return;
 
-      const items = Array.from(
-        bar.querySelectorAll('.custom-announcement-bar__item')
+    const slider = bar.querySelector(
+      '.custom-announcement-bar__slider'
+    );
+
+    const items = Array.from(
+      bar.querySelectorAll(
+        '.custom-announcement-bar__item'
+      )
+    );
+
+    if (!slider || items.length <= 1) return;
+
+
+    /* =========================================
+       SETTINGS
+       ========================================= */
+
+    const changeTime =
+      parseInt(
+        bar.dataset.changeTime,
+        10
+      ) || 5;
+
+    const animationSpeed =
+      parseInt(
+        bar.dataset.animationSpeed,
+        10
+      ) || 600;
+
+    const direction =
+      bar.dataset.direction || 'left';
+
+
+    /* =========================================
+       CLEAN PREVIOUS INITIALIZATION
+       ========================================= */
+
+    if (bar._announcementTimer) {
+      clearInterval(
+        bar._announcementTimer
       );
+    }
 
-      if (items.length <= 1) return;
 
-      const slider = bar.querySelector('.custom-announcement-bar__slider');
+    /* =========================================
+       SET SLIDER HEIGHT
+       ========================================= */
 
-      const speed = parseInt(bar.dataset.speed, 10) || 4;
-      const direction = bar.dataset.direction || 'left';
+    function setSliderHeight() {
 
-      let currentIndex = 0;
-      let timer = null;
-      let isAnimating = false;
+      let maxHeight = 0;
 
-      /*
-       * Set slider height based on the tallest item.
-       * This keeps the announcement bar stable on mobile.
-       */
-      function setSliderHeight() {
+      items.forEach(function(item) {
 
-        let maxHeight = 0;
+        const height = item.scrollHeight;
 
-        items.forEach(function (item) {
-
-          const oldVisibility = item.style.visibility;
-          const oldPosition = item.style.position;
-          const oldOpacity = item.style.opacity;
-
-          item.style.visibility = 'visible';
-          item.style.position = 'absolute';
-          item.style.opacity = '1';
-
-          maxHeight = Math.max(
-            maxHeight,
-            item.offsetHeight
-          );
-
-          item.style.visibility = oldVisibility;
-          item.style.position = oldPosition;
-          item.style.opacity = oldOpacity;
-
-        });
-
-        slider.style.height = maxHeight + 'px';
-      }
-
-
-      function clearClasses(item) {
-
-        item.classList.remove(
-          'is-active',
-          'is-enter-left',
-          'is-exit-left',
-          'is-enter-right',
-          'is-exit-right'
-        );
-
-      }
-
-
-      function showNext() {
-
-        if (isAnimating) return;
-
-        isAnimating = true;
-
-        const currentItem = items[currentIndex];
-
-        let nextIndex;
-
-        if (direction === 'right') {
-
-          nextIndex =
-            currentIndex - 1;
-
-          if (nextIndex < 0) {
-            nextIndex = items.length - 1;
-          }
-
-        } else {
-
-          nextIndex =
-            currentIndex + 1;
-
-          if (nextIndex >= items.length) {
-            nextIndex = 0;
-          }
-
-        }
-
-        const nextItem = items[nextIndex];
-
-        /*
-         * Reset classes
-         */
-
-        items.forEach(function (item, index) {
-
-          if (
-            index !== currentIndex &&
-            index !== nextIndex
-          ) {
-            clearClasses(item);
-          }
-
-        });
-
-
-        /*
-         * Prepare the next slide
-         */
-
-        clearClasses(nextItem);
-
-        if (direction === 'left') {
-
-          nextItem.classList.add(
-            'is-enter-left'
-          );
-
-        } else {
-
-          nextItem.classList.add(
-            'is-enter-right'
-          );
-
-        }
-
-
-        /*
-         * Force browser reflow
-         * so the animation starts correctly.
-         */
-
-        void nextItem.offsetWidth;
-
-
-        /*
-         * Move current item out
-         */
-
-        if (direction === 'left') {
-
-          currentItem.classList.remove(
-            'is-active'
-          );
-
-          currentItem.classList.add(
-            'is-exit-left'
-          );
-
-        } else {
-
-          currentItem.classList.remove(
-            'is-active'
-          );
-
-          currentItem.classList.add(
-            'is-exit-right'
-          );
-
-        }
-
-
-        /*
-         * Move next item into view
-         */
-
-        nextItem.classList.add(
-          'is-active'
-        );
-
-        nextItem.classList.remove(
-          'is-enter-left',
-          'is-enter-right'
-        );
-
-
-        currentIndex = nextIndex;
-
-
-        /*
-         * Wait for CSS transition
-         */
-
-        setTimeout(function () {
-
-          clearClasses(currentItem);
-
-          currentItem.style.visibility = 'hidden';
-          currentItem.style.opacity = '0';
-
-          clearClasses(nextItem);
-
-          nextItem.classList.add(
-            'is-active'
-          );
-
-          isAnimating = false;
-
-        }, 650);
-
-      }
-
-
-      function startAutoplay() {
-
-        stopAutoplay();
-
-        timer = setInterval(
-          showNext,
-          speed * 1000
-        );
-
-      }
-
-
-      function stopAutoplay() {
-
-        if (timer) {
-
-          clearInterval(timer);
-
-          timer = null;
-
-        }
-
-      }
-
-
-      /*
-       * Initialize items
-       */
-
-      items.forEach(function (item, index) {
-
-        clearClasses(item);
-
-        if (index === 0) {
-
-          item.classList.add(
-            'is-active'
-          );
-
-          item.style.visibility = 'visible';
-          item.style.opacity = '1';
-
-        } else {
-
-          item.style.visibility = 'hidden';
-          item.style.opacity = '0';
-
+        if (height > maxHeight) {
+          maxHeight = height;
         }
 
       });
 
-
-      setSliderHeight();
-
-      startAutoplay();
-
-
-      /*
-       * Recalculate height on resize
-       */
-
-      let resizeTimer;
-
-      window.addEventListener(
-        'resize',
-        function () {
-
-          clearTimeout(resizeTimer);
-
-          resizeTimer = setTimeout(
-            setSliderHeight,
-            150
-          );
-
-        }
-      );
-
-
-      /*
-       * Pause while browser tab is hidden
-       */
-
-      document.addEventListener(
-        'visibilitychange',
-        function () {
-
-          if (document.hidden) {
-
-            stopAutoplay();
-
-          } else {
-
-            startAutoplay();
-
-          }
-
-        }
-      );
+      slider.style.height =
+        Math.max(maxHeight, 18) + 'px';
 
     }
 
 
-    /*
-     * Shopify theme editor
-     */
+    /* =========================================
+       INITIAL STATE
+       ========================================= */
 
-    initAnnouncementBar(
-      '{{ section.id }}'
+    items.forEach(function(item, index) {
+
+      item.style.transition = 'none';
+
+      item.classList.remove(
+        'is-active'
+      );
+
+      item.style.opacity = '0';
+      item.style.visibility = 'hidden';
+      item.style.transform =
+        'translate(-50%, -50%)';
+
+    });
+
+
+    let currentIndex = 0;
+
+    const firstItem = items[0];
+
+    firstItem.style.transition = 'none';
+
+    firstItem.style.opacity = '1';
+
+    firstItem.style.visibility = 'visible';
+
+    firstItem.style.transform =
+      'translate(-50%, -50%)';
+
+    firstItem.classList.add(
+      'is-active'
     );
 
 
-    document.addEventListener(
-      'shopify:section:load',
-      function (event) {
+    /*
+     * Re-enable CSS transition
+     */
 
-        if (
-          event.detail.sectionId ===
-          '{{ section.id }}'
-        ) {
+    requestAnimationFrame(function() {
 
-          initAnnouncementBar(
-            '{{ section.id }}'
-          );
+      items.forEach(function(item) {
 
+        item.style.transition = '';
+
+      });
+
+    });
+
+
+    setSliderHeight();
+
+
+    /* =========================================
+       CHANGE SLIDE
+       ========================================= */
+
+    function changeSlide() {
+
+      const currentItem =
+        items[currentIndex];
+
+
+      let nextIndex;
+
+
+      if (direction === 'right') {
+
+        nextIndex =
+          currentIndex - 1;
+
+        if (nextIndex < 0) {
+          nextIndex =
+            items.length - 1;
         }
+
+      } else {
+
+        nextIndex =
+          currentIndex + 1;
+
+        if (nextIndex >= items.length) {
+          nextIndex = 0;
+        }
+
+      }
+
+
+      const nextItem =
+        items[nextIndex];
+
+
+      /*
+       * Disable transition temporarily
+       */
+
+      nextItem.style.transition =
+        'none';
+
+
+      /*
+       * Put next item outside viewport
+       */
+
+      if (direction === 'left') {
+
+        nextItem.style.transform =
+          'translate(50%, -50%)';
+
+      } else {
+
+        nextItem.style.transform =
+          'translate(-150%, -50%)';
+
+      }
+
+
+      nextItem.style.opacity = '0';
+
+      nextItem.style.visibility =
+        'visible';
+
+
+      nextItem.classList.add(
+        'is-active'
+      );
+
+
+      /*
+       * Force browser reflow
+       */
+
+      void nextItem.offsetWidth;
+
+
+      /*
+       * Enable animation
+       */
+
+      nextItem.style.transition =
+        'transform ' +
+        animationSpeed +
+        'ms ease, opacity ' +
+        animationSpeed +
+        'ms ease';
+
+
+      currentItem.style.transition =
+        'transform ' +
+        animationSpeed +
+        'ms ease, opacity ' +
+        animationSpeed +
+        'ms ease';
+
+
+      /*
+       * Animate current item out
+       */
+
+      if (direction === 'left') {
+
+        currentItem.style.transform =
+          'translate(-150%, -50%)';
+
+      } else {
+
+        currentItem.style.transform =
+          'translate(50%, -50%)';
+
+      }
+
+      currentItem.style.opacity = '0';
+
+
+      /*
+       * Animate next item in
+       */
+
+      nextItem.style.transform =
+        'translate(-50%, -50%)';
+
+      nextItem.style.opacity = '1';
+
+
+      /*
+       * Update current index
+       */
+
+      currentIndex =
+        nextIndex;
+
+
+      /*
+       * Clean old item after animation
+       */
+
+      setTimeout(function() {
+
+        currentItem.classList.remove(
+          'is-active'
+        );
+
+        currentItem.style.visibility =
+          'hidden';
+
+        currentItem.style.opacity =
+          '0';
+
+        currentItem.style.transform =
+          'translate(-50%, -50%)';
+
+        currentItem.style.transition =
+          '';
+
+      }, animationSpeed + 50);
+
+    }
+
+
+    /* =========================================
+       START AUTOMATIC CAROUSEL
+       ========================================= */
+
+    bar._announcementTimer =
+      setInterval(
+        changeSlide,
+        changeTime * 1000
+      );
+
+
+    /* =========================================
+       RESIZE
+       ========================================= */
+
+    let resizeTimer;
+
+    window.addEventListener(
+      'resize',
+      function() {
+
+        clearTimeout(
+          resizeTimer
+        );
+
+        resizeTimer =
+          setTimeout(
+            setSliderHeight,
+            150
+          );
 
       }
     );
 
-  })();
+  }
+
+
+  /*
+   * Start
+   */
+
+  initAnnouncementBar();
+
+
+  /*
+   * Shopify Theme Editor
+   */
+
+  document.addEventListener(
+    'shopify:section:load',
+    function(event) {
+
+      if (
+        event.detail.sectionId ===
+        '{{ section.id }}'
+      ) {
+
+        initAnnouncementBar();
+
+      }
+
+    }
+  );
+
+
+})();
 </script>
 
 
@@ -541,13 +555,26 @@
 
     {
       "type": "range",
-      "id": "slide_speed",
+      "id": "change_time",
       "min": 1,
       "max": 15,
       "step": 1,
       "unit": "sec",
-      "label": "Time Between Announcements",
-      "default": 4
+      "label": "Change Announcement After",
+      "info": "How many seconds each announcement stays visible before changing.",
+      "default": 5
+    },
+
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "min": 200,
+      "max": 1500,
+      "step": 100,
+      "unit": "ms",
+      "label": "Slide Animation Speed",
+      "info": "Controls how quickly the announcement slides.",
+      "default": 600
     },
 
     {
@@ -631,6 +658,5 @@
     }
 
   ]
-
 }
 {% endschema %}
