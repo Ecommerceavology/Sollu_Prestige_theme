@@ -3639,6 +3639,25 @@ x-header.header.Header_sec {
         padding-right: 28px !important;
     }
 
+     .Sollu_story {
+        padding: 100px 0;
+    }
+
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        max-width: 100% !important;
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+        gap: 40px;
+    }
+
+    .Sollu_story .prose.text-center.sm\:text-start {
+        max-width: 48%;
+    }
+
+    .Sollu_story picture {
+        max-width: 48%;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -3928,6 +3947,27 @@ x-header.header.Header_sec {
 
     .returned_and_cancel multi-column.multi-column.scroll-area.snap-x.bleed.md\:unbleed {
         gap: 35px;
+    }
+
+     .Sollu_story {
+        padding: 80px 0;
+    }
+
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        gap: 30px;
+    }
+
+    .Sollu_story .prose.text-center.sm\:text-start {
+        max-width: 50%;
+    }
+
+    .Sollu_story picture {
+        max-width: 50%;
+    }
+
+    .Sollu_story p {
+        font-size: 17px;
+        line-height: 27px;
     }
     
 }
@@ -4690,6 +4730,40 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Pro_content_tabs_sec .content-tabs::part(tab-list) {
         gap: 18px !important;
         overflow-x: auto !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .Sollu_story {
+        padding: 70px 0;
+    }
+
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        gap: 24px;
+    }
+
+    .Sollu_story .prose.text-center.sm\:text-start {
+        max-width: 52%;
+    }
+
+    .Sollu_story picture {
+        max-width: 48%;
+    }
+
+    .Sollu_story p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .sollu_story_banner .content-over-media::before {
+        background: linear-gradient(
+            90deg,
+            rgba(42, 36, 32, 0.9) 0%,
+            rgba(42, 36, 32, 0.58) 58%,
+            rgba(42, 36, 32, 0.12) 100%
+        ) !important;
     }
 }
 
@@ -5928,7 +6002,48 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 15px;
         line-height: 24px;
     }
+.Sollu_story {
+        padding: 60px 0;
+    }
 
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        display: flex !important;
+        flex-direction: column;
+        align-items: stretch;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        gap: 35px;
+    }
+
+    .Sollu_story .prose.text-center.sm\:text-start {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .Sollu_story picture {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .Sollu_story p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .Sollu_story .prose > div:nth-child(2) p {
+        font-size: 10px;
+        line-height: 18px;
+        letter-spacing: 1.2px;
+    }
+
+    .sollu_story_banner .content-over-media::before {
+        background: linear-gradient(
+            90deg,
+            rgba(42, 36, 32, 0.9) 0%,
+            rgba(42, 36, 32, 0.65) 65%,
+            rgba(42, 36, 32, 0.2) 100%
+        ) !important;
+    }
 
 }
 
@@ -6903,6 +7018,36 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 15px;
         line-height: 23px;
     }
+
+    .Sollu_story {
+        padding: 50px 0;
+    }
+
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        gap: 28px;
+    }
+
+    .Sollu_story p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .Sollu_story .prose > div:nth-child(2) p {
+        font-size: 10px;
+        line-height: 17px;
+        letter-spacing: 1px;
+    }
+
+    .sollu_story_banner .content-over-media::before {
+        background: linear-gradient(
+            90deg,
+            rgba(42, 36, 32, 0.92) 0%,
+            rgba(42, 36, 32, 0.7) 70%,
+            rgba(42, 36, 32, 0.3) 100%
+        ) !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -7824,6 +7969,21 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         min-height: 44px !important;
         font-size: 10px !important;
         letter-spacing: 1px !important;
+    }
+
+     .Sollu_story {
+        padding: 45px 0;
+    }
+
+    .Sollu_story image-with-text.image-with-text.image-with-text--reverse {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        gap: 24px;
+    }
+
+    .Sollu_story p {
+        font-size: 15px;
+        line-height: 24px;
     }
 }
 
