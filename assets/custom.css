@@ -3174,7 +3174,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     position: relative;
     z-index: 2;
 }
-
+.contact-designer__field-help {
+    font-style: italic;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
@@ -6025,6 +6027,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     width: 100%;
     order: unset !IMPORTANT;
 }
+
     .Sollu_story p {
         font-size: 16px;
         line-height: 26px;
