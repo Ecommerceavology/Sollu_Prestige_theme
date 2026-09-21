@@ -3076,6 +3076,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .returned_and_cancel .section-stack {
     gap: 40px !IMPORTANT;
 }
+.Contact_info_sec .multi-column__item.snap-center.group:hover img {
+    scale: none !important;
+}
 
 
 
