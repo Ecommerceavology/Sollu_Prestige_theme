@@ -68,6 +68,14 @@
     "contact-form": {
       "type": "contact",
       "blocks": {
+        "text_jWPM3M": {
+          "type": "text",
+          "settings": {
+            "title": "“Vi bruger dine oplysninger til at besvare din henvendelse. Læsmere i vores privatlivspolitik.”",
+            "use_long_text": true,
+            "required": false
+          }
+        },
         "dropdown_6Pzcwp": {
           "type": "dropdown",
           "settings": {
@@ -78,6 +86,7 @@
         }
       },
       "block_order": [
+        "text_jWPM3M",
         "dropdown_6Pzcwp"
       ],
       "settings": {

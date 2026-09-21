@@ -1,3 +1,4 @@
+```liquid
 {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
 
 <style>
@@ -72,6 +73,54 @@
     border-color: {{ section.settings.input_border_color }};
   }
 
+  /* TEXT EDITOR BLOCK */
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor {
+    width: 100%;
+    color: {{ section.settings.form_description_color }};
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor p {
+    margin: 0 0 10px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor p:last-child {
+    margin-bottom: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor strong {
+    font-weight: 600;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor em {
+    font-style: italic;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor ul,
+  #shopify-section-{{ section.id }} .contact-designer__text-editor ol {
+    margin: 10px 0;
+    padding-left: 20px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor li {
+    margin-bottom: 5px;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__text-editor h1,
+  #shopify-section-{{ section.id }} .contact-designer__text-editor h2,
+  #shopify-section-{{ section.id }} .contact-designer__text-editor h3,
+  #shopify-section-{{ section.id }} .contact-designer__text-editor h4 {
+    margin: 0 0 10px;
+    color: {{ section.settings.form_heading_color }};
+  }
+
   /* BUTTON */
 
   #shopify-section-{{ section.id }} .contact-designer__submit {
@@ -107,7 +156,6 @@
       line-height: 1;
     }
   {% endif %}
-
 
   /* CONTACT INFORMATION */
 
@@ -220,7 +268,6 @@
     margin-bottom: 20px;
   }
 
-
   /* MOBILE */
 
   @media screen and (max-width: 749px) {
@@ -250,6 +297,10 @@
       min-width: 0;
       width: 100%;
     }
+
+    #shopify-section-{{ section.id }} .contact-designer__text-editor {
+      font-size: 13px;
+    }
   }
 </style>
 
@@ -262,7 +313,6 @@
   <div class="contact-designer__inner">
 
     <div class="contact-designer__grid">
-
 
       {%- comment -%}
         LEFT SIDE - FORM
@@ -417,6 +467,17 @@
                   required: block.settings.required
                 -%}
 
+
+              {%- elsif block.type == 'richtext' -%}
+
+                {%- if block.settings.content != blank -%}
+
+                  <div class="contact-designer__text-editor">
+                    {{ block.settings.content }}
+                  </div>
+
+                {%- endif -%}
+
               {%- endif -%}
 
             {%- endfor -%}
@@ -488,7 +549,6 @@
 
 
         <div class="contact-designer__items">
-
 
           {%- if section.settings.show_email -%}
 
@@ -666,7 +726,6 @@
             </div>
 
           {%- endif -%}
-
 
         </div>
 
@@ -1225,6 +1284,19 @@
           "default": true
         }
       ]
+    },
+
+    {
+      "type": "richtext",
+      "name": "Text editor",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Add your text here.</p>"
+        }
+      ]
     }
 
   ],
@@ -1238,3 +1310,4 @@
   ]
 }
 {% endschema %}
+```
