@@ -24,20 +24,20 @@
         "subheading_Mjitx6": {
           "type": "subheading",
           "settings": {
-            "text": "KONTAKT OS"
+            "text": "Kontakt os"
           }
         },
         "heading_zwnryd": {
           "type": "heading",
           "settings": {
-            "text": "Vi er her forat hjælpe dig",
+            "text": "Vi hjælper dig gerne",
             "heading_tag": "h1"
           }
         },
         "richtext_WyJfKX": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Har du spørgsmål til vores produkter, din ordre eller noget helt tredje? Så tøv ikke med at kontakte os – vi hjælper dig gerne.</p>"
+            "content": "<p>Har du et spørgsmål om et produkt, din ordre eller din fortrydelsesret? Skriv til os, så vender vi tilbage inden for 1-2 hverdage.</p>"
           }
         }
       },
@@ -50,16 +50,12 @@
       "settings": {
         "custom_class": "contac_hero_sec",
         "show_feature_list": true,
-
-        "feature_1_text": "<p>Hurtig og venlig kundeservice</p>",
+        "feature_1_text": "<p>Hjælp til ordre, levering, fortrydelse og reklamation</p>",
         "feature_1_icon": "check_circle",
-
-        "feature_2_text": "<p>Ekspertrådgivning om produkter</p>",
+        "feature_2_text": "<p>Svar på spørgsmål om vores produkter</p>",
         "feature_2_icon": "check_circle",
-
-        "feature_3_text": "<p>Vi svarer inden for 24 timer på hverdage</p>",
+        "feature_3_text": "<p>Svar inden for 1-2 hverdage</p>",
         "feature_3_icon": "check_circle",
-
         "color_scheme": "",
         "separate_section_with_border": true,
         "image": "shopify://shop_images/9H2ydoQ92iIp_1OaSXNnVuYUN8IBwzTDO0sK8T1NKEg8e4wOWRUlQx41DgTamSNEHd0eDW_VxXNnKMp4-KJ4IwwMpxKz2mp36lKNzTiAObVIalzGxsymAi6fDmBkEMHBuhhYxwMy59-_W30E2qsHiJgC1LZrTh6x-nBI5snqnrJXThyVHOpxN2e.jpg",
@@ -69,7 +65,6 @@
         "remove_vertical_spacing": true
       }
     },
-
     "contact-form": {
       "type": "contact",
       "blocks": {
@@ -137,7 +132,6 @@
         "success_message": "Thanks for contacting us."
       }
     },
-
     "multi_column_gP8jYi": {
       "type": "multi-column",
       "blocks": {
