@@ -20,6 +20,12 @@
             "text": "Announce something here"
           }
         },
+        "message_Tjzjza": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
+        },
         "message_PKgiFm": {
           "type": "message",
           "settings": {
@@ -35,6 +41,7 @@
       },
       "block_order": [
         "message_abT9BH",
+        "message_Tjzjza",
         "message_PKgiFm",
         "message_YTRDYW"
       ],
