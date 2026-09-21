@@ -3033,6 +3033,13 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding: 48px 0!important;
     border-top: 1px solid #e8dfd8!important;
 }
+.returned_and_cancel .container {
+    width: 100%!important;
+    max-width: 1200px!important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+}
 
 
 
