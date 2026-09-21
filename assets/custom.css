@@ -3056,8 +3056,16 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 400;
     text-transform: unset !important;
     letter-spacing: 2px;
+    font-family: "Cormorant Garamond", serif !important;
 }
-
+.returned_and_cancel p {
+    color: #8c8278;
+    text-align: left;
+    
+    font-size: 16px;
+    line-height: 25.6px;
+    font-weight: 300;
+}
 
 
 
