@@ -68,6 +68,12 @@
     "contact-form": {
       "type": "contact",
       "blocks": {
+        "right_richtext_KpeGzJ": {
+          "type": "right_richtext",
+          "settings": {
+            "content": "<p>Sollu har ingen fysisk butik. Kontakt os, før du sender en vare retur.</p>"
+          }
+        },
         "dropdown_6Pzcwp": {
           "type": "dropdown",
           "settings": {
@@ -84,6 +90,7 @@
         }
       },
       "block_order": [
+        "right_richtext_KpeGzJ",
         "dropdown_6Pzcwp",
         "richtext_mHhEMR"
       ],
