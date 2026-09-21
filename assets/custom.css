@@ -3132,7 +3132,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .Sollu_story picture img{
     border-radius: 8px;
 }
-.prose.text-center.sm\:text-start > div:nth-child(2) p {
+.Sollu_story .prose > div:nth-child(2) p {
     color: #b8965a;
  
   font-size: 11px;
