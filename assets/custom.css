@@ -3015,6 +3015,14 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     align-items: center !important;
 }
 
+.contact-designer__text-editor p {
+    color: #8c8278;
+    text-align: left;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
