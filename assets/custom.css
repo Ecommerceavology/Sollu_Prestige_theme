@@ -5822,6 +5822,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .returned_and_cancel multi-column.multi-column.scroll-area.snap-x.bleed.md\:unbleed {
+        grid: unset !IMPORTANT;
         padding-top: 20px;
         grid-template-columns: 1fr !important;
         gap: 30px;
