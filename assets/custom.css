@@ -1627,7 +1627,7 @@ span.custom-product-card__price-current {
 .Contact_info_sec multi-column.multi-column {
      grid: none !important;
     display: grid!important;
-    grid-template-columns: repeat(4,1fr)!important;
+    grid-template-columns: repeat(2,1fr)!important;
     
 }
 
@@ -4294,9 +4294,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Contact_info_sec img {
         width: 23px !important;
     }
-     .Contact_info_sec multi-column.multi-column {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+
 
 
 
@@ -5845,9 +5843,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 15px;
         line-height: 24px;
     }
-     .Contact_info_sec multi-column.multi-column {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+
 
 }
 
