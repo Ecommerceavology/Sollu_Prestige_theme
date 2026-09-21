@@ -97,8 +97,8 @@
         "input_border_color": "#b9b1a9",
         "name_label": "Navn",
         "email_label": "E-mail",
-        "message_label": "Ordrenummer(valgfrit)",
-        "button_text": "SEND BESKED",
+        "message_label": "Besked",
+        "button_text": "Send besked",
         "show_button_arrow": true,
         "button_background": "#292624",
         "button_text_color": "#ffffff",
@@ -129,7 +129,7 @@
         "info_label_transform": "uppercase",
         "info_value_color": "#3b3734",
         "info_value_weight": "500",
-        "success_message": "Thanks for contacting us."
+        "success_message": "Tak for din besked. Vi vender tilbage inden\nfor 1-2 hverdage."
       }
     },
     "multi_column_gP8jYi": {
