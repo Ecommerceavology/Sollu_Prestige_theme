@@ -3132,13 +3132,16 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .Sollu_story picture img{
     border-radius: 8px;
 }
+.Sollu_story .prose > div:nth-child(2){
+    margin-top: 0 !IMPORTANT;
+}
 .Sollu_story .prose > div:nth-child(2) p {
     color: #b8965a;
  
   font-size: 11px;
   line-height: 20px;
   letter-spacing: 1.4px;
-  font-weight: 700;
+  font-weight: 700 !important;
   font-style: italic;
   text-transform: uppercase;
 
