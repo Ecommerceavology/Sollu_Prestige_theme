@@ -38,26 +38,33 @@
     "announcement_bar_custom_eKfeYc": {
       "type": "announcement-bar-custom",
       "blocks": {
+        "announcement_6f4YFc": {
+          "type": "announcement",
+          "settings": {
+            "text": "Dansk virksomhed"
+          }
+        },
         "announcement_xYHyyL": {
           "type": "announcement",
           "settings": {
-            "text": "Dansk kundeservice"
+            "text": "Fri fragt over 499,00 kr."
           }
         },
         "announcement_rzrTJ8": {
           "type": "announcement",
           "settings": {
-            "text": "Dansk kundeservice"
+            "text": "Levering 1-3 hverdage"
           }
         },
         "announcement_kH4EWQ": {
           "type": "announcement",
           "settings": {
-            "text": "Dansk kundeservice"
+            "text": "30 dages fortrydelsesret"
           }
         }
       },
       "block_order": [
+        "announcement_6f4YFc",
         "announcement_xYHyyL",
         "announcement_rzrTJ8",
         "announcement_kH4EWQ"
