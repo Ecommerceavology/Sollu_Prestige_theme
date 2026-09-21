@@ -3050,8 +3050,8 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     text-transform: unset !important;
 }
 .returned_and_cancel p.h3.multi-column__heading {
-    color: #2a2420;
-    font-size: 28px;
+    color: #2a2420 !important;
+    font-size: 28px !important;
     line-height: 33.6px;
     font-weight: 400;
     text-transform: unset !important;
