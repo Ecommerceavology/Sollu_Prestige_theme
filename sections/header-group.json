@@ -37,11 +37,33 @@
     },
     "announcement_bar_custom_eKfeYc": {
       "type": "announcement-bar-custom",
+      "blocks": {
+        "announcement_xYHyyL": {
+          "type": "announcement",
+          "settings": {
+            "text": "Dansk kundeservice"
+          }
+        },
+        "announcement_rzrTJ8": {
+          "type": "announcement",
+          "settings": {
+            "text": "Dansk kundeservice"
+          }
+        },
+        "announcement_kH4EWQ": {
+          "type": "announcement",
+          "settings": {
+            "text": "Dansk kundeservice"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_xYHyyL",
+        "announcement_rzrTJ8",
+        "announcement_kH4EWQ"
+      ],
       "name": "Custom Announcement Bar",
       "settings": {
-        "text_1": "Dansk virksomhed",
-        "text_2": "Fri fragt over 499,00 kr.",
-        "text_3": "Levering 1-3 hverdage",
         "item_gap": 30,
         "padding_vertical": 12,
         "bg_color": "#2a2420",
