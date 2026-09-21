@@ -3087,6 +3087,16 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 400!important;
 }
 
+.About_sollu_sec a.link {
+    color: #d4af7a;
+    text-align: left;
+    font-family: "Jost-Regular", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.68px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
