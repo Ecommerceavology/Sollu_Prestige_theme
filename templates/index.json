@@ -288,12 +288,6 @@
             "product": "julie"
           }
         },
-        "product_LRJUBy": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-aqua-flosser"
-          }
-        },
         "product_n7KqDc": {
           "type": "product",
           "settings": {
@@ -304,6 +298,12 @@
           "type": "product",
           "settings": {
             "product": "sollu-ease"
+          }
+        },
+        "product_LRJUBy": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-aqua-flosser"
           }
         },
         "product_BtWc4L": {
@@ -318,9 +318,9 @@
         "product_CKedX4",
         "product_7MytBj",
         "product_iMQiz7",
-        "product_LRJUBy",
         "product_n7KqDc",
         "product_VVkqdP",
+        "product_LRJUBy",
         "product_BtWc4L"
       ],
       "name": "All Products section",
