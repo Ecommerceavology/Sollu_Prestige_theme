@@ -1094,7 +1094,7 @@ section.cpf-section.custom-product-feature img.cpf-image {
     letter-spacing: .42px !important;
     font-weight: 400 !important;
     font-family: Cormorant Garamond, serif !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
     margin-bottom: 8px !important;
     transition: color .3s ease !important;
 }
@@ -1108,7 +1108,7 @@ section.cpf-section.custom-product-feature img.cpf-image {
     line-height: 20.8px !important;
     font-weight: 300 !important;
     letter-spacing: .6px !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
     margin-bottom: 10px !important;
 }
 span.custom-product-card__price-current {
@@ -1117,7 +1117,7 @@ span.custom-product-card__price-current {
     font-size: 14px !important;
     letter-spacing: .42px !important;
     font-weight: 400 !important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
 }
 .custom-product-card__content {
     align-items: start !important;
