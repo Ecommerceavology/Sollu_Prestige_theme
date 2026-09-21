@@ -3069,6 +3069,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 .returned_and_cancel multi-column.multi-column.scroll-area.snap-x.bleed.md\:unbleed {
     padding-top: 24px;
     border-top: 1px solid #c4c7c7;
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 50px;
 }
 
 
