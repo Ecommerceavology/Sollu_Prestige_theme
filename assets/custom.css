@@ -3148,6 +3148,25 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 }
 
 
+.sollu_story_banner .content-over-media {
+    position: relative;
+}
+
+.sollu_story_banner .content-over-media::after {
+    background: linear-gradient(
+        90deg,
+        rgba(42, 36, 32, 0.89) 0%,
+        rgba(42, 36, 32, 0.5) 51.99999809265137%,
+        rgba(42, 36, 32, 0.05) 81.99999928474426%
+    ) !important;
+}
+
+.sollu_story_banner .content-over-media .content {
+    position: relative;
+    z-index: 2;
+}
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
