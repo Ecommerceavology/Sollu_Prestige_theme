@@ -598,7 +598,7 @@
             "title": "Dine rutiner —dine resultater",
             "content": "<p>Selvplejeprodukter til hjemmet, fordi din krop fortjener at blive passet på. Vi udvælger produkter med omtanke, så dine rutiner kan give dig de resultater, du går efter. Ingen store løfter. Kun produkter der holder, og rutiner du faktisk kan følge.</p>",
             "link_text": "Læs historien bag Sollu",
-            "link_url": "",
+            "link_url": "shopify://pages/sollu-historien-bag-sollu",
             "link_style": "link"
           }
         }
