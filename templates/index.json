@@ -334,7 +334,7 @@
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
         "show_cta": true,
-        "cta_text": "SE ALLE 10 PRODUKTER",
+        "cta_text": "SE ALLE PRODUKTER",
         "cta_link": "shopify://collections"
       }
     },
