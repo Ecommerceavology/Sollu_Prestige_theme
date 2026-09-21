@@ -3073,6 +3073,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     grid-template-columns: 1fr 1fr !important;
     gap: 50px;
 }
+.returned_and_cancel .section-stack {
+    gap: 40px !IMPORTANT;
+}
 
 
 
