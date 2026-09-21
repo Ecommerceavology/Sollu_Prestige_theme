@@ -71,8 +71,8 @@
         "dropdown_6Pzcwp": {
           "type": "dropdown",
           "settings": {
-            "title": "Emne",
-            "values": "General inquiry, Support, Other",
+            "title": "Spørgsmål til et produkt",
+            "values": "Min ordre,Fortrydelse eller retur,Reklamation , Andet",
             "required": true
           }
         }
@@ -86,8 +86,8 @@
         "separate_section_with_border": true,
         "section_background": "#f7f5f2",
         "text_color": "#333333",
-        "form_heading": "SEND OS EN BESKED",
-        "form_description": "<p>Udfyld formularen, så vender vi tilbage til dig hurtigst muligt.</p>",
+        "form_heading": "Send os en besked",
+        "form_description": "<p>Udfyld formularen, så vender vi tilbage til dig inden for 1-2 hverdage.</p>",
         "title_weight": "400",
         "form_heading_color": "#2c2927",
         "form_description_color": "#8a827c",
@@ -97,7 +97,7 @@
         "input_border_color": "#b9b1a9",
         "name_label": "Navn",
         "email_label": "E-mail",
-        "message_label": "Besked",
+        "message_label": "Ordrenummer(valgfrit)",
         "button_text": "SEND BESKED",
         "show_button_arrow": true,
         "button_background": "#292624",
