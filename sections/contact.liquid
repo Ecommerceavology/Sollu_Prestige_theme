@@ -19,7 +19,9 @@
     align-items: start;
   }
 
-  /* FORM CARD */
+  /* =========================================================
+     FORM CARD
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__form-card {
     background: {{ section.settings.form_background }};
@@ -72,7 +74,35 @@
     border-color: {{ section.settings.input_border_color }};
   }
 
-  /* LEFT TEXT EDITOR */
+
+  /* =========================================================
+     FIELD HELP TEXT
+  ========================================================= */
+
+  #shopify-section-{{ section.id }} .contact-designer__field-help {
+    margin-top: -8px;
+    color: {{ section.settings.form_description_color }};
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__field-help p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__field-help a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  #shopify-section-{{ section.id }} .contact-designer__field-help strong {
+    font-weight: 600;
+  }
+
+
+  /* =========================================================
+     LEFT TEXT EDITOR
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__text-editor {
     width: 100%;
@@ -125,7 +155,10 @@
     color: {{ section.settings.form_heading_color }};
   }
 
-  /* BUTTON */
+
+  /* =========================================================
+     BUTTON
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__submit {
     margin-top: 20px;
@@ -161,7 +194,10 @@
     }
   {% endif %}
 
-  /* CONTACT INFORMATION */
+
+  /* =========================================================
+     CONTACT INFORMATION
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__info {
     padding-top: 30px;
@@ -204,7 +240,10 @@
     align-items: start;
   }
 
-  /* ICON */
+
+  /* =========================================================
+     ICON
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__icon {
     width: 40px;
@@ -226,7 +265,10 @@
     display: block;
   }
 
-  /* CONTACT TEXT */
+
+  /* =========================================================
+     CONTACT TEXT
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__item-label {
     margin: 0 0 5px;
@@ -266,10 +308,15 @@
     margin: 0;
   }
 
-  /* RIGHT SIDE TEXT EDITOR */
+
+  /* =========================================================
+     RIGHT SIDE TEXT EDITOR
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__right-text-editor {
     margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid {{ section.settings.info_description_color }};
     color: {{ section.settings.info_description_color }};
     font-size: 13px;
     line-height: 1.6;
@@ -318,13 +365,19 @@
     color: {{ section.settings.info_heading_color }};
   }
 
-  /* MESSAGES */
+
+  /* =========================================================
+     MESSAGES
+  ========================================================= */
 
   #shopify-section-{{ section.id }} .contact-designer__messages {
     margin-bottom: 20px;
   }
 
-  /* MOBILE */
+
+  /* =========================================================
+     MOBILE
+  ========================================================= */
 
   @media screen and (max-width: 749px) {
 
@@ -360,7 +413,12 @@
 
     #shopify-section-{{ section.id }} .contact-designer__right-text-editor {
       margin-top: 25px;
+      padding-top: 15px;
       font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .contact-designer__field-help {
+      font-size: 11px;
     }
   }
 </style>
@@ -377,7 +435,9 @@
 
 
       {%- comment -%}
-        LEFT SIDE - FORM
+        =====================================================
+        LEFT SIDE - CONTACT FORM
+        =====================================================
       {%- endcomment -%}
 
       <div class="contact-designer__form-card">
@@ -457,6 +517,10 @@
             {%- endif -%}
 
 
+            {%- comment -%}
+              NAME + EMAIL
+            {%- endcomment -%}
+
             <div class="fieldset-row">
 
               {%- render 'input',
@@ -482,12 +546,9 @@
 
 
             {%- comment -%}
+              =================================================
               CUSTOM FORM BLOCKS
-
-              Text fields and dropdowns are displayed inside
-              the form fields area.
-
-              Richtext blocks are handled separately below.
+              =================================================
             {%- endcomment -%}
 
             {%- for block in section.blocks -%}
@@ -505,7 +566,7 @@
                 {%- endif -%}
 
 
-                {%- capture name -%}
+                {%- capture field_name -%}
                   contact[{{ field_title | escape }}]
                 {%- endcapture -%}
 
@@ -513,7 +574,7 @@
                 {%- if block.settings.use_long_text -%}
 
                   {%- render 'input',
-                    name: name,
+                    name: field_name,
                     label: field_title,
                     required: block.settings.required,
                     multiline: 4
@@ -523,10 +584,22 @@
 
                   {%- render 'input',
                     type: 'text',
-                    name: name,
+                    name: field_name,
                     label: field_title,
                     required: block.settings.required
                   -%}
+
+                {%- endif -%}
+
+
+                {%- if block.settings.help_text != blank -%}
+
+                  <div
+                    class="contact-designer__field-help"
+                    {{ block.shopify_attributes }}
+                  >
+                    {{ block.settings.help_text }}
+                  </div>
 
                 {%- endif -%}
 
@@ -554,6 +627,10 @@
             {%- endfor -%}
 
 
+            {%- comment -%}
+              MESSAGE
+            {%- endcomment -%}
+
             {%- assign message_label = section.settings.message_label -%}
 
             {%- if message_label == blank -%}
@@ -572,7 +649,9 @@
 
 
           {%- comment -%}
+            =================================================
             SUBMIT BUTTON
+            =================================================
           {%- endcomment -%}
 
           <div class="contact-designer__submit">
@@ -593,9 +672,11 @@
 
 
           {%- comment -%}
-            LEFT SIDE TEXT EDITOR
+            =================================================
+            LEFT TEXT EDITOR
 
-            This is displayed directly below the submit button.
+            Appears below submit button.
+            =================================================
           {%- endcomment -%}
 
           {%- for block in section.blocks -%}
@@ -620,7 +701,9 @@
 
 
       {%- comment -%}
+        =====================================================
         RIGHT SIDE - CONTACT INFORMATION
+        =====================================================
       {%- endcomment -%}
 
       <div class="contact-designer__info">
@@ -650,6 +733,10 @@
         <div class="contact-designer__items">
 
 
+          {%- comment -%}
+            EMAIL
+          {%- endcomment -%}
+
           {%- if section.settings.show_email -%}
 
             <div class="contact-designer__item">
@@ -665,7 +752,14 @@
                   stroke-linejoin="round"
                   aria-hidden="true"
                 >
-                  <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="1.5"
+                  ></rect>
+
                   <path d="m3 7 9 6 9-6"></path>
                 </svg>
 
@@ -711,6 +805,10 @@
           {%- endif -%}
 
 
+          {%- comment -%}
+            PHONE
+          {%- endcomment -%}
+
           {%- if section.settings.show_phone -%}
 
             <div class="contact-designer__item">
@@ -747,7 +845,9 @@
 
                   <div class="contact-designer__item-value">
 
-                    <a href="tel:{{ section.settings.phone_number | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}">
+                    <a
+                      href="tel:{{ section.settings.phone_number | remove: ' ' | remove: '-' | remove: '(' | remove: ')' }}"
+                    >
                       {{ section.settings.phone_number }}
                     </a>
 
@@ -771,6 +871,10 @@
           {%- endif -%}
 
 
+          {%- comment -%}
+            ADDRESS
+          {%- endcomment -%}
+
           {%- if section.settings.show_address -%}
 
             <div class="contact-designer__item">
@@ -787,7 +891,12 @@
                   aria-hidden="true"
                 >
                   <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-                  <circle cx="12" cy="10" r="2.5"></circle>
+
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                  ></circle>
                 </svg>
 
               </div>
@@ -827,14 +936,15 @@
 
           {%- endif -%}
 
-
         </div>
 
 
         {%- comment -%}
+          =================================================
           RIGHT SIDE TEXT EDITOR
 
-          This is displayed below Email, Phone and Address.
+          Appears below Email / Phone / Address.
+          =================================================
         {%- endcomment -%}
 
         {%- for block in section.blocks -%}
@@ -916,6 +1026,7 @@
       "default": "#333333"
     },
 
+
     {
       "type": "header",
       "content": "Form"
@@ -932,7 +1043,7 @@
       "type": "richtext",
       "id": "form_description",
       "label": "Description",
-      "default": "<p>Udfyld formularen, så vender vi tilbage til dig hurtigst muligt.</p>"
+      "default": "<p>Udfyld formularen, så vender vi tilbage til dig inden for 1-2 hverdage.</p>"
     },
 
     {
@@ -1023,6 +1134,7 @@
       "default": "Besked"
     },
 
+
     {
       "type": "header",
       "content": "Button"
@@ -1081,6 +1193,7 @@
       "default": 0
     },
 
+
     {
       "type": "header",
       "content": "Contact information"
@@ -1138,6 +1251,7 @@
       "default": "#8A827C"
     },
 
+
     {
       "type": "header",
       "content": "Email"
@@ -1161,15 +1275,16 @@
       "type": "text",
       "id": "email_address",
       "label": "Email address",
-      "default": "info@sollu.dk"
+      "default": "kontakt@sollu.dk"
     },
 
     {
       "type": "text",
       "id": "email_description",
       "label": "Description",
-      "default": "Vi svarer inden for 24 timer."
+      "default": "Vi svarer inden for 1-2 hverdage."
     },
+
 
     {
       "type": "header",
@@ -1194,15 +1309,16 @@
       "type": "text",
       "id": "phone_number",
       "label": "Phone number",
-      "default": "+45 12 34 56 78"
+      "default": "+45 2189 5400"
     },
 
     {
       "type": "text",
       "id": "phone_description",
       "label": "Description",
-      "default": "Mandag – fredag: 09.00 – 16.00"
+      "default": "Mandag – fredag: 10.00 – 15.30"
     },
+
 
     {
       "type": "header",
@@ -1234,8 +1350,9 @@
       "type": "textarea",
       "id": "address_description",
       "label": "Address",
-      "default": "Gothersgade 15, 1123\nKøbenhavn K, Danmark"
+      "default": "Pilekæret 30\n2840 Holte\nDanmark\nCVR 46 09 28 72"
     },
+
 
     {
       "type": "header",
@@ -1255,6 +1372,7 @@
       "label": "Icon color",
       "default": "#8B8279"
     },
+
 
     {
       "type": "header",
@@ -1342,6 +1460,7 @@
       "default": "500"
     },
 
+
     {
       "type": "header",
       "content": "Messages"
@@ -1351,10 +1470,11 @@
       "type": "textarea",
       "id": "success_message",
       "label": "Success message",
-      "default": "Thanks for contacting us."
+      "default": "Tak for din henvendelse."
     }
 
   ],
+
 
   "blocks": [
 
@@ -1362,80 +1482,104 @@
       "type": "text",
       "name": "Text field",
       "settings": [
+
         {
           "type": "text",
           "id": "title",
           "label": "Field label",
-          "default": "Custom field"
+          "default": "Ordrenummer (valgfrit)"
         },
+
+        {
+          "type": "text",
+          "id": "help_text",
+          "label": "Help text",
+          "info": "Small text displayed below the field.",
+          "default": "Du finder det i din ordrebekræftelse."
+        },
+
         {
           "type": "checkbox",
           "id": "use_long_text",
           "label": "Use long text",
           "default": false
         },
+
         {
           "type": "checkbox",
           "id": "required",
           "label": "Required field",
           "default": false
         }
+
       ]
     },
+
 
     {
       "type": "dropdown",
       "name": "Dropdown",
       "settings": [
+
         {
           "type": "text",
           "id": "title",
           "label": "Field label",
-          "default": "Emne"
+          "default": "Spørgsmål til et produkt"
         },
+
         {
           "type": "text",
           "id": "values",
           "label": "Dropdown values",
           "info": "Separate values with commas.",
-          "default": "General inquiry, Support, Other"
+          "default": "Spørgsmål til et produkt, Returnering, Reklamation, Andet"
         },
+
         {
           "type": "checkbox",
           "id": "required",
           "label": "Required field",
           "default": true
         }
+
       ]
     },
+
 
     {
       "type": "richtext",
       "name": "Text editor",
       "settings": [
+
         {
           "type": "richtext",
           "id": "content",
           "label": "Content",
           "default": "<p>Vi bruger dine oplysninger til at besvare din henvendelse. Læs mere i vores privatlivspolitik.</p>"
         }
+
       ]
     },
+
 
     {
       "type": "right_richtext",
       "name": "Right side text editor",
       "settings": [
+
         {
           "type": "richtext",
           "id": "content",
           "label": "Content",
           "default": "<p>Sollu har ingen fysisk butik. Kontakt os, før du sender en vare retur.</p>"
         }
+
       ]
     }
 
   ],
+
 
   "presets": [
     {
