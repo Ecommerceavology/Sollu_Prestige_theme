@@ -128,7 +128,7 @@
         "show_address": true,
         "address_item_label": "Adresse",
         "address_title": "Sollu ApS",
-        "address_description": "Pilekæret 30\n2840 Holte\nDanmark\nCVR 46 09 28 72\n\nSollu har ingen fysisk butik. Kontakt os, før du sender en vare retur.",
+        "address_description": "Pilekæret 30\n2840 Holte\nDanmark\nCVR 46 09 28 72",
         "icon_background": "#f1eee9",
         "icon_color": "#8b8279",
         "info_label_color": "#655e58",
