@@ -1,3 +1,4 @@
+```liquid
 {%- style -%}
   @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap');
 
@@ -37,6 +38,7 @@
     margin: 0;
     text-align: center;
     white-space: nowrap;
+    flex: 0 0 auto;
   }
 
   .custom-announcement-bar__dot {
@@ -133,21 +135,20 @@
 <div class="custom-announcement-bar">
   <div class="custom-announcement-bar__content">
 
-    <span class="custom-announcement-bar__item">
-      {{ section.settings.text_1 }}
-    </span>
+    {% for block in section.blocks %}
 
-    <span class="custom-announcement-bar__dot">·</span>
+      <span
+        class="custom-announcement-bar__item"
+        {{ block.shopify_attributes }}
+      >
+        {{ block.settings.text }}
+      </span>
 
-    <span class="custom-announcement-bar__item">
-      {{ section.settings.text_2 }}
-    </span>
+      {% unless forloop.last %}
+        <span class="custom-announcement-bar__dot">·</span>
+      {% endunless %}
 
-    <span class="custom-announcement-bar__dot">·</span>
-
-    <span class="custom-announcement-bar__item">
-      {{ section.settings.text_3 }}
-    </span>
+    {% endfor %}
 
   </div>
 </div>
@@ -156,24 +157,6 @@
 {
   "name": "Custom Announcement Bar",
   "settings": [
-    {
-      "type": "text",
-      "id": "text_1",
-      "label": "First Item",
-      "default": "Dansk kundeservice"
-    },
-    {
-      "type": "text",
-      "id": "text_2",
-      "label": "Second Item",
-      "default": "14 dages fortrydelsesret"
-    },
-    {
-      "type": "text",
-      "id": "text_3",
-      "label": "Third Item",
-      "default": "Fri fragt over 499 kr."
-    },
     {
       "type": "range",
       "id": "item_gap",
@@ -207,10 +190,72 @@
       "default": "#000000"
     }
   ],
+
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Announcement Text",
+          "default": "Dansk kundeservice"
+        }
+      ]
+    }
+  ],
+
   "presets": [
     {
-      "name": "Custom Announcement Bar"
+      "name": "Custom Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Dansk kundeservice"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "14 dages fortrydelsesret"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Fri fragt over 499 kr."
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
+```
+
+### What you'll get in Shopify
+
+In the Theme Customizer you'll now have:
+
+**Custom Announcement Bar**
+
+* Announcement
+
+  * Dansk kundeservice
+* Announcement
+
+  * 14 dages fortrydelsesret
+* Announcement
+
+  * Fri fragt over 499 kr.
+* **＋ Add announcement**
+
+You can add:
+
+`Dansk kundeservice · 14 dages fortrydelsesret · Fri fragt over 499 kr. · Hurtig levering · Sikker betaling · Dansk design`
+
+And if you remove an item, the `·` separator is automatically removed as well. No empty dots will appear.
+
+The responsive behavior from your previous version is also retained.
