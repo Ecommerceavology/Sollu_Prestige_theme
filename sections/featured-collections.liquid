@@ -80,20 +80,10 @@
 </style>
 
 
-{%- if section.settings.product_1 != blank
-  or section.settings.product_2 != blank
-  or section.settings.product_3 != blank
-  or section.settings.product_4 != blank
-  or section.settings.product_5 != blank
-  or section.settings.product_6 != blank
-  or section.settings.product_7 != blank
-  or section.settings.product_8 != blank
-  or section.settings.product_9 != blank
-  or section.settings.product_10 != blank
--%}
+{%- if section.blocks.size > 0 -%}
 
   {%- comment -%}
-    Save the current product before displaying selected products.
+    Save the current product before looping through manually selected products.
     This allows us to exclude the product currently being viewed.
   {%- endcomment -%}
 
@@ -111,6 +101,12 @@
     "
   >
 
+    {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      SECTION HEADER
+      --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
     {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
 
       <div class="container">
@@ -118,15 +114,20 @@
         <div class="section-header">
 
           {%- if section.settings.subheading != blank -%}
+
             <p class="section-header__subheading">
               {{ section.settings.subheading }}
             </p>
+
           {%- endif -%}
 
+
           {%- if section.settings.heading != blank -%}
+
             <h2 class="h2">
               {{ section.settings.heading }}
             </h2>
+
           {%- endif -%}
 
         </div>
@@ -140,222 +141,245 @@
 
       <div class="product-list product-list--center">
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 1
-          ======================================================================
-        {%- endcomment -%}
-
-        {%- assign selected_product = section.settings.product_1 -%}
-
-        {%- if selected_product != blank -%}
-
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
-
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
-
-          {%- endunless -%}
-
-        {%- endif -%}
-
 
         {%- comment -%}
           ======================================================================
-          PRODUCT POSITION 2
+          MANUAL PRODUCT SEQUENCE
+          
+          The order of these blocks is the order in which products appear.
+          
+          Example:
+          
+          Block 1 = Julie
+          Block 2 = Mary
+          Block 3 = Vibra Pink
+          Block 4 = Vibra Grey
+          
+          You can drag blocks in Shopify Customizer to change the order.
           ======================================================================
         {%- endcomment -%}
 
-        {%- assign selected_product = section.settings.product_2 -%}
 
-        {%- if selected_product != blank -%}
+        {%- for block in section.blocks -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+          {%- assign selected_product = block.settings.product -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
 
-          {%- endunless -%}
+          {%- if selected_product != blank -%}
 
-        {%- endif -%}
+            {%- comment -%}
+              Skip the current product if this section is being displayed
+              on a product page.
+            {%- endcomment -%}
 
+            {%- unless current_product != blank and selected_product.id == current_product.id -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 3
-          ======================================================================
-        {%- endcomment -%}
 
-        {%- assign selected_product = section.settings.product_3 -%}
+              {%- comment -%}
+                PRODUCT CATEGORY
+              {%- endcomment -%}
 
-        {%- if selected_product != blank -%}
+              {%- assign product_category = blank -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+              {%- for product_collection in selected_product.collections -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                {%- assign collection_name = product_collection.title | strip -%}
 
-          {%- endunless -%}
+                {%- assign collection_name_downcase = collection_name | downcase -%}
 
-        {%- endif -%}
 
+                {%- unless collection_name_downcase == 'all collections' -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 4
-          ======================================================================
-        {%- endcomment -%}
+                  {%- if product_category == blank -%}
 
-        {%- assign selected_product = section.settings.product_4 -%}
+                    {%- assign product_category = collection_name -%}
 
-        {%- if selected_product != blank -%}
+                  {%- endif -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+                {%- endunless -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+              {%- endfor -%}
 
-          {%- endunless -%}
 
-        {%- endif -%}
+              {%- comment -%}
+                PRODUCT HIGHLIGHTS
+              {%- endcomment -%}
 
+              {%- assign product_highlights = selected_product.metafields.custom.product_highlights.value -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 5
-          ======================================================================
-        {%- endcomment -%}
 
-        {%- assign selected_product = section.settings.product_5 -%}
+              {%- comment -%}
+                PRODUCT RATING
+              {%- endcomment -%}
 
-        {%- if selected_product != blank -%}
+              {%- assign rating_count = selected_product.metafields.custom.product_rating.value.rating | plus: 0 -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+              <div
+                class="product-list__item"
+                {{ block.shopify_attributes }}
+              >
 
-          {%- endunless -%}
+                <div class="product-card">
 
-        {%- endif -%}
 
+                  {%- comment -%}
+                    PRODUCT IMAGE
+                  {%- endcomment -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 6
-          ======================================================================
-        {%- endcomment -%}
+                  {%- if selected_product.featured_media != blank -%}
 
-        {%- assign selected_product = section.settings.product_6 -%}
+                    <a
+                      href="{{ selected_product.url }}"
+                      class="product-card__figure"
+                    >
 
-        {%- if selected_product != blank -%}
+                      <div class="product-card__media">
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+                        {{
+                          selected_product.featured_media
+                          | image_url: width: 1200
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '200,300,400,500,600,800,1000,1200',
+                            sizes: '(max-width: 699px) 50vw, 25vw',
+                            class: 'product-card__image'
+                        }}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                      </div>
 
-          {%- endunless -%}
+                    </a>
 
-        {%- endif -%}
+                  {%- endif -%}
 
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 7
-          ======================================================================
-        {%- endcomment -%}
+                  <div class="product-card__info">
 
-        {%- assign selected_product = section.settings.product_7 -%}
 
-        {%- if selected_product != blank -%}
+                    {%- comment -%}
+                      CATEGORY
+                    {%- endcomment -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+                    {%- if product_category != blank -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                      <div class="homepage-product-card__category">
+                        {{ product_category }}
+                      </div>
 
-          {%- endunless -%}
+                    {%- endif -%}
 
-        {%- endif -%}
 
+                    {%- comment -%}
+                      PRODUCT TITLE
+                    {%- endcomment -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 8
-          ======================================================================
-        {%- endcomment -%}
+                    <a
+                      href="{{ selected_product.url }}"
+                      class="product-card__title"
+                    >
+                      {{ selected_product.title }}
+                    </a>
 
-        {%- assign selected_product = section.settings.product_8 -%}
 
-        {%- if selected_product != blank -%}
+                    {%- comment -%}
+                      PRODUCT HIGHLIGHTS
+                    {%- endcomment -%}
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+                    {%- if product_highlights != blank -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                      <div class="homepage-product-card__highlights">
+                        {{ product_highlights }}
+                      </div>
 
-          {%- endunless -%}
+                    {%- endif -%}
 
-        {%- endif -%}
 
+                    {%- comment -%}
+                      PRODUCT RATING
+                    {%- endcomment -%}
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 9
-          ======================================================================
-        {%- endcomment -%}
+                    {%- if rating_count > 0 -%}
 
-        {%- assign selected_product = section.settings.product_9 -%}
+                      <div class="homepage-product-card__rating">
 
-        {%- if selected_product != blank -%}
+                        <div
+                          class="homepage-product-card__stars"
+                          aria-label="{{ rating_count }} out of 5 stars"
+                        >
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
+                          {%- for star in (1..5) -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                            {%- assign previous_star = star | minus: 1 -%}
 
-          {%- endunless -%}
 
-        {%- endif -%}
+                            {%- if rating_count >= star -%}
 
+                              <span class="homepage-product-card__star homepage-product-card__star--full">
+                                ★
+                              </span>
 
-        {%- comment -%}
-          ======================================================================
-          PRODUCT POSITION 10
-          ======================================================================
-        {%- endcomment -%}
 
-        {%- assign selected_product = section.settings.product_10 -%}
+                            {%- elsif rating_count > previous_star -%}
 
-        {%- if selected_product != blank -%}
+                              <span class="homepage-product-card__star homepage-product-card__star--half">
+                                ★
+                              </span>
 
-          {%- unless current_product != blank and selected_product.id == current_product.id -%}
 
-            {%- render 'custom-featured-product-card',
-              product: selected_product
-            -%}
+                            {%- else -%}
 
-          {%- endunless -%}
+                              <span class="homepage-product-card__star homepage-product-card__star--empty">
+                                ★
+                              </span>
 
-        {%- endif -%}
+                            {%- endif -%}
+
+                          {%- endfor -%}
+
+                        </div>
+
+
+                        <span class="homepage-product-card__rating-value">
+                          {{ rating_count }}
+                        </span>
+
+                      </div>
+
+                    {%- endif -%}
+
+
+                    {%- comment -%}
+                      PRODUCT PRICE
+                    {%- endcomment -%}
+
+                    <div class="product-card__price">
+
+                      {%- render 'price-list', product: selected_product -%}
+
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            {%- endunless -%}
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
 
       </div>
 
 
       {%- comment -%}
-        ======================================================================
+        --------------------------------------------------------------------------------------------------------------------
         CTA BUTTON
-        ======================================================================
+        --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       {%- if section.settings.show_cta and section.settings.cta_text != blank -%}
@@ -417,78 +441,7 @@
 
     {
       "type": "header",
-      "content": "Product sequence"
-    },
-
-    {
-      "type": "paragraph",
-      "content": "Select a product for each position. Products will display in exactly this order."
-    },
-
-    {
-      "type": "product",
-      "id": "product_1",
-      "label": "Position 1"
-    },
-
-    {
-      "type": "product",
-      "id": "product_2",
-      "label": "Position 2"
-    },
-
-    {
-      "type": "product",
-      "id": "product_3",
-      "label": "Position 3"
-    },
-
-    {
-      "type": "product",
-      "id": "product_4",
-      "label": "Position 4"
-    },
-
-    {
-      "type": "product",
-      "id": "product_5",
-      "label": "Position 5"
-    },
-
-    {
-      "type": "product",
-      "id": "product_6",
-      "label": "Position 6"
-    },
-
-    {
-      "type": "product",
-      "id": "product_7",
-      "label": "Position 7"
-    },
-
-    {
-      "type": "product",
-      "id": "product_8",
-      "label": "Position 8"
-    },
-
-    {
-      "type": "product",
-      "id": "product_9",
-      "label": "Position 9"
-    },
-
-    {
-      "type": "product",
-      "id": "product_10",
-      "label": "Position 10"
-    },
-
-
-    {
-      "type": "header",
-      "content": "Layout"
+      "content": "Product layout"
     },
 
     {
@@ -559,10 +512,59 @@
 
   ],
 
-  "presets": [
+
+  "blocks": [
+
     {
-      "name": "Featured products custom"
+      "type": "product",
+      "name": "Product",
+
+      "settings": [
+
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select product"
+        }
+
+      ]
+
     }
+
+  ],
+
+
+  "max_blocks": 10,
+
+
+  "presets": [
+
+    {
+      "name": "Featured products custom",
+
+      "blocks": [
+
+        {
+          "type": "product"
+        },
+
+        {
+          "type": "product"
+        },
+
+        {
+          "type": "product"
+        },
+
+        {
+          "type": "product"
+        }
+
+      ]
+
+    }
+
   ]
+
 }
 {% endschema %}
