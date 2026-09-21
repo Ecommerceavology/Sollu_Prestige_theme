@@ -11,10 +11,60 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "image_with_text_overlay_ihHBAP": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Pgimyh": {
+          "type": "subheading",
+          "settings": {
+            "text": "Sollu.dk"
+          }
+        },
+        "heading_GwT8AB": {
+          "type": "heading",
+          "settings": {
+            "text": "Læs historien bag Sollu",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_HjAHrG": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Pgimyh",
+        "heading_GwT8AB",
+        "richtext_HjAHrG"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_overlay_ihHBAP"
   ]
 }
