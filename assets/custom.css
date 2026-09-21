@@ -3041,7 +3041,14 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding-right: 32px!important;
 }
 
-
+.returned_and_cancel h2.h2 {
+    color: #2a2420;
+    font-size: 36px;
+    line-height: 41.6px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: unset !important;
+}
 
 
 
