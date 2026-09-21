@@ -264,16 +264,64 @@
     "featured-collections-2": {
       "type": "featured-collections",
       "blocks": {
-        "collection-1": {
-          "type": "collection",
+        "product_N8CBEF": {
+          "type": "product",
           "settings": {
-            "collection": "all-collections",
-            "products_count": 17
+            "product": "vibra-in-grey"
+          }
+        },
+        "product_CKedX4": {
+          "type": "product",
+          "settings": {
+            "product": "mary"
+          }
+        },
+        "product_7MytBj": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-vibra"
+          }
+        },
+        "product_iMQiz7": {
+          "type": "product",
+          "settings": {
+            "product": "julie"
+          }
+        },
+        "product_LRJUBy": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-aqua-flosser"
+          }
+        },
+        "product_n7KqDc": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-relief"
+          }
+        },
+        "product_VVkqdP": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-ease"
+          }
+        },
+        "product_BtWc4L": {
+          "type": "product",
+          "settings": {
+            "product": "sollu-relief-pro"
           }
         }
       },
       "block_order": [
-        "collection-1"
+        "product_N8CBEF",
+        "product_CKedX4",
+        "product_7MytBj",
+        "product_iMQiz7",
+        "product_LRJUBy",
+        "product_n7KqDc",
+        "product_VVkqdP",
+        "product_BtWc4L"
       ],
       "name": "All Products section",
       "settings": {
