@@ -146,6 +146,58 @@
         "success_message": "Tak for din besked. Vi vender tilbage inden\nfor 1-2 hverdage."
       }
     },
+    "multi_column_P6p3hU": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_pJRVPf": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "30 dages fortrydelsesret",
+            "heading_tag": "h3",
+            "content": "<p>Du har 30 dages fortrydelsesret fra den dag, du modtager din vare, og du må gerne afprøve produktet. Skriv til os på kontakt@sollu.dk med dit ordrenummer. Ved fortrydelse betaler du selv returfragten. Læs mere under Retur & Fortrydelse.”<br/><br/></p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_3rQjBx": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "24 måneders reklamationsret",
+            "heading_tag": "h3",
+            "content": "<p>Er der noget galt med dit produkt, så skriv til os med dit ordrenummer og gerne et billede af manglen. Godkender vi reklamationen, sender vi dig en returlabel, og du betaler ikke for returneringen. Se vilkårene i vores handelsbetingelser.”<br/><br/></p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_pJRVPf",
+        "image_with_text_3rQjBx"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "custom_class": "",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 2,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "start",
+        "spacing": "md",
+        "show_count_number": false,
+        "count_number_size": 11,
+        "count_number_color": "#B18A50",
+        "column_heading_size": 24,
+        "column_heading_color": "#000000",
+        "column_content_size": 16,
+        "column_content_color": "#000000",
+        "subheading": "",
+        "title": "14 dages fortrydelsesret",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "multi_column_gP8jYi": {
       "type": "multi-column",
       "blocks": {
@@ -229,6 +281,7 @@
     "main",
     "image_with_text_DJLFTA",
     "contact-form",
+    "multi_column_P6p3hU",
     "multi_column_gP8jYi"
   ]
 }
