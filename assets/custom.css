@@ -6021,10 +6021,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .Sollu_story picture {
-        max-width: 100%;
-        width: 100%;
-    }
-
+    max-width: 100%;
+    width: 100%;
+    order: unset !IMPORTANT;
+}
     .Sollu_story p {
         font-size: 16px;
         line-height: 26px;
