@@ -1589,7 +1589,7 @@ span.custom-product-card__price-current {
 }
 .Contact_info_sec .container {
     width: 100%;
-    max-width: 1280px!important;
+    max-width: 1200px!important;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1612,7 +1612,7 @@ span.custom-product-card__price-current {
 .Contact_info_sec .multi-column__content p {
     color: #8c8278 !important;
     
-    font-size: 12px !important;
+    font-size: 14px !important;
     line-height: 16px !important;
     font-weight: 400 !IMPORTANT;
 }
@@ -5242,10 +5242,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         letter-spacing: 0.5px !important;
     }
 
-    .Contact_info_sec .multi-column__content p {
-        font-size: 11px !important;
-        line-height: 15px !important;
-    }
+   
 
     .Contact_info_sec .multi-column__content {
         margin-top: 3px !important;
@@ -7243,7 +7240,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .Contact_info_sec .multi-column__content p {
-        font-size: 10px !important;
+        font-size: 12px !important;
         line-height: 14px !important;
     }
 
