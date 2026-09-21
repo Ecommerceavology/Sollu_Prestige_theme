@@ -671,7 +671,7 @@ h1.header__logo {
     letter-spacing: .46px !important;
     font-weight: 300!important;
     margin-top: 11px!important;
-    text-transform: capitalize !important;
+    text-transform: unset !important;
 }
 span.custom-reviews__summary-text {
     color: #8c8278 !important;
