@@ -3809,6 +3809,29 @@ x-header.header.Header_sec {
         font-size: 11px !important;
         letter-spacing: 1.5px !important;
     }
+
+    .returned_and_cancel {
+        padding: 42px 0 !important;
+    }
+
+    .returned_and_cancel .container {
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
+
+    .returned_and_cancel h2.h2 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .returned_and_cancel p.h3.multi-column__heading {
+        font-size: 26px !important;
+        line-height: 32px;
+    }
+
+    .returned_and_cancel multi-column.multi-column.scroll-area.snap-x.bleed.md\:unbleed {
+        gap: 35px;
+    }
     
 }
 
@@ -5766,6 +5789,51 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         min-height: 48px !important;
         font-size: 11px !important;
         letter-spacing: 1.3px !important;
+    }
+
+     .contact-designer__right-text-editor {
+        padding-top: 16px;
+    }
+
+    .cst_contact_sec .contact-designer__right-text-editor p {
+        font-size: 16px;
+        line-height: 27px !important;
+    }
+
+    .returned_and_cancel {
+        padding: 36px 0 !important;
+    }
+
+    .returned_and_cancel .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .returned_and_cancel h2.h2 {
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 1.5px;
+    }
+
+    .returned_and_cancel p.h3.multi-column__heading {
+        font-size: 24px !important;
+        line-height: 30px;
+        letter-spacing: 1.5px;
+    }
+
+    .returned_and_cancel multi-column.multi-column.scroll-area.snap-x.bleed.md\:unbleed {
+        padding-top: 20px;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    .returned_and_cancel .section-stack {
+        gap: 30px !important;
+    }
+
+    .returned_and_cancel p {
+        font-size: 15px;
+        line-height: 24px;
     }
 }
 
