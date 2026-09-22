@@ -1642,7 +1642,7 @@ span.custom-product-card__price-current {
 
 .Retur_multi_sec {
     background: #faf7f2!important;
-    padding: 80px 0!important;
+    padding: 40px 0!important;
     border: none !important;
 }
 .Retur_multi_sec .container{
@@ -3254,10 +3254,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
    
 }
 
-.Retur_multi_sec {
-    padding-top: 80px!important;
-    padding-bottom: 80px !important;
-}
+
 
 .return_sec_1 {
     padding: 0 0 80px !important;
@@ -3537,9 +3534,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
 
-     .Retur_multi_sec {
-        padding: 70px 0 !important;
-    }
+
 
     .Retur_multi_sec .container,
     .retur_info_sec .container,
@@ -4590,9 +4585,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
 
 
-    .Retur_multi_sec {
-        padding: 60px 0 !important;
-    }
+
 
     .Retur_multi_sec .container,
     .retur_info_sec .container,
@@ -5596,9 +5589,6 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
 
 
-     .Retur_multi_sec {
-        padding: 50px 0 !important;
-    }
 
     .Retur_multi_sec .container,
     .retur_info_sec .container,
@@ -6778,9 +6768,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
 
 
-    .Retur_multi_sec {
-        padding: 40px 0 !important;
-    }
+
 
     .Retur_multi_sec .container,
     .retur_info_sec .container,
