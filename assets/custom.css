@@ -3426,6 +3426,25 @@ position: relative !important;
 .shopify-policy__body ul {
     padding-left: 5px;
 }
+
+
+
+
+.shopify-policy__body table tr td:first-child{
+    width: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
