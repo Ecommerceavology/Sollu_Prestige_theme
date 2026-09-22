@@ -207,36 +207,49 @@
         "content": "<p>Fortryder du dit køb, får du det beløb tilbage, du har betalt til os, herunder leveringsomkostninger (dog ikke ekstra omkostninger, hvis du selv har valgt en dyrere leveringsform end vores billigste standardlevering). Er der en værdiforringelse, du hæfter for, trækkes den fra beløbet.</p>"
       }
     },
-    "multi_column_qj9twQ": {
+    "multi_column_bwDLyC": {
       "type": "multi-column",
       "blocks": {
-        "rich_text_hFxxwF": {
-          "type": "rich_text",
-          "settings": {
-            "title": "",
-            "heading_tag": "h3",
-            "content": ""
-          }
-        },
-        "image_with_text_kqANM8": {
+        "image_with_text_hXjEbm": {
           "type": "image_with_text",
           "settings": {
-            "title": "",
+            "title": "Kontakt os",
             "heading_tag": "h3",
-            "content": "",
+            "content": "<p>Send en e-mail til kontakt@sollu.dk med dit ordrenummer og en beskrivelse af manglen, gerne med et billede.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_T8CcaM": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Vi vurderer sagen",
+            "heading_tag": "h3",
+            "content": "<p>Vi vender tilbage hurtigst muligt med en vurdering. Godkender vi reklamationen, sender vi dig en returlabel, og du skal ikke selv betale for at sende varen retur.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_qhV77R": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Indlever varen",
+            "heading_tag": "h3",
+            "content": "<p>Sæt returlabelen på pakken, og indlever den i din nærmeste pakkeshop. Vi behandler sagen, så snart vi har modtaget varen.</p>",
             "link_url": "",
             "link_text": ""
           }
         }
       },
       "block_order": [
-        "rich_text_hFxxwF",
-        "image_with_text_kqANM8"
+        "image_with_text_hXjEbm",
+        "image_with_text_T8CcaM",
+        "image_with_text_qhV77R"
       ],
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
-        "custom_class": "retur_Returns_Cancellations",
-        "color_scheme": "",
+        "custom_class": "Retur_multi_sec",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": true,
         "columns_per_row": 3,
         "stack_on_mobile": false,
@@ -244,7 +257,7 @@
         "content_alignment": "start",
         "text_alignment": "start",
         "spacing": "md",
-        "show_count_number": false,
+        "show_count_number": true,
         "count_number_size": 11,
         "count_number_color": "#b18a50",
         "column_heading_size": 24,
@@ -254,7 +267,7 @@
         "subheading": "Reklamation",
         "title": "24 måneders reklamationsret",
         "heading_style": "h2",
-        "content": "<p>Når du handler hos os som forbruger, har du 24 måneders reklamationsret. Det betyder, at du kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation — forudsat at reklamationen er berettiget, og at manglen ikke skyldes forkert brug af varen.</p>"
+        "content": "<p>Varen skal returneres i original emballage. Du må gerne prøve den, som du ville i en fysisk butik —det er hele formålet med vores 30 dages fulde returret. Er varen ikke noget for dig, skal du ikke beholde den.</p>"
       }
     },
     "rich_text_kR7aJb": {
@@ -271,7 +284,7 @@
         "richtext_Ey9dhQ": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Hvis du fortryder dit køb, får du det beløb, du har indbetalt til os, tilbage. I tilfælde af en værdiforringelse, som du hæfter for, fratrækkes denne købsbeløbet. Vi refunderer alle betalinger modtaget fra dig, herunder leveringsomkostninger (dog ikke ekstra omkostninger som følge af dit eget valg af en anden leveringsform end den billigste form for standardlevering, som vi tilbyder).<br/><br/></p>",
+            "content": "<p>Hvis du fortryder dit køb, får du det beløb, du har indbetalt til os, tilbage. I tilfælde af en værdiforringelse, som du hæfter for, fratrækkes denne købsbeløbet. Vi refunderer alle betalinger modtaget fra dig, herunder leveringsomkostninger (dog ikke ekstra omkostninger som følge af dit eget valg af en anden leveringsform end den billigste form for standardlevering, som vi tilbyder).<br/></p>",
             "custom_class": ""
           }
         },
@@ -331,7 +344,7 @@
     "multi_column_kNa98H",
     "multi_column_G9thhx",
     "multi_column_AKeBCy",
-    "multi_column_qj9twQ",
+    "multi_column_bwDLyC",
     "rich_text_kR7aJb",
     "newsletter_pxN7Q4"
   ]
