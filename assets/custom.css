@@ -1651,8 +1651,9 @@ span.custom-product-card__price-current {
     padding-right: 32px!important;
 }
 .Retur_multi_sec .multi-column__item {
-    padding: 32px !important;
-    border: 1px solid rgba(196, 199, 199, 0.3);
+    padding: 32px!important;
+    border: 1px solid rgba(196,199,199,.3);
+    background: white;
 }
 .Retur_multi_sec multi-column.multi-column {
     grid: none !IMPORTANT;
