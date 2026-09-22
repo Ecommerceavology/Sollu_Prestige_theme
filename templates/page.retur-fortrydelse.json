@@ -37,7 +37,7 @@
         "richtext_UymBhK": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Her finder du information om, hvordan du returnerer en vare eller benytter din<br/>fortrydelsesret. Vi har gjort processen så enkel og gennemskuelig som muligt.<br/><br/></p>"
+            "content": "<p>Her finder du information om, hvordan du fortryder dit køb, eller reklamerer over en vare. Vi har forsøgt at gøre processen så enkel og gennemskuelig som muligt.</p>"
           }
         }
       },
@@ -68,9 +68,9 @@
         "image_with_text_84qLBd": {
           "type": "image_with_text",
           "settings": {
-            "title": "VIGTIG BETINGELSE",
+            "title": "",
             "heading_tag": "h3",
-            "content": "<p>Varen skal returneres i original, ubrudt emballage, og den må ikke være taget i brug, da dette forringer salgsværdien væsentligt, især for hygiejneprodukter.</p>",
+            "content": "",
             "link_url": "",
             "link_text": ""
           }
@@ -97,10 +97,10 @@
         "column_heading_color": "#000000",
         "column_content_size": 16,
         "column_content_color": "#000000",
-        "subheading": "",
-        "title": "14 dages fortrydelsesret",
+        "subheading": "Fortrydelse af dit køb",
+        "title": "30 dages fortrydelsesret",
         "heading_style": "h2",
-        "content": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos Sollu.dk. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.<br/><br/>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring (f.eks. via e-mail). Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.<br/><br/></p>"
+        "content": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos Sollu.dk. Det er en frivillig udvidelse fra vores side — loven kræver kun 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring, for eksempel via e-mail. Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.</p>"
       }
     },
     "multi_column_G9thhx": {
@@ -109,9 +109,9 @@
         "image_with_text_4fJRV8": {
           "type": "image_with_text",
           "settings": {
-            "title": "Kontakt Os",
+            "title": "Kontakt os",
             "heading_tag": "h3",
-            "content": "<p>Send en e-mail til vores kundeservice med dit ordrenummer og oplys, at du ønsker at returnere varen. Vi sender dig herefter en returlabel.</p>",
+            "content": "<p>Send en e-mail til kontakt@sollu.dk med dit ordrenummer, og oplys at du ønsker at fortryde dit køb.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -119,9 +119,9 @@
         "image_with_text_RHNKLG": {
           "type": "image_with_text",
           "settings": {
-            "title": "Pak Varen",
+            "title": "Pak varen",
             "heading_tag": "h3",
-            "content": "<p>Sørg for, at varen er forsvarligt pakket ind i original emballage. Vedlæg en kopi af<br/>ordrebekræftelsen eller følgesedlen i pakken.</p>",
+            "content": "<p>Sørg for, at varen er forsvarligt pakket i original emballage. Vedlæg en kopi af ordrebekræftelsen eller følgesedlen.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -129,9 +129,9 @@
         "image_with_text_zQGCD8": {
           "type": "image_with_text",
           "settings": {
-            "title": "Indlever & Vent",
+            "title": "Send varen retur",
             "heading_tag": "h3",
-            "content": "<p>Sæt returlabelen på pakken og indlever den i din nærmeste pakkeshop. Vi refunderer beløbet senest 14 dage efter modtagelse af returvaren.</p>",
+            "content": "<p>Du sørger selv for forsendelsen og afholder de direkte omkostninger ved returneringen. Send varen til retur-adressen nederst på siden. Vi refunderer beløbet senest 14 dage efter, vi har modtaget varen retur.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -161,9 +161,72 @@
         "column_content_size": 16,
         "column_content_color": "#000000",
         "subheading": "",
-        "title": "",
+        "title": "Vigtig betingelse",
         "heading_style": "h2",
-        "content": ""
+        "content": "<p>Varen skal returneres i original emballage. Du må gerne prøve den, som du ville i en fysisk butik —det er hele formålet med vores 30 dages fulde returret. Er varen ikke noget for dig, skal du ikke beholde den.</p>"
+      }
+    },
+    "multi_column_AKeBCy": {
+      "type": "multi-column",
+      "blocks": {
+        "image_with_text_m8GzBM": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "30 dages fortrydelsesret",
+            "heading_tag": "h3",
+            "content": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos Sollu.dk. Det er en frivillig udvidelse fra vores side — loven kræver kun 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring, for eksempel via e-mail. Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_DfmbdU": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Column title",
+            "heading_tag": "h3",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_DciXEN": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "VIGTIG BETINGELSE",
+            "heading_tag": "h3",
+            "content": "<p>Varen skal returneres i original, ubrudt emballage, og den må ikke være taget i brug, da dette forringer salgsværdien væsentligt, især for hygiejneprodukter.</p>",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_m8GzBM",
+        "image_with_text_DfmbdU",
+        "image_with_text_DciXEN"
+      ],
+      "name": "t:sections.multi_column.presets.multi_column.name",
+      "settings": {
+        "custom_class": "retur_Returns_Cancellations",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "show_count_number": false,
+        "count_number_size": 11,
+        "count_number_color": "#b18a50",
+        "column_heading_size": 24,
+        "column_heading_color": "#000000",
+        "column_content_size": 16,
+        "column_content_color": "#000000",
+        "subheading": "Fortrydelse af dit køb",
+        "title": "30 dages fortrydelsesret",
+        "heading_style": "h2",
+        "content": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos Sollu.dk. Det er en frivillig udvidelse fra vores side — loven kræver kun 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring, for eksempel via e-mail. Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.</p>"
       }
     },
     "rich_text_kR7aJb": {
@@ -239,6 +302,7 @@
     "image_with_text_overlay_qfTE8F",
     "multi_column_kNa98H",
     "multi_column_G9thhx",
+    "multi_column_AKeBCy",
     "rich_text_kR7aJb",
     "newsletter_pxN7Q4"
   ]
