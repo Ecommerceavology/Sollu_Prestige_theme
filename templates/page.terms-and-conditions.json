@@ -139,6 +139,21 @@
             "target_id": "reklamationsret",
             "text": "<p>Forbrugerkøbelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsret.</p><p>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af<br/>produktet eller anden skadeforvoldende adfærd.</p><p>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>"
           }
+        },
+        "navigation_item_3nnK3d": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "6. Klageadgang",
+            "target_id": "reklamationsret"
+          }
+        },
+        "content_block_XPKHxL": {
+          "type": "content_block",
+          "settings": {
+            "heading": "5. Reklamationsret",
+            "target_id": "reklamationsret",
+            "text": "<p>Hvis du vil klage over dit køb, skal du rette henvendelse til kontakt@sollu.dk. Hvis det ikke lykkes os at finde en løsning, kan du indgive en klage til:</p><p>Center for Klageløsning, Nævnenes Hus</p><p>Toldboden 2, 8800 Viborg</p><p><a href=\"https://www.naevneneshus.dk\">www.naevneneshus.dk</a></p><p>Hvis du er bosiddende i et andet EU-land end Danmark, kan du finde den relevante<br/>klageinstans i dit eget land via EU-Kommissionens oversigt over godkendte klageinstanser:<br/><a href=\"https://consumer-redress.ec.europa.eu/dispute-resolution-bodies\">consumer-redress.ec.europa.eu/dispute-resolution-bodies</a></p>"
+          }
         }
       },
       "block_order": [
@@ -151,7 +166,9 @@
         "navigation_item_Viin39",
         "content_block_4iTFFY",
         "navigation_item_qeErXk",
-        "content_block_UJkW6b"
+        "content_block_UJkW6b",
+        "navigation_item_3nnK3d",
+        "content_block_XPKHxL"
       ],
       "name": "Custom Sidebar Navigation",
       "settings": {
