@@ -3284,7 +3284,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     line-height: 25.6px!important;
     font-weight: 300!important;
 }
-
+h2#contact {
+    font-family: fantasy !important;
+}
 
 
 /* //responsive  */
