@@ -7788,6 +7788,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Pro_content_tabs_sec {
         padding: 0 0 32px !important;
     }
+    .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
+    min-height: 210px!important;
+    max-height: 210px !important;
+}
 }
 
 @media (max-width: 400px) {
