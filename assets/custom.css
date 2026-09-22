@@ -3299,7 +3299,13 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     color: #2a2420!important;
     border: 1px solid #2a2420!important;
 }
-
+.sidebar-content-navigation__text.rte a {
+    text-decoration: underline !important;
+    transition: all .3s ease !important;
+}
+.sidebar-content-navigation__text.rte a:hover{
+     color: #2a2420!important;  
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
