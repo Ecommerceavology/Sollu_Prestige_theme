@@ -4892,6 +4892,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         gap: 18px !important;
         overflow-x: auto !important;
     }
+    .return_sec_1 {
+    padding: 0 0 60px !important;
+}
 }
 
 @media (max-width: 850px) {
