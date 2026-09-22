@@ -8160,6 +8160,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 330px !important;
+        max-height: 330px !important;
     }
 }
 
