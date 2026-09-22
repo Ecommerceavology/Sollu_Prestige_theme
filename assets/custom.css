@@ -3397,24 +3397,25 @@ position: relative !important;
 
 
 .cst-privacy-policy-banner-content h1 {
-    color: #faf7f2;
-    text-align: left;
-    font-size: 50px;
-    line-height: 56.9px;
-    letter-spacing: .78px;
-    font-weight: 400;
-    font-family: Cormorant Garamond,serif!important;
-    max-width: 490px;
-    margin: 16px 0 21px;
-    text-transform: unset;
+    color: #faf7f2 !important;
+    text-align: left !important;
+    font-size: 50px !important;
+    line-height: 56.9px !important;
+    letter-spacing: .78px !important;
+    font-weight: 400 !important;
+    font-family: Cormorant Garamond, serif !important;
+    max-width: 490px !important;
+    margin: 16px 0 21px !important;
+    text-transform: unset !important;
 }
+
 .cst-privacy-policy-banner-content p {
-    color: #faf7f2db;
-    text-align: left;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 300;
-    max-width: 475px;
+    color: #faf7f2db !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    line-height: 28px !important;
+    font-weight: 300 !important;
+    max-width: 475px !important;
 }
 
 /* //responsive  */
