@@ -3202,7 +3202,8 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 }
 .shopify-section--main-list-collections .collection-list.wrap {
     gap: 20px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 .shopify-section--main-list-collections h1.h2 {
     color: #2a2420;
@@ -3233,6 +3234,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     --content-over-media-gap: 20px !important;
     row-gap: 20px !important;
 }
+
 
 
 
