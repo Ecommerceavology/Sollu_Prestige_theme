@@ -16,9 +16,6 @@
       --multi-column-count-color: {{ section.settings.count_number_color }};
     }
 
-    /*
-     * COUNT NUMBER
-     */
     #shopify-section-{{ section.id }} .multi-column__count {
       display: block;
       margin: 0 0 1rem;
@@ -29,38 +26,29 @@
       font-weight: 400;
     }
 
-    /*
-     * COLUMN HEADING
-     */
     #shopify-section-{{ section.id }} .multi-column__item .multi-column__heading {
       font-size: var(--multi-column-heading-size);
       color: var(--multi-column-heading-color);
     }
 
-    /*
-     * COLUMN CONTENT
-     */
     #shopify-section-{{ section.id }} .multi-column__item .multi-column__content {
       font-size: var(--multi-column-content-size);
       color: var(--multi-column-content-color);
     }
 
-    /*
-     * RICH TEXT BLOCK
-     */
-    #shopify-section-{{ section.id }} .multi-column__item--rich-text {
+    /* Rich text block */
+    #shopify-section-{{ section.id }} .multi-column__rich-text {
       width: 100%;
     }
 
-    #shopify-section-{{ section.id }} .multi-column__item--rich-text .multi-column__rich-text {
-      font-size: var(--multi-column-content-size);
-      color: var(--multi-column-content-color);
-    }
-
-    #shopify-section-{{ section.id }} .multi-column__item--rich-text .multi-column__rich-text-heading {
+    #shopify-section-{{ section.id }} .multi-column__rich-text-heading {
       font-size: var(--multi-column-heading-size);
       color: var(--multi-column-heading-color);
-      margin-bottom: 1rem;
+    }
+
+    #shopify-section-{{ section.id }} .multi-column__rich-text-content {
+      font-size: var(--multi-column-content-size);
+      color: var(--multi-column-content-color);
     }
 
     @media screen and (min-width: 700px) {
@@ -145,47 +133,35 @@
           {%- for block in section.blocks -%}
 
             {%- liquid
-
               assign show_block = false
-
-              assign block_title_text = block.settings.title | default: '' | strip_html | strip
-              assign block_content_text = block.settings.content | default: '' | strip_html | strip
-              assign block_link_text = block.settings.link_text | default: '' | strip
 
               if block.type == 'image_with_text'
 
-                if block.settings.image != blank
-                  assign show_block = true
-                elsif block_title_text != blank
-                  assign show_block = true
-                elsif block_content_text != blank
-                  assign show_block = true
-                elsif block_link_text != blank
+                assign image_text_content = block.settings.content | default: '' | strip_html | strip
+
+                if image_text_content != blank
                   assign show_block = true
                 endif
 
               elsif block.type == 'video_with_text'
 
+                assign video_content = block.settings.content | default: '' | strip_html | strip
+
                 if block.settings.video != blank
                   assign show_block = true
-                elsif block_title_text != blank
-                  assign show_block = true
-                elsif block_content_text != blank
-                  assign show_block = true
-                elsif block_link_text != blank
+                elsif video_content != blank
                   assign show_block = true
                 endif
 
               elsif block.type == 'rich_text'
 
-                if block_content_text != blank
-                  assign show_block = true
-                elsif block_title_text != blank
+                assign rich_text_content = block.settings.content | default: '' | strip_html | strip
+
+                if rich_text_content != blank
                   assign show_block = true
                 endif
 
               endif
-
             -%}
 
             {%- if show_block -%}
@@ -193,8 +169,8 @@
               <div
                 class="
                   multi-column__item
-                  {% if block.type == 'rich_text' %}multi-column__item--rich-text{% endif %}
                   {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %}
+                  {% if block.type == 'rich_text' %}multi-column__rich-text{% endif %}
                   snap-center
                   group
                 "
@@ -209,7 +185,7 @@
 
 
                 {%- comment -%}
-                  IMAGE / VIDEO MEDIA
+                  IMAGE / VIDEO
                 {%- endcomment -%}
 
                 {%- capture media_content -%}
@@ -258,10 +234,6 @@
                 {%- endcapture -%}
 
 
-                {%- comment -%}
-                  MEDIA WRAPPER
-                {%- endcomment -%}
-
                 {%- if media_content != blank -%}
 
                   {%- liquid
@@ -295,67 +267,12 @@
 
 
                 {%- comment -%}
-                  STANDARD IMAGE / VIDEO TEXT CONTENT
+                  IMAGE WITH TEXT / VIDEO WITH TEXT CONTENT
                 {%- endcomment -%}
 
                 {%- if block.type == 'image_with_text' or block.type == 'video_with_text' -%}
 
-                  {%- if section.settings.show_count_number or block_title_text != blank or block_content_text != blank or block_link_text != blank -%}
-
-                    <div class="prose text-{{ section.settings.text_alignment }}">
-
-                      {%- if section.settings.show_count_number -%}
-
-                        <span class="multi-column__count">
-                          {{ forloop.index | prepend: '0' }}
-                        </span>
-
-                      {%- endif -%}
-
-
-                      {%- if block_title_text != blank -%}
-
-                        <p class="{{ block.settings.heading_tag }} multi-column__heading">
-                          {{ block.settings.title }}
-                        </p>
-
-                      {%- endif -%}
-
-
-                      {%- if block_content_text != blank -%}
-
-                        <div class="multi-column__content">
-                          {{- block.settings.content -}}
-                        </div>
-
-                      {%- endif -%}
-
-
-                      {%- if block_link_text != blank -%}
-
-                        <a
-                          href="{{ block.settings.link_url }}"
-                          class="link"
-                        >
-                          {{ block.settings.link_text | escape }}
-                        </a>
-
-                      {%- endif -%}
-
-                    </div>
-
-                  {%- endif -%}
-
-                {%- endif -%}
-
-
-                {%- comment -%}
-                  RICH TEXT BLOCK
-                {%- endcomment -%}
-
-                {%- if block.type == 'rich_text' -%}
-
-                  <div class="prose text-{{ section.settings.text_alignment }} multi-column__rich-text">
+                  <div class="prose text-{{ section.settings.text_alignment }}">
 
                     {%- if section.settings.show_count_number -%}
 
@@ -366,24 +283,69 @@
                     {%- endif -%}
 
 
-                    {%- if block_title_text != blank -%}
+                    {%- if block.settings.title != blank -%}
 
-                      <{{ block.settings.heading_tag }}
-                        class="multi-column__rich-text-heading"
-                      >
+                      <p class="{{ block.settings.heading_tag }} multi-column__heading">
                         {{ block.settings.title }}
-                      </{{ block.settings.heading_tag }}>
+                      </p>
 
                     {%- endif -%}
 
 
-                    {%- if block_content_text != blank -%}
+                    {%- if block.settings.content != blank -%}
 
                       <div class="multi-column__content">
                         {{- block.settings.content -}}
                       </div>
 
                     {%- endif -%}
+
+
+                    {%- if block.settings.link_text != blank -%}
+
+                      <a
+                        href="{{ block.settings.link_url }}"
+                        class="link"
+                      >
+                        {{ block.settings.link_text | escape }}
+                      </a>
+
+                    {%- endif -%}
+
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- comment -%}
+                  RICH TEXT BLOCK
+                {%- endcomment -%}
+
+                {%- if block.type == 'rich_text' -%}
+
+                  <div class="prose text-{{ section.settings.text_alignment }}">
+
+                    {%- if section.settings.show_count_number -%}
+
+                      <span class="multi-column__count">
+                        {{ forloop.index | prepend: '0' }}
+                      </span>
+
+                    {%- endif -%}
+
+
+                    {%- if block.settings.title != blank -%}
+
+                      <p class="{{ block.settings.heading_tag }} multi-column__heading">
+                        {{ block.settings.title }}
+                      </p>
+
+                    {%- endif -%}
+
+
+                    <div class="multi-column__rich-text-content">
+                      {{- block.settings.content -}}
+                    </div>
 
                   </div>
 
@@ -537,7 +499,6 @@
       "default": "md"
     },
 
-
     {
       "type": "header",
       "content": "Count Number"
@@ -567,7 +528,6 @@
       "label": "Count number color",
       "default": "#B18A50"
     },
-
 
     {
       "type": "header",
@@ -609,7 +569,6 @@
       "label": "Column content color",
       "default": "#000000"
     },
-
 
     {
       "type": "header",
@@ -673,12 +632,11 @@
 
   ],
 
-
   "blocks": [
 
     {
       "type": "image_with_text",
-      "name": "t:sections.multi_column.blocks.image_with_text.name",
+      "name": "Image with text",
 
       "settings": [
 
@@ -692,8 +650,7 @@
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "t:global.text.heading",
-          "default": "Column title"
+          "label": "t:global.text.heading"
         },
 
         {
@@ -734,8 +691,7 @@
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          "label": "Content"
         },
 
         {
@@ -753,10 +709,9 @@
       ]
     },
 
-
     {
       "type": "video_with_text",
-      "name": "t:sections.multi_column.blocks.video_with_text.name",
+      "name": "Video with text",
 
       "settings": [
 
@@ -791,8 +746,7 @@
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "t:global.text.heading",
-          "default": "Column title"
+          "label": "t:global.text.heading"
         },
 
         {
@@ -833,8 +787,7 @@
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          "label": "Content"
         },
 
         {
@@ -851,7 +804,6 @@
 
       ]
     },
-
 
     {
       "type": "rich_text",
@@ -910,7 +862,6 @@
     }
 
   ],
-
 
   "presets": [
 
