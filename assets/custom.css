@@ -3267,7 +3267,13 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding: 80px 0 !important;
     border: none!important;
 }
-
+.return_sec_3 .container {
+    width: 100%!important;
+    max-width: 1200px!important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+}
 
 
 
