@@ -7319,6 +7319,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 15px !important;
         line-height: 23px !important;
     }
+    .return_sec_1 {
+    padding: 0 0 40px !important;
+}
 }
 
 @media (max-width: 480px) {
@@ -7876,6 +7879,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
     min-height: 210px!important;
     max-height: 210px !important;
+}
+.return_sec_1 {
+    padding: 0 0 40px !important;
 }
 
 }
