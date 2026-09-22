@@ -3340,7 +3340,14 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     text-transform: unset !important;
     letter-spacing: 2px !important;
 }
-
+.shopify-policy__body h2 {
+    color: #2a2420;
+    font-size: 21px;
+    letter-spacing: 1px !important;
+    font-weight: 400;
+    font-family: Cormorant Garamond,serif!important;
+    text-transform: unset!important;
+}
 
 
 
