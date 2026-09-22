@@ -3395,6 +3395,20 @@ position: relative !important;
     left: 0 !important;
 }
 
+
+.cst-privacy-policy-banner-content h1 {
+    color: #faf7f2;
+    text-align: left;
+    font-size: 50px;
+    line-height: 56.9px;
+    letter-spacing: .78px;
+    font-weight: 400;
+    font-family: Cormorant Garamond,serif!important;
+    max-width: 490px;
+    margin: 16px 0 21px;
+    text-transform: unset;
+}
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
