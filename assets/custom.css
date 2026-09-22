@@ -3240,11 +3240,10 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 }
 
 
-.shopify-section--main-list-collections img {
-    object-fit: contain;
-    object-position: center;
-    margin-inline: auto;
-    transition: opacity .1s ease-in-out;
+.shopify-section--main-list-collections .content-over-media img {
+    object-fit: contain !important;
+    object-position: center !important;
+   
 }
 
 
