@@ -166,9 +166,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/SVG_3.svg",
-            "title": "Gennemtænkt design",
+            "title": "<strong>Gennemtænkt design</strong>",
             "heading_tag": "h3",
-            "content": "<p>Smukke produkter skabt til at passe ind i dit liv.</p>",
+            "content": "<p>Produkter udvalgt til at passe ind i dit liv.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -177,9 +177,9 @@
           "type": "image_with_text",
           "settings": {
             "image": "shopify://shop_images/SVG_4.svg",
-            "title": "Bæredygtighed",
+            "title": "<strong>Omhu i udvælgelsen </strong>",
             "heading_tag": "h3",
-            "content": "<p>Vi tager ansvar for miljøet og vælger bedre materialer.</p>",
+            "content": "<p>Vi går efter kvalitet og finish, ikke det billigste.</p>",
             "link_url": "",
             "link_text": ""
           }
@@ -190,7 +190,7 @@
             "image": "shopify://shop_images/SVG_5.svg",
             "title": "Ærlighed",
             "heading_tag": "h3",
-            "content": "<p>Transparens i alt, hvad vi gør.</p>",
+            "content": "<p>Transparens i alt, hvad vi gør – også om, at vi er nye.</p>",
             "link_url": "",
             "link_text": ""
           }
