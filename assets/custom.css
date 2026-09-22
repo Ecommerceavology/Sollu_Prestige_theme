@@ -3310,7 +3310,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 
 
 
-
+.shopify-policy__title.h2 {
+    display: none;
+}
 .shopify-policy__container {
     border: none!important;
     background: #faf7f2!important;
