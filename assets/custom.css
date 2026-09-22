@@ -2103,7 +2103,10 @@ span.custom-product-card__price-current {
 }
 
 
-
+.About_Sec_3 .image-with-text-feature-list__icon:before {
+  
+    margin-top: 7px;
+}
 
 
 
