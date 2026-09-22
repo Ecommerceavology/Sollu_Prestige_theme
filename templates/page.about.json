@@ -77,14 +77,14 @@
         "heading_M66iVr": {
           "type": "heading",
           "settings": {
-            "text": "VORES HISTORIE",
+            "text": "Vores Historie",
             "heading_tag": "h1"
           }
         },
         "richtext_UzYNcK": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Sollu blev grundlagt med en enkel idé: at gøre professionel selvpleje til en naturlig del af din hverdag. Vi så et behov for effektive, smukke og brugervenlige produkter, som leverer resultater – uden besøg i klinik.</p>"
+            "content": "<p>Sollu er et nystiftet dansk mærke. Vi startede med en enkel idé: at gøre veldesignede selvplejeprodukter lettere at få fat i, uden besøg i klinik. Vi er nye på markedet, og det siger vi gerne højt – vi bygger Sollu fra bunden, ét produkt ad gangen.</p>"
           }
         }
       },
@@ -97,15 +97,15 @@
       "settings": {
         "custom_class": "About_Sec_2",
         "show_feature_list": true,
-        "feature_1_text": "<p><strong>Grundlagt i Danmark</strong><br/>Designet med omtanke</p>",
+        "feature_1_text": "<p><strong>Dansk mærke – </strong>Grundlagt i Danmark - Lager i Danmark</p>",
         "feature_1_icon": "check_circle",
-        "feature_2_text": "<p><strong>Eksperter bag</strong><br/>Viden og erfaring</p>",
+        "feature_2_text": "<p><strong>Udvalgt med omhu – </strong>Design frem for tilfældigheder</p>",
         "feature_2_icon": "check_circle",
-        "feature_3_text": "<p><strong>Fokus på resultater</strong><br/>Dokumenteret effekt</p>",
+        "feature_3_text": "<p><strong>Nystartet – </strong>Vi er ærlige om, hvor vi er</p>",
         "feature_3_icon": "check_circle",
         "color_scheme": "",
         "separate_section_with_border": true,
-        "image": "shopify://shop_images/Woman_using_LED_mask.png",
+        "image": "shopify://shop_images/Sollu_julie.png",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
@@ -131,7 +131,7 @@
         "richtext_Mh4Dix": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Vi vil gøre avanceret skønhed og velvære tilgængeligt for alle. Vores produkter er udviklet til at forbedre din hud, lindre spændinger og give dig mere energi – så du føler dig godt tilpas, hver dag.<br/><br/></p>"
+            "content": "<p>Vores mission er at gøre gennemtænkt selvpleje til en naturlig del af din hverdag. Vi udvælger Sollu’s produkter ud fra testet<br/>kvalitet og et design, der passer til den skandinavisk hverdag. Resten er op til dine rutiner.</p>"
           }
         }
       },
@@ -144,11 +144,11 @@
       "settings": {
         "custom_class": "About_Sec_3",
         "show_feature_list": true,
-        "feature_1_text": "<p><strong>Innovation<br/></strong>Vi udvikler nye løsninger</p>",
+        "feature_1_text": "<p><strong>Udvælgelse – </strong>Vi vælger produkter med omtanke</p>",
         "feature_1_icon": "check_circle",
-        "feature_2_text": "<p><strong>Kvalitet<br/></strong>Produkter i højeste kvalitet</p>",
+        "feature_2_text": "<p><strong>Design – </strong>Enkelt og skandinavisk udtryk</p>",
         "feature_2_icon": "check_circle",
-        "feature_3_text": "<p><strong>Tryghed<br/></strong>Sikre produkter du kan stole på</p>",
+        "feature_3_text": "<p><strong>Tryghed – </strong>Fuld fortrydelsesret og reklamationsret</p>",
         "feature_3_icon": "check_circle",
         "color_scheme": "",
         "separate_section_with_border": true,
