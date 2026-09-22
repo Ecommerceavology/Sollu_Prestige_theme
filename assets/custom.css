@@ -30,6 +30,8 @@ h6 {
 p {
     font-family: "Jost", sans-serif !important;
     font-weight: 300 !important;
+    text-transform: unset !IMPORTANT;
+    letter-spacing: normal !important;
 }
 
 a {
