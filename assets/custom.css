@@ -3887,6 +3887,27 @@ x-header.header.Header_sec {
          max-height: 330px !important;
     }
 
+     .shopify-policy__container {
+        padding-top: 90px !important;
+        padding-bottom: 70px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 42px !important;
+        line-height: 46px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 30px;
+        margin-top: 50px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 23px;
+        margin-top: 30px !important;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -4231,6 +4252,33 @@ x-header.header.Header_sec {
     .return_sec_3 .container {
         padding-left: 28px !important;
         padding-right: 28px !important;
+    }
+
+
+    .shopify-policy__container {
+        padding: 75px 28px 60px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 40px !important;
+        line-height: 44px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 29px;
+        margin-top: 45px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 22px;
+    }
+
+    .shopify-policy__body p,
+    .shopify-policy__body li,
+    .shopify-policy__body td {
+        font-size: 16px;
+        line-height: 25px;
     }
     
 }
@@ -4998,6 +5046,8 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 .return_sec_2 {
    padding:  60px 0 !important;
 }
+
+
 }
 
 @media (max-width: 850px) {
@@ -6380,6 +6430,44 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     padding: 0 0 50px !important;
 }
 
+
+ .shopify-policy__container {
+        padding: 60px 24px 50px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 36px !important;
+        line-height: 40px !important;
+        letter-spacing: .3px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 27px;
+        letter-spacing: .7px !important;
+        margin-top: 40px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 21px;
+        letter-spacing: .7px !important;
+        margin-top: 28px !important;
+    }
+
+    .shopify-policy__body p,
+    .shopify-policy__body li,
+    .shopify-policy__body td {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .shopify-policy__body th {
+        font-size: 15px;
+    }
+
+    .shopify-policy__body p {
+        margin-top: 18px !important;
+    }
 }
 
 @media (max-width: 750px) {
@@ -7429,6 +7517,33 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
    
     padding: 40px 0 !important;
 }
+
+ .shopify-policy__container {
+        padding: 50px 20px 45px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 33px !important;
+        line-height: 37px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 25px;
+        margin-top: 35px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 20px;
+        margin-top: 25px !important;
+    }
+
+    .shopify-policy__body p,
+    .shopify-policy__body li,
+    .shopify-policy__body td {
+        font-size: 15px;
+        line-height: 23px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -8369,6 +8484,36 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 14px !important;
         line-height: 22px !important;
     }
+    .shopify-policy__container {
+        padding: 45px 16px 40px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 30px !important;
+        line-height: 34px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 23px;
+        margin-top: 32px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 19px;
+        margin-top: 23px !important;
+    }
+
+    .shopify-policy__body p,
+    .shopify-policy__body li,
+    .shopify-policy__body td {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .shopify-policy__body th {
+        font-size: 14px;
+    }
 
   
 }
@@ -8543,5 +8688,31 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .return_sec_3 p {
         font-size: 14px !important;
         line-height: 21px !important;
+    }
+
+    .shopify-policy__container {
+        padding: 40px 14px 35px !important;
+    }
+
+    .shopify-policy__container .shopify-policy__title h1,
+    .shopify-policy__body h1 {
+        font-size: 28px !important;
+        line-height: 32px !important;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 22px;
+        margin-top: 28px !important;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 18px;
+    }
+
+    .shopify-policy__body p,
+    .shopify-policy__body li,
+    .shopify-policy__body td {
+        font-size: 14px;
+        line-height: 21px;
     }
 }
