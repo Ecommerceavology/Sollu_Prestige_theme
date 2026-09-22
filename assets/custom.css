@@ -3385,6 +3385,14 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     margin-top: 20px !important;
 }
 
+.cst-privacy-policy-banner {
+position: relative !important;
+}
+.cst-privacy-policy-banner-content{
+    position: absolute !important;
+    top: 0 !IMPORTANT;
+    left: 0 !important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
