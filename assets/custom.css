@@ -3191,9 +3191,15 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 
 .shopify-section--main-list-collections .section-spacing.section-spacing--tight {
     background: #faf7f2!important;
-    padding: 110px 0 81px!important;
+    padding: 80px 0 81px!important;
 }
-
+.shopify-section--main-list-collections .container {
+    width: 100%!important;
+    max-width: 1200px!important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+}
 
 
 
