@@ -145,7 +145,7 @@
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
         "custom_class": "Retur_multi_sec",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": true,
         "columns_per_row": 3,
         "stack_on_mobile": false,
@@ -172,38 +172,16 @@
         "image_with_text_m8GzBM": {
           "type": "image_with_text",
           "settings": {
-            "title": "30 dages fortrydelsesret",
+            "title": "",
             "heading_tag": "h3",
-            "content": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos Sollu.dk. Det er en frivillig udvidelse fra vores side — loven kræver kun 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring, for eksempel via e-mail. Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_DfmbdU": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Column title",
-            "heading_tag": "h3",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": ""
-          }
-        },
-        "image_with_text_DciXEN": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "VIGTIG BETINGELSE",
-            "heading_tag": "h3",
-            "content": "<p>Varen skal returneres i original, ubrudt emballage, og den må ikke være taget i brug, da dette forringer salgsværdien væsentligt, især for hygiejneprodukter.</p>",
+            "content": "",
             "link_url": "",
             "link_text": ""
           }
         }
       },
       "block_order": [
-        "image_with_text_m8GzBM",
-        "image_with_text_DfmbdU",
-        "image_with_text_DciXEN"
+        "image_with_text_m8GzBM"
       ],
       "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
@@ -223,10 +201,10 @@
         "column_heading_color": "#000000",
         "column_content_size": 16,
         "column_content_color": "#000000",
-        "subheading": "Fortrydelse af dit køb",
-        "title": "30 dages fortrydelsesret",
+        "subheading": "",
+        "title": "Tilbagebetaling",
         "heading_style": "h2",
-        "content": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos Sollu.dk. Det er en frivillig udvidelse fra vores side — loven kræver kun 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>For at gøre brug af fortrydelsesretten skal du meddele os din beslutning i en utvetydig erklæring, for eksempel via e-mail. Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig besked om dette.</p>"
+        "content": "<p>Fortryder du dit køb, får du det beløb tilbage, du har betalt til os, herunder leveringsomkostninger (dog ikke ekstra omkostninger, hvis du selv har valgt en dyrere leveringsform end vores billigste standardlevering). Er der en værdiforringelse, du hæfter for, trækkes den fra beløbet.</p>"
       }
     },
     "rich_text_kR7aJb": {
