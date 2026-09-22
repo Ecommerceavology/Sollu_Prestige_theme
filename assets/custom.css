@@ -7218,7 +7218,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .shopify-section--main-list-collections .collection-list.wrap {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 18px;
     }
 
