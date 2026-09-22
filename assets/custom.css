@@ -3308,6 +3308,31 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
      color: #2a2420!important;  
 }
 
+
+
+
+.shopify-policy__container {
+    border: none!important;
+    background: #faf7f2!important;
+    padding: 110px 0 81px!important;
+    margin: 0 auto;
+    width: 100%!important;
+    max-width: 950px !important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
