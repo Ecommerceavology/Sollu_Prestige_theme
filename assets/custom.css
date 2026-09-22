@@ -3285,6 +3285,15 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 300!important;
 }
 
+.cart-drawer__footer button.button.w-full {
+    color: #faf7f2!important;
+    font-size: 12px!important;
+    letter-spacing: 1.68px!important;
+    font-weight: 400!important;
+    background: #2a2420!important;
+    padding: 20px !important;
+}
+
 
 
 /* //responsive  */
