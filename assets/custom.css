@@ -4332,6 +4332,7 @@ x-header.header.Header_sec {
 }
 
 @media (max-width: 991px) {
+    
 
     .page-width,
 x-header.header,
@@ -5108,7 +5109,23 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .cst-privacy-policy-banner-content > div {
         padding: 45px 30px !important;
     }
+.shopify-policy__body table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
 
+  .shopify-policy__body table thead,
+  .shopify-policy__body table tbody {
+    width: max-content !important;
+  }
+
+  .shopify-policy__body table th,
+  .shopify-policy__body table td {
+    white-space: nowrap !important;
+  }
 }
 
 @media (max-width: 850px) {
