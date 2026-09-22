@@ -137,7 +137,7 @@
           "settings": {
             "heading": "5. Reklamationsret",
             "target_id": "reklamationsret",
-            "text": "<p>Købelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsref.<br/><br/>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af produktet eller anden skadeforvoldende adfærd.<br/><br/>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>"
+            "text": "<p>Forbrugerkøbelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsret.</p><p>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af<br/>produktet eller anden skadeforvoldende adfærd.</p><p>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>"
           }
         }
       },
