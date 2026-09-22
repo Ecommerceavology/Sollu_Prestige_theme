@@ -3434,7 +3434,9 @@ position: relative !important;
     width: 110px;
 }
 
-
+.shopify-policy__body table tr td:nth-child(3){
+     width: 80px;
+}
 
 
 
