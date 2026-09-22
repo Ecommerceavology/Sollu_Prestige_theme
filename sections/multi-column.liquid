@@ -120,142 +120,154 @@
 
           {%- for block in section.blocks -%}
 
-            <div
-              class="
-                multi-column__item
-                {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %}
-                snap-center
-                group
-              "
-              {{ block.shopify_attributes }}
-            >
+            {%- comment -%}
+              Only display the block when Content is not empty.
+            {%- endcomment -%}
 
-              {%- capture sizes_attribute -%}
-                (max-width: 699px) 53vw,
-                (max-width: 999px) 38vw,
-                calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
-              {%- endcapture -%}
+            {%- if block.settings.content != blank -%}
 
-              {%- capture media_content -%}
+              <div
+                class="
+                  multi-column__item
+                  {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %}
+                  snap-center
+                  group
+                "
+                {{ block.shopify_attributes }}
+              >
 
-                {%- if block.type == 'image_with_text' and block.settings.image != blank -%}
+                {%- capture sizes_attribute -%}
+                  (max-width: 699px) 53vw,
+                  (max-width: 999px) 38vw,
+                  calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
+                {%- endcapture -%}
 
-                  {%- liquid
-                    assign loading_strategy = null
+                {%- capture media_content -%}
 
-                    if forloop.index > 2 or section.location == 'footer'
-                      assign loading_strategy = 'lazy'
-                    endif
-                  -%}
+                  {%- if block.type == 'image_with_text' and block.settings.image != blank -%}
 
-                  {{
-                    block.settings.image
-                    | image_url: width: block.settings.image.width
-                    | image_tag:
-                      loading: loading_strategy,
+                    {%- liquid
+                      assign loading_strategy = null
+
+                      if forloop.index > 2 or section.location == 'footer'
+                        assign loading_strategy = 'lazy'
+                      endif
+                    -%}
+
+                    {{
+                      block.settings.image
+                      | image_url: width: block.settings.image.width
+                      | image_tag:
+                        loading: loading_strategy,
+                        sizes: sizes_attribute,
+                        widths: '300,400,500,600,800,1000,1200,1400,1600,1800',
+                        class: 'zoom-image group-hover:zoom'
+                    }}
+
+                  {%- elsif block.type == 'video_with_text' and block.settings.video != blank -%}
+
+                    {%- liquid
+                      if block.settings.autoplay and block.settings.loop
+                        assign show_controls = false
+                      else
+                        assign show_controls = true
+                      endif
+                    -%}
+
+                    {% render 'media',
+                      media: block.settings.video,
+                      autoplay: block.settings.autoplay,
+                      loop: block.settings.loop,
+                      controls: show_controls,
                       sizes: sizes_attribute,
-                      widths: '300,400,500,600,800,1000,1200,1400,1600,1800',
-                      class: 'zoom-image group-hover:zoom'
-                  }}
+                      play_button_background: block.settings.play_button_background
+                    %}
 
-                {%- elsif block.type == 'video_with_text' and block.settings.video != blank -%}
+                  {%- endif -%}
+
+                {%- endcapture -%}
+
+                {%- if media_content != blank -%}
 
                   {%- liquid
-                    if block.settings.autoplay and block.settings.loop
-                      assign show_controls = false
-                    else
-                      assign show_controls = true
+                    assign add_link = false
+
+                    if block.type == 'video_with_text' and block.settings.autoplay and block.settings.link_url != blank
+                      assign add_link = true
+                    elsif block.type == 'image_with_text' and block.settings.link_url != blank
+                      assign add_link = true
                     endif
                   -%}
 
-                  {% render 'media',
-                    media: block.settings.video,
-                    autoplay: block.settings.autoplay,
-                    loop: block.settings.loop,
-                    controls: show_controls,
-                    sizes: sizes_attribute,
-                    play_button_background: block.settings.play_button_background
-                  %}
+                  {%- if add_link -%}
 
-                {%- endif -%}
+                    <a
+                      href="{{ block.settings.link_url }}"
+                      class="multi-column__media overflow-hidden"
+                    >
+                      {{- media_content -}}
+                    </a>
 
-              {%- endcapture -%}
+                  {%- else -%}
 
-              {%- if media_content != blank -%}
-
-                {%- liquid
-                  assign add_link = false
-
-                  if block.type == 'video_with_text' and block.settings.autoplay and block.settings.link_url != blank
-                    assign add_link = true
-                  elsif block.type == 'image_with_text' and block.settings.link_url != blank
-                    assign add_link = true
-                  endif
-                -%}
-
-                {%- if add_link -%}
-
-                  <a
-                    href="{{ block.settings.link_url }}"
-                    class="multi-column__media overflow-hidden"
-                  >
-                    {{- media_content -}}
-                  </a>
-
-                {%- else -%}
-
-                  <div class="multi-column__media overflow-hidden">
-                    {{- media_content -}}
-                  </div>
-
-                {%- endif -%}
-
-              {%- endif -%}
-
-              {%- if section.settings.show_count_number or block.settings.title != blank or block.settings.content != blank or block.settings.link_text != blank -%}
-
-                <div class="prose text-{{ section.settings.text_alignment }}">
-
-                  {%- if section.settings.show_count_number -%}
-
-                    <span class="multi-column__count">
-                      {{ forloop.index | prepend: '0' }}
-                    </span>
-
-                  {%- endif -%}
-
-                  {%- if block.settings.title != blank -%}
-
-                    <p class="{{ block.settings.heading_tag }} multi-column__heading">
-                      {{ block.settings.title }}
-                    </p>
-
-                  {%- endif -%}
-
-                  {%- if block.settings.content != blank -%}
-
-                    <div class="multi-column__content">
-                      {{- block.settings.content -}}
+                    <div class="multi-column__media overflow-hidden">
+                      {{- media_content -}}
                     </div>
 
                   {%- endif -%}
 
-                  {%- if block.settings.link_text != blank -%}
+                {%- endif -%}
 
-                    <a
-                      href="{{ block.settings.link_url }}"
-                      class="link"
-                    >
-                      {{ block.settings.link_text | escape }}
-                    </a>
+                {%- if section.settings.show_count_number
+                  or block.settings.title != blank
+                  or block.settings.content != blank
+                  or block.settings.link_text != blank
+                -%}
 
-                  {%- endif -%}
+                  <div class="prose text-{{ section.settings.text_alignment }}">
 
-                </div>
+                    {%- if section.settings.show_count_number -%}
 
-              {%- endif -%}
+                      <span class="multi-column__count">
+                        {{ forloop.index | prepend: '0' }}
+                      </span>
 
-            </div>
+                    {%- endif -%}
+
+                    {%- if block.settings.title != blank -%}
+
+                      <p class="{{ block.settings.heading_tag }} multi-column__heading">
+                        {{ block.settings.title }}
+                      </p>
+
+                    {%- endif -%}
+
+                    {%- if block.settings.content != blank -%}
+
+                      <div class="multi-column__content">
+                        {{- block.settings.content -}}
+                      </div>
+
+                    {%- endif -%}
+
+                    {%- if block.settings.link_text != blank -%}
+
+                      <a
+                        href="{{ block.settings.link_url }}"
+                        class="link"
+                      >
+                        {{ block.settings.link_text | escape }}
+                      </a>
+
+                    {%- endif -%}
+
+                  </div>
+
+                {%- endif -%}
+
+              </div>
+
+            {%- endif -%}
 
           {%- endfor -%}
 
@@ -728,5 +740,6 @@
     }
 
   ]
+
 }
 {% endschema %}
