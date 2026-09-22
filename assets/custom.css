@@ -3739,6 +3739,7 @@ x-header.header.Header_sec {
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 330px !important;
+         max-height: 330px !important;
     }
 
 }
@@ -4071,6 +4072,7 @@ x-header.header.Header_sec {
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 300px !important;
+         max-height: 300px !important;
     }
 
     .shopify-section--main-list-collections .section-stack {
@@ -4889,6 +4891,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 380px !important;
+         max-height: 380px !important;
     }
 }
 
@@ -6198,6 +6201,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 360px !important;
         row-gap: 16px !important;
+         max-height: 360px !important;
     }
 
     .shopify-section--main-list-collections .section-stack {
@@ -7229,6 +7233,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 360px !important;
+        max-height: 360px !important;
     }
 
     .shopify-section--main-list-collections .section-stack {
@@ -8320,5 +8325,6 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 290px !important;
+        max-height: 290px !important;
     }
 }
