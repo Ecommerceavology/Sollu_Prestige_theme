@@ -1,1 +1,231 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"color_scheme":"","show_title":true,"page_width":"xs"}},"image_with_text_overlay_qTAmgD":{"type":"image-with-text-overlay","blocks":{"subheading_WGVnmV":{"type":"subheading","settings":{"text":"JURIDISK INFORMATION"}},"heading_9WkpH8":{"type":"heading","settings":{"text":"Handelsbetingelser","heading_tag":"h2"}},"richtext_wci3UM":{"type":"richtext","settings":{"content":"<p>Her finder du de juridiske vilkår og betingelser for handel på Sollu.dk. Vi anbefaler, at du læser dem grundigt igennem, før du foretager et køb.<br\/><br\/><\/p>"}}},"block_order":["subheading_WGVnmV","heading_9WkpH8","richtext_wci3UM"],"name":"Hero section","settings":{"custom_class":"Hero_sec pro_hero_sec faq_hero_sec","color_scheme":"scheme-3","image_size":"sm","image":"shopify:\/\/shop_images\/Section_2.png","allow_transparent_header":false,"reveal_on_scroll":true,"remove_vertical_spacing":true,"content_width":"md","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center-start sm:text-start","overlay_color":"#000000","overlay_opacity":20}},"custom_sidebar_content_navigation_9EEGij":{"type":"custom-sidebar-content-navigation","blocks":{"navigation_item_UW9HA4":{"type":"navigation_item","settings":{"label":"Generelt","target_id":"general"}},"content_block_bMKwPX":{"type":"content_block","settings":{"heading":"1. Generelle oplysninger","target_id":"general","text":"<ul><li>Sollu ApS<\/li><li>CVR: 12345678<\/li><li>Bredgade 10, 1260 København K<\/li><li>Email: kontakt@sollu.dk<\/li><li>Telefon: +45 12 34 56 78<\/li><\/ul>"}},"navigation_item_Y6jFWW":{"type":"navigation_item","settings":{"label":"Betaling","target_id":"betaling"}},"content_block_hWzHAJ":{"type":"content_block","settings":{"heading":"2. Betaling","target_id":"betaling","text":"<p>På Sollu.dk kan der betales med:<\/p><ul><li>Dankort \/ VISA-Dankort<\/li><li>MasterCard<\/li><li>MobilePay<\/li><li>Apple Pay<\/li><\/ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager. Der tages ikke gebyr ved betaling på Sollu.dk.<\/p>"}},"navigation_item_YwBCwW":{"type":"navigation_item","settings":{"label":"Levering","target_id":"levering"}},"content_block_jTiYJt":{"type":"content_block","settings":{"heading":"3. Levering","target_id":"levering","text":"<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage. <br\/><br\/>Vi sender varer med GLS og PostNord. Fragtprisen oplyses ved kassen inden godkendelse af ordren. Ved køb over 1000 DKK tilbydes gratis levering til pakkeshop.<\/p>"}},"navigation_item_Viin39":{"type":"navigation_item","settings":{"label":"Fortrydelsesret","target_id":"fortrydelsesret"}},"content_block_4iTFFY":{"type":"content_block","settings":{"heading":"4. Fortrydelsesret","target_id":"fortrydelsesret","text":"<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.<br\/><br\/>Du skal inden 14 dage fra modtagelse give os meddelelse om, at du ønsker at fortryde dit køb. Meddelelsen skal gives ved at sende en mail til kontakt@sollu.dk eller ved at benytte standardfortrydelsesformularen.<br\/><br\/>Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig meddelelse om dette.<\/p>"}},"navigation_item_qeErXk":{"type":"navigation_item","settings":{"label":"Reklamationsret","target_id":"reklamationsret"}},"content_block_UJkW6b":{"type":"content_block","settings":{"heading":"5. Reklamationsret","target_id":"reklamationsret","text":"<p>Købelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsref.<br\/><br\/>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af produktet eller anden skadeforvoldende adfærd.<br\/><br\/>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.<\/p>"}}},"block_order":["navigation_item_UW9HA4","content_block_bMKwPX","navigation_item_Y6jFWW","content_block_hWzHAJ","navigation_item_YwBCwW","content_block_jTiYJt","navigation_item_Viin39","content_block_4iTFFY","navigation_item_qeErXk","content_block_UJkW6b"],"name":"Custom Sidebar Navigation","settings":{"custom_class":"sidebar_content_sec","max_width":1200,"sidebar_width":160,"column_gap":40,"padding_top":40,"padding_bottom":40,"padding_horizontal":20,"navigation_label":"Page navigation","enable_sticky":true,"enable_sticky_mobile":false,"sticky_top":20,"sidebar_item_height":35,"sidebar_item_padding_vertical":8,"sidebar_item_padding_horizontal":10,"sidebar_font_size":12,"sidebar_font_weight":"600","sidebar_background":"#ffffff","sidebar_text_color":"#222222","sidebar_hover_background":"#f5f1e9","sidebar_hover_text":"#222222","sidebar_active_background":"#eee2cf","sidebar_active_text":"#222222","active_border_color":"#222222","active_border_width":1,"heading_size":30,"heading_weight":"400","heading_spacing":20,"heading_bottom_padding":15,"heading_border_width":1,"heading_border_color":"#e5e5e5","heading_color":"#2c2927","text_color":"#222222","text_size":14,"text_line_height":1.6,"content_spacing":45,"scroll_offset":80,"mobile_scroll_offset":20,"mobile_padding_top":20,"mobile_padding_bottom":20,"mobile_padding_horizontal":15,"mobile_column_gap":30,"mobile_sidebar_item_height":40,"mobile_sidebar_item_padding_vertical":9,"mobile_sidebar_item_padding_horizontal":12,"mobile_sidebar_font_size":12,"mobile_heading_size":26,"mobile_text_size":14}},"newsletter_NNqd7N":{"type":"newsletter","settings":{"custom_class":"Newsletter_sec pro_newsletter","color_scheme":"scheme-2","separate_section_with_border":true,"image_size":"md","subheading":"Nyhedsbrev","title":"Tilmeld dig og få 15% på dinførste ordre","heading_style":"h2","content":"<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.<\/p>","button_text":"Tilmeld","input_bottom_info":"<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik<\/a>. Vi deler aldrig din e-mail.<\/p>","overlay_color":"#f5f0e8","overlay_opacity":100}}},"order":["main","image_with_text_overlay_qTAmgD","custom_sidebar_content_navigation_9EEGij","newsletter_NNqd7N"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "image_with_text_overlay_qTAmgD": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_WGVnmV": {
+          "type": "subheading",
+          "settings": {
+            "text": "JURIDISK INFORMATION"
+          }
+        },
+        "heading_9WkpH8": {
+          "type": "heading",
+          "settings": {
+            "text": "Handelsbetingelser",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_wci3UM": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Her finder du de juridiske vilkår og betingelser for handel på Sollu.dk. Vi anbefaler, at du læser dem grundigt igennem, før du foretager et køb.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WGVnmV",
+        "heading_9WkpH8",
+        "richtext_wci3UM"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "custom_sidebar_content_navigation_9EEGij": {
+      "type": "custom-sidebar-content-navigation",
+      "blocks": {
+        "navigation_item_UW9HA4": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Generelt",
+            "target_id": "general"
+          }
+        },
+        "content_block_bMKwPX": {
+          "type": "content_block",
+          "settings": {
+            "heading": "1. Generelle oplysninger",
+            "target_id": "general",
+            "text": "<ul><li>Sollu ApS</li><li>CVR-nr.: DK 46 09 28 72</li><li>Pilekæret 30, 2840 Holte</li><li>Email: kontakt@sollu.dk</li><li>Telefon: +45 2189 5400</li></ul>"
+          }
+        },
+        "navigation_item_Y6jFWW": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Betaling",
+            "target_id": "betaling"
+          }
+        },
+        "content_block_hWzHAJ": {
+          "type": "content_block",
+          "settings": {
+            "heading": "2. Betaling",
+            "target_id": "betaling",
+            "text": "<p>På Sollu.dk kan der betales med:</p><ul><li>Dankort / VISA-Dankort</li><li>MasterCard</li><li>MobilePay</li><li>Apple Pay</li></ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager. Der tages ikke gebyr ved betaling på Sollu.dk.</p>"
+          }
+        },
+        "navigation_item_YwBCwW": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Levering",
+            "target_id": "levering"
+          }
+        },
+        "content_block_jTiYJt": {
+          "type": "content_block",
+          "settings": {
+            "heading": "3. Levering",
+            "target_id": "levering",
+            "text": "<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage. <br/><br/>Vi sender varer med GLS og PostNord. Fragtprisen oplyses ved kassen inden godkendelse af ordren. Ved køb over 1000 DKK tilbydes gratis levering til pakkeshop.</p>"
+          }
+        },
+        "navigation_item_Viin39": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Fortrydelsesret",
+            "target_id": "fortrydelsesret"
+          }
+        },
+        "content_block_4iTFFY": {
+          "type": "content_block",
+          "settings": {
+            "heading": "4. Fortrydelsesret",
+            "target_id": "fortrydelsesret",
+            "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os. Fortrydelsesfristen udløber 14 dage efter den dag, du har modtaget din vare.<br/><br/>Du skal inden 14 dage fra modtagelse give os meddelelse om, at du ønsker at fortryde dit køb. Meddelelsen skal gives ved at sende en mail til kontakt@sollu.dk eller ved at benytte standardfortrydelsesformularen.<br/><br/>Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig meddelelse om dette.</p>"
+          }
+        },
+        "navigation_item_qeErXk": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Reklamationsret",
+            "target_id": "reklamationsret"
+          }
+        },
+        "content_block_UJkW6b": {
+          "type": "content_block",
+          "settings": {
+            "heading": "5. Reklamationsret",
+            "target_id": "reklamationsret",
+            "text": "<p>Købelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsref.<br/><br/>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af produktet eller anden skadeforvoldende adfærd.<br/><br/>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_UW9HA4",
+        "content_block_bMKwPX",
+        "navigation_item_Y6jFWW",
+        "content_block_hWzHAJ",
+        "navigation_item_YwBCwW",
+        "content_block_jTiYJt",
+        "navigation_item_Viin39",
+        "content_block_4iTFFY",
+        "navigation_item_qeErXk",
+        "content_block_UJkW6b"
+      ],
+      "name": "Custom Sidebar Navigation",
+      "settings": {
+        "custom_class": "sidebar_content_sec",
+        "max_width": 1200,
+        "sidebar_width": 160,
+        "column_gap": 40,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 20,
+        "navigation_label": "Page navigation",
+        "enable_sticky": true,
+        "enable_sticky_mobile": false,
+        "sticky_top": 20,
+        "sidebar_item_height": 35,
+        "sidebar_item_padding_vertical": 8,
+        "sidebar_item_padding_horizontal": 10,
+        "sidebar_font_size": 12,
+        "sidebar_font_weight": "600",
+        "sidebar_background": "#ffffff",
+        "sidebar_text_color": "#222222",
+        "sidebar_hover_background": "#f5f1e9",
+        "sidebar_hover_text": "#222222",
+        "sidebar_active_background": "#eee2cf",
+        "sidebar_active_text": "#222222",
+        "active_border_color": "#222222",
+        "active_border_width": 1,
+        "heading_size": 30,
+        "heading_weight": "400",
+        "heading_spacing": 20,
+        "heading_bottom_padding": 15,
+        "heading_border_width": 1,
+        "heading_border_color": "#e5e5e5",
+        "heading_color": "#2c2927",
+        "text_color": "#222222",
+        "text_size": 14,
+        "text_line_height": 1.6,
+        "content_spacing": 45,
+        "scroll_offset": 80,
+        "mobile_scroll_offset": 20,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20,
+        "mobile_padding_horizontal": 15,
+        "mobile_column_gap": 30,
+        "mobile_sidebar_item_height": 40,
+        "mobile_sidebar_item_padding_vertical": 9,
+        "mobile_sidebar_item_padding_horizontal": 12,
+        "mobile_sidebar_font_size": 12,
+        "mobile_heading_size": 26,
+        "mobile_text_size": 14
+      }
+    },
+    "newsletter_NNqd7N": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec pro_newsletter",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 15% på dinførste ordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner, der virker, og besked når nye enheder lander. Du kanaltid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_qTAmgD",
+    "custom_sidebar_content_navigation_9EEGij",
+    "newsletter_NNqd7N"
+  ]
+}
