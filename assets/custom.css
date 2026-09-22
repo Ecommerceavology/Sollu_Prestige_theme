@@ -23,6 +23,7 @@ h6 {
     font-family: "Cormorant Garamond", serif !important;
     font-weight: 300 !important;
     line-height: 50.6px; !important;
+    text-transform: unset !IMPORTANT;
 }
 
 p {
