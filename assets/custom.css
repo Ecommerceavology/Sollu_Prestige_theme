@@ -23,15 +23,13 @@ h6 {
     font-family: "Cormorant Garamond", serif !important;
     font-weight: 300 !important;
     line-height: 50.6px; !important;
-    text-transform: unset !IMPORTANT;
-    letter-spacing: normal !important;
+
 }
 
 p {
     font-family: "Jost", sans-serif !important;
     font-weight: 300 !important;
-    text-transform: unset !IMPORTANT;
-    letter-spacing: normal !important;
+    
 }
 
 a {
