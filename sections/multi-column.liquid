@@ -121,10 +121,13 @@
           {%- for block in section.blocks -%}
 
             {%- comment -%}
-              Only display the block when Content is not empty.
+              Remove HTML tags and whitespace from the rich text content.
+              This makes empty values such as <p></p> count as blank.
             {%- endcomment -%}
 
-            {%- if block.settings.content != blank -%}
+            {%- assign block_content_text = block.settings.content | strip_html | strip -%}
+
+            {%- if block_content_text != blank -%}
 
               <div
                 class="
@@ -218,52 +221,44 @@
 
                 {%- endif -%}
 
-                {%- if section.settings.show_count_number
-                  or block.settings.title != blank
-                  or block.settings.content != blank
-                  or block.settings.link_text != blank
-                -%}
+                <div class="prose text-{{ section.settings.text_alignment }}">
 
-                  <div class="prose text-{{ section.settings.text_alignment }}">
+                  {%- if section.settings.show_count_number -%}
 
-                    {%- if section.settings.show_count_number -%}
+                    <span class="multi-column__count">
+                      {{ forloop.index | prepend: '0' }}
+                    </span>
 
-                      <span class="multi-column__count">
-                        {{ forloop.index | prepend: '0' }}
-                      </span>
+                  {%- endif -%}
 
-                    {%- endif -%}
+                  {%- if block.settings.title != blank -%}
 
-                    {%- if block.settings.title != blank -%}
+                    <p class="{{ block.settings.heading_tag }} multi-column__heading">
+                      {{ block.settings.title }}
+                    </p>
 
-                      <p class="{{ block.settings.heading_tag }} multi-column__heading">
-                        {{ block.settings.title }}
-                      </p>
+                  {%- endif -%}
 
-                    {%- endif -%}
+                  {%- if block_content_text != blank -%}
 
-                    {%- if block.settings.content != blank -%}
+                    <div class="multi-column__content">
+                      {{- block.settings.content -}}
+                    </div>
 
-                      <div class="multi-column__content">
-                        {{- block.settings.content -}}
-                      </div>
+                  {%- endif -%}
 
-                    {%- endif -%}
+                  {%- if block.settings.link_text != blank -%}
 
-                    {%- if block.settings.link_text != blank -%}
+                    <a
+                      href="{{ block.settings.link_url }}"
+                      class="link"
+                    >
+                      {{ block.settings.link_text | escape }}
+                    </a>
 
-                      <a
-                        href="{{ block.settings.link_url }}"
-                        class="link"
-                      >
-                        {{ block.settings.link_text | escape }}
-                      </a>
+                  {%- endif -%}
 
-                    {%- endif -%}
-
-                  </div>
-
-                {%- endif -%}
+                </div>
 
               </div>
 
@@ -556,8 +551,7 @@
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "t:global.text.heading",
-          "default": "Column title"
+          "label": "t:global.text.heading"
         },
 
         {
@@ -598,8 +592,7 @@
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          "label": "t:global.text.content"
         },
 
         {
@@ -654,8 +647,7 @@
         {
           "type": "inline_richtext",
           "id": "title",
-          "label": "t:global.text.heading",
-          "default": "Column title"
+          "label": "t:global.text.heading"
         },
 
         {
@@ -696,8 +688,7 @@
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          "label": "t:global.text.content"
         },
 
         {
