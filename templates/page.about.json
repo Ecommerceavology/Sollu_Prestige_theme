@@ -402,7 +402,7 @@
         "custom_class": "About_Sec_7",
         "show_all_products": true,
         "all_products_text": "ALLE PRODUKTER",
-        "all_products_link": "",
+        "all_products_link": "shopify://collections",
         "color_scheme": "",
         "separate_section_with_border": true,
         "image_size": "auto",
