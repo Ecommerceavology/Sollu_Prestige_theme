@@ -6273,6 +6273,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         line-height: 24px !important;
     }
 
+    .return_sec_1 {
+    padding: 0 0 50px !important;
+}
+
 }
 
 @media (max-width: 750px) {
