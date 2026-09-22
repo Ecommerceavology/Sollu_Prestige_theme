@@ -2089,7 +2089,7 @@ span.custom-product-card__price-current {
 
 .About_Sec_2 li.image-with-text-feature-list__item,
 .About_Sec_3 li.image-with-text-feature-list__item {
-    align-items: center !important;
+    /* align-items: center !important; */
     gap: 16px !important;
 }
 .About_Sec_2 .image-with-text-feature-list__items,
