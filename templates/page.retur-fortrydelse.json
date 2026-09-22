@@ -270,54 +270,67 @@
         "content": "<p>Varen skal returneres i original emballage. Du må gerne prøve den, som du ville i en fysisk butik —det er hele formålet med vores 30 dages fulde returret. Er varen ikke noget for dig, skal du ikke beholde den.</p>"
       }
     },
-    "rich_text_kR7aJb": {
-      "type": "rich-text",
+    "multi_column_xJg4AL": {
+      "type": "multi-column",
       "blocks": {
-        "heading_cRwp9X": {
-          "type": "heading",
+        "image_with_text_T9ddrT": {
+          "type": "image_with_text",
           "settings": {
-            "text": "Reklamation",
-            "heading_tag": "h1",
-            "custom_class": ""
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
           }
         },
-        "richtext_Ey9dhQ": {
-          "type": "richtext",
+        "image_with_text_nmFF7q": {
+          "type": "image_with_text",
           "settings": {
-            "content": "<p>Hvis du fortryder dit køb, får du det beløb, du har indbetalt til os, tilbage. I tilfælde af en værdiforringelse, som du hæfter for, fratrækkes denne købsbeløbet. Vi refunderer alle betalinger modtaget fra dig, herunder leveringsomkostninger (dog ikke ekstra omkostninger som følge af dit eget valg af en anden leveringsform end den billigste form for standardlevering, som vi tilbyder).<br/></p>",
-            "custom_class": ""
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
           }
         },
-        "heading_3xXJ9e": {
-          "type": "heading",
+        "image_with_text_YpUNU8": {
+          "type": "image_with_text",
           "settings": {
-            "text": "Returadresse",
-            "heading_tag": "h1",
-            "custom_class": ""
-          }
-        },
-        "richtext_bhLCgk": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Sollu ApS<br/>Pilekæret 30<br/>2840 Holte<br/>Danmark</p>",
-            "custom_class": ""
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
           }
         }
       },
       "block_order": [
-        "heading_cRwp9X",
-        "richtext_Ey9dhQ",
-        "heading_3xXJ9e",
-        "richtext_bhLCgk"
+        "image_with_text_T9ddrT",
+        "image_with_text_nmFF7q",
+        "image_with_text_YpUNU8"
       ],
-      "name": "t:sections.rich_text.presets.rich_text.name",
+      "name": "t:sections.multi_column.presets.multi_column.name",
       "settings": {
+        "custom_class": "",
         "color_scheme": "",
-        "custom_class": "retur_info_sec",
         "separate_section_with_border": true,
-        "content_width": "sm",
-        "text_position": "start",
-        "remove_vertical_spacing": false
+        "columns_per_row": 3,
+        "stack_on_mobile": false,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "md",
+        "show_count_number": true,
+        "count_number_size": 11,
+        "count_number_color": "#B18A50",
+        "column_heading_size": 24,
+        "column_heading_color": "#000000",
+        "column_content_size": 16,
+        "column_content_color": "#000000",
+        "subheading": "",
+        "title": "Returadresse",
+        "heading_style": "h2",
+        "content": "<p>Sollu ApS<br/>Pilekæret 30<br/>2840 Holte<br/>Danmark</p>"
       }
     },
     "newsletter_pxN7Q4": {
@@ -345,7 +358,7 @@
     "multi_column_G9thhx",
     "multi_column_AKeBCy",
     "multi_column_bwDLyC",
-    "rich_text_kR7aJb",
+    "multi_column_xJg4AL",
     "newsletter_pxN7Q4"
   ]
 }
