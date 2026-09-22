@@ -3369,7 +3369,11 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 400;
 }
 
-
+th {
+    color: #2a2420;
+    font-size: 18px;
+    font-weight: 600;
+}
 
 
 
