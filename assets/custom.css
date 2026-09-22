@@ -1658,7 +1658,7 @@ span.custom-product-card__price-current {
     grid: none !IMPORTANT;
     gap: 24px!important;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
 }
 .Retur_multi_sec .multi-column__count {
     background: #2a2420;
