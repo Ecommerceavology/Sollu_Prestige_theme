@@ -3417,6 +3417,9 @@ position: relative !important;
     font-weight: 300 !important;
     max-width: 475px !important;
 }
+.cst-privacy-policy-banner-content>div {
+    padding: 65px 40px !IMPORTANT;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
@@ -3857,6 +3860,19 @@ nav.header__secondary-nav {
     .return_sec_1 {
     padding: 0 0 70px !important;
 }
+ .cst-privacy-policy-banner-content h1 {
+        font-size: 46px !important;
+        line-height: 52px !important;
+    }
+
+    .cst-privacy-policy-banner-content p {
+        font-size: 16px !important;
+        line-height: 27px !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 55px 35px !important;
+    }
 }
 @media (max-width: 1200px) {
 
@@ -5073,7 +5089,20 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 .return_sec_2 {
    padding:  60px 0 !important;
 }
+.cst-privacy-policy-banner-content h1 {
+        font-size: 42px !important;
+        line-height: 48px !important;
+        letter-spacing: .6px !important;
+    }
 
+    .cst-privacy-policy-banner-content p {
+        font-size: 15px !important;
+        line-height: 26px !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 45px 30px !important;
+    }
 
 }
 
@@ -6493,6 +6522,22 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .shopify-policy__body p {
         margin-top: 18px !important;
     }
+     .cst-privacy-policy-banner-content h1 {
+        font-size: 38px !important;
+        line-height: 43px !important;
+        letter-spacing: .5px !important;
+        margin: 12px 0 17px !important;
+    }
+
+    .cst-privacy-policy-banner-content p {
+        font-size: 15px !important;
+        line-height: 25px !important;
+        max-width: 100% !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 40px 24px !important;
+    }
 }
 
 @media (max-width: 750px) {
@@ -7567,6 +7612,22 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 15px;
         line-height: 23px;
     }
+
+    .cst-privacy-policy-banner-content h1 {
+        font-size: 34px !important;
+        line-height: 39px !important;
+        letter-spacing: .4px !important;
+        margin: 10px 0 15px !important;
+    }
+
+    .cst-privacy-policy-banner-content p {
+        font-size: 14px !important;
+        line-height: 24px !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 35px 20px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -8536,6 +8597,20 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 14px;
     }
 
+
+    .cst-privacy-policy-banner-content h1 {
+        font-size: 31px !important;
+        line-height: 36px !important;
+    }
+
+    .cst-privacy-policy-banner-content p {
+        font-size: 14px !important;
+        line-height: 23px !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 30px 18px !important;
+    }
   
 }
 
@@ -8733,5 +8808,18 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .shopify-policy__body td {
         font-size: 14px;
         line-height: 21px;
+    }
+     .cst-privacy-policy-banner-content h1 {
+        font-size: 28px !important;
+        line-height: 33px !important;
+    }
+
+    .cst-privacy-policy-banner-content p {
+        font-size: 13px !important;
+        line-height: 22px !important;
+    }
+
+    .cst-privacy-policy-banner-content > div {
+        padding: 25px 15px !important;
     }
 }
