@@ -3381,7 +3381,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 600 !important;
 }
 
-
+.shopify-policy__body p {
+    margin-top: 20px !important;
+}
 
 
 /* //responsive  */
