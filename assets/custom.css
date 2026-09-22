@@ -3420,7 +3420,9 @@ position: relative !important;
 .cst-privacy-policy-banner-content>div {
     padding: 65px 40px !IMPORTANT;
 }
-
+.cst-privacy-policy-banner img {
+    object-fit: cover;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
