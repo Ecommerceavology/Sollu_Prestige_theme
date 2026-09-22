@@ -3230,9 +3230,8 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     max-width: 100%!important;
     min-height: 358px!important;
     display: grid;
-    --content-over-media-gap: unset !important;
-    row-gap: unset!important;
-    grid-template: unset;
+    --content-over-media-gap: 20px !important;
+    row-gap: 20px !important;
 }
 
 
