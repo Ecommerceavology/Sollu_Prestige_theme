@@ -2298,11 +2298,13 @@ span.custom-product-card__price-current {
     gap: 32px !important;
 }
 .About_Sec_5 p.h3.multi-column__heading {
-    color: #ffffff !important;
-    font-size: 30px !important;
-    line-height: 36px !important;
-    font-weight: 600 !important;
-    font-family: "Cormorant Garamond", serif !important;
+    color: #fff!important;
+    font-size: 25px!important;
+    line-height: 36px!important;
+    font-weight: 600!important;
+    font-family: Cormorant Garamond,serif!important;
+    letter-spacing: 1px;
+    text-transform: unset !important;
 }
 .About_Sec_5 .multi-column__item .multi-column__content {
     margin-top: 4px !important;
