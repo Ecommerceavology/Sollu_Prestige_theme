@@ -3300,8 +3300,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     border: 1px solid #2a2420!important;
 }
 .sidebar-content-navigation__text.rte a {
-    text-decoration: underline !important;
-    transition: all .3s ease !important;
+    text-decoration: underline!important;
+    transition: all .3s ease!important;
+    font-weight: 500;
 }
 .sidebar-content-navigation__text.rte a:hover{
      color: #2a2420!important;  
