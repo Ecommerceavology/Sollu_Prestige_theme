@@ -210,6 +210,14 @@
     "multi_column_qj9twQ": {
       "type": "multi-column",
       "blocks": {
+        "rich_text_hFxxwF": {
+          "type": "rich_text",
+          "settings": {
+            "title": "",
+            "heading_tag": "h3",
+            "content": ""
+          }
+        },
         "image_with_text_kqANM8": {
           "type": "image_with_text",
           "settings": {
@@ -222,6 +230,7 @@
         }
       },
       "block_order": [
+        "rich_text_hFxxwF",
         "image_with_text_kqANM8"
       ],
       "name": "t:sections.multi_column.presets.multi_column.name",
