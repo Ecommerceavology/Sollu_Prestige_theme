@@ -3232,14 +3232,20 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     min-height: 358px!important;
     display: grid;
     --content-over-media-gap: 20px !important;
-    row-gap: 20px !important;
+    row-gap: 20px!important;
+    background: white !important;
 }
 .shopify-section--main-list-collections .section-stack {
     gap: 45px;
 }
 
 
-
+.shopify-section--main-list-collections img {
+    object-fit: contain;
+    object-position: center;
+    margin-inline: auto;
+    transition: opacity .1s ease-in-out;
+}
 
 
 
