@@ -3423,6 +3423,9 @@ position: relative !important;
 .cst-privacy-policy-banner img {
     object-fit: cover;
 }
+.shopify-policy__body ul {
+    padding-left: 5px;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
