@@ -1,5 +1,15 @@
 {%- if section.blocks.size > 0 -%}
 
+  {%- assign has_content_blocks = false -%}
+
+  {%- for block in section.blocks -%}
+    {%- assign block_content_text = block.settings.content | strip_html | strip -%}
+
+    {%- if block_content_text != blank -%}
+      {%- assign has_content_blocks = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   <style>
     #shopify-section-{{ section.id }} {
       --multi-column-gap: {% if section.settings.spacing == 'xs' %}1.5rem{% elsif section.settings.spacing == 'sm' %}2.5rem{% elsif section.settings.spacing == 'md' %}3.125rem{% else %}4.375rem{% endif %};
@@ -116,157 +126,156 @@
           text_alignment: section.settings.content_alignment
         -%}
 
-        <multi-column class="multi-column {% unless section.settings.stack_on_mobile %}scroll-area snap-x bleed md:unbleed{% endunless %}">
+        {%- if has_content_blocks -%}
 
-          {%- for block in section.blocks -%}
+          <multi-column class="multi-column {% unless section.settings.stack_on_mobile %}scroll-area snap-x bleed md:unbleed{% endunless %}">
 
-            {%- comment -%}
-              Remove HTML tags and whitespace from the rich text content.
-              This makes empty values such as <p></p> count as blank.
-            {%- endcomment -%}
+            {%- for block in section.blocks -%}
 
-            {%- assign block_content_text = block.settings.content | strip_html | strip -%}
+              {%- assign block_content_text = block.settings.content | strip_html | strip -%}
 
-            {%- if block_content_text != blank -%}
+              {%- if block_content_text != blank -%}
 
-              <div
-                class="
-                  multi-column__item
-                  {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %}
-                  snap-center
-                  group
-                "
-                {{ block.shopify_attributes }}
-              >
+                <div
+                  class="
+                    multi-column__item
+                    {% if section.settings.overlap_image and block.settings.title != blank %}multi-column__item--overlap{% endif %}
+                    snap-center
+                    group
+                  "
+                  {{ block.shopify_attributes }}
+                >
 
-                {%- capture sizes_attribute -%}
-                  (max-width: 699px) 53vw,
-                  (max-width: 999px) 38vw,
-                  calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
-                {%- endcapture -%}
+                  {%- capture sizes_attribute -%}
+                    (max-width: 699px) 53vw,
+                    (max-width: 999px) 38vw,
+                    calc((100vw - 3rem * 2) / {{ section.settings.columns_per_row }})
+                  {%- endcapture -%}
 
-                {%- capture media_content -%}
+                  {%- capture media_content -%}
 
-                  {%- if block.type == 'image_with_text' and block.settings.image != blank -%}
+                    {%- if block.type == 'image_with_text' and block.settings.image != blank -%}
 
-                    {%- liquid
-                      assign loading_strategy = null
+                      {%- liquid
+                        assign loading_strategy = null
 
-                      if forloop.index > 2 or section.location == 'footer'
-                        assign loading_strategy = 'lazy'
-                      endif
-                    -%}
+                        if forloop.index > 2 or section.location == 'footer'
+                          assign loading_strategy = 'lazy'
+                        endif
+                      -%}
 
-                    {{
-                      block.settings.image
-                      | image_url: width: block.settings.image.width
-                      | image_tag:
-                        loading: loading_strategy,
+                      {{
+                        block.settings.image
+                        | image_url: width: block.settings.image.width
+                        | image_tag:
+                          loading: loading_strategy,
+                          sizes: sizes_attribute,
+                          widths: '300,400,500,600,800,1000,1200,1400,1600,1800',
+                          class: 'zoom-image group-hover:zoom'
+                      }}
+
+                    {%- elsif block.type == 'video_with_text' and block.settings.video != blank -%}
+
+                      {%- liquid
+                        if block.settings.autoplay and block.settings.loop
+                          assign show_controls = false
+                        else
+                          assign show_controls = true
+                        endif
+                      -%}
+
+                      {% render 'media',
+                        media: block.settings.video,
+                        autoplay: block.settings.autoplay,
+                        loop: block.settings.loop,
+                        controls: show_controls,
                         sizes: sizes_attribute,
-                        widths: '300,400,500,600,800,1000,1200,1400,1600,1800',
-                        class: 'zoom-image group-hover:zoom'
-                    }}
+                        play_button_background: block.settings.play_button_background
+                      %}
 
-                  {%- elsif block.type == 'video_with_text' and block.settings.video != blank -%}
+                    {%- endif -%}
+
+                  {%- endcapture -%}
+
+                  {%- if media_content != blank -%}
 
                     {%- liquid
-                      if block.settings.autoplay and block.settings.loop
-                        assign show_controls = false
-                      else
-                        assign show_controls = true
+                      assign add_link = false
+
+                      if block.type == 'video_with_text' and block.settings.autoplay and block.settings.link_url != blank
+                        assign add_link = true
+                      elsif block.type == 'image_with_text' and block.settings.link_url != blank
+                        assign add_link = true
                       endif
                     -%}
 
-                    {% render 'media',
-                      media: block.settings.video,
-                      autoplay: block.settings.autoplay,
-                      loop: block.settings.loop,
-                      controls: show_controls,
-                      sizes: sizes_attribute,
-                      play_button_background: block.settings.play_button_background
-                    %}
+                    {%- if add_link -%}
+
+                      <a
+                        href="{{ block.settings.link_url }}"
+                        class="multi-column__media overflow-hidden"
+                      >
+                        {{- media_content -}}
+                      </a>
+
+                    {%- else -%}
+
+                      <div class="multi-column__media overflow-hidden">
+                        {{- media_content -}}
+                      </div>
+
+                    {%- endif -%}
 
                   {%- endif -%}
 
-                {%- endcapture -%}
+                  <div class="prose text-{{ section.settings.text_alignment }}">
 
-                {%- if media_content != blank -%}
+                    {%- if section.settings.show_count_number -%}
 
-                  {%- liquid
-                    assign add_link = false
+                      <span class="multi-column__count">
+                        {{ forloop.index | prepend: '0' }}
+                      </span>
 
-                    if block.type == 'video_with_text' and block.settings.autoplay and block.settings.link_url != blank
-                      assign add_link = true
-                    elsif block.type == 'image_with_text' and block.settings.link_url != blank
-                      assign add_link = true
-                    endif
-                  -%}
+                    {%- endif -%}
 
-                  {%- if add_link -%}
+                    {%- if block.settings.title != blank -%}
 
-                    <a
-                      href="{{ block.settings.link_url }}"
-                      class="multi-column__media overflow-hidden"
-                    >
-                      {{- media_content -}}
-                    </a>
+                      <p class="{{ block.settings.heading_tag }} multi-column__heading">
+                        {{ block.settings.title }}
+                      </p>
 
-                  {%- else -%}
+                    {%- endif -%}
 
-                    <div class="multi-column__media overflow-hidden">
-                      {{- media_content -}}
-                    </div>
+                    {%- if block_content_text != blank -%}
 
-                  {%- endif -%}
+                      <div class="multi-column__content">
+                        {{- block.settings.content -}}
+                      </div>
 
-                {%- endif -%}
+                    {%- endif -%}
 
-                <div class="prose text-{{ section.settings.text_alignment }}">
+                    {%- if block.settings.link_text != blank -%}
 
-                  {%- if section.settings.show_count_number -%}
+                      <a
+                        href="{{ block.settings.link_url }}"
+                        class="link"
+                      >
+                        {{ block.settings.link_text | escape }}
+                      </a>
 
-                    <span class="multi-column__count">
-                      {{ forloop.index | prepend: '0' }}
-                    </span>
+                    {%- endif -%}
 
-                  {%- endif -%}
-
-                  {%- if block.settings.title != blank -%}
-
-                    <p class="{{ block.settings.heading_tag }} multi-column__heading">
-                      {{ block.settings.title }}
-                    </p>
-
-                  {%- endif -%}
-
-                  {%- if block_content_text != blank -%}
-
-                    <div class="multi-column__content">
-                      {{- block.settings.content -}}
-                    </div>
-
-                  {%- endif -%}
-
-                  {%- if block.settings.link_text != blank -%}
-
-                    <a
-                      href="{{ block.settings.link_url }}"
-                      class="link"
-                    >
-                      {{ block.settings.link_text | escape }}
-                    </a>
-
-                  {%- endif -%}
+                  </div>
 
                 </div>
 
-              </div>
+              {%- endif -%}
 
-            {%- endif -%}
+            {%- endfor -%}
 
-          {%- endfor -%}
+          </multi-column>
 
-        </multi-column>
+        {%- endif -%}
 
       </div>
     </div>
