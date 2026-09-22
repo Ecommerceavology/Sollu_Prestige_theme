@@ -3256,7 +3256,9 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 
 
 
-.return_sec_1
+.return_sec_1 {
+    padding: 0 0 80px !important;
+}
 
 
 .return_sec_2 {
@@ -3719,8 +3721,9 @@ nav.header__secondary-nav {
 .return_sec_3 {
         padding: 70px 0 !important;
     }
+
     .return_sec_1 {
-    padding: 0 0 80px!important;
+    padding: 0 0 70px !important;
 }
 }
 @media (max-width: 1200px) {
