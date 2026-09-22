@@ -3322,7 +3322,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     padding-left: 32px!important;
     padding-right: 32px!important;
 }
-.shopify-policy__title h1 {
+.shopify-policy__container .shopify-policy__title h1 {
     color: #2a2420;
     font-size: 46px !important;
     line-height: 50.6px !important;
