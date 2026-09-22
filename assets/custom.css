@@ -3318,7 +3318,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     width: 100%!important;
     max-width: 100% !important;
     margin: 0 auto!important;
-    padding: 110px 0px 81px!important;
+   
 }
 .shopify-policy__container .shopify-policy__title h1 {
     color: #2a2420;
@@ -3893,10 +3893,7 @@ x-header.header.Header_sec {
          max-height: 330px !important;
     }
 
-     .shopify-policy__container {
-        padding-top: 90px !important;
-        padding-bottom: 70px !important;
-    }
+ 
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
@@ -4261,9 +4258,7 @@ x-header.header.Header_sec {
     }
 
 
-    .shopify-policy__container {
-        padding: 75px 28px 60px !important;
-    }
+
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
@@ -6437,9 +6432,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 }
 
 
- .shopify-policy__container {
-        padding: 60px 24px 50px !important;
-    }
+
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
@@ -7524,9 +7517,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     padding: 40px 0 !important;
 }
 
- .shopify-policy__container {
-        padding: 50px 20px 45px !important;
-    }
+
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
@@ -8490,9 +8481,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         font-size: 14px !important;
         line-height: 22px !important;
     }
-    .shopify-policy__container {
-        padding: 45px 16px 40px !important;
-    }
+
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
@@ -8696,9 +8685,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         line-height: 21px !important;
     }
 
-    .shopify-policy__container {
-        padding: 40px 14px 35px !important;
-    }
+
 
     .shopify-policy__container .shopify-policy__title h1,
     .shopify-policy__body h1 {
