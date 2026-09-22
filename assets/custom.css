@@ -3252,7 +3252,8 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 }
 
 .Retur_multi_sec {
-    padding-top: 50px !important;
+    padding-top: 50px!important;
+    padding-bottom: 0px !important;
 }
 
 
