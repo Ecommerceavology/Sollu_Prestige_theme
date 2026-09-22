@@ -3342,7 +3342,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
 }
 .shopify-policy__body h2 {
     color: #2a2420;
-    font-size: 26px;
+    font-size: 32px;
     letter-spacing: 1px!important;
     font-weight: 400;
     font-family: Cormorant Garamond,serif!important;
@@ -3358,6 +3358,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-family: Cormorant Garamond,serif!important;
     text-transform: unset!important;
     line-height: normal!important;
+    margin-top: 35px !important;
 }
 
 
