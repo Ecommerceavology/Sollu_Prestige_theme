@@ -146,7 +146,7 @@
       "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
         "color_scheme": "",
-        "custom_class": "",
+        "custom_class": "Shipping_and_delivery",
         "separate_section_with_border": true,
         "content_width": "sm",
         "text_position": "start",
