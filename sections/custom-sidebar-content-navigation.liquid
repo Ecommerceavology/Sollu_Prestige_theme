@@ -14,469 +14,260 @@
     width: 100%;
     max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
-
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
     padding-left: {{ section.settings.padding_horizontal }}px;
     padding-right: {{ section.settings.padding_horizontal }}px;
-
     box-sizing: border-box;
   }
 
-
-  /* ==========================================
-     LAYOUT
-     ========================================== */
-
   #shopify-section-{{ section.id }} .sidebar-content-navigation__layout {
     display: grid;
-
     grid-template-columns:
       {{ section.settings.sidebar_width }}px
       minmax(0, 1fr);
-
     gap: {{ section.settings.column_gap }}px;
-
     align-items: start;
   }
-
-
-  /* ==========================================
-     SIDEBAR
-     ========================================== */
 
   #shopify-section-{{ section.id }} .sidebar-content-navigation__sidebar {
     width: 100%;
     min-width: 0;
   }
 
-
   {% if section.settings.enable_sticky %}
-
     #shopify-section-{{ section.id }} .sidebar-content-navigation__sidebar-inner {
       position: sticky;
-
       top: {{ section.settings.sticky_top }}px;
-
       z-index: 5;
     }
-
   {% endif %}
-
 
   #shopify-section-{{ section.id }} .sidebar-content-navigation__nav {
     display: flex;
-
     flex-direction: column;
-
     width: 100%;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
   }
 
-
   #shopify-section-{{ section.id }} .sidebar-content-navigation__nav-item {
     display: block;
-
     width: 100%;
-
     margin: 0;
     padding: 0;
   }
 
-
-  /* ==========================================
-     SIDEBAR LINK
-     ========================================== */
-
   #shopify-section-{{ section.id }} .sidebar-content-navigation__link {
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     width: 100%;
-
-    min-height:
-      {{ section.settings.sidebar_item_height }}px;
-
+    min-height: {{ section.settings.sidebar_item_height }}px;
     padding:
       {{ section.settings.sidebar_item_padding_vertical }}px
       {{ section.settings.sidebar_item_padding_horizontal }}px;
-
     box-sizing: border-box;
-
-    background-color:
-      {{ section.settings.sidebar_background }};
-
-    color:
-      {{ section.settings.sidebar_text_color }};
-
-    font-size:
-      {{ section.settings.sidebar_font_size }}px;
-
-    font-weight:
-      {{ section.settings.sidebar_font_weight }};
-
+    background-color: {{ section.settings.sidebar_background }};
+    color: {{ section.settings.sidebar_text_color }};
+    font-size: {{ section.settings.sidebar_font_size }}px;
+    font-weight: {{ section.settings.sidebar_font_weight }};
     line-height: 1.25;
-
     text-decoration: none;
-
     border: 0;
-
     cursor: pointer;
-
     transition:
       background-color 0.2s ease,
       color 0.2s ease;
   }
 
-
-  /* ==========================================
-     HOVER
-     ========================================== */
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__link:hover {
-    background-color:
-      {{ section.settings.sidebar_hover_background }};
-
-    color:
-      {{ section.settings.sidebar_hover_text }};
+    background-color: {{ section.settings.sidebar_hover_background }};
+    color: {{ section.settings.sidebar_hover_text }};
   }
-
-
-  /* ==========================================
-     ACTIVE ITEM
-     
-     IMPORTANT:
-     Active state is controlled ONLY by
-     JavaScript on the LI element.
-     ========================================== */
 
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__nav-item.is-active
   .sidebar-content-navigation__link {
-
-    background-color:
-      {{ section.settings.sidebar_active_background }};
-
-    color:
-      {{ section.settings.sidebar_active_text }};
+    background-color: {{ section.settings.sidebar_active_background }};
+    color: {{ section.settings.sidebar_active_text }};
   }
 
-
-  /* ==========================================
-     ACTIVE LEFT BORDER
-     ========================================== */
-
   {% if section.settings.active_border_width > 0 %}
-
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__nav-item.is-active
     .sidebar-content-navigation__link::before {
-
       content: "";
-
       position: absolute;
-
       left: 0;
       top: 0;
       bottom: 0;
-
-      width:
-        {{ section.settings.active_border_width }}px;
-
-      background-color:
-        {{ section.settings.active_border_color }};
+      width: {{ section.settings.active_border_width }}px;
+      background-color: {{ section.settings.active_border_color }};
     }
-
   {% endif %}
-
-
-  /* ==========================================
-     RIGHT CONTENT
-     ========================================== */
 
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__content {
-
     width: 100%;
-
     min-width: 0;
   }
 
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__content-block {
-
     position: relative;
-
     width: 100%;
-
     margin:
       0 0
       {{ section.settings.content_spacing }}px;
-
     padding: 0;
   }
 
-
-  /* ==========================================
-     CONTENT HEADING
-     ========================================== */
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__heading {
-
     margin:
       0 0
       {{ section.settings.heading_spacing }}px;
-
     padding:
       0 0
       {{ section.settings.heading_bottom_padding }}px;
-
-    color:
-      {{ section.settings.heading_color }};
-
-    font-size:
-      {{ section.settings.heading_size }}px;
-
-    font-weight:
-      {{ section.settings.heading_weight }};
-
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: {{ section.settings.heading_weight }};
     line-height: 1.25;
-
     border-bottom:
       {{ section.settings.heading_border_width }}px
       solid
       {{ section.settings.heading_border_color }};
   }
 
-
-  /* ==========================================
-     CONTENT TEXT
-     ========================================== */
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text {
-
-    color:
-      {{ section.settings.text_color }};
-
-    font-size:
-      {{ section.settings.text_size }}px;
-
-    line-height:
-      {{ section.settings.text_line_height }};
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.text_size }}px;
+    line-height: {{ section.settings.text_line_height }};
   }
-
 
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text > *:first-child {
     margin-top: 0;
   }
 
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text > *:last-child {
     margin-bottom: 0;
   }
 
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text p {
-
     margin-top: 0;
-
     margin-bottom: 16px;
   }
-
 
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text ul,
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text ol {
-
     margin-top: 0;
-
     margin-bottom: 16px;
-
     padding-left: 24px;
   }
 
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text li {
-
     margin-bottom: 6px;
   }
 
-
   #shopify-section-{{ section.id }}
   .sidebar-content-navigation__text a {
-
     color: inherit;
   }
 
-
-  /* ==========================================
-     MOBILE
-     ========================================== */
-
   @media screen and (max-width: 749px) {
-
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__container {
-
-      padding-top:
-        {{ section.settings.mobile_padding_top }}px;
-
-      padding-bottom:
-        {{ section.settings.mobile_padding_bottom }}px;
-
-      padding-left:
-        {{ section.settings.mobile_padding_horizontal }}px;
-
-      padding-right:
-        {{ section.settings.mobile_padding_horizontal }}px;
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-left: {{ section.settings.mobile_padding_horizontal }}px;
+      padding-right: {{ section.settings.mobile_padding_horizontal }}px;
     }
-
 
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__layout {
-
       display: flex;
-
       flex-direction: column;
-
-      gap:
-        {{ section.settings.mobile_column_gap }}px;
+      gap: {{ section.settings.mobile_column_gap }}px;
     }
-
 
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__sidebar {
-
       width: 100%;
     }
 
-
     {% if section.settings.enable_sticky_mobile %}
-
       #shopify-section-{{ section.id }}
       .sidebar-content-navigation__sidebar-inner {
-
         position: sticky;
-
-        top:
-          {{ section.settings.sticky_top }}px;
-
+        top: {{ section.settings.sticky_top }}px;
         z-index: 5;
       }
-
     {% else %}
-
       #shopify-section-{{ section.id }}
       .sidebar-content-navigation__sidebar-inner {
-
         position: static;
       }
-
     {% endif %}
-
 
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__link {
-
-      min-height:
-        {{ section.settings.mobile_sidebar_item_height }}px;
-
+      min-height: {{ section.settings.mobile_sidebar_item_height }}px;
       padding:
         {{ section.settings.mobile_sidebar_item_padding_vertical }}px
         {{ section.settings.mobile_sidebar_item_padding_horizontal }}px;
-
-      font-size:
-        {{ section.settings.mobile_sidebar_font_size }}px;
+      font-size: {{ section.settings.mobile_sidebar_font_size }}px;
     }
-
 
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__heading {
-
-      font-size:
-        {{ section.settings.mobile_heading_size }}px;
+      font-size: {{ section.settings.mobile_heading_size }}px;
     }
-
 
     #shopify-section-{{ section.id }}
     .sidebar-content-navigation__text {
-
-      font-size:
-        {{ section.settings.mobile_text_size }}px;
+      font-size: {{ section.settings.mobile_text_size }}px;
     }
-
   }
 </style>
 
-
 <div
   id="sidebar-content-navigation-{{ section.id }}"
-
   class="sidebar-content-navigation{% if section_custom_class != blank %} {{ section_custom_class | escape }}{% endif %}"
-
   data-sidebar-content-navigation
-
   data-section-id="{{ section.id }}"
-
   data-scroll-offset="{{ section.settings.scroll_offset }}"
-
   data-mobile-scroll-offset="{{ section.settings.mobile_scroll_offset }}"
 >
-
-
   <div class="sidebar-content-navigation__container">
-
-
     <div class="sidebar-content-navigation__layout">
-
 
       <!-- ==========================================
            LEFT SIDEBAR
            ========================================== -->
 
-      <aside
-        class="sidebar-content-navigation__sidebar"
-      >
+      <aside class="sidebar-content-navigation__sidebar">
+        <div class="sidebar-content-navigation__sidebar-inner">
 
-
-        <div
-          class="sidebar-content-navigation__sidebar-inner"
-        >
-
-
-          <nav
-            aria-label="{{ section.settings.navigation_label | escape }}"
-          >
-
-
+          <nav aria-label="{{ section.settings.navigation_label | escape }}">
             <ul
               class="sidebar-content-navigation__nav"
               role="list"
             >
 
-
               {% for block in section.blocks %}
 
-
                 {% if block.type == 'navigation_item' %}
-
 
                   {% assign target_id =
                     block.settings.target_id
@@ -485,70 +276,44 @@
                     | handleize
                   %}
 
-
                   {% if block.settings.label != blank
                     and target_id != blank
                   %}
 
-
-                    <li
-                      class="sidebar-content-navigation__nav-item"
-                    >
-
+                    <li class="sidebar-content-navigation__nav-item">
 
                       <a
                         href="#{{ target_id }}"
-
                         class="sidebar-content-navigation__link"
-
                         data-sidebar-link
-
                         data-target="{{ target_id }}"
                       >
-
                         {{ block.settings.label | escape }}
-
                       </a>
-
 
                     </li>
 
-
                   {% endif %}
-
 
                 {% endif %}
 
-
               {% endfor %}
 
-
             </ul>
-
-
           </nav>
 
-
         </div>
-
-
       </aside>
-
 
       <!-- ==========================================
            RIGHT CONTENT
            ========================================== -->
 
-      <main
-        class="sidebar-content-navigation__content"
-      >
-
+      <main class="sidebar-content-navigation__content">
 
         {% for block in section.blocks %}
 
-
           {% if block.type == 'content_block' %}
-
 
             {% assign content_id =
               block.settings.target_id
@@ -557,74 +322,58 @@
               | handleize
             %}
 
-
             {% if content_id != blank %}
-
 
               <section
                 id="{{ content_id }}"
-
                 class="sidebar-content-navigation__content-block"
-
                 data-content-target="{{ content_id }}"
-
                 {{ block.shopify_attributes }}
               >
 
-
                 {% if block.settings.heading != blank %}
 
-
-                  <h2
-                    class="sidebar-content-navigation__heading"
-                  >
-
+                  <h2 class="sidebar-content-navigation__heading">
                     {{ block.settings.heading | escape }}
-
                   </h2>
 
-
                 {% endif %}
 
+                {% if block.settings.content_mode == 'html' %}
 
-                {% if block.settings.text != blank %}
+                  {% if block.settings.html_content != blank %}
 
+                    <div class="sidebar-content-navigation__text rte">
+                      {{ block.settings.html_content }}
+                    </div>
 
-                  <div
-                    class="sidebar-content-navigation__text rte"
-                  >
+                  {% endif %}
 
-                    {{ block.settings.text }}
+                {% else %}
 
-                  </div>
+                  {% if block.settings.text != blank %}
 
+                    <div class="sidebar-content-navigation__text rte">
+                      {{ block.settings.text }}
+                    </div>
+
+                  {% endif %}
 
                 {% endif %}
-
 
               </section>
 
-
             {% endif %}
-
 
           {% endif %}
 
-
         {% endfor %}
-
 
       </main>
 
-
     </div>
-
-
   </div>
-
-
 </div>
-
 
 <script>
 (function () {
@@ -635,14 +384,12 @@
       '#sidebar-content-navigation-{{ section.id }}'
     );
 
-
     if (!section) {
       return;
     }
 
-
     /*
-    Prevent duplicate initialization.
+      Prevent duplicate initialization.
     */
 
     if (
@@ -651,14 +398,12 @@
       return;
     }
 
-
     section.dataset.initialized = 'true';
 
-
     /*
-    ==========================================
-    GET SIDEBAR ITEMS
-    ==========================================
+      ==========================================
+      GET SIDEBAR ITEMS
+      ==========================================
     */
 
     const navItems = Array.from(
@@ -667,13 +412,11 @@
       )
     );
 
-
     const links = Array.from(
       section.querySelectorAll(
         '[data-sidebar-link]'
       )
     );
-
 
     if (
       !navItems.length ||
@@ -682,22 +425,20 @@
       return;
     }
 
-
     /*
-    ==========================================
-    SET ACTIVE ITEM
-    ==========================================
-    
-    ONLY ONE ITEM CAN HAVE is-active.
-    ==========================================
+      ==========================================
+      SET ACTIVE ITEM
+      ==========================================
+
+      ONLY ONE ITEM CAN HAVE is-active.
+      ==========================================
     */
 
     function setActive(link) {
 
-
       /*
-      Remove is-active from
-      every sidebar item.
+        Remove is-active from
+        every sidebar item.
       */
 
       navItems.forEach(
@@ -710,10 +451,9 @@
         }
       );
 
-
       /*
-      Remove is-active from
-      every link as well.
+        Remove is-active from
+        every link as well.
       */
 
       links.forEach(
@@ -730,14 +470,12 @@
         }
       );
 
-
       if (!link) {
         return;
       }
 
-
       /*
-      Find the LI of the clicked link.
+        Find the LI of the clicked link.
       */
 
       const clickedItem =
@@ -745,10 +483,9 @@
           '.sidebar-content-navigation__nav-item'
         );
 
-
       /*
-      Add is-active ONLY to
-      the clicked LI.
+        Add is-active ONLY to
+        the clicked LI.
       */
 
       if (clickedItem) {
@@ -759,15 +496,13 @@
 
       }
 
-
       /*
-      Also add it to the link.
+        Also add it to the link.
       */
 
       link.classList.add(
         'is-active'
       );
-
 
       link.setAttribute(
         'aria-current',
@@ -776,23 +511,20 @@
 
     }
 
-
     /*
-    ==========================================
-    FIND CONTENT TARGET
-    ==========================================
+      ==========================================
+      FIND CONTENT TARGET
+      ==========================================
     */
 
     function getTarget(targetId) {
-
 
       if (!targetId) {
         return null;
       }
 
-
       /*
-      First find inside this section.
+        First find inside this section.
       */
 
       let target =
@@ -802,9 +534,8 @@
           '"]'
         );
 
-
       /*
-      Fallback to document ID.
+        Fallback to document ID.
       */
 
       if (!target) {
@@ -816,70 +547,54 @@
 
       }
 
-
       return target;
 
     }
 
-
     /*
-    ==========================================
-    HEADER HEIGHT
-    ==========================================
+      ==========================================
+      HEADER HEIGHT
+      ==========================================
     */
 
     function getHeaderHeight() {
 
-
       let headerHeight = 0;
 
-
       const selectors = [
-
         'header',
-
         '.shopify-section-header',
-
         '#shopify-section-header'
-
       ];
-
 
       selectors.forEach(
         function (selector) {
-
 
           const elements =
             document.querySelectorAll(
               selector
             );
 
-
           elements.forEach(
             function (element) {
 
-
               const rect =
                 element.getBoundingClientRect();
-
 
               if (
                 rect.height > 0 &&
                 rect.bottom > 0
               ) {
 
-
                 const style =
                   window.getComputedStyle(
                     element
                   );
 
-
                 if (
                   style.position === 'fixed' ||
                   style.position === 'sticky'
                 ) {
-
 
                   headerHeight =
                     Math.max(
@@ -889,56 +604,43 @@
 
                 }
 
-
               }
 
             }
           );
 
-
         }
       );
-
 
       return headerHeight;
 
     }
 
-
     /*
-    ==========================================
-    SCROLL OFFSET
-    ==========================================
+      ==========================================
+      SCROLL OFFSET
+      ==========================================
     */
 
     function getScrollOffset() {
 
-
       const isMobile =
         window.innerWidth <= 749;
 
-
       const customOffset =
         parseInt(
-
           isMobile
-
             ? section.getAttribute(
                 'data-mobile-scroll-offset'
               )
-
             : section.getAttribute(
                 'data-scroll-offset'
               ),
-
           10
-
         ) || 0;
-
 
       const headerHeight =
         getHeaderHeight();
-
 
       return Math.max(
         customOffset,
@@ -947,35 +649,31 @@
 
     }
 
-
     /*
-    ==========================================
-    CLICK HANDLER
-    ==========================================
-    
-    IMPORTANT:
+      ==========================================
+      CLICK HANDLER
+      ==========================================
 
-    There is NO scroll event listener here.
+      IMPORTANT:
 
-    Therefore scrolling will NEVER change
-    the active sidebar item.
-    ==========================================
+      There is NO scroll event listener here.
+
+      Therefore scrolling will NEVER change
+      the active sidebar item.
+      ==========================================
     */
 
     links.forEach(
       function (link) {
 
-
         link.addEventListener(
           'click',
           function (event) {
 
-
             event.preventDefault();
 
-
             /*
-            Get target ID.
+              Get target ID.
             */
 
             const targetId =
@@ -983,54 +681,46 @@
                 'data-target'
               );
 
-
             if (!targetId) {
               return;
             }
 
-
             /*
-            Find target section.
+              Find target section.
             */
 
             const target =
               getTarget(targetId);
 
-
             if (!target) {
               return;
             }
 
-
             /*
-            ==================================
-            IMPORTANT
+              ==================================
+              IMPORTANT
 
-            Select clicked item FIRST.
-            ==================================
+              Select clicked item FIRST.
+              ==================================
             */
 
             setActive(link);
 
-
             /*
-            ==================================
-            CALCULATE SCROLL POSITION
-            ==================================
+              ==================================
+              CALCULATE SCROLL POSITION
+              ==================================
             */
 
             const targetRect =
               target.getBoundingClientRect();
 
-
             const targetTop =
               targetRect.top +
               window.pageYOffset;
 
-
             const offset =
               getScrollOffset();
-
 
             const finalPosition =
               Math.max(
@@ -1038,28 +728,21 @@
                 targetTop - offset
               );
 
-
             /*
-            ==================================
-            SMOOTH SCROLL
-            ==================================
+              ==================================
+              SMOOTH SCROLL
+              ==================================
             */
 
             window.scrollTo({
-
-              top:
-                finalPosition,
-
-              behavior:
-                'smooth'
-
+              top: finalPosition,
+              behavior: 'smooth'
             });
 
-
             /*
-            ==================================
-            UPDATE HASH
-            ==================================
+              ==================================
+              UPDATE HASH
+              ==================================
             */
 
             if (
@@ -1067,38 +750,30 @@
               window.history.replaceState
             ) {
 
-
               window.history.replaceState(
-
                 null,
-
                 '',
-
                 '#' + targetId
-
               );
 
             }
 
-
           }
         );
-
 
       }
     );
 
-
     /*
-    ==========================================
-    INITIAL ACTIVE ITEM
-    ==========================================
-    
-    If URL contains #betaling,
-    Betaling will be active.
+      ==========================================
+      INITIAL ACTIVE ITEM
+      ==========================================
 
-    Otherwise first item is active.
-    ==========================================
+      If URL contains #betaling,
+      Betaling will be active.
+
+      Otherwise first item is active.
+      ==========================================
     */
 
     const currentHash =
@@ -1106,14 +781,11 @@
         .replace('#', '')
         .trim();
 
-
     if (currentHash) {
-
 
       const hashLink =
         links.find(
           function (link) {
-
 
             return (
               link.getAttribute(
@@ -1121,35 +793,27 @@
               ) === currentHash
             );
 
-
           }
         );
 
-
       if (hashLink) {
-
 
         setActive(
           hashLink
         );
 
-
       } else {
-
 
         setActive(
           links[0]
         );
 
-
       }
-
 
     } else {
 
-
       /*
-      First item active on initial load.
+        First item active on initial load.
       */
 
       setActive(
@@ -1160,43 +824,36 @@
 
   }
 
-
   /*
-  ==========================================
-  INITIAL LOAD
-  ==========================================
+    ==========================================
+    INITIAL LOAD
+    ==========================================
   */
 
   if (
     document.readyState === 'loading'
   ) {
 
-
     document.addEventListener(
       'DOMContentLoaded',
       initSidebarContentNavigation
     );
 
-
   } else {
-
 
     initSidebarContentNavigation();
 
-
   }
 
-
   /*
-  ==========================================
-  SHOPIFY THEME EDITOR
-  ==========================================
+    ==========================================
+    SHOPIFY THEME EDITOR
+    ==========================================
   */
 
   document.addEventListener(
     'shopify:section:load',
     function (event) {
-
 
       if (
         event.detail &&
@@ -1204,36 +861,27 @@
         '{{ section.id }}'
       ) {
 
-
         const section =
           document.querySelector(
             '#sidebar-content-navigation-{{ section.id }}'
           );
 
-
         if (section) {
-
 
           section.dataset.initialized =
             'false';
 
-
         }
-
 
         initSidebarContentNavigation();
 
-
       }
-
 
     }
   );
 
-
 })();
 </script>
-
 
 {% schema %}
 {
@@ -1320,7 +968,6 @@
       "unit": "px",
       "default": 20
     },
-
 
     {
       "type": "header",
@@ -1428,7 +1075,6 @@
       "default": "600"
     },
 
-
     {
       "type": "header",
       "content": "Sidebar colors"
@@ -1493,7 +1139,6 @@
       "unit": "px",
       "default": 1
     },
-
 
     {
       "type": "header",
@@ -1622,7 +1267,6 @@
       "default": 45
     },
 
-
     {
       "type": "header",
       "content": "Scrolling"
@@ -1649,7 +1293,6 @@
       "unit": "px",
       "default": 20
     },
-
 
     {
       "type": "header",
@@ -1768,12 +1411,10 @@
 
   ],
 
-
   "blocks": [
 
     {
       "type": "navigation_item",
-
       "name": "Sidebar item",
 
       "settings": [
@@ -1796,10 +1437,8 @@
       ]
     },
 
-
     {
       "type": "content_block",
-
       "name": "Content block",
 
       "settings": [
@@ -1820,16 +1459,42 @@
         },
 
         {
+          "type": "select",
+          "id": "content_mode",
+          "label": "Content mode",
+          "options": [
+            {
+              "value": "visual",
+              "label": "Visual editor"
+            },
+            {
+              "value": "html",
+              "label": "HTML / Code"
+            }
+          ],
+          "default": "visual"
+        },
+
+        {
           "type": "richtext",
           "id": "text",
-          "label": "Content"
+          "label": "Content",
+          "visible_if": "{{ block.settings.content_mode == 'visual' }}"
+        },
+
+        {
+          "type": "textarea",
+          "id": "html_content",
+          "label": "HTML content",
+          "info": "Enter HTML code. It will be rendered as HTML on the storefront.",
+          "placeholder": "<p>Your HTML here...</p>",
+          "visible_if": "{{ block.settings.content_mode == 'html' }}"
         }
 
       ]
     }
 
   ],
-
 
   "presets": [
 
@@ -1840,7 +1505,6 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Generelt",
             "target_id": "general"
@@ -1849,7 +1513,6 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Betaling",
             "target_id": "betaling"
@@ -1858,7 +1521,6 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Levering",
             "target_id": "levering"
@@ -1867,7 +1529,6 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Fortrydelsesret",
             "target_id": "fortrydelsesret"
@@ -1876,7 +1537,6 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Reklamationsret",
             "target_id": "reklamationsret"
@@ -1885,70 +1545,68 @@
 
         {
           "type": "navigation_item",
-
           "settings": {
             "label": "Persondatapolitik",
             "target_id": "persondatapolitik"
           }
         },
 
-
         {
           "type": "content_block",
-
           "settings": {
             "heading": "1. Generelle oplysninger",
             "target_id": "general",
+            "content_mode": "visual",
             "text": "<p>Sollu ApS</p><p>CVR: 12345678</p><p>Bredgade 10, 1260 København K</p><p>Email: kontakt@sollu.dk</p><p>Telefon: +45 12 34 56 78</p>"
           }
         },
 
         {
           "type": "content_block",
-
           "settings": {
             "heading": "2. Betaling",
             "target_id": "betaling",
+            "content_mode": "visual",
             "text": "<p>På Sollu.dk kan der betales med:</p><ul><li>Dankort / VISA-Dankort</li><li>MasterCard</li><li>MobilePay</li><li>Apple Pay</li></ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager.</p>"
           }
         },
 
         {
           "type": "content_block",
-
           "settings": {
             "heading": "3. Levering",
             "target_id": "levering",
+            "content_mode": "visual",
             "text": "<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.</p><p>Vi sender varer med GLS og PostNord.</p>"
           }
         },
 
         {
           "type": "content_block",
-
           "settings": {
             "heading": "4. Fortrydelsesret",
             "target_id": "fortrydelsesret",
+            "content_mode": "visual",
             "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os.</p>"
           }
         },
 
         {
           "type": "content_block",
-
           "settings": {
             "heading": "5. Reklamationsret",
             "target_id": "reklamationsret",
+            "content_mode": "visual",
             "text": "<p>Købelovens mangelregler finder anvendelse på varekøb.</p>"
           }
         },
 
         {
           "type": "content_block",
-
           "settings": {
             "heading": "6. Persondatapolitik",
             "target_id": "persondatapolitik",
+            "content_mode": "visual",
             "text": "<p>Vi behandler dine personoplysninger i overensstemmelse med gældende regler.</p>"
           }
         }
