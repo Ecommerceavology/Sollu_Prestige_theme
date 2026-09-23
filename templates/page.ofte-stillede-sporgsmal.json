@@ -24,20 +24,20 @@
         "subheading_8jU94e": {
           "type": "subheading",
           "settings": {
-            "text": "KUNDESERVICE"
+            "text": ""
           }
         },
         "heading_czyjUy": {
           "type": "heading",
           "settings": {
-            "text": "Vi er her for at hjælpe",
+            "text": "Ofte stillede spørgsmål",
             "heading_tag": "h2"
           }
         },
         "richtext_Hi8GD4": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Har du spørgsmål til din ordre, vores produkter eller levering?</p>"
+            "content": "<p>Her har vi samlet svar på de spørgsmål, vi oftest får. Finder du ikke det, du leder efter, er du velkommen til at kontakte os.</p>"
           }
         }
       },
