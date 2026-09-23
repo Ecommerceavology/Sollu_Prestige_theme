@@ -247,6 +247,57 @@
         "content": ""
       }
     },
+    "faq_QJpDaJ": {
+      "type": "faq",
+      "blocks": {
+        "category_nCcgMb": {
+          "type": "category",
+          "settings": {
+            "title": "Reklamation",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_iCDqcA": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad er 24 måneders reklamationsret?",
+            "answer": "<p>Når du handler som forbruger, har du 24 måneders reklamationsret efter forbrugerkøbeloven. Har varen en fejl eller mangel, kan du afhængigt af situationen få den repareret, ombyttet, pengene tilbage eller afslag i prisen. Reklamationsretten dækker ikke skader, der skyldes forkert brug af varen.</p>"
+          }
+        },
+        "question_jbdFpk": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad gør jeg, hvis mit produkt er defekt?",
+            "answer": "<p>Skriv til kontakt@sollu.dk med dit ordrenummer og en beskrivelse af fejlen, gerne med et billede. Vi vurderer sagen og vender tilbage til dig. Du kan læse mere på siden Reklamation.</p>"
+          }
+        },
+        "question_aR7yFJ": {
+          "type": "question",
+          "settings": {
+            "question": "Hvem betaler fragten ved en reklamation?",
+            "answer": "<p>Det gør vi. Godkender vi din reklamation, sender vi dig en returlabel, som du kan bruge uden beregning.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_nCcgMb",
+        "question_iCDqcA",
+        "question_jbdFpk",
+        "question_aR7yFJ"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "newsletter_EjwzA9": {
       "type": "newsletter",
       "settings": {
@@ -271,6 +322,7 @@
     "faq_HRQPPP",
     "faq_6W8a8V",
     "faq_nQE6qe",
+    "faq_QJpDaJ",
     "newsletter_EjwzA9"
   ]
 }
