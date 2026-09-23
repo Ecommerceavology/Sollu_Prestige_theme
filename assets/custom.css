@@ -3457,7 +3457,7 @@ position: relative !important;
     padding-left: 32px!important;
     padding-right: 32px!important;
 }
-.Shipping_and_delivery p
+.Shipping_and_delivery p,
 .Complaint_sec p {
     color: #8c8278;
     font-size: 16px;
