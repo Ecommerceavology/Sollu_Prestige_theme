@@ -3960,6 +3960,9 @@ nav.header__secondary-nav {
     }
 }
 @media (max-width: 1200px) {
+    li.header__search-link, li.relative.header__cart-link {
+    max-height: 22px;
+}
 
     section#shopify-pc__banner .shopify-pc__banner__wrapper {
         gap: 60px;
