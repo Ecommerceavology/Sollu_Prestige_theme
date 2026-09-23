@@ -3505,7 +3505,7 @@ position: relative !important;
     margin-bottom: 24px !important;
 }
 
-.main.form-wrapper .sidebar-content-navigation__content .submit-btn {
+.sidebar-content-navigation__content .form-wrapper .submit-btn {
    
     transition: all 0.25s ease;
     display: inline-flex;
@@ -3513,7 +3513,7 @@ position: relative !important;
     gap: 10px;
 }
 
-.main.form-wrapper .sidebar-content-navigation__content .submit-btn::after {
+.sidebar-content-navigation__content .form-wrapper .submit-btn::after {
     content: "";
     width: 18px;
     height: 18px;
