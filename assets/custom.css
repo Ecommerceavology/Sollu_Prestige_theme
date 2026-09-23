@@ -4038,6 +4038,16 @@ x-header.header.Header_sec {
         margin-top: 30px !important;
     }
 
+    .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 70px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        max-width: 850px !important;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -5206,6 +5216,36 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
   .shopify-policy__body table td {
     white-space: nowrap !important;
   }
+
+   .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 60px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        max-width: 100% !important;
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+    }
+
+    .Shipping_and_delivery p,
+    .Complaint_sec p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .Shipping_and_delivery p.h1,
+    .Complaint_sec h2 {
+        font-size: 30px;
+        line-height: 39px;
+        margin-top: 26px;
+    }
+
+    .Complaint_sec h4 {
+        font-size: 22px;
+        line-height: 28px;
+    }
 }
 
 @media (max-width: 850px) {
@@ -6640,6 +6680,50 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .cst-privacy-policy-banner-content > div {
         padding: 40px 24px !important;
     }
+
+    .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 50px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .Shipping_and_delivery p,
+    .Complaint_sec p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .Shipping_and_delivery p.h1,
+    .Complaint_sec h2 {
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 1.5px;
+        padding-bottom: 14px;
+        margin-top: 24px;
+    }
+
+    .Shipping_and_delivery .prose.text-start>div {
+        margin-top: 20px !important;
+    }
+
+    .Complaint_sec section {
+        margin-bottom: 26px !important;
+    }
+
+    .Complaint_sec h4 {
+        font-size: 21px;
+        line-height: 27px;
+        margin-bottom: 20px;
+    }
+
+    .Complaint_sec p {
+        margin-bottom: 20px !important;
+    }
 }
 
 @media (max-width: 750px) {
@@ -7730,6 +7814,50 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .cst-privacy-policy-banner-content > div {
         padding: 35px 20px !important;
     }
+
+    .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 40px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .Shipping_and_delivery p,
+    .Complaint_sec p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .Shipping_and_delivery p.h1,
+    .Complaint_sec h2 {
+        font-size: 25px;
+        line-height: 32px;
+        letter-spacing: 1px;
+        padding-bottom: 12px;
+        margin-top: 22px;
+    }
+
+    .Shipping_and_delivery .prose.text-start>div {
+        margin-top: 18px !important;
+    }
+
+    .Complaint_sec section {
+        margin-bottom: 22px !important;
+    }
+
+    .Complaint_sec h4 {
+        font-size: 19px;
+        line-height: 25px;
+        margin-bottom: 18px;
+    }
+
+    .Complaint_sec p {
+        margin-bottom: 18px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -8713,6 +8841,42 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .cst-privacy-policy-banner-content > div {
         padding: 30px 18px !important;
     }
+
+
+    .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 35px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .Shipping_and_delivery p,
+    .Complaint_sec p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .Shipping_and_delivery p.h1,
+    .Complaint_sec h2 {
+        font-size: 23px;
+        line-height: 30px;
+        letter-spacing: .8px;
+        margin-top: 20px;
+    }
+
+    .Complaint_sec h4 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    .Complaint_sec p {
+        margin-bottom: 16px !important;
+    }
   
 }
 
@@ -8923,5 +9087,34 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .cst-privacy-policy-banner-content > div {
         padding: 25px 15px !important;
+    }
+
+     .Shipping_and_delivery,
+    .Complaint_sec {
+        padding: 30px 0 !important;
+    }
+
+    .Shipping_and_delivery .container,
+    .Complaint_sec .sidebar-content-navigation__container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .Shipping_and_delivery p,
+    .Complaint_sec p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .Shipping_and_delivery p.h1,
+    .Complaint_sec h2 {
+        font-size: 21px;
+        line-height: 28px;
+        letter-spacing: .5px;
+    }
+
+    .Complaint_sec h4 {
+        font-size: 17px;
+        line-height: 23px;
     }
 }
