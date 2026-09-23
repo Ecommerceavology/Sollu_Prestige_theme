@@ -112,11 +112,29 @@
         "heading_style": "h2",
         "content": ""
       }
+    },
+    "newsletter_EjwzA9": {
+      "type": "newsletter",
+      "settings": {
+        "custom_class": "Newsletter_sec pro_newsletter",
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_size": "md",
+        "subheading": "Nyhedsbrev",
+        "title": "Tilmeld dig og få 10% på din førsteordre",
+        "heading_style": "h2",
+        "content": "<p>Rutiner der virker. Få besked når nye Sollu enheder introduceres. Du kan altid afmelde.</p>",
+        "button_text": "Tilmeld",
+        "input_bottom_info": "<p>Ved tilmelding accepterer du vores <a href=\"#\" title=\"#\">privatlivspolitik</a>. Vi deler aldrig din e-mail.</p>",
+        "overlay_color": "#f5f0e8",
+        "overlay_opacity": 100
+      }
     }
   },
   "order": [
     "main",
     "image_with_text_overlay_6ApDDm",
-    "faq_HRQPPP"
+    "faq_HRQPPP",
+    "newsletter_EjwzA9"
   ]
 }
