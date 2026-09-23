@@ -50,13 +50,98 @@
             "content": "<p>Standardleveringstiden er 1-3 hverdage. Du får en e-mail fra os, når din ordre er afsendt.<br/>[***Sporing af pakken: sætning om sporingslink indsættes, når lagerløsning og fragtaftale er på plads***]</p>",
             "custom_class": ""
           }
+        },
+        "heading_8LBFfc": {
+          "type": "heading",
+          "settings": {
+            "text": "Fragt og pris",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_n3Jikj": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Ved køb over 499 kr. er leveringen til pakkeshop gratis. Handler du for et lavere beløb, betaler du fragt.<br/>Fragtprisen vises altid ved kassen, inden du godkender din ordre.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_JXa8Ad": {
+          "type": "heading",
+          "settings": {
+            "text": "Betaling",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_ErCe86": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Beløbet hæves først på dit kort, når din ordre afsendes fra vores lager. Der tages ikke gebyr ved betaling. Du kan betale med Dankort / VISA-Dankort, MasterCard, MobilePay og Apple Pay.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_pCh9E3": {
+          "type": "heading",
+          "settings": {
+            "text": "Når du modtager din pakke",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_VFFtpe": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Kontrollér pakken, når du modtager den. Er varen beskadiget, eller mangler der noget, skal du skrive til os på kontakt@sollu.dk med dit ordrenummer og gerne et billede, så vi kan finde en løsning.<br/>Har din ordre ikke nået dig inden for den forventede leveringstid, kan du også skrive til os med dit ordrenummer, så undersøger vi sagen.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_aa8TGA": {
+          "type": "heading",
+          "settings": {
+            "text": "Returnering",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_KprPLA": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Har du brug for at sende en vare retur, kan du læse om forløbet på siden Returnering og fortrydelsesret. Har varen en fejl, kan du læse mere på siden Reklamation.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_EjUatx": {
+          "type": "heading",
+          "settings": {
+            "text": "Spørgsmål om din ordre",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_ihtgWt": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Skriv til os på kontakt@sollu.dk, ring på +45 2189 5400 (mandag til fredag kl. 10.00-15.30), eller brug kontaktformularen på siden Kontakt. Vi svarer inden for 1-2 hverdage.</p>",
+            "custom_class": ""
+          }
         }
       },
       "block_order": [
         "heading_FmxrCW",
         "richtext_Ke44Eb",
         "heading_RKJMgP",
-        "richtext_8qMDY6"
+        "richtext_8qMDY6",
+        "heading_8LBFfc",
+        "richtext_n3Jikj",
+        "heading_JXa8Ad",
+        "richtext_ErCe86",
+        "heading_pCh9E3",
+        "richtext_VFFtpe",
+        "heading_aa8TGA",
+        "richtext_KprPLA",
+        "heading_EjUatx",
+        "richtext_ihtgWt"
       ],
       "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
