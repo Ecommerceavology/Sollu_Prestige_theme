@@ -2424,8 +2424,9 @@ span.custom-product-card__price-current {
     font-size: 46px!important;
     line-height: 36px!important;
     font-weight: 300!important;
-    text-transform: uppercase!important;
-    margin-top: 14px !IMPORTANT;
+    text-transform: unset !important;
+    margin-top: 14px!important;
+    letter-spacing: 2px;
 }
 .About_Sec_7 p {
     color: #8c8278 !IMPORTANT;
