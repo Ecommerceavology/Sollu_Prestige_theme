@@ -11,10 +11,264 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_CzP6pW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TijG7n": {
+          "type": "heading",
+          "settings": {
+            "text": "Levering i Danmark",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_Ehn73G": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Vi leverer til adresser i Danmark. Vi sender med GLS og PostNord, og du vælger leveringsmåde ved kassen.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_XMm93q": {
+          "type": "heading",
+          "settings": {
+            "text": "Leveringstid",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_qtn4JQ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Standardleveringstiden er 1-3 hverdage. Du får en e-mail fra os, når din ordre er afsendt.<br/>[***Sporing af pakken: sætning om sporingslink indsættes, når lagerløsning og fragtaftale er på plads***]</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_8aatk3": {
+          "type": "heading",
+          "settings": {
+            "text": "Fragt og pris",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_fhk4jq": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Ved køb over 499 kr. er leveringen til pakkeshop gratis. Handler du for et lavere beløb, betaler du fragt.<br/>Fragtprisen vises altid ved kassen, inden du godkender din ordre.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_y4VeLb": {
+          "type": "heading",
+          "settings": {
+            "text": "Betaling",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_EaF63X": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Beløbet hæves først på dit kort, når din ordre afsendes fra vores lager. Der tages ikke gebyr ved betaling. Du kan betale med Dankort / VISA-Dankort, MasterCard, MobilePay og Apple Pay.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_nXQgXq": {
+          "type": "heading",
+          "settings": {
+            "text": "Når du modtager din pakke",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_h8mccx": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Kontrollér pakken, når du modtager den. Er varen beskadiget, eller mangler der noget, skal du skrive til os på kontakt@sollu.dk med dit ordrenummer og gerne et billede, så vi kan finde en løsning.<br/>Har din ordre ikke nået dig inden for den forventede leveringstid, kan du også skrive til os med dit ordrenummer, så undersøger vi sagen.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_PVfxzh": {
+          "type": "heading",
+          "settings": {
+            "text": "Returnering",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_9amEFQ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Har du brug for at sende en vare retur, kan du læse om forløbet på siden Returnering og fortrydelsesret. Har varen en fejl, kan du læse mere på siden Reklamation.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_kCHYcP": {
+          "type": "heading",
+          "settings": {
+            "text": "Spørgsmål om din ordre",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_UzYCMM": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Skriv til os på kontakt@sollu.dk, ring på +45 2189 5400 (mandag til fredag kl. 10.00-15.30), eller brug kontaktformularen på siden Kontakt. Vi svarer inden for 1-2 hverdage.</p>",
+            "custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_TijG7n",
+        "richtext_Ehn73G",
+        "heading_XMm93q",
+        "richtext_qtn4JQ",
+        "heading_8aatk3",
+        "richtext_fhk4jq",
+        "heading_y4VeLb",
+        "richtext_EaF63X",
+        "heading_nXQgXq",
+        "richtext_h8mccx",
+        "heading_PVfxzh",
+        "richtext_9amEFQ",
+        "heading_kCHYcP",
+        "richtext_UzYCMM"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "custom_class": "Complaint_sec",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
+    "custom_sidebar_content_navigation_NqUpqF": {
+      "type": "custom-sidebar-content-navigation",
+      "blocks": {
+        "content_block_UW6RhH": {
+          "type": "content_block",
+          "settings": {
+            "heading": "24 måneders reklamationsret",
+            "target_id": "general",
+            "text": "<p>Når du handler hos os som forbruger, har du 24 måneders reklamationsret efter forbrugerkøbeloven.Fristen regnes fra den dag, du har modtaget din vare.</p><p><br/>Har varen en fejl eller mangel, kan du afhængigt af den konkrete situation få varen repareret, ombyttet, pengene tilbage eller afslag i prisen. Det er en forudsætning, at reklamationen er berettiget, og at manglen ikke skyldes forkert brug af varen eller anden skadeforvoldende adfærd.</p>"
+          }
+        },
+        "content_block_nryiYD": {
+          "type": "content_block",
+          "settings": {
+            "heading": "Sådan reklamerer du",
+            "target_id": "betaling",
+            "text": "<p>Du skal reklamere inden for rimelig tid, efter at du har opdaget fejlen. Vi anbefaler, at du kontakter os så<br/>hurtigt som muligt. Send ikke varen retur, før du har hørt fra os.</p><h4><br/>01 Kontakt os</h4><p>Send en e-mail til kontakt@sollu.dk med dit ordrenummer og en beskrivelse af fejlen. Vedhæft gerne et<br/>billede eller en kort video, hvor fejlen kan ses. Du kan også bruge kontaktformularen på siden Kontakt og<br/>vælge emnet “Reklamation”.</p><h4><br/>02 Vi vurderer sagen</h4><p>Vi svarer inden for 1-2 hverdage og vender tilbage med en vurdering. Godkender vi reklamationen, sender<br/>vi dig en returlabel, og du skal ikke selv betale for at sende varen retur.</p><h4><br/>03 Indlever varen</h4><p>Pak varen forsvarligt, sæt returlabelen på pakken, og indlever den i din nærmeste pakkeshop. Vi behandler<br/>sagen, så snart vi har modtaget varen.</p>"
+          }
+        },
+        "content_block_g8TRtx": {
+          "type": "content_block",
+          "settings": {
+            "heading": "01 Kontakt os",
+            "target_id": "levering",
+            "text": "<p>01 Kontakt os</p>"
+          }
+        },
+        "content_block_A9MgCW": {
+          "type": "content_block",
+          "settings": {
+            "heading": "4. Fortrydelsesret",
+            "target_id": "fortrydelsesret",
+            "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os.</p>"
+          }
+        },
+        "content_block_aLjtre": {
+          "type": "content_block",
+          "settings": {
+            "heading": "5. Reklamationsret",
+            "target_id": "reklamationsret",
+            "text": "<p>Købelovens mangelregler finder anvendelse på varekøb.</p>"
+          }
+        },
+        "content_block_iKjxNM": {
+          "type": "content_block",
+          "settings": {
+            "heading": "6. Persondatapolitik",
+            "target_id": "persondatapolitik",
+            "text": "<p>Vi behandler dine personoplysninger i overensstemmelse med gældende regler.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_block_UW6RhH",
+        "content_block_nryiYD",
+        "content_block_g8TRtx",
+        "content_block_A9MgCW",
+        "content_block_aLjtre",
+        "content_block_iKjxNM"
+      ],
+      "name": "Sidebar Content Nav",
+      "settings": {
+        "custom_class": "",
+        "max_width": 1200,
+        "sidebar_width": 160,
+        "column_gap": 40,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 20,
+        "navigation_label": "Page navigation",
+        "enable_sticky": true,
+        "enable_sticky_mobile": false,
+        "sticky_top": 20,
+        "sidebar_item_height": 35,
+        "sidebar_item_padding_vertical": 8,
+        "sidebar_item_padding_horizontal": 10,
+        "sidebar_font_size": 12,
+        "sidebar_font_weight": "600",
+        "sidebar_background": "#ffffff",
+        "sidebar_text_color": "#222222",
+        "sidebar_hover_background": "#f5f1e9",
+        "sidebar_hover_text": "#222222",
+        "sidebar_active_background": "#eee2cf",
+        "sidebar_active_text": "#222222",
+        "active_border_color": "#222222",
+        "active_border_width": 1,
+        "heading_size": 30,
+        "heading_weight": "400",
+        "heading_spacing": 20,
+        "heading_bottom_padding": 15,
+        "heading_border_width": 1,
+        "heading_border_color": "#e5e5e5",
+        "heading_color": "#2c2927",
+        "text_color": "#8b8178",
+        "text_size": 14,
+        "text_line_height": 1.6,
+        "content_spacing": 45,
+        "scroll_offset": 80,
+        "mobile_scroll_offset": 20,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20,
+        "mobile_padding_horizontal": 15,
+        "mobile_column_gap": 30,
+        "mobile_sidebar_item_height": 40,
+        "mobile_sidebar_item_padding_vertical": 9,
+        "mobile_sidebar_item_padding_horizontal": 12,
+        "mobile_sidebar_font_size": 12,
+        "mobile_heading_size": 26,
+        "mobile_text_size": 14
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_CzP6pW",
+    "custom_sidebar_content_navigation_NqUpqF"
   ]
 }
