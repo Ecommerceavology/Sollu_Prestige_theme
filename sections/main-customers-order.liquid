@@ -2,10 +2,7 @@
   <div class="container container--lg">
     <div class="section-stack">
       <div class="v-stack justify-items-start gap-6">
-        <a
-          href="{{ routes.account_url }}"
-          class="text-with-icon h6 link-faded"
-        >
+        <a href="{{ routes.account_url }}" class="text-with-icon h6 link-faded">
           {%- render 'icon' with 'chevron-left', width: 10, direction_aware: true -%}
           {{- 'customer.order.back' | t: name: order.name -}}
         </a>
@@ -14,131 +11,82 @@
           <div class="prose">
             {%- assign order_created_at = order.created_at | date: format: 'date_at_time' -%}
 
-            <h1 class="h3">
-              {{ 'customer.order.order_name' | t: name: order.name }}
-            </h1>
-
-            <p>
-              {{ 'customer.order.created_at' | t: created_at: order_created_at }}
-            </p>
+            <h1 class="h3">{{ 'customer.order.order_name' | t: name: order.name }}</h1>
+            <p>{{ 'customer.order.created_at' | t: created_at: order_created_at }}</p>
           </div>
         </div>
       </div>
 
       <div class="customer-order">
         <div class="customer-order__details">
-
-          <!--
-            =========================================================
-                 ORDER STATUS
-            =========================================================
-          -->
+          {%- comment -%}
+            ----------------------------------------------------------------------------------------------------------------
+            ORDER STATUS
+            ----------------------------------------------------------------------------------------------------------------
+          {%- endcomment -%}
 
           {%- if order.cancelled -%}
             {%- assign cancelled_on = order.cancelled_at | date: format: 'date_at_time' -%}
-
-            {%- assign cancel_message = 'customer.order.cancelled_on'
-              | t: date: cancelled_on, reason: order.cancel_reason_label
-            -%}
-
+            {%- assign cancel_message = 'customer.order.cancelled_on' | t: date: cancelled_on, reason: order.cancel_reason_label -%}
             {%- render 'banner', status: 'error', content: cancel_message -%}
           {%- endif -%}
 
-          {%- assign fulfillment = order.line_items
-            | where: 'fulfillment'
-            | map: 'fulfillment'
-            | sort: 'created_at'
-            | last
-          -%}
+          {%- assign fulfillment = order.line_items | where: 'fulfillment' | map: 'fulfillment' | sort: 'created_at' | last -%}
 
           {%- if order.shipping_address and fulfillment -%}
             {%- assign created_at = fulfillment.created_at | date: format: 'date' -%}
 
             {%- if fulfillment.tracking_number -%}
-              {%- assign fulfillment_message = 'customer.order.fulfillment_with_number'
-                | t: date: created_at, tracking_number: fulfillment.tracking_number
-              -%}
+              {%- assign fulfillment_message = 'customer.order.fulfillment_with_number' | t: date: created_at, tracking_number: fulfillment.tracking_number -%}
             {%- else -%}
               {%- assign fulfillment_message = 'customer.order.fulfillment' | t: date: created_at -%}
             {%- endif -%}
 
             {%- if fulfillment.tracking_url -%}
               {%- capture fulfillment_message -%}
-
                 {%- assign button_content = 'customer.order.track_shipment' | t -%}
 
                 <div class="banner__text-with-button">
                   {{- fulfillment_message -}}
-
-                  {%- render 'button',
-                    href: fulfillment.tracking_url,
-                    external: true,
-                    content: button_content,
-                    size: 'sm'
-                  -%}
+                  {%- render 'button', href: fulfillment.tracking_url, external: true, content: button_content, size: 'sm' -%}
                 </div>
-
               {%- endcapture -%}
             {%- endif -%}
 
             {%- render 'banner', status: 'success', content: fulfillment_message -%}
           {%- endif -%}
 
-          <!--
-            =========================================================
-                 ORDER SUMMARY
-            =========================================================
-          -->
-
+          {%- comment -%}
+            ----------------------------------------------------------------------------------------------------------------
+            ORDER SUMMARY
+            ----------------------------------------------------------------------------------------------------------------
+          {%- endcomment -%}
           <table class="order-summary table--reduce-border">
             <thead class="order-summary__header">
               <tr>
-                <th>
-                  {{ 'customer.order.product' | t }}
-                </th>
-
-                <th class="text-center">
-                  {{ 'customer.order.quantity' | t }}
-                </th>
-
-                <th class="text-end">
-                  {{ 'customer.order.total' | t }}
-                </th>
+                <th>{{ 'customer.order.product' | t }}</th>
+                <th class="text-center">{{ 'customer.order.quantity' | t }}</th>
+                <th class="text-end">{{ 'customer.order.total' | t }}</th>
               </tr>
             </thead>
 
             <tbody class="order-summary__body">
               {%- for line_item in order.line_items -%}
                 <tr>
-                  <td>
-                    {%- render 'line-item', line_item: line_item -%}
-                  </td>
-
-                  <td class="text-center">
-                    {{ line_item.quantity }}
-                  </td>
-
-                  <td class="text-end">
-                    {{ line_item.final_line_price | money }}
-                  </td>
+                  <td>{%- render 'line-item', line_item: line_item -%}</td>
+                  <td class="text-center">{{ line_item.quantity }}</td>
+                  <td class="text-end">{{ line_item.final_line_price | money }}</td>
                 </tr>
               {%- endfor -%}
             </tbody>
 
             <tfoot class="order-summary__footer">
-
               <tr>
                 <td></td>
-
                 <td colspan="2">
                   <div class="h-stack gap-2 justify-between">
-                    <span class="text-subdued">
-                      {{ 'customer.order.subtotal' | t }}
-                    </span>
-
-                    <span class="text-subdued text-end">
-                      {{ order.line_items_subtotal_price | money }}
-                    </span>
+                    <span class="text-subdued">{{ 'customer.order.subtotal' | t }}</span>
+                    <span class="text-subdued text-end">{{ order.line_items_subtotal_price | money }}</span>
                   </div>
                 </td>
               </tr>
@@ -146,17 +94,10 @@
               {%- for discount_application in order.cart_level_discount_applications -%}
                 <tr>
                   <td></td>
-
                   <td colspan="2">
                     <div class="h-stack gap-2 justify-between">
-                      <span class="text-subdued">
-                        {{ 'customer.order.discount' | t }}
-                        ({{ discount_application.title }})
-                      </span>
-
-                      <span class="text-subdued text-end">
-                        -{{ discount_application.total_allocated_amount | money }}
-                      </span>
+                      <span class="text-subdued">{{ 'customer.order.discount' | t }} ({{ discount_application.title }})</span>
+                      <span class="text-subdued text-end">-{{ discount_application.total_allocated_amount | money }}</span>
                     </div>
                   </td>
                 </tr>
@@ -165,17 +106,10 @@
               {%- for shipping_method in order.shipping_methods -%}
                 <tr>
                   <td></td>
-
                   <td colspan="2">
                     <div class="h-stack gap-2 justify-between">
-                      <span class="text-subdued">
-                        {{ 'customer.order.shipping' | t }}
-                        ({{ shipping_method.title }})
-                      </span>
-
-                      <span class="text-subdued text-end">
-                        {{ shipping_method.price | money }}
-                      </span>
+                      <span class="text-subdued">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</span>
+                      <span class="text-subdued text-end">{{ shipping_method.price | money }}</span>
                     </div>
                   </td>
                 </tr>
@@ -184,28 +118,18 @@
               {%- for tax_line in order.tax_lines -%}
                 <tr>
                   <td></td>
-
                   <td colspan="2">
                     <div class="h-stack gap-2 justify-between">
                       <span class="text-subdued">
-
                         {%- if cart.taxes_included -%}
-                          {{ 'customer.order.taxes_included' | t }}
-                          ({{ tax_line.title }}
+                          {{ 'customer.order.taxes_included' | t }} ({{ tax_line.title }}
                           {{ tax_line.rate_percentage }}%)
-
                         {%- else -%}
-                          {{ 'customer.order.taxes_excluded' | t }}
-                          ({{ tax_line.title }}
+                          {{ 'customer.order.taxes_excluded' | t }} ({{ tax_line.title }}
                           {{ tax_line.rate_percentage }}%)
-
                         {%- endif -%}
-
                       </span>
-
-                      <span class="text-subdued text-end">
-                        {{ tax_line.price | money }}
-                      </span>
+                      <span class="text-subdued text-end">{{ tax_line.price | money }}</span>
                     </div>
                   </td>
                 </tr>
@@ -214,16 +138,10 @@
               {%- if order.total_duties > 0 -%}
                 <tr>
                   <td></td>
-
                   <td colspan="2">
                     <div class="h-stack gap-2 justify-between">
-                      <span class="text-subdued">
-                        {{ 'customer.order.total_duties' | t }}
-                      </span>
-
-                      <span class="text-subdued text-end">
-                        {{ order.total_duties | money }}
-                      </span>
+                      <span class="text-subdued">{{ 'customer.order.total_duties' | t }}</span>
+                      <span class="text-subdued text-end">{{ order.total_duties | money }}</span>
                     </div>
                   </td>
                 </tr>
@@ -232,16 +150,10 @@
               {%- if order.total_refunded_amount > 0 -%}
                 <tr>
                   <td></td>
-
                   <td colspan="2">
                     <div class="h-stack gap-2 justify-between">
-                      <span class="text-subdued">
-                        {{ 'customer.order.refunded_amount' | t }}
-                      </span>
-
-                      <span class="text-subdued text-end">
-                        {{ order.total_refunded_amount | money }}
-                      </span>
+                      <span class="text-subdued">{{ 'customer.order.refunded_amount' | t }}</span>
+                      <span class="text-subdued text-end">{{ order.total_refunded_amount | money }}</span>
                     </div>
                   </td>
                 </tr>
@@ -249,394 +161,43 @@
 
               <tr>
                 <td></td>
-
                 <td colspan="2">
                   <div class="h-stack gap-2 justify-between">
-                    <span class="text-lg">
-                      {{ 'customer.order.total' | t }}
-                    </span>
-
-                    <span class="text-lg text-end">
-                      {{ order.total_net_amount | money_with_currency }}
-                    </span>
+                    <span class="text-lg">{{ 'customer.order.total' | t }}</span>
+                    <span class="text-lg text-end">{{ order.total_net_amount | money_with_currency }}</span>
                   </div>
                 </td>
               </tr>
-
             </tfoot>
           </table>
-
-          <!--
-            =========================================================
-                 EU DIGITAL WITHDRAWAL
-            =========================================================
-          -->
-
-          {%- unless order.cancelled -%}
-
-            <div
-              id="eu-withdrawal"
-              class="eu-withdrawal v-stack gap-6"
-              style="
-                margin-top: 32px;
-                padding: 24px;
-                border: 1px solid #e5e5e5;
-                border-radius: 8px;
-              "
-            >
-
-              <!-- STEP 1 -->
-
-              <div
-                id="eu-withdrawal-step-1"
-                class="v-stack gap-4"
-              >
-
-                <div class="prose">
-                  <h2 class="h5">
-                    Withdraw from contract
-                  </h2>
-
-                  <p>
-                    If you wish to exercise your statutory right of withdrawal,
-                    you can submit your request electronically using this form.
-                  </p>
-                </div>
-
-                <div class="v-stack gap-2">
-
-                  <label for="withdrawal-email">
-                    Email address
-                  </label>
-
-                  <input
-                    id="withdrawal-email"
-                    type="email"
-                    value="{{ customer.email | escape }}"
-                    autocomplete="email"
-                    required
-                    style="
-                      width: 100%;
-                      padding: 12px;
-                      border: 1px solid #ccc;
-                      border-radius: 4px;
-                    "
-                  >
-
-                </div>
-
-                <div class="v-stack gap-2">
-
-                  <label for="withdrawal-message">
-                    Additional information
-                    <span class="text-subdued">
-                      (optional)
-                    </span>
-                  </label>
-
-                  <textarea
-                    id="withdrawal-message"
-                    rows="4"
-                    style="
-                      width: 100%;
-                      padding: 12px;
-                      border: 1px solid #ccc;
-                      border-radius: 4px;
-                      resize: vertical;
-                    "
-                    placeholder="Optional message"
-                  ></textarea>
-
-                </div>
-
-                <button
-                  type="button"
-                  id="withdrawal-continue"
-                  class="button"
-                >
-                  Continue
-                </button>
-
-              </div>
-
-              <!-- STEP 2 -->
-
-              <div
-                id="eu-withdrawal-step-2"
-                class="v-stack gap-4"
-                hidden
-              >
-
-                <div class="prose">
-
-                  <h2 class="h5">
-                    Confirm withdrawal
-                  </h2>
-
-                  <p>
-                    Please confirm that you wish to submit your withdrawal
-                    request for order {{ order.name }}.
-                  </p>
-
-                </div>
-
-                <div
-                  style="
-                    padding: 16px;
-                    background: #f7f7f7;
-                    border-radius: 6px;
-                  "
-                >
-
-                  <p>
-                    <strong>Order:</strong>
-                    {{ order.name }}
-                  </p>
-
-                  <p>
-                    <strong>Email:</strong>
-                    <span id="withdrawal-confirm-email"></span>
-                  </p>
-
-                </div>
-
-                <div class="h-stack gap-3">
-
-                  <button
-                    type="button"
-                    id="withdrawal-back"
-                    class="button button--outline"
-                  >
-                    Back
-                  </button>
-
-                  <button
-                    type="button"
-                    id="withdrawal-confirm"
-                    class="button"
-                  >
-                    Confirm withdrawal
-                  </button>
-
-                </div>
-
-                <p
-                  id="withdrawal-backend-message"
-                  class="text-subdued"
-                  hidden
-                >
-                  The withdrawal form is ready, but the backend connection
-                  has not been configured yet.
-                </p>
-
-              </div>
-
-              <!-- FRONTEND TEST MESSAGE -->
-
-              <div
-                id="eu-withdrawal-success"
-                class="v-stack gap-3"
-                hidden
-              >
-
-                <div class="prose">
-
-                  <h2 class="h5">
-                    Withdrawal request ready
-                  </h2>
-
-                  <p>
-                    The frontend withdrawal flow is working correctly.
-                  </p>
-
-                  <p>
-                    The backend connection is not configured yet, so no real
-                    withdrawal request has been submitted.
-                  </p>
-
-                </div>
-
-              </div>
-
-              <!-- ERROR -->
-
-              <div
-                id="eu-withdrawal-error"
-                class="prose"
-                hidden
-              >
-
-                <p style="color: #a32226;">
-                  We could not process the withdrawal request.
-                  Please try again.
-                </p>
-
-              </div>
-
-            </div>
-
-          {%- endunless -%}
-
         </div>
 
-        <!--
-          =========================================================
-               ORDER ADDRESSES
-          =========================================================
-        -->
-
+        {%- comment -%}
+          ----------------------------------------------------------------------------------------------------------------
+          ORDER ADDRESSES
+          ----------------------------------------------------------------------------------------------------------------
+        {%- endcomment -%}
         {%- if order.billing_address or order.shipping_address -%}
-
           <div class="customer-order__address-list">
-
             {%- if order.billing_address -%}
-
               <div class="v-stack gap-6 sm:gap-8">
-
-                <p class="customer-account-category h6 text-subdued">
-                  {{ 'customer.order.billing_address' | t }}
-                </p>
-
+                <p class="customer-account-category h6 text-subdued">{{ 'customer.order.billing_address' | t }}</p>
                 {{- order.billing_address | format_address -}}
-
               </div>
-
             {%- endif -%}
 
             {%- if order.shipping_address -%}
-
               <div class="v-stack gap-6 sm:gap-8">
-
-                <p class="customer-account-category h6 text-subdued">
-                  {{ 'customer.order.shipping_address' | t }}
-                </p>
-
+                <p class="customer-account-category h6 text-subdued">{{ 'customer.order.shipping_address' | t }}</p>
                 {{- order.shipping_address | format_address -}}
-
               </div>
-
             {%- endif -%}
-
           </div>
-
         {%- endif -%}
-
       </div>
     </div>
   </div>
 </div>
-
-
-<!--
-  =========================================================
-       WITHDRAWAL UI JAVASCRIPT
-  =========================================================
--->
-
-<script>
-  (function () {
-    const step1 = document.getElementById('eu-withdrawal-step-1');
-    const step2 = document.getElementById('eu-withdrawal-step-2');
-    const success = document.getElementById('eu-withdrawal-success');
-    const error = document.getElementById('eu-withdrawal-error');
-
-    const emailInput = document.getElementById('withdrawal-email');
-    const messageInput = document.getElementById('withdrawal-message');
-
-    const confirmEmail = document.getElementById('withdrawal-confirm-email');
-
-    const continueButton = document.getElementById('withdrawal-continue');
-    const backButton = document.getElementById('withdrawal-back');
-    const confirmButton = document.getElementById('withdrawal-confirm');
-
-    const backendMessage = document.getElementById(
-      'withdrawal-backend-message'
-    );
-
-    if (
-      !step1 ||
-      !step2 ||
-      !emailInput ||
-      !messageInput ||
-      !continueButton ||
-      !backButton ||
-      !confirmButton
-    ) {
-      return;
-    }
-
-    /*
-     * STEP 1
-     * Validate the email and move to confirmation.
-     */
-
-    continueButton.addEventListener('click', function () {
-      const email = emailInput.value.trim();
-
-      if (!email || !emailInput.checkValidity()) {
-        emailInput.reportValidity();
-        return;
-      }
-
-      confirmEmail.textContent = email;
-
-      step1.hidden = true;
-      step2.hidden = false;
-    });
-
-
-    /*
-     * BACK BUTTON
-     */
-
-    backButton.addEventListener('click', function () {
-      step2.hidden = true;
-      step1.hidden = false;
-
-      if (backendMessage) {
-        backendMessage.hidden = true;
-      }
-    });
-
-
-    /*
-     * CONFIRM BUTTON
-     *
-     * Frontend only for now.
-     *
-     * No real request is sent.
-     * Backend can be connected later.
-     */
-
-    confirmButton.addEventListener('click', function () {
-      const email = emailInput.value.trim();
-      const message = messageInput.value.trim();
-
-      if (!email || !emailInput.checkValidity()) {
-        emailInput.reportValidity();
-        return;
-      }
-
-      const withdrawalData = {
-        order_name: {{ order.name | json }},
-        order_id: {{ order.id | json }},
-        customer_email: email,
-        message: message,
-        submitted_at: new Date().toISOString()
-      };
-
-      console.log(
-        'Frontend withdrawal data:',
-        withdrawalData
-      );
-
-      step2.hidden = true;
-      success.hidden = false;
-    });
-
-  })();
-</script>
-
 
 {% schema %}
 {
