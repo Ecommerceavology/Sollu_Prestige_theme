@@ -115,8 +115,67 @@
         "color_scheme": "",
         "separate_section_with_border": true,
         "show_categories": false,
-        "subheading": "Need help?",
-        "title": "Frequently Asked Questions",
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "faq_6W8a8V": {
+      "type": "faq",
+      "blocks": {
+        "category_7KWdjC": {
+          "type": "category",
+          "settings": {
+            "title": "Fragt og levering",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_dmqNkH": {
+          "type": "question",
+          "settings": {
+            "question": "Hvor hurtigt får jeg min ordre?",
+            "answer": "<p>Standardleveringstiden er 1-3 hverdage. Du kan læse mere på siden Fragt og levering.</p>"
+          }
+        },
+        "question_NxkT7Q": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad koster fragt?",
+            "answer": "<p>Ved køb over 499 kr. er leveringen til pakkeshop gratis. Handler du for et lavere beløb, ser du fragtprisen ved kassen, inden du godkender din ordre.</p>"
+          }
+        },
+        "question_mmGN4U": {
+          "type": "question",
+          "settings": {
+            "question": "Leverer I uden for Danmark?",
+            "answer": "<p>Nej, vi leverer til adresser i Danmark.</p>"
+          }
+        },
+        "question_3Wnab8": {
+          "type": "question",
+          "settings": {
+            "question": "Hvilke fragtfirmaer bruger I?",
+            "answer": "<p>Vi sender med GLS og PostNord.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_7KWdjC",
+        "question_dmqNkH",
+        "question_NxkT7Q",
+        "question_mmGN4U",
+        "question_3Wnab8"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
         "heading_style": "h2",
         "content": ""
       }
@@ -143,6 +202,7 @@
     "main",
     "image_with_text_overlay_6ApDDm",
     "faq_HRQPPP",
+    "faq_6W8a8V",
     "newsletter_EjwzA9"
   ]
 }
