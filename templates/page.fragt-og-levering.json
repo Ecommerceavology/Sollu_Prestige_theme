@@ -18,75 +18,59 @@
         "page_width": "xs"
       }
     },
-    "custom_sidebar_content_navigation_3QC9wH": {
-      "type": "custom-sidebar-content-navigation",
+    "rich_text_Xq6rpr": {
+      "type": "rich-text",
       "blocks": {
-        "content_block_FG3rQr": {
-          "type": "content_block",
+        "heading_FmxrCW": {
+          "type": "heading",
           "settings": {
-            "heading": "Levering i Danmark",
-            "target_id": "",
-            "text": "<p>Vi leverer til adresser i Danmark. Vi sender med GLS og PostNord, og du vælger leveringsmåde ved kassen.</p>"
+            "text": "Levering i Danmark",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_Ke44Eb": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Vi leverer til adresser i Danmark. Vi sender med GLS og PostNord, og du vælger leveringsmåde ved kassen.</p>",
+            "custom_class": ""
+          }
+        },
+        "heading_RKJMgP": {
+          "type": "heading",
+          "settings": {
+            "text": "Leveringstid",
+            "heading_tag": "h1",
+            "custom_class": ""
+          }
+        },
+        "richtext_8qMDY6": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Standardleveringstiden er 1-3 hverdage. Du får en e-mail fra os, når din ordre er afsendt.<br/>[***Sporing af pakken: sætning om sporingslink indsættes, når lagerløsning og fragtaftale er på plads***]</p>",
+            "custom_class": ""
           }
         }
       },
       "block_order": [
-        "content_block_FG3rQr"
+        "heading_FmxrCW",
+        "richtext_Ke44Eb",
+        "heading_RKJMgP",
+        "richtext_8qMDY6"
       ],
-      "name": "Sidebar Content Nav",
+      "name": "t:sections.rich_text.presets.rich_text.name",
       "settings": {
+        "color_scheme": "",
         "custom_class": "",
-        "max_width": 1200,
-        "sidebar_width": 160,
-        "column_gap": 40,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_horizontal": 20,
-        "navigation_label": "Page navigation",
-        "enable_sticky": true,
-        "enable_sticky_mobile": false,
-        "sticky_top": 20,
-        "sidebar_item_height": 35,
-        "sidebar_item_padding_vertical": 8,
-        "sidebar_item_padding_horizontal": 10,
-        "sidebar_font_size": 12,
-        "sidebar_font_weight": "600",
-        "sidebar_background": "#ffffff",
-        "sidebar_text_color": "#222222",
-        "sidebar_hover_background": "#f5f1e9",
-        "sidebar_hover_text": "#222222",
-        "sidebar_active_background": "#eee2cf",
-        "sidebar_active_text": "#222222",
-        "active_border_color": "#222222",
-        "active_border_width": 1,
-        "heading_size": 30,
-        "heading_weight": "400",
-        "heading_spacing": 20,
-        "heading_bottom_padding": 15,
-        "heading_border_width": 1,
-        "heading_border_color": "#e5e5e5",
-        "heading_color": "#2c2927",
-        "text_color": "#8b8178",
-        "text_size": 14,
-        "text_line_height": 1.6,
-        "content_spacing": 45,
-        "scroll_offset": 80,
-        "mobile_scroll_offset": 20,
-        "mobile_padding_top": 20,
-        "mobile_padding_bottom": 20,
-        "mobile_padding_horizontal": 15,
-        "mobile_column_gap": 30,
-        "mobile_sidebar_item_height": 40,
-        "mobile_sidebar_item_padding_vertical": 9,
-        "mobile_sidebar_item_padding_horizontal": 12,
-        "mobile_sidebar_font_size": 12,
-        "mobile_heading_size": 26,
-        "mobile_text_size": 14
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
       }
     }
   },
   "order": [
     "main",
-    "custom_sidebar_content_navigation_3QC9wH"
+    "rich_text_Xq6rpr"
   ]
 }
