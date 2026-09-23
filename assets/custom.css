@@ -3488,7 +3488,9 @@ position: relative !important;
 .Complaint_sec .sidebar-content-navigation__layout {
     display: block !important;
 }
-
+.Complaint_sec section{
+    margin-bottom: 30px !important;
+}
 
 
 
