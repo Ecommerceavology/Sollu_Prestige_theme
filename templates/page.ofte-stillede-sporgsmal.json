@@ -170,7 +170,7 @@
       ],
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
-        "custom_class": "FAQ_sec FAQ_sec_1",
+        "custom_class": "FAQ_sec FAQ_sec_2",
         "color_scheme": "",
         "separate_section_with_border": true,
         "show_categories": false,
@@ -237,7 +237,7 @@
       ],
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
-        "custom_class": "FAQ_sec FAQ_sec_1",
+        "custom_class": "FAQ_sec FAQ_sec_2",
         "color_scheme": "",
         "separate_section_with_border": true,
         "show_categories": false,
@@ -288,7 +288,7 @@
       ],
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
-        "custom_class": "FAQ_sec FAQ_sec_1",
+        "custom_class": "FAQ_sec FAQ_sec_2",
         "color_scheme": "",
         "separate_section_with_border": true,
         "show_categories": false,
@@ -339,7 +339,66 @@
       ],
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
-        "custom_class": "FAQ_sec FAQ_sec_1",
+        "custom_class": "FAQ_sec FAQ_sec_2",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
+    "faq_p6zUip": {
+      "type": "faq",
+      "blocks": {
+        "category_WHLkDk": {
+          "type": "category",
+          "settings": {
+            "title": "Om Sollu og kontakt",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_Hzgq48": {
+          "type": "question",
+          "settings": {
+            "question": "Hvem står bag Sollu?",
+            "answer": "<p>Sollu.dk drives af Sollu ApS i Holte. Vi udvælger selvplejeprodukter til hjemmebrug ud fra kvalitet og skandinavisk design. Du kan læse mere på siden Om os.</p>"
+          }
+        },
+        "question_rUfe9Q": {
+          "type": "question",
+          "settings": {
+            "question": "Har I en fysisk butik?",
+            "answer": "<p>Nej, Sollu findes kun online. Har du spørgsmål, kan du kontakte os på e-mail, telefon eller via kontaktformularen.</p>"
+          }
+        },
+        "question_Bhcmga": {
+          "type": "question",
+          "settings": {
+            "question": "Hvordan kontakter jeg jer, og hvornår svarer I?",
+            "answer": "<p>Du kan skrive til kontakt@sollu.dk, ringe på +45 2189 5400 (mandag til fredag kl. 10.00-15.30) eller bruge kontaktformularen på siden Kontakt. Vi svarer inden for 1-2 hverdage.</p>"
+          }
+        },
+        "question_3dFiLz": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad sker der med mine oplysninger?",
+            "answer": "<p>Vi indsamler kun det, vi har brug for, og vi sælger ikke dine oplysninger. Du kan læse mere i vores privatlivspolitik.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_WHLkDk",
+        "question_Hzgq48",
+        "question_rUfe9Q",
+        "question_Bhcmga",
+        "question_3dFiLz"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_3",
         "color_scheme": "",
         "separate_section_with_border": true,
         "show_categories": false,
@@ -375,6 +434,7 @@
     "faq_nQE6qe",
     "faq_QJpDaJ",
     "faq_a8Ftg4",
+    "faq_p6zUip",
     "newsletter_EjwzA9"
   ]
 }
