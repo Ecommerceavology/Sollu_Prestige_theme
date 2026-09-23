@@ -1,106 +1,65 @@
 <div class="page-width" style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
   <h1 style="text-align: center; font-size: 2rem; margin-bottom: 20px;">Fortrydelse af køb</h1>
-
-  <!-- Success / Acknowledgment Message (Step 3) -->
-  <div
-    id="withdrawal-success"
-    style="display: none; background: #e7f4e4; color: #2e6224; padding: 20px; border-radius: 6px; border: 1px solid #c3e6bc; margin-bottom: 20px; text-align: center;"
-  >
-    <h3 style="margin-top:0;">Tak for din henvendelse!</h3>
-    <p>
-      Din anmodning om fortrydelse er modtaget. En elektronisk modtagelseskvittering er blevet sendt til din
-      e-mailadresse med det samme.
-    </p>
-  </div>
-
+  
   <div id="withdrawal-form-wrapper">
     {% form 'contact' %}
+      
+      <!-- SUCCESS MESSAGE (अगर फॉर्म सही सबमिट हुआ तो ये दिखेगा) -->
       {% if form.posted_successfully? %}
+        <div style="background: #e7f4e4; color: #2e6224; padding: 20px; border-radius: 6px; border: 1px solid #c3e6bc; text-align: center;">
+          <h3 style="margin-top:0;">Tak for din henvendelse!</h3>
+          <p>Din anmodning om fortrydelse er modtaget. En elektronisk modtagelseskvittering er blevet sendt til din e-mailadresse med det samme.</p>
+        </div>
         <script>
-          window.onload = function () {
-            document.getElementById('withdrawal-success').style.display = 'block';
-            document.getElementById('withdrawal-form-wrapper').style.display = 'none';
-          };
+          window.onload = function() {
+            document.getElementById('step-1-ui').style.display = 'none';
+            document.getElementById('step-2-ui').style.display = 'none';
+          }
         </script>
+      {% endif %}
+
+      {% if form.errors %}
+        <div style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
+          {{ form.errors | default_errors }}
+        </div>
       {% endif %}
 
       <!-- STEP 1: Introduction and Email Input -->
       <div id="step-1-ui">
         <p style="color: #555; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6;">
-          I henhold til EU-lovgivningen har du ret til at træde tilbage fra denne aftale uden begrundelse inden for 14
-          dage. Udfyld venligst trinnene nedenfor for at gøre brug af din fortrydelsesret.
+          I henhold til EU-lovgivningen har du ret til at træde tilbage fra denne aftale uden begrundelse inden for 14 dage. Udfyld venligst trinnene nedenfor for at gøre brug af din fortrydelsesret.
         </p>
 
         <div style="margin-bottom: 20px;">
-          <label style="display:block; margin-bottom:5px; font-weight:bold;" for="WithdrawalEmail"
-            >Din E-mailadresse *</label
-          >
-          <input
-            style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; box-sizing: border-box;"
-            type="email"
-            id="WithdrawalEmail"
-            name="contact[email]"
-            required
-            placeholder="eksempel@mail.dk"
-          >
+          <label style="display:block; margin-bottom:5px; font-weight:bold;" for="WithdrawalEmail">Din E-mailadresse *</label>
+          <input style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; box-sizing: border-box;" type="email" id="WithdrawalEmail" name="contact[email]" value="{% if form.email %}{{ form.email }}{% endif %}" required placeholder="eksempel@mail.dk">
         </div>
 
         <div style="margin-bottom: 25px;">
-          <label style="display:block; margin-bottom:5px; font-weight:bold;" for="WithdrawalMessage"
-            >Valgfri besked (Valgfrit)</label
-          >
-          <textarea
-            style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; height: 90px; box-sizing: border-box;"
-            id="WithdrawalMessage"
-            name="contact[body]"
-            placeholder="Skriv eventuelle bemærkninger her..."
-          ></textarea>
+          <label style="display:block; margin-bottom:5px; font-weight:bold;" for="WithdrawalMessage">Valgfri besked (Valgfrit)</label>
+          <textarea style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; height: 90px; box-sizing: border-box;" id="WithdrawalMessage" name="contact[Besked]"></textarea>
         </div>
 
-        <button
-          type="button"
-          onclick="goToStep2()"
-          style="width:100%; padding:14px; background:#000; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer; font-size:1rem;"
-        >
-          Fortsæt
-        </button>
+        <button type="button" onclick="goToStep2()" style="width:100%; padding:14px; background:#000; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer; font-size:1rem;">Fortsæt</button>
       </div>
 
-      <!-- STEP 2: Order Information & Final Legally Required Confirmation -->
+      <!-- STEP 2: Order Information & Confirmation -->
       <div id="step-2-ui" style="display: none;">
         <h3 style="margin-top:0; margin-bottom:15px; font-size:1.3rem;">Ordreinformation</h3>
-
+        
         <div style="margin-bottom: 20px;">
           <label style="display:block; margin-bottom:5px; font-weight:bold;" for="WithdrawalOrder">Ordrenummer *</label>
-          <input
-            style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; box-sizing: border-box;"
-            type="text"
-            id="WithdrawalOrder"
-            name="contact[ordrenummer]"
-            required
-            placeholder="F.eks. #1002"
-          >
+          <!-- नाम को contact[Ordrenummer] किया गया है ताकि ये टाइमलाइन में सेव हो सके -->
+          <input style="width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; box-sizing: border-box;" type="text" id="WithdrawalOrder" name="contact[Ordrenummer]" required placeholder="F.eks. #1002">
         </div>
 
         <div style="background:#f9f9f9; padding:15px; border-radius:4px; border:1px solid #eee; margin-bottom:25px; font-size:0.9rem; color:#444; line-height:1.5;">
-          <strong>Bekræftelse:</strong> Ved at klikke på knappen nedenfor erklærer jeg formelt, at jeg ønsker at udnytte
-          min fortrydelsesret i forbindelse med ovenstående køb.
+          <strong>Bekræftelse:</strong> Ved at klikke på knappen nedenfor erklærer jeg formelt, at jeg ønsker at udnytte min fortrydelsesret i forbindelse med ovenstående køb.
         </div>
 
         <div style="display: flex; gap: 12px;">
-          <button
-            type="button"
-            onclick="goToStep1()"
-            style="flex: 1; padding:14px; background:#fff; color:#000; border:1px solid #000; border-radius:4px; font-weight:bold; cursor:pointer;"
-          >
-            Tilbage
-          </button>
-          <button
-            type="submit"
-            style="flex: 2; padding:14px; background:#d9534f; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;"
-          >
-            Bekræft fortrydelse
-          </button>
+          <button type="button" onclick="goToStep1()" style="flex: 1; padding:14px; background:#fff; color:#000; border:1px solid #000; border-radius:4px; font-weight:bold; cursor:pointer;">Tilbage</button>
+          <button type="submit" style="flex: 2; padding:14px; background:#d9534f; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer;">Bekræft fortrydelse</button>
         </div>
       </div>
     {% endform %}
@@ -110,7 +69,7 @@
 <script>
   function goToStep2() {
     var email = document.getElementById('WithdrawalEmail').value;
-    if (!email || !email.includes('@')) {
+    if(!email || !email.includes('@')) {
       alert('Indtast venligst en gyldig e-mailadresse.');
       return;
     }
