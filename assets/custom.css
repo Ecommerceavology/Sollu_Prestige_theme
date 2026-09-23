@@ -3480,7 +3480,12 @@ position: relative !important;
 }
 
 
-
+.Complaint_sec aside.sidebar-content-navigation__sidebar {
+    display: none;
+}
+.Complaint_sec .sidebar-content-navigation__layout {
+    display: block !important;
+}
 
 
 
