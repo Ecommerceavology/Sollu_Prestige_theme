@@ -18,6 +18,50 @@
         "page_width": "xs"
       }
     },
+    "image_with_text_overlay_39pwEH": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_TWfKBt": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_MLQtRC": {
+          "type": "heading",
+          "settings": {
+            "text": "Reklamation",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_4nQCWB": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Er der en fejl eller mangel ved dit produkt, hjælper vi dig. Her kan du se, hvad reklamationsretten omfatter, og hvordan du reklamerer. Ønsker du i stedet at fortryde et køb, kan du læse om det på siden Returnering og fortrydelsesret.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_TWfKBt",
+        "heading_MLQtRC",
+        "richtext_4nQCWB"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
     "rich_text_CzP6pW": {
       "type": "rich-text",
       "blocks": {
@@ -259,6 +303,7 @@
   },
   "order": [
     "main",
+    "image_with_text_overlay_39pwEH",
     "rich_text_CzP6pW",
     "custom_sidebar_content_navigation_NqUpqF"
   ]
