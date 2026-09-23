@@ -3460,7 +3460,7 @@ position: relative !important;
     color: #2a2420;
     font-size: 32px;
     line-height: 41.6px;
-    font-weight: 600;
+    font-weight: 600 !important;
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(196, 199, 199, 0.3);
     font-family: "Cormorant Garamond", serif !important;
