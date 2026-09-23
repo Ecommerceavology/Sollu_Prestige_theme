@@ -3501,6 +3501,9 @@ position: relative !important;
 .Complaint_sec h4 br{
     display: none;
 }
+.Complaint_sec p {
+    margin-bottom: 24px !important;
+}
 
 
 /* //responsive  */
