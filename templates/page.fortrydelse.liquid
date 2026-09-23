@@ -1,38 +1,65 @@
+```liquid
 <div class="withdrawal-page">
   <div class="withdrawal-container">
+
     <h1 class="withdrawal-title">Fortrydelse af køb</h1>
+
     <div id="withdrawal-form-wrapper">
+
       {% form 'contact' %}
+
         {% if form.posted_successfully? %}
           <div class="withdrawal-success">
             <h3>Tak for din henvendelse!</h3>
             <p>
-              Din anmodning om fortrydelse er modtaget. En elektronisk modtagelseskvittering er blevet sendt til din
+              Din anmodning om fortrydelse er modtaget.
+              En elektronisk modtagelseskvittering er blevet sendt til din
               e-mailadresse med det samme.
             </p>
           </div>
+
           <script>
             document.addEventListener('DOMContentLoaded', function () {
               var step1 = document.getElementById('step-1-ui');
               var step2 = document.getElementById('step-2-ui');
-              if (step1) step1.style.display = 'none';
-              if (step2) step2.style.display = 'none';
+
+              if (step1) {
+                step1.style.display = 'none';
+              }
+
+              if (step2) {
+                step2.style.display = 'none';
+              }
             });
           </script>
         {% endif %}
+
+
         {% if form.errors %}
-          <div class="withdrawal-error">{{ form.errors | default_errors }}</div>
+          <div class="withdrawal-error">
+            {{ form.errors | default_errors }}
+          </div>
         {% endif %}
+
+
         <!-- STEP 1 -->
         <div id="step-1-ui">
+
           <div class="withdrawal-intro">
             <p>
-              I henhold til EU-lovgivningen har du ret til at træde tilbage fra denne aftale uden begrundelse inden for
-              14 dage. Udfyld venligst trinnene nedenfor for at gøre brug af din fortrydelsesret.
+              I henhold til EU-lovgivningen har du ret til at træde tilbage
+              fra denne aftale uden begrundelse inden for 14 dage.
+              Udfyld venligst trinnene nedenfor for at gøre brug af din
+              fortrydelsesret.
             </p>
           </div>
+
+
           <div class="withdrawal-field">
-            <label for="WithdrawalEmail"> Din E-mailadresse <span>*</span> </label>
+            <label for="WithdrawalEmail">
+              Din E-mailadresse <span>*</span>
+            </label>
+
             <input
               type="email"
               id="WithdrawalEmail"
@@ -43,182 +70,372 @@
               required
             >
           </div>
+
+
           <div class="withdrawal-field">
-            <label for="WithdrawalMessage"> Valgfri besked <small>(Valgfrit)</small> </label>
+            <label for="WithdrawalMessage">
+              Valgfri besked
+              <small>(Valgfrit)</small>
+            </label>
+
             <textarea
               id="WithdrawalMessage"
               name="contact[Besked]"
               placeholder="Skriv eventuelt en besked..."
             ></textarea>
           </div>
-          <button type="button" class="withdrawal-button withdrawal-button-primary" onclick="goToStep2()">
+
+
+          <button
+            type="button"
+            class="withdrawal-button withdrawal-button-primary"
+            onclick="goToStep2()"
+          >
             Fortsæt
           </button>
+
         </div>
+
+
         <!-- STEP 2 -->
         <div id="step-2-ui" style="display: none;">
+
           <div class="withdrawal-step-header">
             <h2>Ordreinformation</h2>
-            <p>Indtast oplysningerne om det køb, du ønsker at fortryde.</p>
+
+            <p>
+              Indtast oplysningerne om det køb, du ønsker at fortryde.
+            </p>
           </div>
+
+
           <div class="withdrawal-field">
-            <label for="WithdrawalOrder"> Ordrenummer <span>*</span> </label>
-            <input type="text" id="WithdrawalOrder" name="contact[Ordrenummer]" placeholder="F.eks. #1002" required>
-          </div>
-          <div class="withdrawal-confirmation">
-            <strong>Bekræftelse</strong>
-            <p>
-              Ved at klikke på knappen nedenfor erklærer jeg formelt, at jeg ønsker at udnytte min fortrydelsesret i
-              forbindelse med ovenstående køb.
-            </p>
-          </div>
-          <div class="withdrawal-actions">
-            <button type="button" class="withdrawal-button withdrawal-button-back" onclick="goToStep1()">
-              Tilbage
-            </button>
-            <button type="submit" class="withdrawal-button withdrawal-button-submit">Bekræft fortrydelse</button>
-          </div>
-        </div>
-      {% endform %}
-    </div>
-  </div>
-</div>
-<style>
-  .withdrawal-page { width: 100%; padding: 60px 20px 80px; box-sizing: border-box; } .withdrawal-container { width: 100%; max-width: 600px; margin: 0 auto; } .withdrawal-title { margin: 0 0 36px; text-align: center; font-size: 32px; line-height: 1.2; font-weight: 600; } .withdrawal-intro { margin-bottom: 32px; } .withdrawal-intro p { margin: 0; color: #555; font-size: 15px; line-height: 1.7; } .withdrawal-field { margin-bottom: 24px; } .withdrawal-field label { display: block; margin-bottom: 9px; color: #222; font-size: 15px; line-height: 1.4; font-weight: 600; } .withdrawal-field label span { color: #d9534f; } .withdrawal-field label small { color: #777; font-size: 13px; font-weight: 400; } .withdrawal-field input, .withdrawal-field textarea { width: 100%; padding: 13px 14px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #222; font-size: 15px; line-height: 1.5; box-sizing: border-box; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .withdrawal-field input { min-height: 48px; } .withdrawal-field textarea { min-height: 110px; resize: vertical; } .withdrawal-field input:focus, .withdrawal-field textarea:focus { outline: none; border-color: #111; box-shadow: 0 0 0 1px #111; } .withdrawal-button { width: 100%; min-height: 50px; padding: 14px 20px; border-radius: 4px; font-size: 15px; line-height: 1.4; font-weight: 600; cursor: pointer; transition: opacity 0.2s ease, background 0.2s ease; box-sizing: border-box; } .withdrawal-button:hover { opacity: 0.85; } .withdrawal-button-primary { margin-top: 4px; background: #000; color: #fff; border: 1px solid #000; } .withdrawal-step-header { margin-bottom: 28px; } .withdrawal-step-header h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.3; font-weight: 600; } .withdrawal-step-header p { margin: 0; color: #666; font-size: 14px; line-height: 1.6; } .withdrawal-confirmation { margin: 30px 0; padding: 18px 20px; background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 5px; color: #444; } .withdrawal-confirmation strong { display: block; margin-bottom: 8px; color: #222; font-size: 15px; } .withdrawal-confirmation p { margin: 0; font-size: 14px; line-height: 1.6; } .withdrawal-actions { display: flex; gap: 12px; margin-top: 30px; } .withdrawal-actions .withdrawal-button-back { flex: 1; } .withdrawal-actions .withdrawal-button-submit { flex: 2; } .withdrawal-button-back { background: #fff; color: #000; border: 1px solid #000; } .withdrawal-button-submit { background: #d9534f; color: #fff; border: 1px solid #d9534f; } .withdrawal-success { margin-bottom: 30px; padding: 22px; background: #e7f4e4; color: #2e6224; border: 1px solid #c3e6bc; border-radius: 6px; text-align: center; } .withdrawal-success h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.4; } .withdrawal-success p { margin: 0; font-size: 14px; line-height: 1.6; } .withdrawal-error { margin-bottom: 24px; padding: 14px 16px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px; font-size: 14px; line-height: 1.5; } @media screen and (max-width: 600px) { .withdrawal-page { padding: 40px 16px 60px; } .withdrawal-title { margin-bottom: 28px; font-size: 27px; } .withdrawal-intro { margin-bottom: 28px; } .withdrawal-field { margin-bottom: 22px; } .withdrawal-actions { gap: 10px; } }
-</style>
-<script>
-  function goToStep2() {
-    var emailInput = document.getElementById('WithdrawalEmail');
-    if (!emailInput) {
-      return;
-    }
-    var email = emailInput.value.trim();
-    if (!email || !email.includes('@')) {
-      alert('Indtast venligst en gyldig e-mailadresse.');
-      emailInput.focus();
-      return;
-    }
-    document.getElementById('step-1-ui').style.display = 'none';
-    document.getElementById('step-2-ui').style.display = 'block';
-    var orderInput = document.getElementById('WithdrawalOrder');
-    if (orderInput) {
-      orderInput.focus();
-    }
-  }
-  function goToStep1() {
-    document.getElementById('step-2-ui').style.display = 'none';
-    document.getElementById('step-1-ui').style.display = 'block';
-  }
-</script>
-<div class="withdrawal-page">
-  <div class="withdrawal-container">
-    <h1 class="withdrawal-title">Fortrydelse af køb</h1>
-    <div id="withdrawal-form-wrapper">
-      {% form 'contact' %}
-        {% if form.posted_successfully? %}
-          <div class="withdrawal-success">
-            <h3>Tak for din henvendelse!</h3>
-            <p>
-              Din anmodning om fortrydelse er modtaget. En elektronisk modtagelseskvittering er blevet sendt til din
-              e-mailadresse med det samme.
-            </p>
-          </div>
-          <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              var step1 = document.getElementById('step-1-ui');
-              var step2 = document.getElementById('step-2-ui');
-              if (step1) step1.style.display = 'none';
-              if (step2) step2.style.display = 'none';
-            });
-          </script>
-        {% endif %}
-        {% if form.errors %}
-          <div class="withdrawal-error">{{ form.errors | default_errors }}</div>
-        {% endif %}
-        <!-- STEP 1 -->
-        <div id="step-1-ui">
-          <div class="withdrawal-intro">
-            <p>
-              I henhold til EU-lovgivningen har du ret til at træde tilbage fra denne aftale uden begrundelse inden for
-              14 dage. Udfyld venligst trinnene nedenfor for at gøre brug af din fortrydelsesret.
-            </p>
-          </div>
-          <div class="withdrawal-field">
-            <label for="WithdrawalEmail"> Din E-mailadresse <span>*</span> </label>
+            <label for="WithdrawalOrder">
+              Ordrenummer <span>*</span>
+            </label>
+
             <input
-              type="email"
-              id="WithdrawalEmail"
-              name="contact[email]"
-              value="{% if form.email %}{{ form.email }}{% endif %}"
-              placeholder="eksempel@mail.dk"
-              autocomplete="email"
+              type="text"
+              id="WithdrawalOrder"
+              name="contact[Ordrenummer]"
+              placeholder="F.eks. #1002"
               required
             >
           </div>
-          <div class="withdrawal-field">
-            <label for="WithdrawalMessage"> Valgfri besked <small>(Valgfrit)</small> </label>
-            <textarea
-              id="WithdrawalMessage"
-              name="contact[Besked]"
-              placeholder="Skriv eventuelt en besked..."
-            ></textarea>
-          </div>
-          <button type="button" class="withdrawal-button withdrawal-button-primary" onclick="goToStep2()">
-            Fortsæt
-          </button>
-        </div>
-        <!-- STEP 2 -->
-        <div id="step-2-ui" style="display: none;">
-          <div class="withdrawal-step-header">
-            <h2>Ordreinformation</h2>
-            <p>Indtast oplysningerne om det køb, du ønsker at fortryde.</p>
-          </div>
-          <div class="withdrawal-field">
-            <label for="WithdrawalOrder"> Ordrenummer <span>*</span> </label>
-            <input type="text" id="WithdrawalOrder" name="contact[Ordrenummer]" placeholder="F.eks. #1002" required>
-          </div>
+
+
           <div class="withdrawal-confirmation">
             <strong>Bekræftelse</strong>
+
             <p>
-              Ved at klikke på knappen nedenfor erklærer jeg formelt, at jeg ønsker at udnytte min fortrydelsesret i
-              forbindelse med ovenstående køb.
+              Ved at klikke på knappen nedenfor erklærer jeg formelt,
+              at jeg ønsker at udnytte min fortrydelsesret i forbindelse
+              med ovenstående køb.
             </p>
           </div>
+
+
           <div class="withdrawal-actions">
-            <button type="button" class="withdrawal-button withdrawal-button-back" onclick="goToStep1()">
+
+            <button
+              type="button"
+              class="withdrawal-button withdrawal-button-back"
+              onclick="goToStep1()"
+            >
               Tilbage
             </button>
-            <button type="submit" class="withdrawal-button withdrawal-button-submit">Bekræft fortrydelse</button>
+
+            <button
+              type="submit"
+              class="withdrawal-button withdrawal-button-submit"
+            >
+              Bekræft fortrydelse
+            </button>
+
           </div>
+
         </div>
+
       {% endform %}
+
     </div>
   </div>
 </div>
+
+
 <style>
-  .withdrawal-page { width: 100%; padding: 60px 20px 80px; box-sizing: border-box; } .withdrawal-container { width: 100%; max-width: 600px; margin: 0 auto; } .withdrawal-title { margin: 0 0 36px; text-align: center; font-size: 32px; line-height: 1.2; font-weight: 600; } .withdrawal-intro { margin-bottom: 32px; } .withdrawal-intro p { margin: 0; color: #555; font-size: 15px; line-height: 1.7; } .withdrawal-field { margin-bottom: 24px; } .withdrawal-field label { display: block; margin-bottom: 9px; color: #222; font-size: 15px; line-height: 1.4; font-weight: 600; } .withdrawal-field label span { color: #d9534f; } .withdrawal-field label small { color: #777; font-size: 13px; font-weight: 400; } .withdrawal-field input, .withdrawal-field textarea { width: 100%; padding: 13px 14px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #222; font-size: 15px; line-height: 1.5; box-sizing: border-box; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .withdrawal-field input { min-height: 48px; } .withdrawal-field textarea { min-height: 110px; resize: vertical; } .withdrawal-field input:focus, .withdrawal-field textarea:focus { outline: none; border-color: #111; box-shadow: 0 0 0 1px #111; } .withdrawal-button { width: 100%; min-height: 50px; padding: 14px 20px; border-radius: 4px; font-size: 15px; line-height: 1.4; font-weight: 600; cursor: pointer; transition: opacity 0.2s ease, background 0.2s ease; box-sizing: border-box; } .withdrawal-button:hover { opacity: 0.85; } .withdrawal-button-primary { margin-top: 4px; background: #000; color: #fff; border: 1px solid #000; } .withdrawal-step-header { margin-bottom: 28px; } .withdrawal-step-header h2 { margin: 0 0 8px; font-size: 22px; line-height: 1.3; font-weight: 600; } .withdrawal-step-header p { margin: 0; color: #666; font-size: 14px; line-height: 1.6; } .withdrawal-confirmation { margin: 30px 0; padding: 18px 20px; background: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 5px; color: #444; } .withdrawal-confirmation strong { display: block; margin-bottom: 8px; color: #222; font-size: 15px; } .withdrawal-confirmation p { margin: 0; font-size: 14px; line-height: 1.6; } .withdrawal-actions { display: flex; gap: 12px; margin-top: 30px; } .withdrawal-actions .withdrawal-button-back { flex: 1; } .withdrawal-actions .withdrawal-button-submit { flex: 2; } .withdrawal-button-back { background: #fff; color: #000; border: 1px solid #000; } .withdrawal-button-submit { background: #d9534f; color: #fff; border: 1px solid #d9534f; } .withdrawal-success { margin-bottom: 30px; padding: 22px; background: #e7f4e4; color: #2e6224; border: 1px solid #c3e6bc; border-radius: 6px; text-align: center; } .withdrawal-success h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.4; } .withdrawal-success p { margin: 0; font-size: 14px; line-height: 1.6; } .withdrawal-error { margin-bottom: 24px; padding: 14px 16px; background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px; font-size: 14px; line-height: 1.5; } @media screen and (max-width: 600px) { .withdrawal-page { padding: 40px 16px 60px; } .withdrawal-title { margin-bottom: 28px; font-size: 27px; } .withdrawal-intro { margin-bottom: 28px; } .withdrawal-field { margin-bottom: 22px; } .withdrawal-actions { gap: 10px; } }
+  .withdrawal-page {
+    width: 100%;
+    padding: 60px 20px 80px;
+    box-sizing: border-box;
+  }
+
+  .withdrawal-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .withdrawal-title {
+    margin: 0 0 36px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  .withdrawal-intro {
+    margin-bottom: 32px;
+  }
+
+  .withdrawal-intro p {
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .withdrawal-field {
+    margin-bottom: 24px;
+  }
+
+  .withdrawal-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  .withdrawal-field label span {
+    color: #d9534f;
+  }
+
+  .withdrawal-field label small {
+    color: #777;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .withdrawal-field input,
+  .withdrawal-field textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .withdrawal-field input {
+    min-height: 48px;
+  }
+
+  .withdrawal-field textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .withdrawal-field input:focus,
+  .withdrawal-field textarea:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 0 1px #111;
+  }
+
+  .withdrawal-button {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition:
+      opacity 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .withdrawal-button:hover {
+    opacity: 0.85;
+  }
+
+  .withdrawal-button-primary {
+    margin-top: 4px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+  }
+
+  .withdrawal-step-header {
+    margin-bottom: 28px;
+  }
+
+  .withdrawal-step-header h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .withdrawal-step-header p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .withdrawal-confirmation {
+    margin: 30px 0;
+    padding: 18px 20px;
+    background: #f8f8f8;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    color: #444;
+  }
+
+  .withdrawal-confirmation strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #222;
+    font-size: 15px;
+  }
+
+  .withdrawal-confirmation p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .withdrawal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .withdrawal-actions .withdrawal-button-back {
+    flex: 1;
+  }
+
+  .withdrawal-actions .withdrawal-button-submit {
+    flex: 2;
+  }
+
+  .withdrawal-button-back {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .withdrawal-button-submit {
+    background: #d9534f;
+    color: #fff;
+    border: 1px solid #d9534f;
+  }
+
+  .withdrawal-success {
+    margin-bottom: 30px;
+    padding: 22px;
+    background: #e7f4e4;
+    color: #2e6224;
+    border: 1px solid #c3e6bc;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .withdrawal-success h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .withdrawal-success p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .withdrawal-error {
+    margin-bottom: 24px;
+    padding: 14px 16px;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+    .withdrawal-page {
+      padding: 40px 16px 60px;
+    }
+
+    .withdrawal-title {
+      margin-bottom: 28px;
+      font-size: 27px;
+    }
+
+    .withdrawal-intro {
+      margin-bottom: 28px;
+    }
+
+    .withdrawal-field {
+      margin-bottom: 22px;
+    }
+
+    .withdrawal-actions {
+      gap: 10px;
+    }
+
+  }
 </style>
+
+
 <script>
   function goToStep2() {
+
     var emailInput = document.getElementById('WithdrawalEmail');
+
     if (!emailInput) {
       return;
     }
+
     var email = emailInput.value.trim();
+
     if (!email || !email.includes('@')) {
       alert('Indtast venligst en gyldig e-mailadresse.');
       emailInput.focus();
       return;
     }
+
     document.getElementById('step-1-ui').style.display = 'none';
     document.getElementById('step-2-ui').style.display = 'block';
+
     var orderInput = document.getElementById('WithdrawalOrder');
+
     if (orderInput) {
       orderInput.focus();
     }
   }
+
+
   function goToStep1() {
+
     document.getElementById('step-2-ui').style.display = 'none';
     document.getElementById('step-1-ui').style.display = 'block';
+
   }
 </script>
+```
