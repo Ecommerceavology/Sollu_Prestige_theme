@@ -3456,7 +3456,15 @@ position: relative !important;
     padding-right: 32px!important;
 }
 
-
+.Shipping_and_delivery p.h1 {
+    color: #2a2420;
+    font-size: 32px;
+    line-height: 41.6px;
+    font-weight: 600;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(196, 199, 199, 0.3);
+    font-family: "Cormorant Garamond", serif !important;
+}
 
 
 
