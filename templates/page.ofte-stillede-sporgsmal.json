@@ -68,7 +68,7 @@
         "category_8XVPLj": {
           "type": "category",
           "settings": {
-            "title": "Order",
+            "title": "Bestilling og betaling",
             "icon": "none",
             "icon_width": 16
           }
@@ -76,22 +76,29 @@
         "question_BA4LkN": {
           "type": "question",
           "settings": {
-            "question": "Do you ship overseas?",
-            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "question": "Hvilke betalingsmetoder kan jeg bruge?",
+            "answer": "<p>Du kan betale med Dankort / VISA-Dankort, MasterCard, MobilePay og Apple Pay. Der tages ikke gebyr ved betaling.</p>"
           }
         },
         "question_U4kRJi": {
           "type": "question",
           "settings": {
-            "question": "How long will it take to get my orders?",
-            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "question": "Hvornår bliver pengene trukket fra mit kort?",
+            "answer": "<p>Beløbet hæves først på dit kort, når din ordre afsendes fra vores lager. Du betaler altså ikke i det øjeblik, du bestiller.</p>"
           }
         },
         "question_CwCPtj": {
           "type": "question",
           "settings": {
-            "question": "Any question?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "question": "Hvordan ved jeg, at min ordre er modtaget?",
+            "answer": "<p>Du får en ordrebekræftelse på e-mail, når du har gennemført dit køb. Kan du ikke finde den, kan du kigge i din mappe med uønsket post eller kontakte os med dit navn og din e-mailadresse.</p>"
+          }
+        },
+        "question_XQPThN": {
+          "type": "question",
+          "settings": {
+            "question": "Kan jeg ændre eller annullere min ordre, efter jeg har bestilt?",
+            "answer": "<p>Skriv til os på kontakt@sollu.dk med dit ordrenummer, så hurtigt du kan. Er ordren ikke sendt endnu,hjælper vi dig gerne med at rette eller annullere den. Er den allerede afsendt, kan du i stedet bruge din fortrydelsesret på 30 dage.</p>"
           }
         }
       },
@@ -99,7 +106,8 @@
         "category_8XVPLj",
         "question_BA4LkN",
         "question_U4kRJi",
-        "question_CwCPtj"
+        "question_CwCPtj",
+        "question_XQPThN"
       ],
       "name": "t:sections.faq.presets.faq.name",
       "settings": {
