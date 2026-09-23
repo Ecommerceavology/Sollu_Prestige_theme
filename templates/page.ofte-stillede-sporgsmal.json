@@ -180,6 +180,73 @@
         "content": ""
       }
     },
+    "faq_nQE6qe": {
+      "type": "faq",
+      "blocks": {
+        "category_QTT3TH": {
+          "type": "category",
+          "settings": {
+            "title": "Fortrydelse og retur",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_xbdPpc": {
+          "type": "question",
+          "settings": {
+            "question": "Hvor lang tid har jeg til at fortryde mit køb?",
+            "answer": "<p>Du har 30 dages fortrydelsesret, regnet fra den dag, du har modtaget din vare. Det er mere, end loven kræver, og vi gør det, fordi du skal kunne prøve produktet derhjemme i ro og mag.</p>"
+          }
+        },
+        "question_xQdLV8": {
+          "type": "question",
+          "settings": {
+            "question": "Må jeg prøve produktet, før jeg beslutter mig?",
+            "answer": "<p>Ja. Du må prøve varen, som du ville i en fysisk butik. Den skal blot sendes retur i original emballage.</p>"
+          }
+        },
+        "question_TFVqfy": {
+          "type": "question",
+          "settings": {
+            "question": "Hvordan fortryder jeg?",
+            "answer": "<p>Send en e-mail til kontakt@sollu.dk med dit ordrenummer, og skriv, at du ønsker at fortryde købet. Kontakt os, før du sender varen retur.</p>"
+          }
+        },
+        "question_Mw9aiP": {
+          "type": "question",
+          "settings": {
+            "question": "Hvem betaler for returfragten?",
+            "answer": "<p>Fortryder du dit køb, betaler du selv for at sende varen retur. Godkender vi en reklamation, er det os, der betaler.</p>"
+          }
+        },
+        "question_Cmxkii": {
+          "type": "question",
+          "settings": {
+            "question": "Hvornår får jeg pengene tilbage?",
+            "answer": "<p>Vi refunderer det, du har betalt, herunder den oprindelige levering. Har du selv valgt en dyrere leveringsform end vores billigste standardlevering, refunderes de ekstra omkostninger dog ikke. Pengene er tilbage hos dig senest 14 dage efter, vi har modtaget varen, eller har modtaget dokumentation for, at du har sendt den. Du kan læse hele forløbet på siden Returnering og fortrydelsesret.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_QTT3TH",
+        "question_xbdPpc",
+        "question_xQdLV8",
+        "question_TFVqfy",
+        "question_Mw9aiP",
+        "question_Cmxkii"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "newsletter_EjwzA9": {
       "type": "newsletter",
       "settings": {
@@ -203,6 +270,7 @@
     "image_with_text_overlay_6ApDDm",
     "faq_HRQPPP",
     "faq_6W8a8V",
+    "faq_nQE6qe",
     "newsletter_EjwzA9"
   ]
 }
