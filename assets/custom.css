@@ -3471,6 +3471,7 @@ position: relative !important;
     font-family: Cormorant Garamond,serif!important;
     text-transform: none;
     letter-spacing: 2px;
+    margin-top: 30px;
 }
 .Shipping_and_delivery .prose.text-start>div {
     margin-top: 24px !important;
