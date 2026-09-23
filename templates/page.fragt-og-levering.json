@@ -18,6 +18,50 @@
         "page_width": "xs"
       }
     },
+    "image_with_text_overlay_U4MLDa": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_jcqVM3": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_nkDRkb": {
+          "type": "heading",
+          "settings": {
+            "text": "Fragt og levering",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_x7ah9g": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Her kan du læse, hvordan vi leverer din ordre, hvad det koster, og hvad du kan forvente.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_jcqVM3",
+        "heading_nkDRkb",
+        "richtext_x7ah9g"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
     "rich_text_Xq6rpr": {
       "type": "rich-text",
       "blocks": {
@@ -156,6 +200,7 @@
   },
   "order": [
     "main",
+    "image_with_text_overlay_U4MLDa",
     "rich_text_Xq6rpr"
   ]
 }
