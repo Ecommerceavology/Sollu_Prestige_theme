@@ -3449,7 +3449,8 @@ position: relative !important;
     padding: 80px 0!important;
     border: none!important;
 }
-.Shipping_and_delivery .container {
+.Shipping_and_delivery .container,
+.Complaint_sec .sidebar-content-navigation__container {
     width: 100%!important;
     max-width: 900px!important;
     margin: 0 auto!important;
