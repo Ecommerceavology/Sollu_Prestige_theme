@@ -3443,6 +3443,20 @@ position: relative !important;
 
 
 
+.Shipping_and_delivery {
+    background: #faf7f2!important;
+    padding: 80px 0!important;
+    border: none!important;
+}
+.container.container--sm {
+    width: 100%!important;
+    max-width: 900px!important;
+    margin: 0 auto!important;
+    padding-left: 32px!important;
+    padding-right: 32px!important;
+}
+
+
 
 
 
