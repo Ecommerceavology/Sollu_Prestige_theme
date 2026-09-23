@@ -327,7 +327,7 @@
       "name": "All Products section",
       "settings": {
         "section_custom_class": "All_pro_sec",
-        "heading": "Mest solgte Sollo produkter",
+        "heading": "Mest solgte Sollu produkter",
         "subheading": "Udvalgte",
         "color_scheme": "scheme-1",
         "products_per_row_mobile": 2,
