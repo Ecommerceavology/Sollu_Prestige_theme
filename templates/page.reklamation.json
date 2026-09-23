@@ -176,33 +176,25 @@
         "content_block_g8TRtx": {
           "type": "content_block",
           "settings": {
-            "heading": "01 Kontakt os",
+            "heading": "Når vi har modtaget varen",
             "target_id": "levering",
-            "text": "<p>01 Kontakt os</p>"
+            "text": "<p>Du får besked om, hvordan sagen løses: ved reparation, ombytning, tilbagebetaling eller afslag i prisen, afhængigt af den konkrete situation.</p>"
           }
         },
         "content_block_A9MgCW": {
           "type": "content_block",
           "settings": {
-            "heading": "4. Fortrydelsesret",
+            "heading": "Returadresse",
             "target_id": "fortrydelsesret",
-            "text": "<p>Som forbruger har du 14 dages fortrydelsesret, når du handler hos os.</p>"
+            "text": "<p>Sollu ApS<br/>Pilekæret 30<br/>2840 Holte<br/>Danmark<br/>Brug kun adressen, hvis du har fået besked fra os. Har du fået en returlabel, står adressen på den.</p>"
           }
         },
         "content_block_aLjtre": {
           "type": "content_block",
           "settings": {
-            "heading": "5. Reklamationsret",
+            "heading": "Hvis vi ikke bliver enige",
             "target_id": "reklamationsret",
-            "text": "<p>Købelovens mangelregler finder anvendelse på varekøb.</p>"
-          }
-        },
-        "content_block_iKjxNM": {
-          "type": "content_block",
-          "settings": {
-            "heading": "6. Persondatapolitik",
-            "target_id": "persondatapolitik",
-            "text": "<p>Vi behandler dine personoplysninger i overensstemmelse med gældende regler.</p>"
+            "text": "<p>Hvis det ikke lykkes os at finde en løsning sammen, kan du klage til Center for Klageløsning, Nævnenes Hus,<br/>Toldboden 2, 8800 Viborg, <a href=\"https://naevneneshus.dk/\" target=\"_blank\" title=\"https://naevneneshus.dk/\">www.naevneneshus.dk</a>. Er du bosiddende i et andet EU-land, kan du finde din<br/>klageinstans via <a href=\"https://consumer-redress.ec.europa.eu/list-alternative-dispute-resolution-adr-bodies_en\" target=\"_blank\" title=\"https://consumer-redress.ec.europa.eu/list-alternative-dispute-resolution-adr-bodies_en\">EU-Kommissionens oversigt over klageinstanser</a>.</p>"
           }
         }
       },
@@ -211,8 +203,7 @@
         "content_block_nryiYD",
         "content_block_g8TRtx",
         "content_block_A9MgCW",
-        "content_block_aLjtre",
-        "content_block_iKjxNM"
+        "content_block_aLjtre"
       ],
       "name": "Sidebar Content Nav",
       "settings": {
