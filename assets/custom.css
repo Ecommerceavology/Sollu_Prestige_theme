@@ -2494,7 +2494,7 @@ span.custom-product-card__price-current {
     position: relative!important;
     width: 100%!important;
     height: 230px!important;
-    object-fit: contain!important;
+    object-fit: cover !important;
     object-position: center!important;
     display: block!important;
     background: #fff!important;
