@@ -3443,7 +3443,8 @@ position: relative !important;
 
 
 
-.Shipping_and_delivery {
+.Shipping_and_delivery,
+.Complaint_sec {
     background: #faf7f2!important;
     padding: 80px 0!important;
     border: none!important;
