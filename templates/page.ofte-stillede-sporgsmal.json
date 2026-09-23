@@ -11,10 +11,112 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "image_with_text_overlay_6ApDDm": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_8jU94e": {
+          "type": "subheading",
+          "settings": {
+            "text": "KUNDESERVICE"
+          }
+        },
+        "heading_czyjUy": {
+          "type": "heading",
+          "settings": {
+            "text": "Vi er her for at hjælpe",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_Hi8GD4": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Har du spørgsmål til din ordre, vores produkter eller levering?</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8jU94e",
+        "heading_czyjUy",
+        "richtext_Hi8GD4"
+      ],
+      "name": "Hero section",
+      "settings": {
+        "custom_class": "Hero_sec pro_hero_sec faq_hero_sec",
+        "color_scheme": "scheme-3",
+        "image_size": "sm",
+        "image": "shopify://shop_images/Section_2.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "faq_HRQPPP": {
+      "type": "faq",
+      "blocks": {
+        "category_8XVPLj": {
+          "type": "category",
+          "settings": {
+            "title": "Order",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_BA4LkN": {
+          "type": "question",
+          "settings": {
+            "question": "Do you ship overseas?",
+            "answer": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "question_U4kRJi": {
+          "type": "question",
+          "settings": {
+            "question": "How long will it take to get my orders?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_CwCPtj": {
+          "type": "question",
+          "settings": {
+            "question": "Any question?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_8XVPLj",
+        "question_BA4LkN",
+        "question_U4kRJi",
+        "question_CwCPtj"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "Need help?",
+        "title": "Frequently Asked Questions",
+        "heading_style": "h2",
+        "content": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_with_text_overlay_6ApDDm",
+    "faq_HRQPPP"
   ]
 }
