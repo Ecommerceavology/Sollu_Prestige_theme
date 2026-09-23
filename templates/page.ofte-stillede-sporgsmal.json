@@ -298,6 +298,57 @@
         "content": ""
       }
     },
+    "faq_a8Ftg4": {
+      "type": "faq",
+      "blocks": {
+        "category_zcVxwc": {
+          "type": "category",
+          "settings": {
+            "title": "Produkterne",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_X38WH9": {
+          "type": "question",
+          "settings": {
+            "question": "Hvordan finder jeg ud af, hvilket produkt der passer til mig?",
+            "answer": "<p>På hver produktside finder du en beskrivelse af produktet, hvad der følger med, og de tekniske specifikationer. Er du stadig i tvivl, kan du skrive til os om, hvad du ønsker at bruge produktet til, så hjælper vi dig med at vurdere, om det passer til dig.</p>"
+          }
+        },
+        "question_ehrXCE": {
+          "type": "question",
+          "settings": {
+            "question": "Hvad følger der med produktet?",
+            "answer": "<p>Under “Hvad medfølger” på den enkelte produktside kan du se, hvad der er i pakken.</p>"
+          }
+        },
+        "question_3qj3jf": {
+          "type": "question",
+          "settings": {
+            "question": "Kan jeg stille spørgsmål til et produkt, før jeg køber?",
+            "answer": "<p>Ja. Brug kontaktformularen og vælg emnet “Spørgsmål til et produkt”, eller skriv til kontakt@sollu.dk.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_zcVxwc",
+        "question_X38WH9",
+        "question_ehrXCE",
+        "question_3qj3jf"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "custom_class": "FAQ_sec FAQ_sec_1",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "",
+        "heading_style": "h2",
+        "content": ""
+      }
+    },
     "newsletter_EjwzA9": {
       "type": "newsletter",
       "settings": {
@@ -323,6 +374,7 @@
     "faq_6W8a8V",
     "faq_nQE6qe",
     "faq_QJpDaJ",
+    "faq_a8Ftg4",
     "newsletter_EjwzA9"
   ]
 }
