@@ -3522,6 +3522,10 @@ position: relative !important;
     flex-shrink: 0;
 }
 
+.sidebar-content-navigation__content .form-wrapper h1.title {
+    font-family: "Jost", sans-serif !important;
+    font-weight: 600 !IMPORTANT;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
