@@ -103,7 +103,8 @@
             {%- endif -%}
 
             {%- if section.settings.show_shipping_text -%}
-              <p class="text-subdued">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
+              {% comment %} <p class="text-subdued">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p> {% endcomment %}
+              <p class="text-subdued">Fragt beregnes ved kassen</p>
             {%- endif -%}
           </div>
         {%- endif -%}
