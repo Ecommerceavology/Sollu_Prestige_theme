@@ -72,6 +72,7 @@
           "type": "text",
           "settings": {
             "title": "Ordrenummer(valgfrit)",
+            "help_text": "Du finder det i din ordrebekræftelse.",
             "use_long_text": false,
             "required": false
           }
@@ -202,7 +203,7 @@
         "column_content_size": 16,
         "column_content_color": "#000000",
         "subheading": "",
-        "title": "14 dages fortrydelsesret",
+        "title": "",
         "heading_style": "h2",
         "content": ""
       }
