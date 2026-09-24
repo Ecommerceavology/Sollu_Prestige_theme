@@ -91,7 +91,7 @@
         "richtext_8qMDY6": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Standardleveringstiden er 1-3 hverdage. Du får en e-mail fra os, når din ordre er afsendt.<br/>[***Sporing af pakken: sætning om sporingslink indsættes, når lagerløsning og fragtaftale er på plads***]</p>",
+            "content": "<p>Standardleveringstiden er 1-3 hverdage. Du får en e-mail fra os, når din ordre er afsendt.</p>",
             "custom_class": ""
           }
         },
