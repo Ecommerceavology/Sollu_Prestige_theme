@@ -3534,9 +3534,12 @@ position: relative !important;
     background: #faf7f2!important;
 }
 .eu-wf-section-wrapper {
-    padding: 0 !important;
+    padding: 0 20px !important;
 }
-
+.eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
+    padding: 0 !important;
+    max-width: 700px !important;
+}
 
 
 /* //responsive  */
