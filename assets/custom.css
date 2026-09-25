@@ -4192,9 +4192,7 @@ x-header.header.Header_sec {
         line-height: 48px;
     }
 
-    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
-        max-width: 580px !important;
-    }
+   
 
 }
 
@@ -4575,9 +4573,7 @@ x-header.header.Header_sec {
         padding: 0 18px !important;
     }
 
-    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
-        max-width: 560px !important;
-    }
+ 
 
     h2.eu-wf-title {
         font-size: 38px;
@@ -5489,9 +5485,6 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         padding: 0 16px !important;
     }
 
-    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
-        max-width: 100% !important;
-    }
 
     h2.eu-wf-title {
         font-size: 36px;
