@@ -3580,10 +3580,11 @@ h3.eu-wf-subtitle {
   
 }
 .eu-wf-input {
-    color: #8c8278 !important;
-    font-size: 12px !important;
-    letter-spacing: .5px !important;
-    font-weight: 300 !important;
+    color: #8c8278!important;
+    font-size: 12px!important;
+    letter-spacing: .5px!important;
+    font-weight: 300!important;
+    border-radius: 4px !important;
 }
 span.eu-wf-policy {
     flex: unset !important;
@@ -3591,6 +3592,14 @@ span.eu-wf-policy {
 button#eu-wf-btn-continue {
     min-width: 160px;
     border-radius: 4px;
+}
+.eu-wf-step-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    gap: 16px;
 }
 
 
