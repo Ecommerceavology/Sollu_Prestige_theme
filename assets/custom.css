@@ -3559,6 +3559,10 @@ h3.eu-wf-subtitle {
     font-family: Jost,sans-serif!important;
     margin-bottom: 20px;
 }
+.eu-wf-step .step-num {
+    
+    line-height: normal !important;
+}
 
 
 /* //responsive  */
