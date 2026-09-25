@@ -4181,6 +4181,19 @@ x-header.header.Header_sec {
         max-width: 850px !important;
     }
 
+    .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 70px 0 90px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
+        max-width: 580px !important;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -4550,6 +4563,39 @@ x-header.header.Header_sec {
     .shopify-policy__body td {
         font-size: 16px;
         line-height: 25px;
+    }
+
+    .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 65px 0 80px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 18px !important;
+    }
+
+    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
+        max-width: 560px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 38px;
+        line-height: 46px;
+        margin-bottom: 22px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 15px;
+        line-height: 27px;
+        margin-bottom: 18px;
+    }
+
+    .eu-wf-form-fields {
+        gap: 15px !important;
+    }
+
+    .eu-wf-step-footer {
+        margin-top: 15px;
+        gap: 14px;
     }
     
 }
@@ -5431,6 +5477,47 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .shopify-section--main-list-collections .content-over-media.content-over-media--auto {
         min-height: 380px !important;
          max-height: 380px !important;
+    }
+
+    .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 55px 0 70px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 16px !important;
+    }
+
+    .eu-wf-card.eu-wf-style-embedded.eu-wf-btn-filled {
+        max-width: 100% !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 36px;
+        line-height: 43px;
+        margin-bottom: 20px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 15px;
+        line-height: 26px;
+    }
+
+    .eu-wf-input {
+        font-size: 13px !important;
+        min-height: 45px;
+    }
+
+    button#eu-wf-btn-continue {
+        min-width: 150px;
+        min-height: 46px !important;
+    }
+
+    button#eu-wf-btn-continue:hover {
+        min-height: 46px !important;
+    }
+
+    .eu-wf-steps {
+        margin-bottom: 20px !important;
     }
 }
 
@@ -6857,6 +6944,71 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Complaint_sec p {
         margin-bottom: 20px !important;
     }
+
+     .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 50px 0 65px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 15px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 33px;
+        line-height: 40px;
+        letter-spacing: .3px;
+        margin-bottom: 18px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 14px;
+        line-height: 25px;
+        margin-bottom: 17px;
+    }
+
+    .eu-wf-field-group label {
+        font-size: 14px !important;
+    }
+
+    .eu-wf-form-fields {
+        gap: 14px !important;
+    }
+
+    .eu-wf-help-text {
+        font-size: 12px !important;
+    }
+
+    .eu-wf-policy {
+        font-size: 13px !important;
+    }
+
+    .eu-wf-input {
+        font-size: 12px !important;
+        letter-spacing: .4px !important;
+        border-radius: 4px !important;
+    }
+
+    .eu-wf-step-footer {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin-top: 14px;
+        gap: 14px;
+    }
+
+    button#eu-wf-btn-continue {
+        width: 100%;
+        min-width: 0;
+        min-height: 46px !important;
+    }
+
+    button#eu-wf-btn-continue:hover {
+        min-height: 46px !important;
+    }
+
+    .eu-wf-steps {
+        margin-bottom: 18px !important;
+    }
 }
 
 @media (max-width: 750px) {
@@ -7991,6 +8143,58 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Complaint_sec p {
         margin-bottom: 18px !important;
     }
+
+     .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 42px 0 55px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 14px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: .2px;
+        margin-bottom: 16px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .eu-wf-form-fields {
+        gap: 13px !important;
+    }
+
+    .eu-wf-field-group label {
+        font-size: 13px !important;
+    }
+
+    .eu-wf-help-text {
+        font-size: 11px !important;
+    }
+
+    .eu-wf-policy {
+        font-size: 12px !important;
+        line-height: 20px !important;
+    }
+
+    .eu-wf-input {
+        font-size: 12px !important;
+        min-height: 44px;
+    }
+
+    .eu-wf-step-footer {
+        margin-top: 13px;
+        gap: 12px;
+    }
+
+    .eu-wf-steps {
+        margin-bottom: 16px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -8553,6 +8757,43 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     padding: 0 0 40px !important;
 }
 
+ .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 38px 0 48px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 12px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 15px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 13px;
+        line-height: 23px;
+        margin-bottom: 14px;
+    }
+
+    .eu-wf-form-fields {
+        gap: 12px !important;
+    }
+
+    .eu-wf-input {
+        font-size: 11px !important;
+        letter-spacing: .3px !important;
+    }
+
+    .eu-wf-step-footer {
+        gap: 11px;
+    }
+
+    .eu-wf-steps {
+        margin-bottom: 15px !important;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -9010,6 +9251,62 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Complaint_sec p {
         margin-bottom: 16px !important;
     }
+
+    .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 34px 0 42px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 10px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0;
+        margin-bottom: 14px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 13px;
+        line-height: 22px;
+        margin-bottom: 13px;
+    }
+
+    .eu-wf-field-group label {
+        font-size: 12px !important;
+    }
+
+    .eu-wf-form-fields {
+        gap: 11px !important;
+    }
+
+    .eu-wf-help-text {
+        font-size: 10px !important;
+    }
+
+    .eu-wf-policy {
+        font-size: 11px !important;
+        line-height: 18px !important;
+    }
+
+    .eu-wf-input {
+        min-height: 42px;
+        font-size: 11px !important;
+    }
+
+    button#eu-wf-btn-continue {
+        min-height: 44px !important;
+    }
+
+    button#eu-wf-btn-continue:hover {
+        min-height: 44px !important;
+    }
+
+    .eu-wf-step-footer {
+        margin-top: 12px;
+        gap: 10px;
+    }
   
 }
 
@@ -9249,5 +9546,36 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .Complaint_sec h4 {
         font-size: 17px;
         line-height: 23px;
+    }
+
+     .shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+        padding: 30px 0 38px !important;
+    }
+
+    .eu-wf-section-wrapper {
+        padding: 0 8px !important;
+    }
+
+    h2.eu-wf-title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    h3.eu-wf-subtitle {
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    .eu-wf-form-fields {
+        gap: 10px !important;
+    }
+
+    .eu-wf-input {
+        font-size: 10px !important;
+    }
+
+    .eu-wf-policy {
+        font-size: 10px !important;
+        line-height: 17px !important;
     }
 }
