@@ -3563,6 +3563,13 @@ h3.eu-wf-subtitle {
     
     line-height: normal !important;
 }
+.eu-wf-field-group label {
+    font-size: 15px;
+   
+}
+.eu-wf-form-fields {
+    gap: 17px;
+}
 
 
 /* //responsive  */
