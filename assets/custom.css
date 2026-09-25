@@ -3578,6 +3578,12 @@ h3.eu-wf-subtitle {
     font-size: 14px !important;
   
 }
+.eu-wf-input {
+    color: #8c8278 !important;
+    font-size: 12px !important;
+    letter-spacing: .5px !important;
+    font-weight: 300 !important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
