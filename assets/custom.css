@@ -3544,12 +3544,12 @@ position: relative !important;
 h2.eu-wf-title {
     color: #2a2420;
     text-align: center;
-    font-size: 46px;
+    font-size: 42px;
     line-height: 50.6px;
     letter-spacing: .46px;
     font-weight: 300!important;
     text-transform: unset;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 h3.eu-wf-subtitle {
     color: #8c8278;
