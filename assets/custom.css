@@ -3529,6 +3529,13 @@ position: relative !important;
     margin-bottom: 10px;
 }
 
+
+.color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+    background: #faf7f2!important;
+}
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
