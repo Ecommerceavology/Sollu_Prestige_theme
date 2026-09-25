@@ -9313,6 +9313,15 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
         margin-top: 12px;
         gap: 10px;
     }
+
+    .eu-wf-step {
+    padding: 0 !important;
+    max-width: fit-content !important;
+}
+.eu-wf-step.active {
+    padding: 10px 10px !important;
+    max-width: 60px !important;
+}
   
 }
 
