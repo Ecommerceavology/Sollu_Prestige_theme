@@ -3609,9 +3609,15 @@ button#eu-wf-btn-continue:hover{
     border: 1px solid #2a2420!important;
      min-height: 47px !important;
 }
+a.eu-wf-link {
+    text-decoration: none !important;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.3s ease;
+}
 
-
-
+a.eu-wf-link:hover {
+    text-decoration: underline !important;
+}
 
 
 
