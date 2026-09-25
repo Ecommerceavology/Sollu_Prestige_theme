@@ -8795,6 +8795,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .eu-wf-steps {
         margin-bottom: 15px !important;
     }
+    .eu-wf-step-divider {
+    margin: 0 !important;
+    flex: 0 1 30px !important;
+}
 
 }
 
