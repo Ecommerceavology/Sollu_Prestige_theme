@@ -3602,6 +3602,11 @@ button#eu-wf-btn-continue {
     margin-top: 16px;
     gap: 16px;
 }
+button#eu-wf-btn-continue:hover{
+        background: transparent!important;
+    color: #2a2420!important;
+    border: 1px solid #2a2420!important;
+}
 
 
 
