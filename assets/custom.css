@@ -3556,7 +3556,8 @@ h3.eu-wf-subtitle {
     font-size: 16px;
     line-height: 28.8px;
     font-weight: 300;
-    font-family: "Jost", sans-serif !important;
+    font-family: Jost,sans-serif!important;
+    margin-bottom: 20px;
 }
 
 
