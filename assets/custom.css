@@ -3530,8 +3530,9 @@ position: relative !important;
 }
 
 
-.color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
+.shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section {
     background: #faf7f2!important;
+    padding: 80px 0 110px!important;
 }
 .eu-wf-section-wrapper {
     padding: 0 20px !important;
