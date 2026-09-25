@@ -7016,15 +7016,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 .header__secondary-nav a span {
     font-size: 10px !important;
 }
-.eu-wf-step {
-    flex: auto !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    max-width: fit-content !important;
-    padding: 10px 26px !important;
-    gap: 6px !important;
-    align-items: center !important;
-}
+
 }
 
 @media (max-width: 575px) {
