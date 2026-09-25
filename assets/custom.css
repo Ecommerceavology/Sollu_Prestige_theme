@@ -3619,7 +3619,12 @@ a.eu-wf-link:hover {
     text-decoration: underline !important;
 }
 
-
+.eu-wf-steps {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 24px !important;
+}
 
 
 
