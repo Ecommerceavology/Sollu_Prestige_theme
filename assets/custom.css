@@ -3550,6 +3550,14 @@ h2.eu-wf-title {
     text-transform: unset;
     margin-bottom: 30px;
 }
+h3.eu-wf-subtitle {
+    color: #8c8278;
+    text-align: left;
+    font-size: 16px;
+    line-height: 28.8px;
+    font-weight: 300;
+    font-family: "Jost", sans-serif !important;
+}
 
 
 /* //responsive  */
