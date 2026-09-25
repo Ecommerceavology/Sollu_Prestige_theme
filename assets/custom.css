@@ -3625,7 +3625,9 @@ a.eu-wf-link:hover {
     justify-content: space-between !important;
     margin-bottom: 24px !important;
 }
-
+.shopify-section--apps .color-scheme.color-scheme--scheme-1.color-scheme--bg-609ecfcfee2f667ac6c12366fc6ece56.section-spacing.bordered-section .container {
+    margin: 0 !important;
+}
 
 
 
