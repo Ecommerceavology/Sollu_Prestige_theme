@@ -7018,12 +7018,12 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 }
 .eu-wf-step {
     flex: auto !important;
-    flex-direction: row;
-    justify-content: center;
-    max-width: fit-content;
-    padding: 10px 26px;
-    gap: 6px;
-    align-items: center;
+    flex-direction: row !important;
+    justify-content: center !important;
+    max-width: fit-content !important;
+    padding: 10px 26px !important;
+    gap: 6px !important;
+    align-items: center !important;
 }
 }
 
