@@ -3540,6 +3540,16 @@ position: relative !important;
     padding: 0 !important;
     max-width: 700px !important;
 }
+h2.eu-wf-title {
+    color: #2a2420;
+    text-align: center;
+    font-size: 46px;
+    line-height: 50.6px;
+    letter-spacing: .46px;
+    font-weight: 300!important;
+    text-transform: unset;
+    margin-bottom: 30px;
+}
 
 
 /* //responsive  */
