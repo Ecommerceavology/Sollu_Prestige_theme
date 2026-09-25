@@ -3574,7 +3574,10 @@ h3.eu-wf-subtitle {
     font-size: 13px !important;
     
 }
-
+.eu-wf-policy {
+    font-size: 14px !important;
+  
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
