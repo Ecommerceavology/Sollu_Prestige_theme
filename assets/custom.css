@@ -3588,7 +3588,10 @@ h3.eu-wf-subtitle {
 span.eu-wf-policy {
     flex: unset !important;
 }
-
+button#eu-wf-btn-continue {
+    min-width: 160px;
+    border-radius: 4px;
+}
 
 
 
