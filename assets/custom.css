@@ -7016,7 +7016,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 .header__secondary-nav a span {
     font-size: 10px !important;
 }
-
+.eu-wf-step {
+    max-width: 120px;
+}
 }
 
 @media (max-width: 575px) {
