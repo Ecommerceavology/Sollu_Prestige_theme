@@ -3592,6 +3592,7 @@ span.eu-wf-policy {
 button#eu-wf-btn-continue {
     min-width: 160px;
     border-radius: 4px;
+    transition: all .3s ease !important;
 }
 .eu-wf-step-footer {
     display: flex;
