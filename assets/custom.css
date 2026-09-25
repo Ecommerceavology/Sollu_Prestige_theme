@@ -3568,7 +3568,7 @@ h3.eu-wf-subtitle {
    
 }
 .eu-wf-form-fields {
-    gap: 17px;
+    gap: 17px !important;
 }
 
 
