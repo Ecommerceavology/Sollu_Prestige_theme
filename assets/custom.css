@@ -3585,6 +3585,25 @@ h3.eu-wf-subtitle {
     letter-spacing: .5px !important;
     font-weight: 300 !important;
 }
+span.eu-wf-policy {
+    flex: unset !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
