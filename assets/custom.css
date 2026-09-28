@@ -8909,7 +8909,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     margin: 0 !important;
     flex: 0 1 30px !important;
 }
+.newsletter-form .klaviyo-form-SQPXWk input::placeholder {
 
+  font-size: 14px !important;
+}
 }
 
 @media (max-width: 400px) {
