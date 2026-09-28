@@ -229,6 +229,7 @@
     },
     "newsletter_D7KWmg": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "custom_class": "Newsletter_sec pro_newsletter",
         "color_scheme": "scheme-2",
@@ -243,6 +244,19 @@
         "overlay_color": "#f5f0e8",
         "overlay_opacity": 100
       }
+    },
+    "custom_liquid_yGzTmn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_class": "klaviyo_sec",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<section class=\"newsletter-section\">\n  <div class=\"newsletter-wrapper\">\n\n    <div class=\"newsletter-content\">\n      <div class=\"newsletter-eyebrow\">NYHEDSBREV</div>\n\n      <h2>\n        Tilmeld dig og få 10% på din<br>\n        første ordre\n      </h2>\n\n      <p>\n        Rutiner der virker. Få besked når nye Sollu enheder introduceres.\n        Du kan altid afmelde.\n      </p>\n    </div>\n\n    <div class=\"newsletter-form\">\n      <div class=\"klaviyo-form-SQPXWk\"></div>\n    </div>\n\n  </div>\n</section>\n\n<style>\n.newsletter-section {\n  width: 100%;\n      background: #f5f0e8!important;\n    padding: 90px 0!important;\n    border: none;\n}\n\n.newsletter-wrapper {\n  \n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  align-items: center;\n  column-gap: 80px;\n      width: 100%!important;\n    max-width: 1200px!important;\n    margin: 0 auto!important;\n    padding-left: 32px!important;\n    padding-right: 32px!important;\n\n    \n}\n\n.newsletter-content {\n  max-width: 500px;\n}\n\n.newsletter-eyebrow {\n  margin-bottom: 12px;\n  font-family: Jost, sans-serif;\n\n\n      color: #b8965a;\n    text-align: left;\n    font-size: 11px;\n    letter-spacing: 2.64px;\n    font-weight: 400!important;\n    text-transform: uppercase;\n}\n\n.newsletter-content h2 {\n  margin: 0;\n  font-family: \"Cormorant Garamond\", serif;\n  color: #2a2420;\n    text-align: left;\n    font-size: 42px;\n    line-height: 47.04px;\n    font-weight: 300!important;\n    letter-spacing: normal;\n    text-transform: unset;\n}\n\n.newsletter-content p {\n\n  font-family: Jost, sans-serif;\n  \n\n      color: #8c8278;\n    text-align: left;\n    font-size: 12px;\n    line-height: normal;\n    font-weight: 300;\n    max-width: 380px;\n    margin-top: 14px;\n}\n\n.newsletter-form {\n  width: 100%;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk {\n  width: 100%;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk form {\n  width: 100% !important;\n  max-width: none !important;\n  padding: 0 !important;\n  margin: 0 !important;\n  background: transparent !important;\n  border: 0 !important;\n  box-shadow: none !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk input {\n  width: 100% !important;\n  height: fit-content !important;\n  padding: 0 90px 0 0 !important;\n  border: 0 !important;\n \n  border-radius: 0 !important;\n  outline: none !important;\n  background: transparent !important;\n}\n\n\n\n\n.newsletter-form .klaviyo-form-SQPXWk button {\n  min-height: 48px !important;\n  padding: 0 !important;\n  border: 0 !important;\n  border-radius: 0 !important;\n  background: transparent !important;\n  box-shadow: none !important;\n  font-family: Jost, sans-serif !important;\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 1.5px !important;\n  color: #2a2420 !important;\n  text-transform: none !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk button:hover {\n  opacity: 0.65 !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk label {\n  font-family: Jost, sans-serif !important;\n  font-size: 13px !important;\n  font-weight: 400 !important;\n  color: #8c8278 !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk p {\n  font-family: Jost, sans-serif !important;\n  font-size: 11px !important;\n  line-height: 1.5 !important;\n  color: #b0aaa3 !important;\n}\n\n\n@media (max-width: 1024px) {\n  .newsletter-section {\n    padding: 75px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    column-gap: 50px;\n    padding-left: 28px !important;\n    padding-right: 28px !important;\n  }\n\n  .newsletter-content h2 {\n    font-size: 38px;\n    line-height: 1.15;\n  }\n}\n\n@media (max-width: 767px) {\n  .newsletter-section {\n    padding: 65px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    grid-template-columns: 1fr;\n    row-gap: 40px;\n    padding-left: 24px !important;\n    padding-right: 24px !important;\n  }\n\n  .newsletter-content {\n    max-width: 100%;\n  }\n\n  .newsletter-content h2 {\n    font-size: 36px;\n    line-height: 1.15;\n  }\n\n  .newsletter-content p {\n    max-width: 100%;\n    font-size: 12px;\n  }\n\n  .newsletter-form {\n    width: 100%;\n  }\n}\n\n@media (max-width: 575px) {\n  .newsletter-section {\n    padding: 55px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    row-gap: 32px;\n    padding-left: 20px !important;\n    padding-right: 20px !important;\n  }\n\n  .newsletter-eyebrow {\n    font-size: 10px;\n    letter-spacing: 2px;\n    margin-bottom: 10px;\n  }\n\n  .newsletter-content h2 {\n    font-size: 32px;\n    line-height: 1.15;\n  }\n\n  .newsletter-content p {\n    margin-top: 12px;\n    font-size: 12px;\n    line-height: 1.5;\n  }\n\n\n\n  .newsletter-form .klaviyo-form-SQPXWk button {\n    min-height: 46px !important;\n    font-size: 11px !important;\n    letter-spacing: 1.2px !important;\n  }\n}\n\n@media (max-width: 390px) {\n  .newsletter-section {\n    padding: 45px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    row-gap: 28px;\n    padding-left: 16px !important;\n    padding-right: 16px !important;\n  }\n\n  .newsletter-content h2 {\n    font-size: 29px;\n  }\n\n  .newsletter-content p {\n    font-size: 11px;\n  }\n\n\n\n  .newsletter-form .klaviyo-form-SQPXWk button {\n    font-size: 10px !important;\n    letter-spacing: 1px !important;\n  }\n\n  .newsletter-form .klaviyo-form-SQPXWk label {\n    font-size: 12px !important;\n  }\n\n  .newsletter-form .klaviyo-form-SQPXWk p {\n    font-size: 10px !important;\n  }\n}\n</style>",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
@@ -250,6 +264,7 @@
     "faq",
     "faq_6zNa4L",
     "faq_HAxGfx",
-    "newsletter_D7KWmg"
+    "newsletter_D7KWmg",
+    "custom_liquid_yGzTmn"
   ]
 }
