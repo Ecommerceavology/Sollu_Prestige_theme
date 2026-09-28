@@ -105,7 +105,7 @@
           "settings": {
             "mode": "inline",
             "only_on_withdrawal_page": true,
-            "page_handle": "rf-withdrawal-form",
+            "page_handle": "new-fortryd-kob",
             "label": "Request a withdrawal",
             "page_url": "",
             "alignment": "center",
