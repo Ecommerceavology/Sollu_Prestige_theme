@@ -3652,15 +3652,27 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
     border-bottom: none !important;
     padding: 0 !important;
     height: fit-content !important;
-        background: transparent;
-   
+    background: transparent;
     color: #757575;
     text-align: left;
     font-family: Jost-Light,sans-serif;
     font-size: 15px;
     font-weight: 300;
 }
-
+.newsletter-form .klaviyo-form-SQPXWk button.needsclick.go20695258.go4033861592.klaviyo-form-button.kl-private-reset-css-Xuajs1 {
+    background: transparent!important;
+    border: none!important;
+    padding: 0!important;
+    color: #2a2420 !important;
+    text-align: center;
+    font-size: 12px !important;
+    letter-spacing: 1.68px !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    width: 100%;
+    max-width: fit-content;
+    transition: color .3s ease,transform .3s ease!important;
+}
 
 
 
