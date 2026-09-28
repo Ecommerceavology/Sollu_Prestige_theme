@@ -3695,6 +3695,10 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
     max-height: fit-content !important;
     min-height: unset !important;
 }
+.newsletter-form .klaviyo-form-SQPXWk input::placeholder {
+
+  font-size: 15px !important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
