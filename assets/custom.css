@@ -5504,6 +5504,13 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 .newsletter-content h2 br{
     display: none !important;
 }
+.newsletter-content p {
+   
+    text-align: center !IMPORTANT;
+   
+    max-width: 100% !important;
+
+}
 }
 
 @media (max-width: 850px) {
