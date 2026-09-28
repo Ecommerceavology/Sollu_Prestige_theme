@@ -747,6 +747,18 @@
         "overlay_color": "#f5f0e8",
         "overlay_opacity": 100
       }
+    },
+    "custom_liquid_X4MRhm": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div class=\"klaviyo-form-SQPXWk\"></div>",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
@@ -759,6 +771,7 @@
     "multi-column",
     "images-with-text-scroll",
     "custom_reviews_fcnBNy",
-    "newsletter"
+    "newsletter",
+    "custom_liquid_X4MRhm"
   ]
 }
