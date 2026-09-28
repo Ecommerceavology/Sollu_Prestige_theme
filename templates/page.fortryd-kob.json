@@ -95,10 +95,29 @@
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false
       }
+    },
+    "17905858928e3e0e2e": {
+      "type": "apps",
+      "blocks": {
+        "square_eu_withdrawal_button_eu_withdrawal_8aKL8n": {
+          "type": "shopify://apps/square-eu-withdrawal-button/blocks/eu-withdrawal/019fa908-a46a-751c-aa82-c68c1bf02636",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "square_eu_withdrawal_button_eu_withdrawal_8aKL8n"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
     }
   },
   "order": [
     "main",
-    "17903237882166f8c6"
+    "17903237882166f8c6",
+    "17905858928e3e0e2e"
   ]
 }
