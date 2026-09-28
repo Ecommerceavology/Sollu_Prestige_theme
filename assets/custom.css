@@ -3648,6 +3648,18 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
         border-bottom: 1px solid rgba(42,36,32,.35);
     padding: 14px 0;
 }
+.newsletter-form .klaviyo-form-SQPXWk input {
+    border-bottom: none !important;
+    padding: 0 !important;
+    height: fit-content !important;
+        background: transparent;
+   
+    color: #757575;
+    text-align: left;
+    font-family: Jost-Light,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
 
 
 
