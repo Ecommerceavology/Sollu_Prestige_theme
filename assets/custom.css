@@ -5511,6 +5511,14 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     max-width: 100% !important;
 
 }
+.newsletter-form {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+.newsletter-form .klaviyo-form-SQPXWk.klaviyo-form.form-version-cid-1 p {
+    text-align: center !important;
+    margin-top: 16px;
+}
 }
 
 @media (max-width: 850px) {
