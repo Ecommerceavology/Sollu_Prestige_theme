@@ -8295,6 +8295,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     .eu-wf-steps {
         margin-bottom: 16px !important;
     }
+    .newsletter-content h2 {
+    font-size: 28px !important;
+   
+}
 }
 
 @media (max-width: 480px) {
