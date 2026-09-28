@@ -3673,7 +3673,10 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
     max-width: fit-content;
     transition: color .3s ease,transform .3s ease!important;
 }
-
+.newsletter-form .klaviyo-form-SQPXWk button.needsclick.go20695258.go4033861592.klaviyo-form-button.kl-private-reset-css-Xuajs1:hover{
+        color: #b8965a!important;
+    transform: translate(5px)!important;
+}
 
 
 
