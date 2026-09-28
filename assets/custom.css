@@ -3644,7 +3644,10 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
 .newsletter-form .klaviyo-form-SQPXWk.klaviyo-form.form-version-cid-1 .needsclick.go310894487.kl-private-reset-css-Xuajs1 {
     padding: 0 !important;
 }
-
+.newsletter-form .needsclick.klaviyo-form>.needsclick.kl-private-reset-css-Xuajs1>.needsclick.kl-private-reset-css-Xuajs1:first-child {
+        border-bottom: 1px solid rgba(42,36,32,.35);
+    padding: 14px 0;
+}
 
 
 
