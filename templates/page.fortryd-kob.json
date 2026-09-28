@@ -89,6 +89,7 @@
       "block_order": [
         "eu_withdrawal_button_withdrawal_form_ecVJNK"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
@@ -96,16 +97,35 @@
         "remove_horizontal_spacing": false
       }
     },
-    "17905858928e3e0e2e": {
+    "1790586830502312be": {
       "type": "apps",
       "blocks": {
-        "square_eu_withdrawal_button_eu_withdrawal_8aKL8n": {
-          "type": "shopify://apps/square-eu-withdrawal-button/blocks/eu-withdrawal/019fa908-a46a-751c-aa82-c68c1bf02636",
-          "settings": {}
+        "eu_withdrawal_button_form_rf_withdrawal_form_BWLxXL": {
+          "type": "shopify://apps/eu-withdrawal-button-form-rf/blocks/withdrawal-form/019f1682-56c7-7961-95b0-aea7f37cb07a",
+          "settings": {
+            "mode": "inline",
+            "only_on_withdrawal_page": true,
+            "page_handle": "rf-withdrawal-form",
+            "label": "Request a withdrawal",
+            "page_url": "",
+            "alignment": "center",
+            "bg_color": "#1a1a1a",
+            "text_color": "#ffffff",
+            "hover_bg_color": "#2f2f2f",
+            "hover_text_color": "#ffffff",
+            "border_color": "#1a1a1a",
+            "hover_border_color": "#2f2f2f",
+            "border_style": "none",
+            "border_radius": 60,
+            "width_mode": "auto",
+            "fixed_width": 200,
+            "height_mode": "auto",
+            "fixed_height": 48
+          }
         }
       },
       "block_order": [
-        "square_eu_withdrawal_button_eu_withdrawal_8aKL8n"
+        "eu_withdrawal_button_form_rf_withdrawal_form_BWLxXL"
       ],
       "settings": {
         "color_scheme": "",
@@ -118,6 +138,6 @@
   "order": [
     "main",
     "17903237882166f8c6",
-    "17905858928e3e0e2e"
+    "1790586830502312be"
   ]
 }
