@@ -3638,7 +3638,9 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm>div {
 section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .container {
     margin: 0 !important;
 }
-
+.newsletter-form .klaviyo-form-SQPXWk.klaviyo-form.form-version-cid-1 p {
+    text-align: left;
+}
 
 
 
