@@ -3691,6 +3691,10 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
 .newsletter-form .needsclick.go2454621715.kl-private-reset-css-Xuajs1 {
     padding: 0 !important;
 }
+.needsclick.kl-private-reset-css-Xuajs1 {
+    max-height: fit-content !important;
+    min-height: unset !important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
