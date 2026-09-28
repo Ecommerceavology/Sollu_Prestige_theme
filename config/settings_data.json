@@ -36,6 +36,11 @@
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
         "settings": {}
+      },
+      "3164333360983353823": {
+        "type": "shopify://apps/square-eu-withdrawal-button/blocks/app-embed/019fa908-a46a-751c-aa82-c68c1bf02636",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
