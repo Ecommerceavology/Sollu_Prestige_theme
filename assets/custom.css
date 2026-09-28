@@ -3700,6 +3700,11 @@ section#shopify-section-template--27122467897680__custom_liquid_X4MRhm .containe
   font-size: 15px !important;
 }
 
+.newsletter-form .klaviyo-form-SQPXWk a span {
+    font-weight: 700 !important;
+    color: #b0aaa3 !important;
+}
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
