@@ -184,28 +184,28 @@
           "type": "question",
           "settings": {
             "question": "Hvad er jeres returpolitik?",
-            "answer": "<p>Ja, vi sender til hele verden. Der påløber fragtomkostninger, som lægges til ved betalingen. Vi kører med rabatter og kampagner hele året, så hold øje med eksklusive tilbud.</p>"
+            "answer": "<p>Du har som udgangspunkt <strong>14 dages fortrydelsesret</strong> fra den dag, du modtager din ordre. Produktet skal returneres i samme stand som ved modtagelsen og være forsvarligt emballeret.</p>"
           }
         },
         "question_fFBK8n": {
           "type": "question",
           "settings": {
             "question": "Hvor lang tid har jeg til at fortryde mit køb?",
-            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "answer": "<p>Du har 14 dage fra modtagelsen af din ordre til at meddele os, at du ønsker at gøre brug af din fortrydelsesret. Herefter skal varen returneres inden for den gældende returfrist.</p>"
           }
         },
         "question_x4fbE6": {
           "type": "question",
           "settings": {
             "question": "Hvor hurtigt får jeg mine penge retur?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Når vi har modtaget og behandlet din retur, tilbagefører vi beløbet til den oprindelige betalingsmetode. Du kan normalt forvente at modtage pengene inden for få hverdage efter, at returen er behandlet.</p>"
           }
         },
         "question_F4gkVK": {
           "type": "question",
           "settings": {
             "question": "Skal jeg selv betale for returfragt?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Returfragt afhænger af årsagen til returneringen. Hvis du benytter din almindelige fortrydelsesret, kan udgiften til returfragt som udgangspunkt være for egen regning. Kontakt kundeservice, hvis du er i tvivl om din konkrete returnering.</p>"
           }
         }
       },
