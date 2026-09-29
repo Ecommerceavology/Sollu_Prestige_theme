@@ -3714,6 +3714,12 @@ a.eu-wf-link:hover {
     color: #2a2420 !important;
 }
 
+ul.header-sidebar__linklist.unstyled-list li.mobile-account-menu-item a {
+    padding: 8px 0;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
