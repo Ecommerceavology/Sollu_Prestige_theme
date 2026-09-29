@@ -3714,7 +3714,7 @@ a.eu-wf-link:hover {
     color: #2a2420 !important;
 }
 
-ul.header-sidebar__linklist.unstyled-list li.mobile-account-menu-item a {
+.header-sidebar__linklist.unstyled-list .mobile-account-menu-item a {
     padding: 8px 0;
     font-size: 12px;
     letter-spacing: 2px;
