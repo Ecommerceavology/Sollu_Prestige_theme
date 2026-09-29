@@ -6,7 +6,9 @@
 html {
     scroll-behavior: smooth !important;
 }
-
+section{
+    overflow: hidden !important;
+}
 body {
     margin: 0 !important;
     padding: 0 !important;
