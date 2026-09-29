@@ -662,6 +662,7 @@
         "review_dJfXPK",
         "review_ddfbtk"
       ],
+      "disabled": true,
       "name": "Custom Reviews",
       "settings": {
         "custom_class": "custom-reviews-section",
