@@ -5325,7 +5325,8 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .About_Sec_2 p.h6,
-    .About_Sec_3 p.h6 {
+    .About_Sec_3 p.h6,
+    .About_Sec_4 p.h6 {
         font-size: 21px !important;
         line-height: 29px !important;
     }
@@ -7849,7 +7850,8 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .About_Sec_2 p.h6,
-    .About_Sec_3 p.h6 {
+    .About_Sec_3 p.h6,
+    .About_Sec_4 p.h6 {
         font-size: 20px !important;
         line-height: 28px !important;
     }
