@@ -1302,6 +1302,7 @@ span.custom-product-card__price-current {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
+    font-family: "Cormorant Garamond", serif !important;
     
 }
 .FAQ_sec_1 {
