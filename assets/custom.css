@@ -3720,7 +3720,9 @@ a.eu-wf-link:hover {
     font-size: 12px;
     letter-spacing: 2px;
 }
-
+.Cate_pro_sec .custom-collection-list-header {
+    margin-bottom: 0 !important;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
