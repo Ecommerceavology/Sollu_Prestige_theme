@@ -8365,8 +8365,8 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopif
     }
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
-        min-height: 220px !important;
-        max-height: 220px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
     }
 
     .Cate_pro_sec .collection-card__content p.h3 {
