@@ -3725,6 +3725,12 @@ a.eu-wf-link:hover {
 .Cate_pro_sec .custom-collection-list-header {
     margin-bottom: 0 !important;
 }
+.return_sec_3 .section-header.justify-self-start.text-start {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
