@@ -2173,7 +2173,7 @@ span.custom-product-card__price-current {
 }
 .About_Sec_4 p.h6 {
     color: #b8965a !important;
-    font-size: 11px !important;
+    font-size: 24px !important;
     line-height: 28px !important;
     font-weight: 400 !important;
 }
@@ -2183,7 +2183,7 @@ span.custom-product-card__price-current {
     line-height: 36px!important;
     font-weight: 400!important;
     text-transform: uppercase!important;
-    margin-top: 14px !important;
+    margin-top: 24px !important;
 }
 .About_Sec_4 .section-stack {
     gap: 64px !important;
