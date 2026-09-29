@@ -3730,6 +3730,14 @@ a.eu-wf-link:hover {
     text-align: center;
 }
 
+.cst_contact_sec .form-control {
+    position: relative;
+}
+
+.cst_contact_sec .form-control .icon-dropdown-chevron {
+    pointer-events: none;
+}
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
