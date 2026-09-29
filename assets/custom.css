@@ -2593,6 +2593,7 @@ span.custom-product-card__price-current {
     font-size: 13px !important;
     line-height: 22px !important;
     font-weight: 300 !important;
+    font-family: "Jost", sans-serif !important;
 }
 .Pro_detail_sec button.button.button--outline.w-full {
     background: #2a2420!important;
