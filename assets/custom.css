@@ -311,6 +311,7 @@ h1.header__logo {
     width: 100% !important;
     max-width: 100% !important;
     min-height: 358px !IMPORTANT;
+    max-height: 358px !IMPORTANT;
     
 }
 .Cate_pro_sec .collection-card__content p.h3 {
@@ -3774,6 +3775,7 @@ a.eu-wf-link:hover {
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
         min-height: 300px !important;
+        max-height: 300px !important;
     }
 
     .Step_sec multi-column.multi-column {
@@ -4789,6 +4791,8 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
         min-height: 320px !important;
+         max-height: 320px !important;
+        
     }
 
     .Step_sec multi-column.multi-column {
@@ -5734,6 +5738,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
         min-height: 260px !important;
+        max-height: 260px !important;
     }
 
     .Cate_pro_sec .collection-card__content p.h3 {
@@ -7229,6 +7234,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
         min-height: 210px !important;
+        max-height: 210px !important;
     }
 
     .Cate_pro_sec .collection-card__content p.h3 {
@@ -8360,6 +8366,7 @@ section#shopify-pc__banner button#shopify-pc__banner__btn-accept, section#shopif
 
     .Cate_pro_sec .content-over-media.content-over-media--auto {
         min-height: 180px !important;
+        max-height: 180px !important;
     }
 
     .Cate_pro_sec .collection-card__content p.h3 {
