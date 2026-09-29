@@ -1279,7 +1279,7 @@ span.custom-product-card__price-current {
     font-size: 24px!important;
     line-height: 33.6px!important;
     font-weight: 400!important;
-    font-family: Libre Caslon Text,serif!important;
+ 
     text-transform: unset!important;
     letter-spacing: normal!important;
     margin-bottom: 24px !important;
@@ -1302,7 +1302,7 @@ span.custom-product-card__price-current {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    font-family: "Hanken Grotesk", sans-serif;
+    
 }
 .FAQ_sec_1 {
     padding-top: 126px;
