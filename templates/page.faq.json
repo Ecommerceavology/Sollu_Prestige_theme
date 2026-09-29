@@ -68,28 +68,28 @@
           "type": "question",
           "settings": {
             "question": "Hvordan placerer jeg en ordre?",
-            "answer": "<p>Ja, vi sender til hele verden. Der påløber fragtomkostninger, som lægges til ved betalingen. Vi kører med rabatter og kampagner hele året, så hold øje med eksklusive tilbud.</p>"
+            "answer": "<p>Du kan nemt placere en ordre direkte på vores hjemmeside. Vælg det ønskede produkt, tilføj det til kurven, og følg herefter trinene til betaling og levering. Når din ordre er gennemført, modtager du en ordrebekræftelse på e-mail.</p>"
           }
         },
         "question-2": {
           "type": "question",
           "settings": {
             "question": "Hvilke betalingsmetoder accepterer I?",
-            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "answer": "<p>Vi accepterer de mest almindelige betalingsmetoder, herunder Dankort, Visa, Mastercard, MobilePay, Apple Pay og Klarna. De tilgængelige betalingsmuligheder vises ved checkout.</p>"
           }
         },
         "question-3": {
           "type": "question",
           "settings": {
             "question": "Kan jeg ændre min ordre efter den er placeret?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Hvis du ønsker at ændre eller annullere din ordre, anbefaler vi, at du kontakter kundeservice så hurtigt som muligt. Vi kan desværre ikke garantere ændringer, hvis ordren allerede er blevet behandlet eller sendt.</p>"
           }
         },
         "question_9rtFwV": {
           "type": "question",
           "settings": {
             "question": "Modtager jeg en ordrebekræftelse?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Ja. Når din ordre er gennemført, sender vi automatisk en ordrebekræftelse til den e-mailadresse, du har angivet. Hvis du ikke modtager den, kan du tjekke din spammappe eller kontakte vores kundeservice.</p>"
           }
         }
       },
@@ -126,28 +126,28 @@
           "type": "question",
           "settings": {
             "question": "Hvad er leveringstiden?",
-            "answer": "<p>Ja, vi sender til hele verden. Der påløber fragtomkostninger, som lægges til ved betalingen. Vi kører med rabatter og kampagner hele året, så hold øje med eksklusive tilbud.</p>"
+            "answer": "<p>Ordrer leveres normalt inden for <strong>1–3 hverdage</strong> i Danmark. Du modtager en e-mail med trackinginformation, når din ordre er afsendt.</p>"
           }
         },
         "question_CeKaRj": {
           "type": "question",
           "settings": {
             "question": "Kan jeg spore min pakke?",
-            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "answer": "<p>Ja. Når din ordre er sendt, modtager du en e-mail med et trackinglink, så du kan følge pakken hele vejen til levering.</p>"
           }
         },
         "question_tmgWPB": {
           "type": "question",
           "settings": {
             "question": "Hvilke fragtfirmaer benytter I?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Vi samarbejder med udvalgte fragtfirmaer for at sikre en hurtig og pålidelig levering. Det konkrete fragtfirma og trackinginformation fremgår af din leveringsbekræftelse.</p>"
           }
         },
         "question_kFjYaw": {
           "type": "question",
           "settings": {
             "question": "Sender I til udlandet?",
-            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "answer": "<p>Ja, vi sender til udvalgte lande uden for Danmark. Leveringstid og fragtpris afhænger af destinationen og vises ved checkout.</p>"
           }
         }
       },
