@@ -3917,6 +3917,14 @@ background:transparent !important;
     padding: 80px 30px;
     border-radius: 25px;
 }
+.not_cst_page button {
+    background: #2a2420;
+    color: #fff;
+}
+.not_cst_page button:hiver {
+    background: #fff;
+    color: #2a2420;
+}
 /* 404 Page CSS End  */
 
 
