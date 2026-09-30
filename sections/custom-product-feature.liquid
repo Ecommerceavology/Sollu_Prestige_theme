@@ -1,5 +1,13 @@
 {%- liquid
   assign featured_product = section.settings.product
+
+  if featured_product == blank and product != blank
+    assign featured_product = product
+  endif
+
+  if featured_product != blank
+    assign featured_variant = featured_product.selected_or_first_available_variant
+  endif
 -%}
 
 <style>
@@ -187,6 +195,7 @@
   }
 
   #shopify-section-{{ section.id }} .cpf-add-to-cart-form {
+    display: block;
     margin: 0;
     padding: 0;
   }
@@ -198,10 +207,13 @@
     width: {{ section.settings.button_width }}px;
     height: {{ section.settings.button_height }}px;
     padding: 0 20px;
+    margin: 0;
     background: var(--cpf-button-background);
     color: var(--cpf-button-color);
     text-decoration: none;
     border: none;
+    border-radius: 0;
+    font-family: inherit;
     font-size: {{ section.settings.button_font_size }}px;
     line-height: 1;
     letter-spacing: {{ section.settings.button_letter_spacing }}px;
@@ -209,6 +221,8 @@
     box-sizing: border-box;
     transition: opacity 0.2s ease;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   #shopify-section-{{ section.id }} .cpf-button:hover {
@@ -225,6 +239,14 @@
     font-size: {{ section.settings.price_size }}px;
     line-height: 1.4;
     white-space: nowrap;
+  }
+
+  /* PRODUCT ERROR / EMPTY STATE */
+
+  #shopify-section-{{ section.id }} .cpf-product-warning {
+    color: var(--cpf-body-color);
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   /* MOBILE */
@@ -299,6 +321,10 @@
 
     #shopify-section-{{ section.id }} .cpf-action {
       flex-wrap: wrap;
+    }
+
+    #shopify-section-{{ section.id }} .cpf-button {
+      max-width: 100%;
     }
   }
 </style>
@@ -466,11 +492,15 @@
 
         <div class="cpf-action">
 
-          {% if featured_product != blank %}
+          {% if featured_product != blank and featured_variant != blank %}
 
-            {% assign featured_variant = featured_product.selected_or_first_available_variant %}
-
-            {% form 'product', featured_product, class: 'cpf-add-to-cart-form' %}
+            <form
+              method="post"
+              action="{{ routes.cart_add_url }}"
+              id="cpf-product-form-{{ section.id }}"
+              class="cpf-add-to-cart-form"
+              enctype="multipart/form-data"
+            >
 
               <input
                 type="hidden"
@@ -486,8 +516,11 @@
 
               <button
                 type="submit"
+                name="add"
                 class="cpf-button"
-                {% unless featured_variant.available %}disabled{% endunless %}
+                {% unless featured_variant.available %}
+                  disabled
+                {% endunless %}
               >
 
                 {% if featured_variant.available %}
@@ -498,7 +531,13 @@
 
               </button>
 
-            {% endform %}
+            </form>
+
+          {% else %}
+
+            <div class="cpf-product-warning">
+              Please select a product in the section settings.
+            </div>
 
           {% endif %}
 
