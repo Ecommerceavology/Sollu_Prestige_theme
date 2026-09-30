@@ -3854,6 +3854,17 @@ background:transparent !important;
     text-transform: uppercase;
     text-align: center;
 }
+.search_page_cst product-card .product-card__info a {
+    color: #2a2420;
+    text-align: left;
+    font-size: 21px;
+    letter-spacing: .42px;
+    font-weight: 400;
+    font-family: Cormorant Garamond, serif !important;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+    line-height: 1;
+}
 /* Search Page CSS End */
 
 
