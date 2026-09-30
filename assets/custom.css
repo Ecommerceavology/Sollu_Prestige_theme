@@ -3899,7 +3899,7 @@ background:transparent !important;
     color: #fff;
     text-align: center;
     font-size: clamp(16px, 4vw, 20px);
-    line-height: 1.2
+    line-height: 1.2;
     letter-spacing: .46px;
     font-weight: 300;
     text-transform: capitalize;
