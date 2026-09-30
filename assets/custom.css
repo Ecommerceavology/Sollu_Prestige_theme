@@ -3892,7 +3892,7 @@ background:transparent !important;
 }
 
 .not_cst_page .container h1 {
-    color: #2a2420;
+    color: #fff;
     text-align: center;
     font-size: clamp(35px, 4vw, 70px);
     line-height: 1.2
@@ -3901,7 +3901,7 @@ background:transparent !important;
     text-transform: unset;
 }
 .not_cst_page .container p {
-    color: #2a2420;
+    color: #fff;
     text-align: center;
     font-size: clamp(16px, 4vw, 20px);
     line-height: 1.2;
