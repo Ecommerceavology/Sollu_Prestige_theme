@@ -3912,6 +3912,11 @@ background:transparent !important;
 .not_cst_page .container p {
     font-size:clamp(14px,3vw,18px)
 }
+.not_cst_page .prose {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    border-radius: 25px;
+}
 /* 404 Page CSS End  */
 
 
