@@ -3814,6 +3814,7 @@ tbody.order-summary__body tr td:first-child  line-item line-item-quantity {
 }
 .cart_cst_page button:hover {
     background: #29262398 !important;
+    border-color: #29262398 !important;
         transform:translateY(3px);
 }
 /* Cart Page CSS End */
