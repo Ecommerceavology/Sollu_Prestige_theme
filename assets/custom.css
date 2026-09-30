@@ -3809,6 +3809,7 @@ tbody.order-summary__body tr td:first-child  line-item line-item-quantity {
     border-width: 1px !important;
     padding: 10px 20px !important;
 transition:0.3s all ease-in-out;
+line-height:1.1;
 }
 .cart_cst_page button:hover {
     background: #29262398 !important;
