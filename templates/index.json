@@ -441,7 +441,7 @@
       "name": "Custom Product Feature",
       "settings": {
         "custom_class": "custom-product-feature",
-        "product": "",
+        "product": "julie",
         "image": "shopify://shop_images/Sollu_Julie_LED-maske.png",
         "eyebrow": "GLOW THERAPY · BESTSELLER",
         "heading": "De fleste husker ansigtet. Model Julie husker også halsen.",
