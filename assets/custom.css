@@ -3782,6 +3782,12 @@ a.eu-wf-link:hover {
     letter-spacing: .42px;
     font-weight: 400 !important;
 }
+.cart_cst_page table.order-summary tbody.order-summary__body td line-item-quantity{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
 /* Cart Page CSS End */
 
 /* //responsive  */
