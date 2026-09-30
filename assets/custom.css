@@ -3886,8 +3886,13 @@ background:transparent !important;
 /* Search Page CSS End */
 
 /* 404 Page CSS Start */
+.not_cst_page{
+           background-color: #f5f0e8;
+    padding: 50px 0 !important; 
+}
+
 .not_cst_page .container h1 {
-    color: #fff;
+    color: #2a2420;
     text-align: center;
     font-size: clamp(35px, 4vw, 70px);
     line-height: 1.2
@@ -3896,7 +3901,7 @@ background:transparent !important;
     text-transform: unset;
 }
 .not_cst_page .container p {
-    color: #fff;
+    color: #2a2420;
     text-align: center;
     font-size: clamp(16px, 4vw, 20px);
     line-height: 1.2;
