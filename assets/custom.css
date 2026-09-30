@@ -3847,7 +3847,7 @@ background:transparent !important;
 .search_page_cst h1 {
     color: #2a2420;
     text-align: left;
-    font-size: 46px;
+    font-size: clamp(35px,4vw,46px);
     line-height: 50.6px;
     letter-spacing: .46px;
     font-weight: 300;
