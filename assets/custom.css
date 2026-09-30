@@ -3844,6 +3844,16 @@ background:transparent !important;
 .search_page_cst .collection {
     margin-bottom: 0;
 }
+.search_page_cst h1 {
+    color: #2a2420;
+    text-align: left;
+    font-size: 46px;
+    line-height: 50.6px;
+    letter-spacing: .46px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+}
 /* Search Page CSS End */
 
 
