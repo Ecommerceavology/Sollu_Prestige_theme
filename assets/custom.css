@@ -3740,7 +3740,7 @@ a.eu-wf-link:hover {
 
 
 /* Cart Page CSS Start */
-.cart_cst_page {
+.cart_cst_page.color-scheme {
     background-color: #f5f0e8;
 }
 
