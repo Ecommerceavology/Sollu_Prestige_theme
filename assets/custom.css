@@ -3796,20 +3796,21 @@ tbody.order-summary__body tr td:first-child  line-item line-item-quantity {
     display: none !important;
 }
 .cart_cst_page button {
-    background: #292623 !important;
-    color: #faf7f2 !important;
-    text-align: left !important;
-    font-size: 12px !important;
-    letter-spacing: 1.68px !important;
-    font-weight: 400 !important;
-    text-transform: uppercase !important;
-    background: #2a2420 !important;
-    border-style: solid !important;
-    border-color: #2a2420 !important;
-    border-width: 1px !important;
-    padding: 10px 20px !important;
-transition:0.3s all ease-in-out;
-line-height:1.1;
+    background: #292623!important;
+    color: #faf7f2!important;
+    text-align: left!important;
+    font-size: 12px!important;
+    letter-spacing: 1.68px!important;
+    font-weight: 400!important;
+    text-transform: uppercase!important;
+    background: #2a2420!important;
+    border-style: solid!important;
+    border-color: #2a2420!important;
+    border-width: 1px!important;
+    padding: 10px 20px!important;
+    transition: .3s all ease-in-out;
+    line-height: 1.1;
+    height: 45px;
 }
 .cart_cst_page button:hover {
     background: #29262398 !important;
