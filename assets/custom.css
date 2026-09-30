@@ -3918,15 +3918,8 @@ background:transparent !important;
     border-radius: 25px;
     background: #2a2420;
 }
-.not_cst_page a.button {
-    background-color: #2a2420 !important;
-    color: #fff;
-}
-.not_cst_page a.button:hover {
-    background-color: #fff;
-    color: #2a2420;
-}
-.not_cst_pag .empty-state {
+
+.not_cst_page .empty-state {
     padding-block: 4rem !important;
 }
 /* 404 Page CSS End  */
