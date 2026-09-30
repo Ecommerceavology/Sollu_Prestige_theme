@@ -3895,7 +3895,7 @@ background:transparent !important;
     font-weight: 300;
     text-transform: unset;
 }
-.not_cst_page .container h1 {
+.not_cst_page .container p {
     color: #fff;
     text-align: center;
     font-size: clamp(18px, 4vw, 30px);
