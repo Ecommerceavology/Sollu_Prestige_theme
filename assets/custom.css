@@ -3922,6 +3922,9 @@ background:transparent !important;
 .not_cst_page .empty-state {
     padding-block: 3rem !important;
 }
+.not_cst_page a.button{
+    font-size:clamp(14px,3vw,16px)
+}
 /* 404 Page CSS End  */
 
 
