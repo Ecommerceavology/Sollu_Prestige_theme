@@ -3904,6 +3904,9 @@ background:transparent !important;
     font-weight: 300;
     text-transform: capitalize;
 }
+.not_cst_page .container p {
+    font-size:clamp(14px,3vw,18px)
+}
 /* 404 Page CSS End  */
 
 
