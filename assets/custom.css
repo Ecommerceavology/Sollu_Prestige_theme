@@ -3830,7 +3830,7 @@ justify-content:start !important;
         background-color: #f5f0e8;
     padding: 50px 0 !important;
 }
-.search_page_cst .collection {
+.search_page_cst .container .section-stack {
     width: 100% !important;
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -3838,7 +3838,7 @@ justify-content:start !important;
     padding-right: 32px !important;
 }
 .search_page_cst .collection-toolbar {
-background:transparent;
+background:transparent !important;
 }
 /* Search Page CSS End */
 
