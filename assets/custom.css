@@ -3792,6 +3792,9 @@ a.eu-wf-link:hover {
 font-size:15px;
 text-transform:capitalize;
 }
+tbody.order-summary__body tr td:first-child  line-item line-item-quantity {
+    display: none !important;
+}
 /* Cart Page CSS End */
 
 /* //responsive  */
