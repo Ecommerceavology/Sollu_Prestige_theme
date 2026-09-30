@@ -3861,10 +3861,16 @@ background:transparent !important;
     letter-spacing: .42px;
     font-weight: 400;
     font-family: Cormorant Garamond, serif !important;
-    margin-bottom: 8px;
     text-transform: capitalize;
     line-height: 1;
     opacity:1;
+}
+.search_page_cst product-card .product-card__info sale-price {
+    color: #2a2420;
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: .42px;
+    font-weight: 400 !important;
 }
 /* Search Page CSS End */
 
