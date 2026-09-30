@@ -3886,7 +3886,7 @@ background:transparent !important;
 /* Search Page CSS End */
 
 /* 404 Page CSS Start */
-.404_cst_page .container h1 {
+.not_cst_page .container h1 {
     color: #fff;
     text-align: center;
     font-size: clamp(35px, 4vw, 70px);
