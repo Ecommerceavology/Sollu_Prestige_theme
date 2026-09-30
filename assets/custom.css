@@ -3836,6 +3836,7 @@ justify-content:start !important;
     margin: 0 auto !important;
     padding-left: 32px !important;
     padding-right: 32px !important;
+    gap:30px;
 }
 .search_page_cst .collection-toolbar {
 background:transparent !important;
