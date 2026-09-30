@@ -3739,6 +3739,13 @@ a.eu-wf-link:hover {
 }
 
 
+/* Cart Page CSS Start */
+.cart_cst_page {
+    background: #f5f0e8;
+}
+
+/* Cart Page CSS End */
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
