@@ -3925,6 +3925,9 @@ background:transparent !important;
     background-color: #fff;
     color: #2a2420;
 }
+.not_cst_pag .empty-state {
+    padding-block: 4rem !important;
+}
 /* 404 Page CSS End  */
 
 
