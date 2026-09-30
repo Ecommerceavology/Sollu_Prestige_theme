@@ -3918,11 +3918,11 @@ background:transparent !important;
     border-radius: 25px;
 }
 .not_cst_page button {
-    background: #2a2420;
+    background-color: #2a2420 !;
     color: #fff;
 }
-.not_cst_page button:hiver {
-    background: #fff;
+.not_cst_page button:hover {
+    background-color: #fff;
     color: #2a2420;
 }
 /* 404 Page CSS End  */
