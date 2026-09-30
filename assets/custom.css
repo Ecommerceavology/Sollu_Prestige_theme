@@ -3795,6 +3795,9 @@ text-transform:capitalize;
 tbody.order-summary__body tr td:first-child  line-item line-item-quantity {
     display: none !important;
 }
+tbody.order-summary__body tr td:nth-child(2) p {
+justify-content:start !important;
+}
 .cart_cst_page button {
     background: #292623!important;
     color: #faf7f2!important;
