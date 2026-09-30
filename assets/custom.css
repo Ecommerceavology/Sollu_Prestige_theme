@@ -3825,6 +3825,13 @@ justify-content:start !important;
 }
 /* Cart Page CSS End */
 
+/* Search Page CSS Start */
+.search_page_cst.color-scheme{
+        background-color: #f5f0e8;
+    padding: 50px 0 !important;
+}
+
+/* Search Page CSS End */
 
 
 /* //responsive  */
