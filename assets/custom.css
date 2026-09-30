@@ -3917,11 +3917,11 @@ background:transparent !important;
     padding: 80px 30px;
     border-radius: 25px;
 }
-.not_cst_page button {
+.not_cst_page a.button {
     background-color: #2a2420 !;
     color: #fff;
 }
-.not_cst_page button:hover {
+.not_cst_page a.button:hover {
     background-color: #fff;
     color: #2a2420;
 }
