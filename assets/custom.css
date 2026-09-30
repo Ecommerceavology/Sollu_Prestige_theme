@@ -3913,9 +3913,10 @@ background:transparent !important;
     font-size:clamp(14px,3vw,18px)
 }
 .not_cst_page .prose {
-   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: #0000003d 0 3px 8px;
     padding: 80px 30px;
     border-radius: 25px;
+    background: #2a2420;
 }
 .not_cst_page a.button {
     background-color: #2a2420 !important;
