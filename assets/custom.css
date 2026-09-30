@@ -3781,7 +3781,7 @@ a.eu-wf-link:hover {
 .cart_cst_page table.order-summary tbody.order-summary__body td sale-price {
     color: #2a2420;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: .42px;
     font-weight: 400 !important;
 }
@@ -3864,6 +3864,7 @@ background:transparent !important;
     margin-bottom: 8px;
     text-transform: capitalize;
     line-height: 1;
+    opacity:1;
 }
 /* Search Page CSS End */
 
