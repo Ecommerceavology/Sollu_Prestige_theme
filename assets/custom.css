@@ -3830,7 +3830,13 @@ justify-content:start !important;
         background-color: #f5f0e8;
     padding: 50px 0 !important;
 }
-
+.search_page_cst .collection {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+}
 /* Search Page CSS End */
 
 
