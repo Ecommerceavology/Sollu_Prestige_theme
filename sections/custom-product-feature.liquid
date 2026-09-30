@@ -186,6 +186,11 @@
     margin-top: {{ section.settings.action_margin_top }}px;
   }
 
+  #shopify-section-{{ section.id }} .cpf-add-to-cart-form {
+    margin: 0;
+    padding: 0;
+  }
+
   #shopify-section-{{ section.id }} .cpf-button {
     display: inline-flex;
     align-items: center;
@@ -203,10 +208,16 @@
     text-transform: uppercase;
     box-sizing: border-box;
     transition: opacity 0.2s ease;
+    cursor: pointer;
   }
 
   #shopify-section-{{ section.id }} .cpf-button:hover {
     opacity: 0.85;
+  }
+
+  #shopify-section-{{ section.id }} .cpf-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   #shopify-section-{{ section.id }} .cpf-price {
@@ -382,76 +393,112 @@
         <div class="cpf-specs">
 
           {% if section.settings.spec_1_label != blank %}
+
             <div class="cpf-spec-row">
+
               <div class="cpf-spec-label">
                 {{ section.settings.spec_1_label }}
               </div>
+
               <div class="cpf-spec-value">
                 {{ section.settings.spec_1_value }}
               </div>
+
             </div>
+
           {% endif %}
 
 
           {% if section.settings.spec_2_label != blank %}
+
             <div class="cpf-spec-row">
+
               <div class="cpf-spec-label">
                 {{ section.settings.spec_2_label }}
               </div>
+
               <div class="cpf-spec-value">
                 {{ section.settings.spec_2_value }}
               </div>
+
             </div>
+
           {% endif %}
 
 
           {% if section.settings.spec_3_label != blank %}
+
             <div class="cpf-spec-row">
+
               <div class="cpf-spec-label">
                 {{ section.settings.spec_3_label }}
               </div>
+
               <div class="cpf-spec-value">
                 {{ section.settings.spec_3_value }}
               </div>
+
             </div>
+
           {% endif %}
 
 
           {% if section.settings.spec_4_label != blank %}
+
             <div class="cpf-spec-row">
+
               <div class="cpf-spec-label">
                 {{ section.settings.spec_4_label }}
               </div>
+
               <div class="cpf-spec-value">
                 {{ section.settings.spec_4_value }}
               </div>
+
             </div>
+
           {% endif %}
 
         </div>
 
 
-        <!-- ACTION -->
+        <!-- ADD TO CART -->
 
         <div class="cpf-action">
 
-          {% if section.settings.button_link != blank %}
+          {% if featured_product != blank %}
 
-            <a
-              href="{{ section.settings.button_link }}"
-              class="cpf-button"
-            >
-              {{ section.settings.button_text }}
-            </a>
+            {% assign featured_variant = featured_product.selected_or_first_available_variant %}
 
-          {% elsif featured_product != blank %}
+            {% form 'product', featured_product, class: 'cpf-add-to-cart-form' %}
 
-            <a
-              href="{{ featured_product.url }}"
-              class="cpf-button"
-            >
-              {{ section.settings.button_text }}
-            </a>
+              <input
+                type="hidden"
+                name="id"
+                value="{{ featured_variant.id }}"
+              >
+
+              <input
+                type="hidden"
+                name="quantity"
+                value="1"
+              >
+
+              <button
+                type="submit"
+                class="cpf-button"
+                {% unless featured_variant.available %}disabled{% endunless %}
+              >
+
+                {% if featured_variant.available %}
+                  {{ section.settings.button_text }}
+                {% else %}
+                  Sold out
+                {% endif %}
+
+              </button>
+
+            {% endform %}
 
           {% endif %}
 
@@ -634,13 +681,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button text",
-      "default": "SE JULIE"
-    },
-
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
+      "default": "Læg i kurv"
     },
 
     {
