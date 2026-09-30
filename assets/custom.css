@@ -3898,7 +3898,7 @@ background:transparent !important;
 .not_cst_page .container p {
     color: #fff;
     text-align: center;
-    font-size: clamp(18px, 4vw, 30px);
+    font-size: clamp(16px, 4vw, 20px);
     line-height: 1.2
     letter-spacing: .46px;
     font-weight: 300;
