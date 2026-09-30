@@ -3788,6 +3788,9 @@ a.eu-wf-link:hover {
     align-items: center;
     text-decoration: none;
 }
+.cart_cst_page table.order-summary tbody.order-summary__body td line-item-quantity a.link{
+font-size:15px;
+}
 /* Cart Page CSS End */
 
 /* //responsive  */
