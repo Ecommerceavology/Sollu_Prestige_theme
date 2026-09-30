@@ -3841,6 +3841,9 @@ justify-content:start !important;
 .search_page_cst .collection-toolbar {
 background:transparent !important;
 }
+.search_page_cst .collection {
+    margin-bottom: 0;
+}
 /* Search Page CSS End */
 
 
