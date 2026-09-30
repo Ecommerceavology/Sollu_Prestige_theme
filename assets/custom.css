@@ -3837,6 +3837,9 @@ justify-content:start !important;
     padding-left: 32px !important;
     padding-right: 32px !important;
 }
+.search_page_cst .collection-toolbar {
+background:transparent;
+}
 /* Search Page CSS End */
 
 
