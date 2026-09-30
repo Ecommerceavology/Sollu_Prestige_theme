@@ -3886,7 +3886,7 @@ background:transparent !important;
 /* Search Page CSS End */
 
 /* 404 Page CSS Start */
-.not_cst_page{
+.not_cst_page.color-scheme{
            background-color: #f5f0e8;
     padding: 50px 0 !important; 
 }
