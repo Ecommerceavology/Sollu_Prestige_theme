@@ -3885,6 +3885,18 @@ background:transparent !important;
 }
 /* Search Page CSS End */
 
+/* 404 Page CSS Start */
+.404_cst_page .container h1 {
+    color: #fff;
+    text-align: center;
+    font-size: clamp(35px, 4vw, 70px);
+    line-height: 1.2
+    letter-spacing: .46px;
+    font-weight: 300;
+    text-transform: unset;
+}
+/* 404 Page CSS End  */
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
