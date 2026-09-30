@@ -3773,6 +3773,7 @@ a.eu-wf-link:hover {
     font-family: Cormorant Garamond, serif !important;
     margin-bottom: 8px;
     text-transform: uppercase;
+    line-height:1;
 }
 /* Cart Page CSS End */
 
