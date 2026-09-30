@@ -3753,6 +3753,9 @@ a.eu-wf-link:hover {
     font-weight: 300 ;
     text-transform: unset;
 }
+.cart_cst_page .cart-page {
+    row-gap: max(5rem,var(--section-vertical-spacing-tight)) !important;
+}
 .cart_cst_page table.order-summary tr th {
     color:  #2a2420;
     text-align: left;
