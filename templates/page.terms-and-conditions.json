@@ -126,7 +126,7 @@
         "content_block_hWzHAJ": {
           "type": "content_block",
           "settings": {
-            "heading": "2. Betaling",
+            "heading": "4. Betaling",
             "target_id": "betaling",
             "content_mode": "visual",
             "text": "<p>På Sollu.dk kan der betales med:</p><ul><li>Dankort / VISA-Dankort</li><li>MasterCard</li><li>MobilePay</li><li>Apple Pay</li></ul><p>Beløbet hæves først på dit kort, når varerne afsendes fra vores lager. Der tages ikke gebyr ved betaling på Sollu.dk.</p>",
@@ -143,7 +143,7 @@
         "content_block_jTiYJt": {
           "type": "content_block",
           "settings": {
-            "heading": "3. Levering",
+            "heading": "5. Levering",
             "target_id": "levering",
             "content_mode": "visual",
             "text": "<p>Vi leverer til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.</p><p>Vi sender med GLS og PostNord. Ved køb over 499,00 kr. er levering til pakkeshop gratis.</p>",
@@ -160,7 +160,7 @@
         "content_block_4iTFFY": {
           "type": "content_block",
           "settings": {
-            "heading": "4. Fortrydelsesret",
+            "heading": "6. Fortrydelsesret",
             "target_id": "fortrydelsesret",
             "content_mode": "visual",
             "text": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos os. Vi tilbyder frivilligt en længere frist end lovens minimum på 14 dage. Fristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>Du skal inden fristens udløb give os besked om, at du ønsker at fortryde dit køb. Det kan du gøre på tre måder:</p><p>•&nbsp;&nbsp;&nbsp;ved at bruge vores digitale fortrydelsesfunktion på siden “Fortryd køb (EU-Fortrydelsesret)”, som du finder i bunden af alle sider på Sollu.dk</p><p>•&nbsp;ved at sende en e-mail til kontakt@sollu.dk</p><p>•&nbsp;ved at bruge standardfortrydelsesformularen<br/>nedenfor</p><p></p><p><strong>Digital fortrydelsesfunktion.</strong><br/>Fortrydelsesfunktionen er tilgængelig i hele fortrydelsesfristen på 30 dage. Når du har brugt den, modtager du<br/>automatisk en bekræftelse på din fortrydelse via e-mail.</p><p><strong>Returnering.</strong> Du skal returnere varen uden unødig forsinkelse og senest 14 dage efter, at du har givet os besked om, at du fortryder. Du betaler selv de direkte omkostninger ved at sende varen retur.</p><p>Retur sendes til:</p><p>Sollu ApS<br/>Pilekæret 30<br/>2840 Holte<br/>Danmark</p><p><strong>Tilbagebetaling.<br/></strong>&nbsp;Fortryder du dit køb, tilbagebetaler vi alle betalinger modtaget fra dig, inklusive de oprindelige leveringsomkostninger (dog ikke ekstra omkostninger, hvis du har valgt en dyrere leveringsform end vores billigste standardlevering). Vi tilbagebetaler uden unødig forsinkelse og senest 14 dage efter, at vi har modtaget din besked om fortrydelse. Vi kan tilbageholde beløbet, indtil vi har modtaget varen retur, eller du har sendt dokumentation for at have returneret den. Pengene<br/>overføres til det betalingsmiddel, du brugte ved købet.</p><p></p><p><strong>Varens stand.</strong> Du må gerne prøve varen, som du ville gøre i en fysisk butik. Har varen en værdiforringelse ud<br/>over det, kan den trækkes fra beløbet.</p><p>Se også vores returpolitik.</p>",
@@ -187,24 +187,41 @@
         "content_block_UJkW6b": {
           "type": "content_block",
           "settings": {
-            "heading": "5. Reklamationsret",
+            "heading": "7. Reklamationsret",
             "target_id": "reklamationsret",
             "content_mode": "visual",
-            "text": "<p>Forbrugerkøbelovens mangelsregler finder anvendelse på varekøb. Når du handler hos os som forbruger, har du 24 måneders reklamationsret.</p><p>Det betyder, at du enten kan få varen repareret, ombyttet, pengene tilbage eller afslag i prisen, afhængig af den konkrete situation. Det er et krav, at reklamationen er berettiget, og at manglen ikke er opstået som følge af en fejlagtig brug af<br/>produktet eller anden skadeforvoldende adfærd.</p><p>Du skal reklamere inden for \"rimelig tid\" efter, at du har opdaget manglen ved varen.</p>",
+            "text": "<p>Forbrugerkøbelovens mangelsregler gælder for dit køb. Som forbruger har du 24 måneders reklamationsret.</p><p>Er der en fejl eller mangel ved varen, kan du afhængigt af situationen få den repareret, ombyttet, pengene tilbage eller et afslag i prisen. Det er en forudsætning, at reklamationen er berettiget, og at fejlen ikke skyldes forkert brug eller anden skadeforvoldende adfærd.</p><p>Du skal reklamere inden for rimelig tid, efter at du har opdaget fejlen. Send en e-mail til kontakt@sollu.dk med dit ordrenummer og en beskrivelse af fejlen, gerne med et billede.</p><p>Godkender vi din reklamation, betaler vi returfragten, og du modtager en returlabel uden beregning.</p>",
             "html_content": ""
           }
         },
         "navigation_item_3nnK3d": {
           "type": "navigation_item",
           "settings": {
-            "label": "Klageadgang",
-            "target_id": "Klageadgang"
+            "label": "Persondata",
+            "target_id": "Persondata"
           }
         },
         "content_block_XPKHxL": {
           "type": "content_block",
           "settings": {
-            "heading": "6. Klageadgang",
+            "heading": "8. Klageadgang",
+            "target_id": "Persondata",
+            "content_mode": "visual",
+            "text": "<p>Vi behandler dine personoplysninger for at kunne gennemføre og levere din ordre. Du kan læse mere i vores privatlivspolitik.</p>",
+            "html_content": ""
+          }
+        },
+        "navigation_item_gU8tpe": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Klageadgang",
+            "target_id": "Klageadgang"
+          }
+        },
+        "content_block_yyPTj6": {
+          "type": "content_block",
+          "settings": {
+            "heading": "9. Klageadgang",
             "target_id": "Klageadgang",
             "content_mode": "visual",
             "text": "<p>Hvis du vil klage over dit køb, skal du rette henvendelse til kontakt@sollu.dk. Hvis det ikke lykkes os at finde en løsning, kan du indgive en klage til:</p><p>Center for Klageløsning, Nævnenes Hus</p><p>Toldboden 2, 8800 Viborg</p><p><a href=\"https://www.naevneneshus.dk\">www.naevneneshus.dk</a></p><p>Hvis du er bosiddende i et andet EU-land end Danmark, kan du finde den relevante<br/>klageinstans i dit eget land via EU-Kommissionens oversigt over godkendte klageinstanser:<br/><a href=\"https://consumer-redress.ec.europa.eu/dispute-resolution-bodies\">consumer-redress.ec.europa.eu/dispute-resolution-bodies</a></p>",
@@ -229,7 +246,9 @@
         "navigation_item_qeErXk",
         "content_block_UJkW6b",
         "navigation_item_3nnK3d",
-        "content_block_XPKHxL"
+        "content_block_XPKHxL",
+        "navigation_item_gU8tpe",
+        "content_block_yyPTj6"
       ],
       "name": "Custom Sidebar Navigation",
       "settings": {
