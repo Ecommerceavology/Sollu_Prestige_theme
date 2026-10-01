@@ -761,12 +761,13 @@ a.sollu-footer__logo {
     font-weight: 300 !important;
 }
 .sollu-footer__links a {
-    color: #8c8278 !important;
-    text-align: left !important;
-    font-size: 13px !important;
-    font-weight: 300 !important;
-    opacity: 1 !important;
-    transition: color 0.3s ease !important;
+    color: #8c8278!important;
+    text-align: left!important;
+    font-size: 13px!important;
+    font-weight: 300!important;
+    opacity: 1!important;
+    transition: color .3s ease!important;
+    text-transform: capitalize;
 }
 
 .sollu-footer__links a:hover {
