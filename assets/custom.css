@@ -3935,7 +3935,6 @@ background:transparent !important;
     padding-bottom: 7px;
 }
 
-.sollu-footer__column:nth-child(4) .sollu-footer__links li:nth-child(6),
 .sollu-footer__column:nth-child(4) .sollu-footer__links li:nth-child(7) {
     display: none !IMPORTANT;
 }
