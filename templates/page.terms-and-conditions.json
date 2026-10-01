@@ -37,7 +37,7 @@
         "richtext_wci3UM": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Her finder du de juridiske vilkår og betingelser for handel på Sollu.dk. Vi anbefaler, at du læser dem grundigt igennem, før du foretager et køb.<br/><br/></p>"
+            "content": "<p><em>Sollu ApS · Gældende fra oktober 2026</em></p>"
           }
         }
       },
@@ -82,6 +82,40 @@
             "html_content": ""
           }
         },
+        "navigation_item_NDEYYq": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Aftalen",
+            "target_id": "Aftalen"
+          }
+        },
+        "content_block_LXHPFz": {
+          "type": "content_block",
+          "settings": {
+            "heading": "2. Aftalen",
+            "target_id": "Aftalen",
+            "content_mode": "visual",
+            "text": "<p>Handelsbetingelserne gælder for alle køb på Sollu.dk. Aftalen er indgået, når du har modtaget vores ordrebekræftelse på e-mail. Opdager vi en åbenlys fejl i pris eller produktoplysninger, kontakter vi dig, før ordren sendes, og du kan vælge at<br/>annullere uden omkostninger.</p><p>Vores webshop henvender sig til forbrugere i Danmark.</p>",
+            "html_content": ""
+          }
+        },
+        "navigation_item_DYqPXb": {
+          "type": "navigation_item",
+          "settings": {
+            "label": "Priser",
+            "target_id": "Priser"
+          }
+        },
+        "content_block_8rMexM": {
+          "type": "content_block",
+          "settings": {
+            "heading": "3. Priser",
+            "target_id": "Priser",
+            "content_mode": "visual",
+            "text": "<p>Alle priser er i danske kroner og inklusive 25 % moms. Fragtprisen oplyses ved kassen, inden du godkender ordren.</p>",
+            "html_content": ""
+          }
+        },
         "navigation_item_Y6jFWW": {
           "type": "navigation_item",
           "settings": {
@@ -112,7 +146,7 @@
             "heading": "3. Levering",
             "target_id": "levering",
             "content_mode": "visual",
-            "text": "<p>Vi tilbyder levering til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.<br/><br/>Vi sender varer med GLS og PostNord. Fragtprisen oplyses ved kassen inden godkendelse af ordren. Ved køb over 499,00 kr. tilbydes gratis levering til pakkeshop.</p>",
+            "text": "<p>Vi leverer til adresser i Danmark. Standardleveringstiden er 1-3 hverdage.</p><p>Vi sender med GLS og PostNord. Ved køb over 499,00 kr. er levering til pakkeshop gratis.</p>",
             "html_content": ""
           }
         },
@@ -129,7 +163,7 @@
             "heading": "4. Fortrydelsesret",
             "target_id": "fortrydelsesret",
             "content_mode": "visual",
-            "text": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos os. Vi tilbyder frivilligt en længere fortrydelsesfrist end lovens minimumskrav på 14 dage. Fortrydelsesfristen udløber 30 dage efter den dag, du har modtaget din vare.<br/><br/>Du skal inden udløbet af fristen give os meddelelse om, at du ønsker at fortryde dit køb. Meddelelsen skal gives ved at sende en mail til kontakt@sollu.dk eller ved at benytte standardfortrydelsesformularen nedenfor.<br/><br/>Du kan ikke fortryde ved blot at nægte modtagelse af varen uden samtidig at give os tydelig meddelelse om dette.</p><p></p><p><strong>Digital fortrydelsesfunktion </strong><br/>Du kan også fortryde dit køb ved at bruge vores digitale fortrydelsesfunktion, som du finder [indsættes, når funktionen er bygget]. Funktionen er tilgængelig gennem hele fortrydelsesfristen, og du modtager automatisk en bekræftelse på din fortrydelse via e-mail.</p><p><strong>Returnering<br/></strong>Du skal returnere varen til os uden unødig forsinkelse og senest 14 dage efter, du har givet os<br/>besked om, at du fortryder dit køb. Du afholder selv de direkte omkostninger i forbindelse med returnering af varen (fragt).</p><p>Retur sendes til:       <br/>Sollu ApS,<br/>Pilekæret 30, 2480 Holte</p><p><strong>Tilbagebetaling<br/></strong>Hvis du fortryderdit køb, refunderer vi alle betalinger modtaget fra dig uden unødig forsinkelseog senest 14 dage fra den dag, hvor vi har modtaget din meddelelse omfortrydelse. Vi kan tilbageholde tilbagebetalingen, indtil vi har modtagetvaren retur, eller du har sendt os dokumentation for at have returneret varen,alt efter hvad der indtræffer først.</p>",
+            "text": "<p>Som forbruger har du 30 dages fortrydelsesret, når du handler hos os. Vi tilbyder frivilligt en længere frist end lovens minimum på 14 dage. Fristen udløber 30 dage efter den dag, du har modtaget din vare.</p><p>Du skal inden fristens udløb give os besked om, at du ønsker at fortryde dit køb. Det kan du gøre på tre måder:</p><p>•&nbsp;&nbsp;&nbsp;ved at bruge vores digitale fortrydelsesfunktion på siden “Fortryd køb (EU-Fortrydelsesret)”, som du finder i bunden af alle sider på Sollu.dk</p><p>•&nbsp;ved at sende en e-mail til kontakt@sollu.dk</p><p>•&nbsp;ved at bruge standardfortrydelsesformularen<br/>nedenfor</p><p></p><p><strong>Digital fortrydelsesfunktion.</strong><br/>Fortrydelsesfunktionen er tilgængelig i hele fortrydelsesfristen på 30 dage. Når du har brugt den, modtager du<br/>automatisk en bekræftelse på din fortrydelse via e-mail.</p><p><strong>Returnering.</strong> Du skal returnere varen uden unødig forsinkelse og senest 14 dage efter, at du har givet os besked om, at du fortryder. Du betaler selv de direkte omkostninger ved at sende varen retur.</p><p>Retur sendes til:</p><p>Sollu ApS<br/>Pilekæret 30<br/>2840 Holte<br/>Danmark</p><p><strong>Tilbagebetaling.<br/></strong>&nbsp;Fortryder du dit køb, tilbagebetaler vi alle betalinger modtaget fra dig, inklusive de oprindelige leveringsomkostninger (dog ikke ekstra omkostninger, hvis du har valgt en dyrere leveringsform end vores billigste standardlevering). Vi tilbagebetaler uden unødig forsinkelse og senest 14 dage efter, at vi har modtaget din besked om fortrydelse. Vi kan tilbageholde beløbet, indtil vi har modtaget varen retur, eller du har sendt dokumentation for at have returneret den. Pengene<br/>overføres til det betalingsmiddel, du brugte ved købet.</p><p></p><p><strong>Varens stand.</strong> Du må gerne prøve varen, som du ville gøre i en fysisk butik. Har varen en værdiforringelse ud<br/>over det, kan den trækkes fra beløbet.</p><p>Se også vores returpolitik.</p>",
             "html_content": ""
           }
         },
@@ -181,6 +215,10 @@
       "block_order": [
         "navigation_item_UW9HA4",
         "content_block_bMKwPX",
+        "navigation_item_NDEYYq",
+        "content_block_LXHPFz",
+        "navigation_item_DYqPXb",
+        "content_block_8rMexM",
         "navigation_item_Y6jFWW",
         "content_block_hWzHAJ",
         "navigation_item_YwBCwW",
@@ -246,6 +284,7 @@
     },
     "newsletter_NNqd7N": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "custom_class": "Newsletter_sec pro_newsletter",
         "color_scheme": "scheme-2",
@@ -260,12 +299,26 @@
         "overlay_color": "#f5f0e8",
         "overlay_opacity": 100
       }
+    },
+    "custom_liquid_BtJnqJ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "custom_class": "klaviyo_sec",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<section class=\"newsletter-section\">\n  <div class=\"newsletter-wrapper\">\n\n    <div class=\"newsletter-content\">\n      <div class=\"newsletter-eyebrow\">NYHEDSBREV</div>\n\n      <h2>\n        Tilmeld dig og få 10% på din<br>\n        første ordre\n      </h2>\n\n      <p>\n        Rutiner der virker. Få besked når nye Sollu enheder introduceres.\n        Du kan altid afmelde.\n      </p>\n    </div>\n\n    <div class=\"newsletter-form\">\n      <div class=\"klaviyo-form-SQPXWk\"></div>\n    </div>\n\n  </div>\n</section>\n\n<style>\n.newsletter-section {\n  width: 100%;\n      background: #f5f0e8!important;\n    padding: 90px 0!important;\n    border: none;\n}\n\n.newsletter-wrapper {\n  \n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  align-items: center;\n  column-gap: 80px;\n      width: 100%!important;\n    max-width: 1200px!important;\n    margin: 0 auto!important;\n    padding-left: 32px!important;\n    padding-right: 32px!important;\n\n    \n}\n\n.newsletter-content {\n  max-width: 500px;\n}\n\n.newsletter-eyebrow {\n  margin-bottom: 12px;\n  font-family: Jost, sans-serif;\n\n\n      color: #b8965a;\n    text-align: left;\n    font-size: 11px;\n    letter-spacing: 2.64px;\n    font-weight: 400!important;\n    text-transform: uppercase;\n}\n\n.newsletter-content h2 {\n  margin: 0;\n  font-family: \"Cormorant Garamond\", serif;\n  color: #2a2420;\n    text-align: left;\n    font-size: 42px;\n    line-height: 47.04px;\n    font-weight: 300!important;\n    letter-spacing: normal;\n    text-transform: unset;\n}\n\n.newsletter-content p {\n\n  font-family: Jost, sans-serif;\n  \n\n      color: #8c8278;\n    text-align: left;\n    font-size: 12px;\n    line-height: normal;\n    font-weight: 300;\n    max-width: 380px;\n    margin-top: 14px;\n}\n\n.newsletter-form {\n  width: 100%;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk {\n  width: 100%;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk form {\n  width: 100% !important;\n  max-width: none !important;\n  padding: 0 !important;\n  margin: 0 !important;\n  background: transparent !important;\n  border: 0 !important;\n  box-shadow: none !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk input {\n  width: 100% !important;\n  height: fit-content !important;\n  padding: 0 90px 0 0 !important;\n  border: 0 !important;\n \n  border-radius: 0 !important;\n  outline: none !important;\n  background: transparent !important;\n}\n\n\n\n\n.newsletter-form .klaviyo-form-SQPXWk button {\n  min-height: 48px !important;\n  padding: 0 !important;\n  border: 0 !important;\n  border-radius: 0 !important;\n  background: transparent !important;\n  box-shadow: none !important;\n  font-family: Jost, sans-serif !important;\n  font-size: 12px !important;\n  font-weight: 500 !important;\n  letter-spacing: 1.5px !important;\n  color: #2a2420 !important;\n  text-transform: none !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk button:hover {\n  opacity: 0.65 !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk label {\n  font-family: Jost, sans-serif !important;\n  font-size: 13px !important;\n  font-weight: 400 !important;\n  color: #8c8278 !important;\n}\n\n.newsletter-form .klaviyo-form-SQPXWk p {\n  font-family: Jost, sans-serif !important;\n  font-size: 11px !important;\n  line-height: 1.5 !important;\n  color: #b0aaa3 !important;\n}\n\n\n@media (max-width: 1024px) {\n  .newsletter-section {\n    padding: 75px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    column-gap: 50px;\n    padding-left: 28px !important;\n    padding-right: 28px !important;\n  }\n\n  .newsletter-content h2 {\n    font-size: 38px;\n    line-height: 1.15;\n  }\n}\n\n@media (max-width: 767px) {\n  .newsletter-section {\n    padding: 65px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    grid-template-columns: 1fr;\n    row-gap: 40px;\n    padding-left: 24px !important;\n    padding-right: 24px !important;\n  }\n\n  .newsletter-content {\n    max-width: 100%;\n  }\n\n  .newsletter-content h2 {\n    font-size: 36px;\n    line-height: 1.15;\n  }\n\n  .newsletter-content p {\n    max-width: 100%;\n    font-size: 12px;\n  }\n\n  .newsletter-form {\n    width: 100%;\n  }\n}\n\n@media (max-width: 575px) {\n  .newsletter-section {\n    padding: 55px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    row-gap: 32px;\n    padding-left: 20px !important;\n    padding-right: 20px !important;\n  }\n\n  .newsletter-eyebrow {\n    font-size: 10px;\n    letter-spacing: 2px;\n    margin-bottom: 10px;\n  }\n\n  .newsletter-content h2 {\n    font-size: 32px;\n    line-height: 1.15;\n  }\n\n  .newsletter-content p {\n    margin-top: 12px;\n    font-size: 12px;\n    line-height: 1.5;\n  }\n\n\n\n  .newsletter-form .klaviyo-form-SQPXWk button {\n    min-height: 46px !important;\n    font-size: 11px !important;\n    letter-spacing: 1.2px !important;\n  }\n}\n\n@media (max-width: 390px) {\n  .newsletter-section {\n    padding: 45px 0 !important;\n  }\n\n  .newsletter-wrapper {\n    row-gap: 28px;\n    padding-left: 16px !important;\n    padding-right: 16px !important;\n  }\n\n  .newsletter-content h2 {\n    font-size: 29px;\n  }\n\n  .newsletter-content p {\n    font-size: 11px;\n  }\n\n\n\n  .newsletter-form .klaviyo-form-SQPXWk button {\n    font-size: 10px !important;\n    letter-spacing: 1px !important;\n  }\n\n  .newsletter-form .klaviyo-form-SQPXWk label {\n    font-size: 12px !important;\n  }\n\n  .newsletter-form .klaviyo-form-SQPXWk p {\n    font-size: 10px !important;\n  }\n}\n</style>",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
     "main",
     "image_with_text_overlay_qTAmgD",
     "custom_sidebar_content_navigation_9EEGij",
-    "newsletter_NNqd7N"
+    "newsletter_NNqd7N",
+    "custom_liquid_BtJnqJ"
   ]
 }
