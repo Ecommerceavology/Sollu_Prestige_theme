@@ -3927,6 +3927,14 @@ background:transparent !important;
 }
 /* 404 Page CSS End  */
 
+.cst-term-of-service-content-wrapper ul ul {
+    list-style: none;
+    margin: 0 !important;
+    padding-left: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
