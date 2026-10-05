@@ -336,7 +336,7 @@
         "vertical_spacing_factor": 1,
         "show_cta": true,
         "cta_text": "se alle 8 produkter",
-        "cta_link": "shopify://collections"
+        "cta_link": "shopify://collections/all"
       }
     },
     "featured-product": {
