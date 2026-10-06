@@ -1,36 +1,351 @@
-{%- doc -%}
-  Renders the free shipping bar component. It is used on cart page and cart drawer to render the remaining amount before being eligible for free shipping.
-{%- enddoc -%}
+{%- if cart_drawer -%}
 
-{%- liquid
-  assign calculated_total_price = 0
+  {%- assign free_shipping_threshold = 49900 -%}
+  {%- assign cart_total = cart.total_price -%}
+  {%- assign remaining_amount = free_shipping_threshold | minus: cart_total -%}
 
-  for line_item in cart.items
-    if line_item.requires_shipping
-      assign calculated_total_price = calculated_total_price | plus: line_item.final_line_price
-    endif
-  endfor
+  {%- if cart_total >= free_shipping_threshold -%}
+    {%- assign shipping_progress = 100 -%}
+  {%- else -%}
+    {%- assign shipping_progress = cart_total | times: 100.0 | divided_by: free_shipping_threshold -%}
+  {%- endif -%}
 
-  # We have to remove the cart level discount from the calculated amount
-
-  assign total_cart_discount = 0
-
-  for discount_application in cart.cart_level_discount_applications
-    assign total_cart_discount = total_cart_discount | plus: discount_application.total_allocated_amount
-  endfor
-
-  assign calculated_total_price = calculated_total_price | minus: total_cart_discount
--%}
-
-{%- if cart.requires_shipping -%}
-  <free-shipping-bar
-    class="free-shipping-bar"
-    threshold="{{ settings.cart_free_shipping_threshold }}"
-    total-price="{{ calculated_total_price }}"
-    reached-message="{{ 'cart.free_shipping_bar.limit_reached_html' | t | escape }}"
-    unreached-message="{{ 'cart.free_shipping_bar.limit_unreached_html' | t | escape }}"
+  <div
+    class="free-shipping-progress"
+    id="FreeShippingProgress"
+    data-threshold="49900"
   >
-    {%- comment -%}The span below is the placeholder where the content will be inserted in JS{%- endcomment -%}
-    <span class="text-subdued">&nbsp;</span>
-  </free-shipping-bar>
+
+    <div
+      class="free-shipping-progress__message"
+      id="FreeShippingProgressMessage"
+    >
+      {%- if cart_total >= free_shipping_threshold -%}
+        Tillykke! Du har opnået fri fragt 🎉
+      {%- else -%}
+        Du er kun
+        <span id="FreeShippingRemaining">
+          {{ remaining_amount | money }}
+        </span>
+        fra fri fragt!
+      {%- endif -%}
+    </div>
+
+    <div
+      class="free-shipping-progress__track"
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="{{ shipping_progress | round }}"
+    >
+      <div
+        class="free-shipping-progress__fill"
+        id="FreeShippingProgressFill"
+        style="width: {{ shipping_progress | at_most: 100 }}%;"
+      ></div>
+    </div>
+
+    <div class="free-shipping-progress__labels">
+      <span>0 kr.</span>
+      <span>499 kr.</span>
+    </div>
+
+  </div>
+
+  <style>
+    .free-shipping-progress {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px;
+      margin: 0 0 16px;
+      background: #f8f8f8;
+      border-radius: 8px;
+    }
+
+    .free-shipping-progress__message {
+      margin: 0 0 10px;
+      color: #222;
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .free-shipping-progress__track {
+      width: 100%;
+      height: 7px;
+      overflow: hidden;
+      background: #e5e5e5;
+      border-radius: 999px;
+    }
+
+    .free-shipping-progress__fill {
+      width: 0;
+      height: 100%;
+      background: #222;
+      border-radius: 999px;
+      transition: width 0.45s ease;
+    }
+
+    .free-shipping-progress__labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      color: #777;
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    @media screen and (max-width: 749px) {
+      .free-shipping-progress {
+        padding: 12px 14px;
+        margin-bottom: 14px;
+      }
+
+      .free-shipping-progress__message {
+        font-size: 13px;
+      }
+
+      .free-shipping-progress__track {
+        height: 6px;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var SHIPPING_THRESHOLD = 49900;
+
+      function formatDKK(amountInOre) {
+        var amount = Number(amountInOre || 0) / 100;
+
+        return amount.toLocaleString('da-DK', {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }) + ' kr.';
+      }
+
+      function updateFreeShippingProgress(cart) {
+        var progress = document.getElementById(
+          'FreeShippingProgress'
+        );
+
+        if (!progress) {
+          return;
+        }
+
+        var message = document.getElementById(
+          'FreeShippingProgressMessage'
+        );
+
+        var fill = document.getElementById(
+          'FreeShippingProgressFill'
+        );
+
+        if (!message || !fill) {
+          return;
+        }
+
+        var cartTotal = Number(
+          cart.total_price || 0
+        );
+
+        var percentage =
+          (cartTotal / SHIPPING_THRESHOLD) * 100;
+
+        percentage = Math.max(
+          0,
+          Math.min(percentage, 100)
+        );
+
+        fill.style.width = percentage + '%';
+
+        var track = progress.querySelector(
+          '.free-shipping-progress__track'
+        );
+
+        if (track) {
+          track.setAttribute(
+            'aria-valuenow',
+            Math.round(percentage)
+          );
+        }
+
+        if (cartTotal >= SHIPPING_THRESHOLD) {
+          message.innerHTML =
+            'Tillykke! Du har opnået fri fragt 🎉';
+        } else {
+          var remaining =
+            SHIPPING_THRESHOLD - cartTotal;
+
+          message.innerHTML =
+            'Du er kun ' +
+            '<span id="FreeShippingRemaining">' +
+            formatDKK(remaining) +
+            '</span>' +
+            ' fra fri fragt!';
+        }
+      }
+
+      function refreshFreeShippingProgress() {
+        fetch('/cart.js', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          },
+          credentials: 'same-origin'
+        })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('Cart request failed');
+          }
+
+          return response.json();
+        })
+        .then(function (cart) {
+          updateFreeShippingProgress(cart);
+        })
+        .catch(function (error) {
+          console.error(
+            'Free shipping progress error:',
+            error
+          );
+        });
+      }
+
+      function isCartRequest(url) {
+        if (!url) {
+          return false;
+        }
+
+        return (
+          url.indexOf('/cart/add') !== -1 ||
+          url.indexOf('/cart/change') !== -1 ||
+          url.indexOf('/cart/update') !== -1 ||
+          url.indexOf('/cart/clear') !== -1
+        );
+      }
+
+      /*
+       * Initial load
+       */
+      if (document.readyState === 'loading') {
+        document.addEventListener(
+          'DOMContentLoaded',
+          refreshFreeShippingProgress
+        );
+      } else {
+        refreshFreeShippingProgress();
+      }
+
+      /*
+       * Shopify / Prestige cart events
+       */
+      document.addEventListener(
+        'cart:updated',
+        refreshFreeShippingProgress
+      );
+
+      document.addEventListener(
+        'cart:refresh',
+        refreshFreeShippingProgress
+      );
+
+      document.addEventListener(
+        'cart:change',
+        refreshFreeShippingProgress
+      );
+
+      /*
+       * Detect fetch cart requests
+       */
+      var originalFetch = window.fetch;
+
+      window.fetch = function () {
+        var args = arguments;
+
+        return originalFetch
+          .apply(this, args)
+          .then(function (response) {
+
+            try {
+              var request = args[0];
+              var url = '';
+
+              if (typeof request === 'string') {
+                url = request;
+              } else if (
+                request &&
+                request.url
+              ) {
+                url = request.url;
+              }
+
+              if (isCartRequest(url)) {
+                setTimeout(
+                  refreshFreeShippingProgress,
+                  200
+                );
+              }
+            } catch (error) {
+              console.warn(
+                'Cart request detection failed:',
+                error
+              );
+            }
+
+            return response;
+          });
+      };
+
+      /*
+       * Detect XMLHttpRequest cart requests
+       */
+      var originalOpen =
+        XMLHttpRequest.prototype.open;
+
+      var originalSend =
+        XMLHttpRequest.prototype.send;
+
+      XMLHttpRequest.prototype.open = function (
+        method,
+        url
+      ) {
+        this._freeShippingCartUrl = url;
+
+        return originalOpen.apply(
+          this,
+          arguments
+        );
+      };
+
+      XMLHttpRequest.prototype.send = function () {
+        var xhr = this;
+
+        xhr.addEventListener(
+          'load',
+          function () {
+            if (
+              isCartRequest(
+                xhr._freeShippingCartUrl
+              )
+            ) {
+              setTimeout(
+                refreshFreeShippingProgress,
+                200
+              );
+            }
+          }
+        );
+
+        return originalSend.apply(
+          this,
+          arguments
+        );
+      };
+    })();
+  </script>
+
 {%- endif -%}
