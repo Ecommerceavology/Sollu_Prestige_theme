@@ -264,79 +264,17 @@
     },
     "featured-collections-2": {
       "type": "featured-collections",
-      "blocks": {
-        "product_N8CBEF": {
-          "type": "product",
-          "settings": {
-            "product": "vibra-in-grey"
-          }
-        },
-        "product_CKedX4": {
-          "type": "product",
-          "settings": {
-            "product": "mary"
-          }
-        },
-        "product_7MytBj": {
-          "type": "product",
-          "settings": {
-            "product": "vibra-in-pink"
-          }
-        },
-        "product_iMQiz7": {
-          "type": "product",
-          "settings": {
-            "product": "julie"
-          }
-        },
-        "product_n7KqDc": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-relief"
-          }
-        },
-        "product_VVkqdP": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-ease"
-          }
-        },
-        "product_LRJUBy": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-aqua-flosser"
-          }
-        },
-        "product_BtWc4L": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-relief-pro"
-          }
-        }
-      },
-      "block_order": [
-        "product_N8CBEF",
-        "product_CKedX4",
-        "product_7MytBj",
-        "product_iMQiz7",
-        "product_n7KqDc",
-        "product_VVkqdP",
-        "product_LRJUBy",
-        "product_BtWc4L"
-      ],
       "name": "All Products section",
       "settings": {
         "section_custom_class": "All_pro_sec",
         "heading": "Mest solgte Sollu produkter",
         "subheading": "Udvalgte",
         "color_scheme": "scheme-1",
+        "max_products": 10,
         "products_per_row_mobile": 2,
         "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "show_cta": true,
-        "cta_text": "se alle 8 produkter",
-        "cta_link": "shopify://collections/all"
+        "vertical_spacing_factor": 1
       }
     },
     "featured-product": {
@@ -594,7 +532,7 @@
           "settings": {
             "image": "shopify://shop_images/Sollu_Ease_1.webp",
             "subheading": "Om Sollu",
-            "title": "Dine rutiner —dine resultater",
+            "title": "Dine rutiner — &nbsp; &nbsp; &nbsp; &nbsp; Dine resultater",
             "content": "<p>Selvplejeprodukter til hjemmet, fordi din krop fortjener at blive passet på. Vi udvælger produkter med omtanke, så dine rutiner kan give dig de resultater, du går efter. Ingen store løfter. Kun produkter der holder, og rutiner du faktisk kan følge.</p>",
             "link_text": "Læs historien bag Sollu",
             "link_url": "shopify://pages/sollu-historien-bag-sollu",
