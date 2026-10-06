@@ -75,7 +75,6 @@
             "text": "<p><strong>Fri fragt over 499,00 kr.</strong></p>",
             "link": "",
             "icon": "picto-delivery-truck",
-            "custom_icon": "shopify://shop_images/01-free-shipping.svg",
             "icon_width": 16,
             "background": "rgba(0,0,0,0)",
             "text_color": "#000000",
