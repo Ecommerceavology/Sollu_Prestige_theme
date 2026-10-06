@@ -222,7 +222,7 @@
         "product_b8M8a6": {
           "type": "product",
           "settings": {
-            "product": "{{ product }}"
+            "product": "julie"
           }
         }
       },
