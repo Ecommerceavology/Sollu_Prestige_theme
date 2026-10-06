@@ -11,9 +11,9 @@
     }
   }
 
-  /* ==============================
+  /* =========================================
      HEADER
-  ============================== */
+  ========================================= */
 
   .related-products-header-{{ section.id }} {
     display: flex;
@@ -27,9 +27,9 @@
     margin-bottom: 0;
   }
 
-  /* ==============================
+  /* =========================================
      PREVIOUS / NEXT BUTTONS
-  ============================== */
+  ========================================= */
 
   .related-products-navigation-{{ section.id }} {
     display: flex;
@@ -75,7 +75,8 @@
     border-color: #777;
   }
 
-  .related-products-navigation-{{ section.id }} button:first-child:disabled:hover {
+  .related-products-navigation-{{ section.id }}
+  button:first-child:disabled:hover {
     background: #292522;
     color: #fff;
     border-color: #292522;
@@ -86,9 +87,9 @@
     height: 13px;
   }
 
-  /* ==============================
+  /* =========================================
      PRODUCT SLIDER
-  ============================== */
+  ========================================= */
 
   .related-products-slider-{{ section.id }} {
     display: flex !important;
@@ -118,25 +119,28 @@
     scroll-snap-align: start;
   }
 
-  /* ==============================
+  /* =========================================
      PRODUCT CARD
-  ============================== */
+  ========================================= */
 
-  .related-products-card-{{ section.id }} .homepage-product-card__rating {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__rating {
     display: flex;
     align-items: center;
     gap: 6px;
     margin-top: 6px;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__stars {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__stars {
     display: flex;
     align-items: center;
     gap: 2px;
     line-height: 1;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__star {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__star {
     position: relative;
     display: inline-block;
     width: 15px;
@@ -145,20 +149,24 @@
     line-height: 15px;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__star--full {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__star--full {
     color: #000;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__star--empty {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__star--empty {
     color: #000;
     opacity: 0.2;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__star--half {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__star--half {
     color: #000;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__star--half::after {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__star--half::after {
     content: "★";
     position: absolute;
     top: 0;
@@ -169,22 +177,25 @@
     color: #000;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__rating-value {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__rating-value {
     font-size: 12px;
     line-height: 1;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__category {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__category {
     margin-bottom: 5px;
   }
 
-  .related-products-card-{{ section.id }} .homepage-product-card__highlights {
+  .related-products-card-{{ section.id }}
+  .homepage-product-card__highlights {
     margin-top: 5px;
   }
 
-  /* ==============================
+  /* =========================================
      MOBILE
-  ============================== */
+  ========================================= */
 
   @media screen and (max-width: 699px) {
 
@@ -206,7 +217,8 @@
       gap: 10px;
     }
 
-    .related-products-slider-{{ section.id }} .product-list__item {
+    .related-products-slider-{{ section.id }}
+    .product-list__item {
       flex: 0 0 calc(
         (100% - ((var(--product-list-items-per-row) - 1) * 10px))
         / var(--product-list-items-per-row)
@@ -229,7 +241,10 @@
 
   {%- for product_collection in current_product.collections -%}
 
-    {%- assign collection_name = product_collection.title | strip | downcase -%}
+    {%- assign collection_name = product_collection.title
+      | strip
+      | downcase
+    -%}
 
     {%- unless collection_name == 'all collections' -%}
 
@@ -242,7 +257,42 @@
   {%- endfor -%}
 
 
+  {%- comment -%}
+    Count products in the same collection,
+    excluding the current product.
+  {%- endcomment -%}
+
+  {%- assign related_product_count = 0 -%}
+
   {%- if related_collection != blank -%}
+
+    {%- for collection_product in related_collection.products -%}
+
+      {%- if collection_product.id != current_product.id -%}
+
+        {%- assign related_product_count =
+          related_product_count | plus: 1
+        -%}
+
+      {%- endif -%}
+
+    {%- endfor -%}
+
+  {%- endif -%}
+
+
+  {%- comment -%}
+    IMPORTANT:
+
+    The complete section only appears when:
+    1. A collection exists
+    2. At least one other product exists
+  {%- endcomment -%}
+
+  {%- if related_collection != blank
+    and related_product_count > 0
+  -%}
+
 
     <div
       class="
@@ -257,7 +307,10 @@
 
       <div class="container">
 
-        <!-- HEADER -->
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
 
         <div class="related-products-header-{{ section.id }}">
 
@@ -283,9 +336,15 @@
           </div>
 
 
-          <!-- PREVIOUS / NEXT -->
+          <!-- =====================================
+               PREVIOUS / NEXT
+          ====================================== -->
 
-          <div class="related-products-navigation-{{ section.id }}">
+          <div
+            class="
+              related-products-navigation-{{ section.id }}
+            "
+          >
 
             <button
               type="button"
@@ -298,6 +357,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+
                 <path
                   d="M15 18L9 12L15 6"
                   stroke="currentColor"
@@ -305,6 +365,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
               </svg>
 
             </button>
@@ -321,6 +382,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+
                 <path
                   d="M9 18L15 12L9 6"
                   stroke="currentColor"
@@ -328,6 +390,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 />
+
               </svg>
 
             </button>
@@ -337,10 +400,16 @@
         </div>
 
 
-        <!-- PRODUCTS -->
+        <!-- =====================================
+             PRODUCTS
+        ====================================== -->
 
         <div
-          class="product-list product-list--center related-products-slider-{{ section.id }}"
+          class="
+            product-list
+            product-list--center
+            related-products-slider-{{ section.id }}
+          "
           data-related-slider
         >
 
@@ -349,24 +418,42 @@
 
           {%- for selected_product in related_collection.products -%}
 
+
             {%- if selected_product.id != current_product.id -%}
+
 
               {%- if products_shown < section.settings.max_products -%}
 
 
-                {%- assign product_category = related_collection.title -%}
+                {%- assign product_category =
+                  related_collection.title
+                -%}
 
-                {%- assign product_highlights = selected_product.metafields.custom.product_highlights.value -%}
 
-                {%- assign rating_count = selected_product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+                {%- assign product_highlights =
+                  selected_product.metafields.custom.product_highlights.value
+                -%}
+
+
+                {%- assign rating_count =
+                  selected_product.metafields.custom.product_rating.value.rating
+                  | plus: 0
+                -%}
 
 
                 <div class="product-list__item">
 
-                  <div class="product-card related-products-card-{{ section.id }}">
+                  <div
+                    class="
+                      product-card
+                      related-products-card-{{ section.id }}
+                    "
+                  >
 
 
-                    <!-- IMAGE -->
+                    <!-- =====================================
+                         PRODUCT IMAGE
+                    ====================================== -->
 
                     {%- if selected_product.featured_media != blank -%}
 
@@ -397,11 +484,17 @@
                     <div class="product-card__info">
 
 
-                      <!-- CATEGORY -->
+                      <!-- =====================================
+                           CATEGORY
+                      ====================================== -->
 
                       {%- if product_category != blank -%}
 
-                        <div class="homepage-product-card__category">
+                        <div
+                          class="
+                            homepage-product-card__category
+                          "
+                        >
 
                           {{ product_category }}
 
@@ -410,7 +503,9 @@
                       {%- endif -%}
 
 
-                      <!-- TITLE -->
+                      <!-- =====================================
+                           TITLE
+                      ====================================== -->
 
                       <a
                         href="{{ selected_product.url }}"
@@ -422,11 +517,17 @@
                       </a>
 
 
-                      <!-- HIGHLIGHTS -->
+                      <!-- =====================================
+                           HIGHLIGHTS
+                      ====================================== -->
 
                       {%- if product_highlights != blank -%}
 
-                        <div class="homepage-product-card__highlights">
+                        <div
+                          class="
+                            homepage-product-card__highlights
+                          "
+                        >
 
                           {{ product_highlights }}
 
@@ -435,39 +536,66 @@
                       {%- endif -%}
 
 
-                      <!-- RATING -->
+                      <!-- =====================================
+                           RATING
+                      ====================================== -->
 
                       {%- if rating_count > 0 -%}
 
-                        <div class="homepage-product-card__rating">
+                        <div
+                          class="
+                            homepage-product-card__rating
+                          "
+                        >
 
                           <div
-                            class="homepage-product-card__stars"
-                            aria-label="{{ rating_count }} out of 5 stars"
+                            class="
+                              homepage-product-card__stars
+                            "
+                            aria-label="
+                              {{ rating_count }} out of 5 stars
+                            "
                           >
 
                             {%- for star in (1..5) -%}
 
-                              {%- assign previous_star = star | minus: 1 -%}
+                              {%- assign previous_star =
+                                star | minus: 1
+                              -%}
 
 
                               {%- if rating_count >= star -%}
 
-                                <span class="homepage-product-card__star homepage-product-card__star--full">
+                                <span
+                                  class="
+                                    homepage-product-card__star
+                                    homepage-product-card__star--full
+                                  "
+                                >
                                   ★
                                 </span>
 
 
                               {%- elsif rating_count > previous_star -%}
 
-                                <span class="homepage-product-card__star homepage-product-card__star--half">
+                                <span
+                                  class="
+                                    homepage-product-card__star
+                                    homepage-product-card__star--half
+                                  "
+                                >
                                   ★
                                 </span>
 
 
                               {%- else -%}
 
-                                <span class="homepage-product-card__star homepage-product-card__star--empty">
+                                <span
+                                  class="
+                                    homepage-product-card__star
+                                    homepage-product-card__star--empty
+                                  "
+                                >
                                   ★
                                 </span>
 
@@ -478,7 +606,11 @@
                           </div>
 
 
-                          <span class="homepage-product-card__rating-value">
+                          <span
+                            class="
+                              homepage-product-card__rating-value
+                            "
+                          >
 
                             {{ rating_count }}
 
@@ -489,11 +621,15 @@
                       {%- endif -%}
 
 
-                      <!-- PRICE -->
+                      <!-- =====================================
+                           PRICE
+                      ====================================== -->
 
                       <div class="product-card__price">
 
-                        {%- render 'price-list', product: selected_product -%}
+                        {%- render 'price-list',
+                          product: selected_product
+                        -%}
 
                       </div>
 
@@ -505,11 +641,16 @@
                 </div>
 
 
-                {%- assign products_shown = products_shown | plus: 1 -%}
+                {%- assign products_shown =
+                  products_shown | plus: 1
+                -%}
+
 
               {%- endif -%}
 
+
             {%- endif -%}
+
 
           {%- endfor -%}
 
@@ -519,10 +660,15 @@
 
     </div>
 
+
   {%- endif -%}
 
 {%- endif -%}
 
+
+<!-- =========================================
+     SLIDER JAVASCRIPT
+========================================= -->
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -531,7 +677,9 @@
       '#shopify-section-{{ section.id }}'
     );
 
-    if (!section) return;
+    if (!section) {
+      return;
+    }
 
 
     const slider = section.querySelector(
@@ -553,7 +701,8 @@
 
 
     /*
-     * Get one product card width.
+     * Calculate one product card width
+     * including the gap.
      */
     function getScrollAmount() {
 
@@ -585,16 +734,18 @@
 
 
     /*
-     * Update Previous / Next button state.
+     * Update navigation buttons.
      */
     function updateButtons() {
 
       const maxScroll =
-        slider.scrollWidth - slider.clientWidth;
+        slider.scrollWidth -
+        slider.clientWidth;
 
 
       /*
-       * No slider required.
+       * If all products fit on screen,
+       * hide arrows.
        */
       if (maxScroll <= 5) {
 
@@ -602,7 +753,6 @@
         nextButton.style.display = 'none';
 
         return;
-
       }
 
 
@@ -627,7 +777,10 @@
       /*
        * Next button.
        */
-      if (slider.scrollLeft >= maxScroll - 5) {
+      if (
+        slider.scrollLeft >=
+        maxScroll - 5
+      ) {
 
         nextButton.disabled = true;
 
@@ -641,43 +794,51 @@
 
 
     /*
-     * Previous.
+     * Previous button click.
      */
-    prevButton.addEventListener('click', function () {
+    prevButton.addEventListener(
+      'click',
+      function () {
 
-      slider.scrollBy({
-        left: -getScrollAmount(),
-        behavior: 'smooth'
-      });
+        slider.scrollBy({
+          left: -getScrollAmount(),
+          behavior: 'smooth'
+        });
 
-    });
-
-
-    /*
-     * Next.
-     */
-    nextButton.addEventListener('click', function () {
-
-      slider.scrollBy({
-        left: getScrollAmount(),
-        behavior: 'smooth'
-      });
-
-    });
-
-
-    /*
-     * Update while scrolling.
-     */
-    slider.addEventListener(
-      'scroll',
-      updateButtons,
-      { passive: true }
+      }
     );
 
 
     /*
-     * Update on resize.
+     * Next button click.
+     */
+    nextButton.addEventListener(
+      'click',
+      function () {
+
+        slider.scrollBy({
+          left: getScrollAmount(),
+          behavior: 'smooth'
+        });
+
+      }
+    );
+
+
+    /*
+     * Update buttons while scrolling.
+     */
+    slider.addEventListener(
+      'scroll',
+      updateButtons,
+      {
+        passive: true
+      }
+    );
+
+
+    /*
+     * Update after browser resize.
      */
     window.addEventListener(
       'resize',
