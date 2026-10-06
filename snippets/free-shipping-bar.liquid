@@ -2,349 +2,376 @@
 
   {%- assign free_shipping_threshold = 49900 -%}
   {%- assign cart_total = cart.total_price -%}
-  {%- assign remaining_amount = free_shipping_threshold | minus: cart_total -%}
 
   {%- if cart_total >= free_shipping_threshold -%}
     {%- assign shipping_progress = 100 -%}
+    {%- assign remaining_amount = 0 -%}
   {%- else -%}
     {%- assign shipping_progress = cart_total | times: 100.0 | divided_by: free_shipping_threshold -%}
+    {%- assign remaining_amount = free_shipping_threshold | minus: cart_total -%}
   {%- endif -%}
 
   <div
-    class="free-shipping-progress"
-    id="FreeShippingProgress"
-    data-threshold="49900"
+    class="sollu-free-shipping"
+    data-free-shipping-threshold="49900"
   >
 
-    <div
-      class="free-shipping-progress__message"
-      id="FreeShippingProgressMessage"
-    >
+    <div class="sollu-free-shipping__message">
       {%- if cart_total >= free_shipping_threshold -%}
+
         Tillykke! Du har opnået fri fragt 🎉
+
       {%- else -%}
+
         Du er kun
-        <span id="FreeShippingRemaining">
+        <span class="sollu-free-shipping__remaining">
           {{ remaining_amount | money }}
         </span>
         fra fri fragt!
+
       {%- endif -%}
     </div>
 
-    <div
-      class="free-shipping-progress__track"
-      role="progressbar"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      aria-valuenow="{{ shipping_progress | round }}"
-    >
+    <div class="sollu-free-shipping__bar">
+
       <div
-        class="free-shipping-progress__fill"
-        id="FreeShippingProgressFill"
-        style="width: {{ shipping_progress | at_most: 100 }}%;"
+        class="sollu-free-shipping__fill"
+        style="width: {{ shipping_progress }}%;"
       ></div>
+
     </div>
 
-    <div class="free-shipping-progress__labels">
+    <div class="sollu-free-shipping__labels">
       <span>0 kr.</span>
       <span>499 kr.</span>
     </div>
 
   </div>
 
+
   <style>
-    .free-shipping-progress {
+    /*
+     * FREE SHIPPING BAR
+     * CART DRAWER ONLY
+     */
+
+    #cart-drawer .sollu-free-shipping {
+      display: block !important;
       width: 100%;
       box-sizing: border-box;
       padding: 14px 16px;
-      margin: 0 0 16px;
+      margin: 0;
       background: #f8f8f8;
-      border-radius: 8px;
+      border-radius: 0;
     }
 
-    .free-shipping-progress__message {
+    #cart-drawer .sollu-free-shipping__message {
+      display: block;
+      width: 100%;
       margin: 0 0 10px;
+      padding: 0;
       color: #222;
       font-size: 14px;
-      line-height: 1.45;
+      line-height: 1.4;
       font-weight: 500;
       text-align: center;
     }
 
-    .free-shipping-progress__track {
+    #cart-drawer .sollu-free-shipping__remaining {
+      font-weight: 600;
+    }
+
+    #cart-drawer .sollu-free-shipping__bar {
+      display: block;
+      position: relative;
       width: 100%;
       height: 7px;
       overflow: hidden;
-      background: #e5e5e5;
+      background: #e2e2e2;
       border-radius: 999px;
     }
 
-    .free-shipping-progress__fill {
-      width: 0;
+    #cart-drawer .sollu-free-shipping__fill {
+      display: block;
       height: 100%;
+      min-width: 0;
+      max-width: 100%;
       background: #222;
       border-radius: 999px;
-      transition: width 0.45s ease;
+      transition: width 0.5s ease;
     }
 
-    .free-shipping-progress__labels {
+    #cart-drawer .sollu-free-shipping__labels {
       display: flex;
       justify-content: space-between;
+      width: 100%;
       margin-top: 6px;
+      padding: 0;
       color: #777;
       font-size: 11px;
       line-height: 1;
     }
 
     @media screen and (max-width: 749px) {
-      .free-shipping-progress {
+
+      #cart-drawer .sollu-free-shipping {
         padding: 12px 14px;
-        margin-bottom: 14px;
       }
 
-      .free-shipping-progress__message {
+      #cart-drawer .sollu-free-shipping__message {
         font-size: 13px;
       }
 
-      .free-shipping-progress__track {
+      #cart-drawer .sollu-free-shipping__bar {
         height: 6px;
       }
+
     }
   </style>
 
+
   <script>
     (function () {
+
       'use strict';
 
-      var SHIPPING_THRESHOLD = 49900;
+      var THRESHOLD = 49900;
 
-      function formatDKK(amountInOre) {
-        var amount = Number(amountInOre || 0) / 100;
 
-        return amount.toLocaleString('da-DK', {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
-        }) + ' kr.';
-      }
+      function formatDKK(amount) {
 
-      function updateFreeShippingProgress(cart) {
-        var progress = document.getElementById(
-          'FreeShippingProgress'
+        return (
+          (Number(amount) / 100).toLocaleString('da-DK', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          }) + ' kr.'
         );
 
-        if (!progress) {
+      }
+
+
+      function updateShippingBar(cart) {
+
+        var drawer = document.querySelector(
+          '#cart-drawer'
+        );
+
+        if (!drawer) {
           return;
         }
 
-        var message = document.getElementById(
-          'FreeShippingProgressMessage'
+
+        var container = drawer.querySelector(
+          '.sollu-free-shipping'
         );
 
-        var fill = document.getElementById(
-          'FreeShippingProgressFill'
+        if (!container) {
+          return;
+        }
+
+
+        var message = container.querySelector(
+          '.sollu-free-shipping__message'
         );
+
+        var fill = container.querySelector(
+          '.sollu-free-shipping__fill'
+        );
+
 
         if (!message || !fill) {
           return;
         }
 
-        var cartTotal = Number(
+
+        var total = Number(
           cart.total_price || 0
         );
 
+
         var percentage =
-          (cartTotal / SHIPPING_THRESHOLD) * 100;
+          (total / THRESHOLD) * 100;
+
 
         percentage = Math.max(
           0,
-          Math.min(percentage, 100)
+          Math.min(
+            percentage,
+            100
+          )
         );
 
-        fill.style.width = percentage + '%';
 
-        var track = progress.querySelector(
-          '.free-shipping-progress__track'
-        );
+        fill.style.width =
+          percentage + '%';
 
-        if (track) {
-          track.setAttribute(
-            'aria-valuenow',
-            Math.round(percentage)
-          );
-        }
 
-        if (cartTotal >= SHIPPING_THRESHOLD) {
+        if (total >= THRESHOLD) {
+
           message.innerHTML =
             'Tillykke! Du har opnået fri fragt 🎉';
+
         } else {
+
           var remaining =
-            SHIPPING_THRESHOLD - cartTotal;
+            THRESHOLD - total;
+
 
           message.innerHTML =
             'Du er kun ' +
-            '<span id="FreeShippingRemaining">' +
+            '<span class="sollu-free-shipping__remaining">' +
             formatDKK(remaining) +
             '</span>' +
             ' fra fri fragt!';
+
         }
+
       }
 
-      function refreshFreeShippingProgress() {
-        fetch('/cart.js', {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json'
-          },
-          credentials: 'same-origin'
-        })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error('Cart request failed');
+
+      function updateFromCart() {
+
+        fetch(
+          '/cart.js',
+          {
+            credentials: 'same-origin',
+            headers: {
+              'Accept': 'application/json'
+            }
           }
+        )
+        .then(function (response) {
 
           return response.json();
+
         })
         .then(function (cart) {
-          updateFreeShippingProgress(cart);
+
+          updateShippingBar(cart);
+
         })
         .catch(function (error) {
+
           console.error(
-            'Free shipping progress error:',
+            'Free shipping error:',
             error
           );
+
         });
+
       }
 
-      function isCartRequest(url) {
-        if (!url) {
-          return false;
-        }
-
-        return (
-          url.indexOf('/cart/add') !== -1 ||
-          url.indexOf('/cart/change') !== -1 ||
-          url.indexOf('/cart/update') !== -1 ||
-          url.indexOf('/cart/clear') !== -1
-        );
-      }
 
       /*
-       * Initial load
+       * Initial update
        */
-      if (document.readyState === 'loading') {
+
+      if (
+        document.readyState === 'loading'
+      ) {
+
         document.addEventListener(
           'DOMContentLoaded',
-          refreshFreeShippingProgress
+          updateFromCart
         );
+
       } else {
-        refreshFreeShippingProgress();
+
+        updateFromCart();
+
       }
 
+
       /*
-       * Shopify / Prestige cart events
+       * Shopify / Prestige events
        */
-      document.addEventListener(
-        'cart:updated',
-        refreshFreeShippingProgress
-      );
 
       document.addEventListener(
-        'cart:refresh',
-        refreshFreeShippingProgress
+        'cart:updated',
+        updateFromCart
       );
+
 
       document.addEventListener(
         'cart:change',
-        refreshFreeShippingProgress
+        updateFromCart
       );
 
+
+      document.addEventListener(
+        'cart:refresh',
+        updateFromCart
+      );
+
+
       /*
-       * Detect fetch cart requests
+       * Detect Shopify AJAX cart requests
        */
-      var originalFetch = window.fetch;
+
+      var originalFetch =
+        window.fetch;
+
 
       window.fetch = function () {
+
         var args = arguments;
+
 
         return originalFetch
           .apply(this, args)
           .then(function (response) {
 
-            try {
-              var request = args[0];
-              var url = '';
 
-              if (typeof request === 'string') {
-                url = request;
-              } else if (
-                request &&
-                request.url
-              ) {
-                url = request.url;
-              }
+            var request =
+              args[0];
 
-              if (isCartRequest(url)) {
-                setTimeout(
-                  refreshFreeShippingProgress,
-                  200
-                );
-              }
-            } catch (error) {
-              console.warn(
-                'Cart request detection failed:',
-                error
-              );
+
+            var url = '';
+
+
+            if (
+              typeof request === 'string'
+            ) {
+
+              url = request;
+
+            } else if (
+              request &&
+              request.url
+            ) {
+
+              url = request.url;
+
             }
+
+
+            if (
+
+              url.indexOf('/cart/add') !== -1 ||
+
+              url.indexOf('/cart/change') !== -1 ||
+
+              url.indexOf('/cart/update') !== -1 ||
+
+              url.indexOf('/cart/clear') !== -1
+
+            ) {
+
+              setTimeout(
+                updateFromCart,
+                300
+              );
+
+            }
+
 
             return response;
+
           });
+
       };
 
-      /*
-       * Detect XMLHttpRequest cart requests
-       */
-      var originalOpen =
-        XMLHttpRequest.prototype.open;
 
-      var originalSend =
-        XMLHttpRequest.prototype.send;
-
-      XMLHttpRequest.prototype.open = function (
-        method,
-        url
-      ) {
-        this._freeShippingCartUrl = url;
-
-        return originalOpen.apply(
-          this,
-          arguments
-        );
-      };
-
-      XMLHttpRequest.prototype.send = function () {
-        var xhr = this;
-
-        xhr.addEventListener(
-          'load',
-          function () {
-            if (
-              isCartRequest(
-                xhr._freeShippingCartUrl
-              )
-            ) {
-              setTimeout(
-                refreshFreeShippingProgress,
-                200
-              );
-            }
-          }
-        );
-
-        return originalSend.apply(
-          this,
-          arguments
-        );
-      };
     })();
   </script>
 
