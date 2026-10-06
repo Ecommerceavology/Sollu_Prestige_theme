@@ -218,17 +218,6 @@
     },
     "featured_collections_W6RYy8": {
       "type": "featured-collections",
-      "blocks": {
-        "product_MjpPeG": {
-          "type": "product",
-          "settings": {
-            "product": "sollu-aqua-flosser"
-          }
-        }
-      },
-      "block_order": [
-        "product_MjpPeG"
-      ],
       "name": "Featured products custom",
       "settings": {
         "section_custom_class": "All_pro_sec related_sec",
