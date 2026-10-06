@@ -218,6 +218,17 @@
     },
     "featured_collections_W6RYy8": {
       "type": "featured-collections",
+      "blocks": {
+        "product_b8M8a6": {
+          "type": "product",
+          "settings": {
+            "product": "{{ product }}"
+          }
+        }
+      },
+      "block_order": [
+        "product_b8M8a6"
+      ],
       "name": "Featured products custom",
       "settings": {
         "section_custom_class": "All_pro_sec related_sec",
