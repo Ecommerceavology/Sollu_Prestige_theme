@@ -1,7 +1,7 @@
 {%- comment -%}
-  ------------------------------------------------------------------------------------------------------------------------
-  CSS
-  ------------------------------------------------------------------------------------------------------------------------
+  RELATED PRODUCTS
+  Automatically shows Shopify recommended/related products.
+  The current product is excluded automatically.
 {%- endcomment -%}
 
 <style>
@@ -17,7 +17,6 @@
     }
   }
 
-  /* Product rating */
   .homepage-product-card__rating {
     display: flex;
     align-items: center;
@@ -71,7 +70,14 @@
     line-height: 1;
   }
 
-  /* CTA spacing */
+  .homepage-product-card__category {
+    margin-bottom: 5px;
+  }
+
+  .homepage-product-card__highlights {
+    margin-top: 5px;
+  }
+
   .homepage-product-grid__cta {
     display: flex;
     justify-content: center;
@@ -80,120 +86,88 @@
 </style>
 
 
-{%- if section.blocks.size > 0 -%}
-
-  {%- comment -%}
-    Save the current product before looping through manually selected products.
-    This allows us to exclude the product currently being viewed.
-  {%- endcomment -%}
+{%- if product != blank -%}
 
   {%- assign current_product = product -%}
 
+  {%- comment -%}
+    Get Shopify's automatic product recommendations.
+  {%- endcomment -%}
 
-  <div
-    class="
-      {% if section.settings.section_custom_class != blank %}
-        {{ section.settings.section_custom_class }}
-      {% endif %}
-      section-spacing
-      color-scheme
-      color-scheme--{{ section.settings.color_scheme.id }}
-    "
-  >
+  {%- assign related_products = recommendations.products -%}
 
-    {%- comment -%}
-      --------------------------------------------------------------------------------------------------------------------
-      SECTION HEADER
-      --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-
-    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
-
-      <div class="container">
-
-        <div class="section-header">
-
-          {%- if section.settings.subheading != blank -%}
-
-            <p class="section-header__subheading">
-              {{ section.settings.subheading }}
-            </p>
-
-          {%- endif -%}
+  {%- if related_products == blank -%}
+    {%- assign related_products = product.collections.first.products -%}
+  {%- endif -%}
 
 
-          {%- if section.settings.heading != blank -%}
+  {%- if related_products != blank -%}
 
-            <h2 class="h2">
-              {{ section.settings.heading }}
-            </h2>
+    <div
+      class="
+        {% if section.settings.section_custom_class != blank %}
+          {{ section.settings.section_custom_class }}
+        {% endif %}
+        section-spacing
+        color-scheme
+        color-scheme--{{ section.settings.color_scheme.id }}
+      "
+    >
 
-          {%- endif -%}
+      {%- comment -%}
+        SECTION HEADER
+      {%- endcomment -%}
+
+      {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+
+        <div class="container">
+
+          <div class="section-header">
+
+            {%- if section.settings.subheading != blank -%}
+              <p class="section-header__subheading">
+                {{ section.settings.subheading }}
+              </p>
+            {%- endif -%}
+
+            {%- if section.settings.heading != blank -%}
+              <h2 class="h2">
+                {{ section.settings.heading }}
+              </h2>
+            {%- endif -%}
+
+          </div>
 
         </div>
 
-      </div>
-
-    {%- endif -%}
+      {%- endif -%}
 
 
-    <div class="container">
+      <div class="container">
 
-      <div class="product-list product-list--center">
+        <div class="product-list product-list--center">
 
+          {%- assign products_shown = 0 -%}
 
-        {%- comment -%}
-          ======================================================================
-          MANUAL PRODUCT SEQUENCE
-          
-          The order of these blocks is the order in which products appear.
-          
-          Example:
-          
-          Block 1 = Julie
-          Block 2 = Mary
-          Block 3 = Vibra Pink
-          Block 4 = Vibra Grey
-          
-          You can drag blocks in Shopify Customizer to change the order.
-          ======================================================================
-        {%- endcomment -%}
-
-
-        {%- for block in section.blocks -%}
-
-          {%- assign selected_product = block.settings.product -%}
-
-
-          {%- if selected_product != blank -%}
+          {%- for selected_product in related_products -%}
 
             {%- comment -%}
-              Skip the current product if this section is being displayed
-              on a product page.
+              NEVER show the product currently being viewed.
             {%- endcomment -%}
 
-            {%- unless current_product != blank and selected_product.id == current_product.id -%}
-
-
-              {%- comment -%}
-                PRODUCT CATEGORY
-              {%- endcomment -%}
+            {%- if selected_product.id != current_product.id and products_shown < section.settings.max_products -%}
 
               {%- assign product_category = blank -%}
 
               {%- for product_collection in selected_product.collections -%}
 
                 {%- assign collection_name = product_collection.title | strip -%}
-
                 {%- assign collection_name_downcase = collection_name | downcase -%}
-
 
                 {%- unless collection_name_downcase == 'all collections' -%}
 
                   {%- if product_category == blank -%}
-
                     {%- assign product_category = collection_name -%}
-
                   {%- endif -%}
 
                 {%- endunless -%}
@@ -201,23 +175,13 @@
               {%- endfor -%}
 
 
-              {%- comment -%}
-                PRODUCT HIGHLIGHTS
-              {%- endcomment -%}
-
               {%- assign product_highlights = selected_product.metafields.custom.product_highlights.value -%}
-
-
-              {%- comment -%}
-                PRODUCT RATING
-              {%- endcomment -%}
 
               {%- assign rating_count = selected_product.metafields.custom.product_rating.value.rating | plus: 0 -%}
 
 
               <div
                 class="product-list__item"
-                {{ block.shopify_attributes }}
               >
 
                 <div class="product-card">
@@ -311,20 +275,17 @@
 
                             {%- assign previous_star = star | minus: 1 -%}
 
-
                             {%- if rating_count >= star -%}
 
                               <span class="homepage-product-card__star homepage-product-card__star--full">
                                 ★
                               </span>
 
-
                             {%- elsif rating_count > previous_star -%}
 
                               <span class="homepage-product-card__star homepage-product-card__star--half">
                                 ★
                               </span>
-
 
                             {%- else -%}
 
@@ -337,7 +298,6 @@
                           {%- endfor -%}
 
                         </div>
-
 
                         <span class="homepage-product-card__rating-value">
                           {{ rating_count }}
@@ -353,9 +313,7 @@
                     {%- endcomment -%}
 
                     <div class="product-card__price">
-
                       {%- render 'price-list', product: selected_product -%}
-
                     </div>
 
 
@@ -366,48 +324,47 @@
               </div>
 
 
-            {%- endunless -%}
+              {%- assign products_shown = products_shown | plus: 1 -%}
 
-          {%- endif -%}
+            {%- endif -%}
 
-        {%- endfor -%}
-
-
-      </div>
-
-
-      {%- comment -%}
-        --------------------------------------------------------------------------------------------------------------------
-        CTA BUTTON
-        --------------------------------------------------------------------------------------------------------------------
-      {%- endcomment -%}
-
-      {%- if section.settings.show_cta and section.settings.cta_text != blank -%}
-
-        <div class="homepage-product-grid__cta">
-
-          <a
-            href="{{ section.settings.cta_link }}"
-            class="button"
-          >
-            {{ section.settings.cta_text }}
-          </a>
+          {%- endfor -%}
 
         </div>
 
-      {%- endif -%}
+
+        {%- comment -%}
+          CTA BUTTON
+        {%- endcomment -%}
+
+        {%- if section.settings.show_cta and section.settings.cta_text != blank -%}
+
+          <div class="homepage-product-grid__cta">
+
+            <a
+              href="{{ section.settings.cta_link }}"
+              class="button"
+            >
+              {{ section.settings.cta_text }}
+            </a>
+
+          </div>
+
+        {%- endif -%}
+
+      </div>
 
     </div>
 
-  </div>
+  {%- endif -%}
 
 {%- endif -%}
 
 
 {% schema %}
 {
-  "name": "Featured products custom",
-  "class": "shopify-section--featured-products",
+  "name": "Related products custom",
+  "class": "shopify-section--related-products",
 
   "settings": [
 
@@ -422,7 +379,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Featured products"
+      "default": "You may also like"
     },
 
     {
@@ -438,10 +395,19 @@
       "default": "scheme-1"
     },
 
-
     {
       "type": "header",
       "content": "Product layout"
+    },
+
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4
     },
 
     {
@@ -484,7 +450,6 @@
       "default": 1
     },
 
-
     {
       "type": "header",
       "content": "CTA button"
@@ -494,14 +459,14 @@
       "type": "checkbox",
       "id": "show_cta",
       "label": "Show CTA button",
-      "default": true
+      "default": false
     },
 
     {
       "type": "text",
       "id": "cta_text",
       "label": "Button text",
-      "default": "SE ALLE 10 PRODUKTER"
+      "default": "SE ALLE PRODUKTER"
     },
 
     {
@@ -512,58 +477,10 @@
 
   ],
 
-
-  "blocks": [
-
-    {
-      "type": "product",
-      "name": "Product",
-
-      "settings": [
-
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Select product"
-        }
-
-      ]
-
-    }
-
-  ],
-
-
-  "max_blocks": 10,
-
-
   "presets": [
-
     {
-      "name": "Featured products custom",
-
-      "blocks": [
-
-        {
-          "type": "product"
-        },
-
-        {
-          "type": "product"
-        },
-
-        {
-          "type": "product"
-        },
-
-        {
-          "type": "product"
-        }
-
-      ]
-
+      "name": "Related products custom"
     }
-
   ]
 
 }
