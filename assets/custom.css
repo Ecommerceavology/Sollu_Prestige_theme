@@ -3968,6 +3968,9 @@ background:transparent !important;
 .cart_cst_page .empty-state {
     padding: 0;
 }
+.cart_cst_page p {
+    margin-top: 5px !important;
+}
 
 
 
