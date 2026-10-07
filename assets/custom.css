@@ -4077,6 +4077,10 @@ background:transparent !important;
 }
 
 
+.About_Sec_7 .collection-card .zoom-image{
+    transition: transform 0.7s cubic-bezier(.25,.46,.45,.94) !important;
+}
+
 
 
 
