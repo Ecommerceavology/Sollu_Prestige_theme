@@ -4040,6 +4040,10 @@ background:transparent !important;
     margin-top: 0 !important;
 }
 
+.All_pro_sec .dvb-fp__image-wrapper {
+    position: relative;
+}
+
 .All_pro_sec .dvb-fp__image-wrapper:before {
     content: "";
     position: absolute;
