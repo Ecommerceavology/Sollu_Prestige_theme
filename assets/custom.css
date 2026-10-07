@@ -2615,7 +2615,7 @@ span.custom-product-card__price-current {
 
 .Pro_detail_sec .feature-badge {
     gap: 12px;
-    align-items: center;
+    align-items: start;
     max-width: fit-content;
 }
 .Pro_detail_sec img.constrained-image {
@@ -3936,7 +3936,7 @@ background:transparent !important;
     padding-bottom: 7px;
 }
 
-.sollu-footer__column:nth-child(4) .sollu-footer__links li:nth-child(5) {
+.sollu-footer__column:nth-child(4) .sollu-footer__links li:nth-child(7) {
     display: none !IMPORTANT;
 }
 
