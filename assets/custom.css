@@ -4089,7 +4089,9 @@ background:transparent !important;
 shipping-estimator .form-control::before {
     display: none;
 }
-
+shipping-estimator label.floating-label.text-xs {
+    background: transparent;
+}
 
 
 
