@@ -3973,7 +3973,16 @@ background:transparent !important;
     margin-top: 10px !important;
 }
 
-
+.All_pro_sec .dvb-fp__heading {
+    color: #2a2420;
+    text-align: left;
+    font-size: 46px;
+    line-height: 50.6px;
+    letter-spacing: .46px;
+    font-weight: 300!important;
+    margin-top: 11px!important;
+    text-transform: unset;
+}
 
 
 
