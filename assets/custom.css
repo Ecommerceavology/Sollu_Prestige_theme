@@ -3964,6 +3964,23 @@ background:transparent !important;
     border-color: #2a2420!important;
 }
 
+
+.cart_cst_page .empty-state {
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
