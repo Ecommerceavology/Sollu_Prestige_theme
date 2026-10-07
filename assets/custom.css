@@ -4114,6 +4114,10 @@ country-selector.contents .form-control {
     flex-direction: column-reverse;
     gap: 0;
 }
+country-selector.contents .form-control svg.icon.icon-dropdown-chevron {
+    bottom: 0 !important;
+    top: 60%;
+}
 
 
 
