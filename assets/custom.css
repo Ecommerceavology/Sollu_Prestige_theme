@@ -3294,10 +3294,10 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     font-weight: 300!important;
 }
 .cart-note-save-button {
-    background: #2a2420;
-    border: 1px solid #2a2420!important;
+    background: #2a2420 !important;
+    border: 1px solid #2a2420 !important;
     transition: 0.3s all ease-in-out;
-    color: #faf7f2;
+    color: #faf7f2 !important;
 }
 .cart-note-save-button:hover {
     background: #faf7f2;
