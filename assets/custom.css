@@ -4092,7 +4092,9 @@ shipping-estimator .form-control::before {
 shipping-estimator label.floating-label.text-xs {
     background: transparent;
 }
-
+.cart_cst_page .shipping-estimator__form .button {
+    margin: 0 !important;
+}
 
 
 
