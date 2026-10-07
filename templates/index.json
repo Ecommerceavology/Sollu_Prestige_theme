@@ -262,6 +262,83 @@
         "content": ""
       }
     },
+    "all_products_qBUhpb": {
+      "type": "all-products",
+      "blocks": {
+        "dvb_product_mYDC9k": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "julie"
+          }
+        },
+        "dvb_product_Rr3xwH": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-ease"
+          }
+        },
+        "dvb_product_pzTDCq": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "mary"
+          }
+        },
+        "dvb_product_hNWXyK": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "vibra-in-grey"
+          }
+        },
+        "dvb_product_BAtEVU": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "vibra-in-pink"
+          }
+        },
+        "dvb_product_t3AFKw": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-relief-pro"
+          }
+        },
+        "dvb_product_Aje6aJ": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-relief"
+          }
+        },
+        "dvb_product_6MeRyg": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-aqua-flosser"
+          }
+        }
+      },
+      "block_order": [
+        "dvb_product_mYDC9k",
+        "dvb_product_Rr3xwH",
+        "dvb_product_pzTDCq",
+        "dvb_product_hNWXyK",
+        "dvb_product_BAtEVU",
+        "dvb_product_t3AFKw",
+        "dvb_product_Aje6aJ",
+        "dvb_product_6MeRyg"
+      ],
+      "name": "DVB Featured Products",
+      "settings": {
+        "dvb_fp_custom_class": "",
+        "dvb_fp_color_scheme": "",
+        "dvb_fp_subheading": "Udvalgte",
+        "dvb_fp_heading": "FEATURED PRODUCTS",
+        "dvb_fp_products_per_row_mobile": "2",
+        "dvb_fp_products_per_row_desktop": 4,
+        "dvb_fp_horizontal_gap": 24,
+        "dvb_fp_vertical_gap": 40,
+        "dvb_fp_show_cta": true,
+        "dvb_fp_cta_text": "SE ALLE PRODUKTER",
+        "dvb_fp_cta_link": ""
+      }
+    },
     "custom_product_feature_73g4FA": {
       "type": "custom-product-feature",
       "name": "Custom Product Feature",
@@ -593,6 +670,7 @@
     "image-with-text-overlay-1",
     "multi_column_g6gVwX",
     "collection_list_wchGVw",
+    "all_products_qBUhpb",
     "custom_product_feature_73g4FA",
     "multi-column",
     "images-with-text-scroll",
