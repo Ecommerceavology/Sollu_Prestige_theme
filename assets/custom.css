@@ -4125,7 +4125,9 @@ background:transparent !important;
 .cart_cst_page .cart-page .shipping-estimator__form {
     justify-content: center;
 }
-
+.cart_cst_page .cart-page .shipping-estimator__form {
+        background: #2a2420!important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
