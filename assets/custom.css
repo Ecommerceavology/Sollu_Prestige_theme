@@ -4106,7 +4106,7 @@ background:transparent !important;
     margin-top: 0 !important;
     margin-bottom: 15px !IMPORTANT;
 }
-.cart_cst_page .cart-page country-selector.contents label.floating-label.text-xs {
+/* .cart_cst_page .cart-page country-selector.contents label.floating-label.text-xs {
     position: unset !important;
 }
 .cart_cst_page .cart-page country-selector.contents .form-control {
@@ -4117,7 +4117,7 @@ background:transparent !important;
 .cart_cst_page .cart-page country-selector.contents .form-control svg.icon.icon-dropdown-chevron {
     bottom: 0 !important;
     top: 60%;
-}
+} */
 
 
 
