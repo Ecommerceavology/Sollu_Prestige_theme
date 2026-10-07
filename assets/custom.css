@@ -4106,7 +4106,14 @@ shipping-estimator.shipping-estimator.bordered-box p.bordered-box__title.h4 {
     margin-top: 0 !important;
     margin-bottom: 15px !IMPORTANT;
 }
-
+country-selector.contents label.floating-label.text-xs {
+    position: unset !important;
+}
+country-selector.contents .form-control {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+}
 
 
 
