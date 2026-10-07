@@ -6017,7 +6017,7 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     }
 
     .All_pro_sec .dvb-fp__grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
 
