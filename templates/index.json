@@ -262,55 +262,6 @@
         "content": ""
       }
     },
-    "featured-collections-2": {
-      "type": "featured-collections",
-      "name": "All Products section",
-      "settings": {
-        "section_custom_class": "All_pro_sec",
-        "heading": "Mest solgte Sollu produkter",
-        "subheading": "Udvalgte",
-        "color_scheme": "scheme-1",
-        "max_products": 10,
-        "products_per_row_mobile": 2,
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1
-      }
-    },
-    "all_products_UrFpb7": {
-      "type": "all-products",
-      "name": "All products",
-      "settings": {
-        "all_products_custom_class": "",
-        "all_products_color_scheme": "",
-        "all_products_subheading": "Udvalgte",
-        "all_products_heading": "ALLE PRODUKTER",
-        "all_products_collection": "",
-        "all_products_limit": 10,
-        "all_products_columns_mobile": 2,
-        "all_products_columns_desktop": 4,
-        "all_products_horizontal_gap": 20,
-        "all_products_vertical_gap": 30,
-        "all_products_show_cta": true,
-        "all_products_cta_text": "SE ALLE PRODUKTER",
-        "all_products_cta_link": ""
-      }
-    },
-    "featured_collections_wiXdTA": {
-      "type": "featured-collections",
-      "name": "All Products section",
-      "settings": {
-        "section_custom_class": "All_pro_sec1",
-        "heading": "Mest solgte Sollu produkter",
-        "subheading": "Udvalgte",
-        "color_scheme": "scheme-1",
-        "max_products": 10,
-        "products_per_row_mobile": 2,
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1
-      }
-    },
     "custom_product_feature_73g4FA": {
       "type": "custom-product-feature",
       "name": "Custom Product Feature",
@@ -642,9 +593,6 @@
     "image-with-text-overlay-1",
     "multi_column_g6gVwX",
     "collection_list_wchGVw",
-    "featured-collections-2",
-    "all_products_UrFpb7",
-    "featured_collections_wiXdTA",
     "custom_product_feature_73g4FA",
     "multi-column",
     "images-with-text-scroll",
