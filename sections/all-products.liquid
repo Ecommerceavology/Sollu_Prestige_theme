@@ -1,0 +1,508 @@
+{%- comment -%}
+  ========================================================================
+  ALL PRODUCTS SECTION
+  Completely independent from Related Products section.
+  ========================================================================
+{%- endcomment -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --all-products-columns-mobile: {{ section.settings.all_products_columns_mobile }};
+    --all-products-columns-desktop: {{ section.settings.all_products_columns_desktop }};
+  }
+
+  .all-products-section-{{ section.id }} {
+    width: 100%;
+  }
+
+  .all-products-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(var(--all-products-columns-mobile), minmax(0, 1fr));
+    column-gap: {{ section.settings.all_products_horizontal_gap }}px;
+    row-gap: {{ section.settings.all_products_vertical_gap }}px;
+  }
+
+  @media screen and (min-width: 700px) {
+    .all-products-grid-{{ section.id }} {
+      grid-template-columns: repeat(var(--all-products-columns-desktop), minmax(0, 1fr));
+    }
+  }
+
+  /*
+    Rating
+  */
+
+  .all-products-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+  }
+
+  .all-products-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    line-height: 1;
+  }
+
+  .all-products-star {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .all-products-star--full {
+    color: #000;
+  }
+
+  .all-products-star--empty {
+    color: #000;
+    opacity: 0.2;
+  }
+
+  .all-products-star--half {
+    color: #000;
+  }
+
+  .all-products-star--half::after {
+    content: "★";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    color: #000;
+  }
+
+  .all-products-rating-number {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  /*
+    CTA
+  */
+
+  .all-products-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+</style>
+
+
+{%- comment -%}
+  ========================================================================
+  SECTION
+  ========================================================================
+{%- endcomment -%}
+
+<div
+  class="
+    all-products-section-{{ section.id }}
+    {% if section.settings.all_products_custom_class != blank %}
+      {{ section.settings.all_products_custom_class }}
+    {% endif %}
+    section-spacing
+    color-scheme
+    color-scheme--{{ section.settings.all_products_color_scheme.id }}
+  "
+>
+
+  {%- comment -%}
+    ======================================================================
+    HEADER
+    ======================================================================
+  {%- endcomment -%}
+
+  {%- if section.settings.all_products_subheading != blank
+    or section.settings.all_products_heading != blank
+  -%}
+
+    <div class="container">
+
+      <div class="section-header">
+
+        {%- if section.settings.all_products_subheading != blank -%}
+
+          <p class="section-header__subheading">
+            {{ section.settings.all_products_subheading }}
+          </p>
+
+        {%- endif -%}
+
+
+        {%- if section.settings.all_products_heading != blank -%}
+
+          <h2 class="h2">
+            {{ section.settings.all_products_heading }}
+          </h2>
+
+        {%- endif -%}
+
+      </div>
+
+    </div>
+
+  {%- endif -%}
+
+
+  {%- comment -%}
+    ======================================================================
+    PRODUCTS
+    ======================================================================
+  {%- endcomment -%}
+
+  {%- assign all_products_collection = section.settings.all_products_collection -%}
+
+
+  {%- if all_products_collection != blank
+    and all_products_collection.products_count > 0
+  -%}
+
+    <div class="container">
+
+      <div class="all-products-grid-{{ section.id }}">
+
+        {%- for product in all_products_collection.products
+          limit: section.settings.all_products_limit
+        -%}
+
+          {%- comment -%}
+            --------------------------------------------------------------
+            CATEGORY
+            --------------------------------------------------------------
+          {%- endcomment -%}
+
+          {%- assign all_products_category = blank -%}
+
+          {%- for product_collection in product.collections -%}
+
+            {%- assign current_collection_name = product_collection.title | strip -%}
+            {%- assign current_collection_name_downcase = current_collection_name | downcase -%}
+
+            {%- unless current_collection_name_downcase == 'all collections' -%}
+
+              {%- if all_products_category == blank -%}
+                {%- assign all_products_category = current_collection_name -%}
+              {%- endif -%}
+
+            {%- endunless -%}
+
+          {%- endfor -%}
+
+
+          {%- comment -%}
+            --------------------------------------------------------------
+            HIGHLIGHTS
+            --------------------------------------------------------------
+          {%- endcomment -%}
+
+          {%- assign all_products_highlights = product.metafields.custom.product_highlights.value -%}
+
+
+          {%- comment -%}
+            --------------------------------------------------------------
+            RATING NUMBER
+            --------------------------------------------------------------
+          {%- endcomment -%}
+
+          {%- assign all_products_rating = product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+
+
+          {%- comment -%}
+            --------------------------------------------------------------
+            PRODUCT CARD
+            --------------------------------------------------------------
+          {%- endcomment -%}
+
+          <div class="all-products-item">
+
+            <article class="all-products-card">
+
+
+              {%- comment -%}
+                IMAGE
+              {%- endcomment -%}
+
+              {%- if product.featured_media != blank -%}
+
+                <a
+                  href="{{ product.url }}"
+                  class="all-products-card__image-link"
+                >
+
+                  {{
+                    product.featured_media
+                    | image_url: width: 1200
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '200,300,400,500,600,800,1000,1200',
+                      sizes: '(max-width: 699px) 50vw, 25vw',
+                      class: 'all-products-card__image'
+                  }}
+
+                </a>
+
+              {%- endif -%}
+
+
+              <div class="all-products-card__info">
+
+
+                {%- comment -%}
+                  CATEGORY
+                {%- endcomment -%}
+
+                {%- if all_products_category != blank -%}
+
+                  <div class="all-products-category">
+                    {{ all_products_category }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- comment -%}
+                  TITLE
+                {%- endcomment -%}
+
+                <a
+                  href="{{ product.url }}"
+                  class="all-products-title"
+                >
+                  {{ product.title }}
+                </a>
+
+
+                {%- comment -%}
+                  HIGHLIGHTS
+                {%- endcomment -%}
+
+                {%- if all_products_highlights != blank -%}
+
+                  <div class="all-products-highlights">
+                    {{ all_products_highlights }}
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- comment -%}
+                  RATING
+                {%- endcomment -%}
+
+                {%- if all_products_rating > 0 -%}
+
+                  <div class="all-products-rating">
+
+                    <div
+                      class="all-products-stars"
+                      aria-label="{{ all_products_rating }} out of 5 stars"
+                    >
+
+                      {%- for star_number in (1..5) -%}
+
+                        {%- assign previous_star_number = star_number | minus: 1 -%}
+
+                        {%- if all_products_rating >= star_number -%}
+
+                          <span class="all-products-star all-products-star--full">
+                            ★
+                          </span>
+
+                        {%- elsif all_products_rating > previous_star_number -%}
+
+                          <span class="all-products-star all-products-star--half">
+                            ★
+                          </span>
+
+                        {%- else -%}
+
+                          <span class="all-products-star all-products-star--empty">
+                            ★
+                          </span>
+
+                        {%- endif -%}
+
+                      {%- endfor -%}
+
+                    </div>
+
+                    <span class="all-products-rating-number">
+                      {{ all_products_rating }}
+                    </span>
+
+                  </div>
+
+                {%- endif -%}
+
+
+                {%- comment -%}
+                  PRICE
+                {%- endcomment -%}
+
+                <div class="all-products-price">
+                  {%- render 'price-list', product: product -%}
+                </div>
+
+
+              </div>
+
+            </article>
+
+          </div>
+
+        {%- endfor -%}
+
+      </div>
+
+
+      {%- comment -%}
+        ==================================================================
+        CTA
+        ==================================================================
+      {%- endcomment -%}
+
+      {%- if section.settings.all_products_show_cta
+        and section.settings.all_products_cta_text != blank
+        and section.settings.all_products_cta_link != blank
+      -%}
+
+        <div class="all-products-cta">
+
+          <a
+            href="{{ section.settings.all_products_cta_link }}"
+            class="button"
+          >
+            {{ section.settings.all_products_cta_text }}
+          </a>
+
+        </div>
+
+      {%- endif -%}
+
+    </div>
+
+  {%- endif -%}
+
+</div>
+
+
+{% schema %}
+{
+  "name": "All products",
+  "tag": "section",
+  "class": "shopify-section--all-products",
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "all_products_custom_class",
+      "label": "Custom class",
+      "info": "Add a custom CSS class to this section."
+    },
+    {
+      "type": "color_scheme",
+      "id": "all_products_color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "all_products_subheading",
+      "label": "Subheading",
+      "default": "Udvalgte"
+    },
+    {
+      "type": "text",
+      "id": "all_products_heading",
+      "label": "Heading",
+      "default": "ALLE PRODUKTER"
+    },
+    {
+      "type": "collection",
+      "id": "all_products_collection",
+      "label": "Product collection"
+    },
+    {
+      "type": "range",
+      "id": "all_products_limit",
+      "label": "Products to show",
+      "min": 3,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "all_products_columns_mobile",
+      "label": "Products per row on mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "all_products_columns_desktop",
+      "label": "Products per row on desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "all_products_horizontal_gap",
+      "label": "Horizontal gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "all_products_vertical_gap",
+      "label": "Vertical gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "CTA button"
+    },
+    {
+      "type": "checkbox",
+      "id": "all_products_show_cta",
+      "label": "Show CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "all_products_cta_text",
+      "label": "CTA text",
+      "default": "SE ALLE PRODUKTER"
+    },
+    {
+      "type": "url",
+      "id": "all_products_cta_link",
+      "label": "CTA link"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "All products"
+    }
+  ]
+}
+{% endschema %}
