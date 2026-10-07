@@ -3940,6 +3940,25 @@ background:transparent !important;
     display: none !IMPORTANT;
 }
 
+.cart_cst_page .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border: 1px solid #292727;
+    background: transparent;
+    text-decoration: none;
+    min-width: 250px!important;
+    min-height: 52px!important;
+    color: #2a2420!important;
+    text-align: center!important;
+    font-size: 12px!important;
+    letter-spacing: 1.68px!important;
+    font-weight: 400!important;
+    text-transform: uppercase!important;
+    transition: all .3s ease!important;
+}
+
 
 /* //responsive  */
 @media (max-width: 1300px) {
