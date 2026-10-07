@@ -4095,6 +4095,15 @@ shipping-estimator label.floating-label.text-xs {
 .cart_cst_page .shipping-estimator__form .button {
     margin: 0 !important;
 }
+shipping-estimator.shipping-estimator.bordered-box {
+    display: flex;
+    flex-direction: column;
+}
+shipping-estimator.shipping-estimator.bordered-box p.bordered-box__title.h4 {
+    position: unset !important;
+    margin: 0 auto;
+    transform: unset !important;
+}
 
 
 
