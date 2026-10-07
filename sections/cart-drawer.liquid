@@ -84,8 +84,14 @@
           <div class="v-stack gap-0.5 justify-items-start">
             {%- if section.settings.show_cart_note -%}
               {%- assign cart_note_dialog_id = 'cart-note-' | append: section.id -%}
-              <button class="link-faded-reverse" aria-controls="{{ cart_note_dialog_id }}">{{ 'cart.general.add_order_note' | t }}</button>
-
+              {% comment %} <button class="link-faded-reverse" aria-controls="{{ cart_note_dialog_id }}">{{ 'cart.general.add_order_note' | t }}</button> {% endcomment %}
+              <button
+                class="link-faded-reverse{% if cart.note != blank %} has-note{% endif %}"
+                aria-controls="{{ cart_note_dialog_id }}"
+              >
+                {{ 'cart.general.add_order_note' | t }}
+              </button>
+              
               <cart-note-dialog id="{{ cart_note_dialog_id }}" class="cart-drawer__order-note">
                 <div class="form">
                   <cart-note class="form-control">
