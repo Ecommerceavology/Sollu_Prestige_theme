@@ -3983,7 +3983,18 @@ background:transparent !important;
     margin-top: 11px!important;
     text-transform: unset;
 }
-
+.All_pro_sec .dvb-fp__subheading {
+    letter-spacing: 1px;
+    text-transform: unset!important;
+    line-height: normal;
+    margin-top: 7px;
+    color: #b8965a;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 2.64px;
+    font-weight: 400!important;
+    text-transform: uppercase;
+}
 
 
 
