@@ -4715,6 +4715,15 @@ x-header.header.Header_sec {
     gap: 10px;
     grid: "primary-nav logo secondary-nav" / minmax(0, 1fr) auto minmax(0, 1fr);
 } */
+ .All_pro_sec .dvb-fp__heading {
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    .All_pro_sec .dvb-fp__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px !important;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -6001,6 +6010,19 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
     .eu-wf-steps {
         margin-bottom: 20px !important;
+    }
+     .All_pro_sec .dvb-fp__heading {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .All_pro_sec .dvb-fp__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px !important;
+    }
+
+    .All_pro_sec .dvb-fp__info {
+        padding-top: 16px;
     }
 }
 
@@ -8702,6 +8724,44 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     font-size: 28px !important;
    
 }
+ .All_pro_sec .dvb-fp__heading {
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 24px;
+    }
+
+    .All_pro_sec .dvb-fp__subheading {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .All_pro_sec .dvb-fp__category {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .All_pro_sec a.dvb-fp__title {
+        font-size: 19px;
+        line-height: 23px;
+    }
+
+    .All_pro_sec .dvb-fp__highlights {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .All_pro_sec .dvb-fp__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px !important;
+    }
+
+    .All_pro_sec .dvb-fp__info {
+        padding-top: 12px;
+    }
+
+    .All_pro_sec .dvb-fp__image-wrapper:before {
+        height: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -9840,7 +9900,29 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     padding: 10px 10px !important;
     max-width: 60px !important;
 }
-  
+   .All_pro_sec .dvb-fp__heading {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+
+    .All_pro_sec .dvb-fp__grid {
+        gap: 12px !important;
+    }
+
+    .All_pro_sec a.dvb-fp__title {
+        font-size: 17px;
+        line-height: 21px;
+    }
+
+    .All_pro_sec .dvb-fp__highlights {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .All_pro_sec .dvb-fp__info {
+        padding-top: 10px;
+    }
 }
 
 @media (max-width: 350px){
