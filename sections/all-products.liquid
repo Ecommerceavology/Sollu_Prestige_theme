@@ -1,19 +1,12 @@
 {%- comment -%}
   ====================================================================================================
   DVB FEATURED PRODUCTS
-  Independent featured product section
-
-  All custom classes, settings and block IDs use the "dvb_fp_" namespace
-  to avoid conflicts with existing theme sections.
+  Independent product grid with manually sortable product blocks.
+  Each product is a Shopify block, so the merchant can drag products
+  up/down in the Theme Editor to control the storefront order.
   ====================================================================================================
 {%- endcomment -%}
 
-
-{%- comment -%}
-  ====================================================================================================
-  STYLES
-  ====================================================================================================
-{%- endcomment -%}
 
 <style>
   #shopify-section-{{ section.id }} .dvb-fp {
@@ -37,9 +30,7 @@
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Product card
-     ----------------------------------------------------------------------------------------------- */
+  /* Product card */
 
   #shopify-section-{{ section.id }} .dvb-fp__card {
     min-width: 0;
@@ -70,18 +61,14 @@
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Category
-     ----------------------------------------------------------------------------------------------- */
+  /* Category */
 
   #shopify-section-{{ section.id }} .dvb-fp__category {
     margin-top: 12px;
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Product title
-     ----------------------------------------------------------------------------------------------- */
+  /* Product title */
 
   #shopify-section-{{ section.id }} .dvb-fp__title {
     display: inline-block;
@@ -90,18 +77,14 @@
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Product highlights
-     ----------------------------------------------------------------------------------------------- */
+  /* Highlights */
 
   #shopify-section-{{ section.id }} .dvb-fp__highlights {
     margin-top: 6px;
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Rating
-     ----------------------------------------------------------------------------------------------- */
+  /* Rating */
 
   #shopify-section-{{ section.id }} .dvb-fp__rating {
     display: flex;
@@ -157,18 +140,14 @@
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Price
-     ----------------------------------------------------------------------------------------------- */
+  /* Price */
 
   #shopify-section-{{ section.id }} .dvb-fp__price {
     margin-top: 7px;
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     CTA
-     ----------------------------------------------------------------------------------------------- */
+  /* CTA */
 
   #shopify-section-{{ section.id }} .dvb-fp__cta {
     display: flex;
@@ -177,16 +156,7 @@
   }
 
 
-  /* -----------------------------------------------------------------------------------------------
-     Mobile
-     ----------------------------------------------------------------------------------------------- */
-
   @media screen and (max-width: 699px) {
-    #shopify-section-{{ section.id }} .dvb-fp__grid {
-      column-gap: var(--dvb-fp-horizontal-gap);
-      row-gap: var(--dvb-fp-vertical-gap);
-    }
-
     #shopify-section-{{ section.id }} .dvb-fp__star {
       width: 14px;
       height: 14px;
@@ -196,12 +166,6 @@
   }
 </style>
 
-
-{%- comment -%}
-  ====================================================================================================
-  SECTION
-  ====================================================================================================
-{%- endcomment -%}
 
 <div
   class="
@@ -219,9 +183,9 @@
 
 
     {%- comment -%}
-      ==================================================================================================
-      SECTION HEADER
-      ==================================================================================================
+      ================================================================================================
+      HEADER
+      ================================================================================================
     {%- endcomment -%}
 
     {%- if section.settings.dvb_fp_subheading != blank or section.settings.dvb_fp_heading != blank -%}
@@ -233,7 +197,6 @@
             {{ section.settings.dvb_fp_subheading }}
           </p>
         {%- endif -%}
-
 
         {%- if section.settings.dvb_fp_heading != blank -%}
           <h2 class="dvb-fp__heading">
@@ -247,283 +210,266 @@
 
 
     {%- comment -%}
-      ==================================================================================================
-      CHECK WHETHER THERE ARE ANY PRODUCTS
-      ==================================================================================================
+      ================================================================================================
+      CHECK IF ANY PRODUCT BLOCK HAS A PRODUCT
+      ================================================================================================
     {%- endcomment -%}
 
     {%- assign dvb_fp_has_products = false -%}
 
     {%- for block in section.blocks -%}
 
-      {%- if block.settings.dvb_fp_collection != blank -%}
-
-        {%- for product in block.settings.dvb_fp_collection.products limit: block.settings.dvb_fp_products_count -%}
-
-          {%- assign dvb_fp_has_products = true -%}
-          {%- break -%}
-
-        {%- endfor -%}
-
-      {%- endif -%}
-
-      {%- if dvb_fp_has_products -%}
+      {%- if block.settings.dvb_fp_product != blank -%}
+        {%- assign dvb_fp_has_products = true -%}
         {%- break -%}
       {%- endif -%}
 
     {%- endfor -%}
 
 
-    {%- comment -%}
-      ==================================================================================================
-      PRODUCTS
-      Section is completely hidden if there are no products.
-      ==================================================================================================
-    {%- endcomment -%}
-
     {%- if dvb_fp_has_products -%}
+
+
+      {%- comment -%}
+        ==============================================================================================
+        PRODUCT GRID
+
+        IMPORTANT:
+        The order here is exactly the order of the blocks in the Shopify Theme Editor.
+
+        Example:
+
+        1. Mary
+        2. Sollu Vibra
+        3. Sollu Relief
+        4. Sollu Relief Pro
+
+        If you drag Relief Pro above Mary in the Theme Editor,
+        Relief Pro will appear above Mary on the storefront.
+        ==============================================================================================
+      {%- endcomment -%}
 
       <div class="dvb-fp__grid">
 
 
         {%- for block in section.blocks -%}
 
-          {%- assign dvb_fp_collection = block.settings.dvb_fp_collection -%}
+          {%- assign dvb_fp_product = block.settings.dvb_fp_product -%}
 
 
-          {%- if dvb_fp_collection != blank -%}
+          {%- if dvb_fp_product != blank -%}
 
 
-            {%- for product in dvb_fp_collection.products limit: block.settings.dvb_fp_products_count -%}
+            {%- comment -%}
+              ========================================================================================
+              PRODUCT CATEGORY
+              Get category from the product's collections.
+              "All Collections" is ignored.
+              ========================================================================================
+            {%- endcomment -%}
+
+            {%- assign dvb_fp_product_category = blank -%}
+
+            {%- for product_collection in dvb_fp_product.collections -%}
+
+              {%- assign dvb_fp_collection_name = product_collection.title | strip -%}
+              {%- assign dvb_fp_collection_name_lower = dvb_fp_collection_name | downcase -%}
+
+              {%- unless dvb_fp_collection_name_lower == 'all collections' -%}
+
+                {%- if dvb_fp_product_category == blank -%}
+                  {%- assign dvb_fp_product_category = dvb_fp_collection_name -%}
+                {%- endif -%}
+
+              {%- endunless -%}
+
+            {%- endfor -%}
+
+
+            {%- comment -%}
+              ========================================================================================
+              PRODUCT HIGHLIGHTS
+              ========================================================================================
+            {%- endcomment -%}
+
+            {%- assign dvb_fp_product_highlights = dvb_fp_product.metafields.custom.product_highlights.value -%}
+
+
+            {%- comment -%}
+              ========================================================================================
+              PRODUCT RATING
+              Metafield:
+              custom.product_rating
+
+              Type:
+              Rating
+
+              We get the actual rating number first.
+              ========================================================================================
+            {%- endcomment -%}
+
+            {%- assign dvb_fp_rating_count = dvb_fp_product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+
+
+            <article
+              class="dvb-fp__card"
+              {{ block.shopify_attributes }}
+            >
 
 
               {%- comment -%}
-                ========================================================================================
-                PRODUCT CATEGORY
-                Get the first actual product collection.
-                "All Collections" is excluded.
-                ========================================================================================
+                ======================================================================================
+                PRODUCT IMAGE
+                ======================================================================================
               {%- endcomment -%}
 
-              {%- assign dvb_fp_product_category = blank -%}
+              {%- if dvb_fp_product.featured_media != blank -%}
 
-              {%- for product_collection in product.collections -%}
+                <a
+                  href="{{ dvb_fp_product.url }}"
+                  class="dvb-fp__image-link"
+                  aria-label="{{ dvb_fp_product.title | escape }}"
+                >
 
-                {%- assign dvb_fp_collection_name = product_collection.title | strip -%}
-                {%- assign dvb_fp_collection_name_lower = dvb_fp_collection_name | downcase -%}
+                  <div class="dvb-fp__image-wrapper">
 
-                {%- unless dvb_fp_collection_name_lower == 'all collections' -%}
+                    {{
+                      dvb_fp_product.featured_media
+                      | image_url: width: 1200
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '200,300,400,500,600,800,1000,1200',
+                        sizes: '(max-width: 699px) 50vw, 25vw',
+                        class: 'dvb-fp__image',
+                        alt: dvb_fp_product.featured_media.alt | default: dvb_fp_product.title
+                    }}
 
-                  {%- if dvb_fp_product_category == blank -%}
-                    {%- assign dvb_fp_product_category = dvb_fp_collection_name -%}
-                  {%- endif -%}
+                  </div>
 
-                {%- endunless -%}
+                </a>
 
-              {%- endfor -%}
-
-
-              {%- comment -%}
-                ========================================================================================
-                PRODUCT HIGHLIGHTS
-                ========================================================================================
-              {%- endcomment -%}
-
-              {%- assign dvb_fp_product_highlights = product.metafields.custom.product_highlights.value -%}
-
-
-              {%- comment -%}
-                ========================================================================================
-                PRODUCT RATING
-                Exact metafield:
-
-                Namespace: custom
-                Key: product_rating
-                Type: Rating
-
-                First get the rating number.
-                ========================================================================================
-              {%- endcomment -%}
-
-              {%- assign dvb_fp_rating_count = product.metafields.custom.product_rating.value.rating | plus: 0 -%}
+              {%- endif -%}
 
 
-              {%- comment -%}
-                ========================================================================================
-                PRODUCT CARD
-                ========================================================================================
-              {%- endcomment -%}
-
-              <article
-                class="dvb-fp__card"
-                {{ block.shopify_attributes }}
-              >
+              <div class="dvb-fp__info">
 
 
                 {%- comment -%}
-                  --------------------------------------------------------------------------------------
-                  IMAGE
-                  --------------------------------------------------------------------------------------
+                  ====================================================================================
+                  CATEGORY
+                  ====================================================================================
                 {%- endcomment -%}
 
-                {%- if product.featured_media != blank -%}
+                {%- if dvb_fp_product_category != blank -%}
 
-                  <a
-                    href="{{ product.url }}"
-                    class="dvb-fp__image-link"
-                    aria-label="{{ product.title | escape }}"
-                  >
-
-                    <div class="dvb-fp__image-wrapper">
-
-                      {{
-                        product.featured_media
-                        | image_url: width: 1200
-                        | image_tag:
-                          loading: 'lazy',
-                          widths: '200,300,400,500,600,800,1000,1200',
-                          sizes: '(max-width: 699px) 50vw, 25vw',
-                          class: 'dvb-fp__image',
-                          alt: product.featured_media.alt | default: product.title
-                      }}
-
-                    </div>
-
-                  </a>
+                  <div class="dvb-fp__category">
+                    {{ dvb_fp_product_category }}
+                  </div>
 
                 {%- endif -%}
 
 
-                <div class="dvb-fp__info">
+                {%- comment -%}
+                  ====================================================================================
+                  PRODUCT TITLE
+                  ====================================================================================
+                {%- endcomment -%}
+
+                <a
+                  href="{{ dvb_fp_product.url }}"
+                  class="dvb-fp__title"
+                >
+                  {{ dvb_fp_product.title }}
+                </a>
 
 
-                  {%- comment -%}
-                    ------------------------------------------------------------------------------------
-                    CATEGORY
-                    ------------------------------------------------------------------------------------
-                  {%- endcomment -%}
+                {%- comment -%}
+                  ====================================================================================
+                  PRODUCT HIGHLIGHTS
+                  ====================================================================================
+                {%- endcomment -%}
 
-                  {%- if dvb_fp_product_category != blank -%}
+                {%- if dvb_fp_product_highlights != blank -%}
 
-                    <div class="dvb-fp__category">
-                      {{ dvb_fp_product_category }}
-                    </div>
+                  <div class="dvb-fp__highlights">
+                    {{ dvb_fp_product_highlights }}
+                  </div>
 
-                  {%- endif -%}
-
-
-                  {%- comment -%}
-                    ------------------------------------------------------------------------------------
-                    PRODUCT TITLE
-                    ------------------------------------------------------------------------------------
-                  {%- endcomment -%}
-
-                  <a
-                    href="{{ product.url }}"
-                    class="dvb-fp__title"
-                  >
-                    {{ product.title }}
-                  </a>
+                {%- endif -%}
 
 
-                  {%- comment -%}
-                    ------------------------------------------------------------------------------------
-                    PRODUCT HIGHLIGHTS
-                    ------------------------------------------------------------------------------------
-                  {%- endcomment -%}
+                {%- comment -%}
+                  ====================================================================================
+                  RATING STARS
+                  ====================================================================================
+                {%- endcomment -%}
 
-                  {%- if dvb_fp_product_highlights != blank -%}
+                {%- if dvb_fp_rating_count > 0 -%}
 
-                    <div class="dvb-fp__highlights">
-                      {{ dvb_fp_product_highlights }}
-                    </div>
+                  <div class="dvb-fp__rating">
 
-                  {%- endif -%}
+                    <div
+                      class="dvb-fp__stars"
+                      aria-label="{{ dvb_fp_rating_count }} out of 5 stars"
+                    >
 
+                      {%- for dvb_fp_star in (1..5) -%}
 
-                  {%- comment -%}
-                    ------------------------------------------------------------------------------------
-                    PRODUCT RATING
-                    ------------------------------------------------------------------------------------
-
-                    Examples:
-
-                    5   = ★★★★★
-                    4.5 = ★★★★½
-                    4   = ★★★★☆
-                    3.5 = ★★★½☆
-                    3   = ★★★☆☆
-                    ------------------------------------------------------------------------------------
-                  {%- endcomment -%}
-
-                  {%- if dvb_fp_rating_count > 0 -%}
-
-                    <div class="dvb-fp__rating">
-
-                      <div
-                        class="dvb-fp__stars"
-                        aria-label="{{ dvb_fp_rating_count }} out of 5 stars"
-                      >
-
-                        {%- for dvb_fp_star in (1..5) -%}
-
-                          {%- assign dvb_fp_previous_star = dvb_fp_star | minus: 1 -%}
+                        {%- assign dvb_fp_previous_star = dvb_fp_star | minus: 1 -%}
 
 
-                          {%- if dvb_fp_rating_count >= dvb_fp_star -%}
+                        {%- if dvb_fp_rating_count >= dvb_fp_star -%}
 
-                            <span class="dvb-fp__star dvb-fp__star--full">
-                              ★
-                            </span>
-
-
-                          {%- elsif dvb_fp_rating_count > dvb_fp_previous_star -%}
-
-                            <span class="dvb-fp__star dvb-fp__star--half">
-                              ★
-                            </span>
+                          <span class="dvb-fp__star dvb-fp__star--full">
+                            ★
+                          </span>
 
 
-                          {%- else -%}
+                        {%- elsif dvb_fp_rating_count > dvb_fp_previous_star -%}
 
-                            <span class="dvb-fp__star dvb-fp__star--empty">
-                              ★
-                            </span>
-
-                          {%- endif -%}
-
-                        {%- endfor -%}
-
-                      </div>
+                          <span class="dvb-fp__star dvb-fp__star--half">
+                            ★
+                          </span>
 
 
-                      <span class="dvb-fp__rating-number">
-                        {{ dvb_fp_rating_count }}
-                      </span>
+                        {%- else -%}
+
+                          <span class="dvb-fp__star dvb-fp__star--empty">
+                            ★
+                          </span>
+
+                        {%- endif -%}
+
+                      {%- endfor -%}
 
                     </div>
 
-                  {%- endif -%}
 
-
-                  {%- comment -%}
-                    ------------------------------------------------------------------------------------
-                    PRICE
-                    ------------------------------------------------------------------------------------
-                  {%- endcomment -%}
-
-                  <div class="dvb-fp__price">
-
-                    {%- render 'price-list', product: product -%}
+                    <span class="dvb-fp__rating-number">
+                      {{ dvb_fp_rating_count }}
+                    </span>
 
                   </div>
 
+                {%- endif -%}
+
+
+                {%- comment -%}
+                  ====================================================================================
+                  PRICE
+                  ====================================================================================
+                {%- endcomment -%}
+
+                <div class="dvb-fp__price">
+
+                  {%- render 'price-list', product: dvb_fp_product -%}
 
                 </div>
 
-              </article>
 
-            {%- endfor -%}
+              </div>
+
+            </article>
 
           {%- endif -%}
 
@@ -533,40 +479,23 @@
 
 
       {%- comment -%}
-        ==================================================================================================
-        CTA BUTTON
-        ==================================================================================================
+        ==============================================================================================
+        CTA
+        ==============================================================================================
       {%- endcomment -%}
 
-      {%- if section.settings.dvb_fp_show_cta -%}
+      {%- if section.settings.dvb_fp_show_cta and section.settings.dvb_fp_cta_text != blank -%}
 
-        {%- assign dvb_fp_cta_link = section.settings.dvb_fp_cta_link -%}
+        <div class="dvb-fp__cta">
 
-        {%- if dvb_fp_cta_link == blank -%}
+          <a
+            href="{{ section.settings.dvb_fp_cta_link | default: routes.all_products_collection_url }}"
+            class="button"
+          >
+            {{ section.settings.dvb_fp_cta_text }}
+          </a>
 
-          {%- assign dvb_fp_first_collection = section.blocks.first.settings.dvb_fp_collection -%}
-
-          {%- if dvb_fp_first_collection != blank -%}
-            {%- assign dvb_fp_cta_link = dvb_fp_first_collection.url -%}
-          {%- endif -%}
-
-        {%- endif -%}
-
-
-        {%- if section.settings.dvb_fp_cta_text != blank and dvb_fp_cta_link != blank -%}
-
-          <div class="dvb-fp__cta">
-
-            <a
-              href="{{ dvb_fp_cta_link }}"
-              class="button"
-            >
-              {{ section.settings.dvb_fp_cta_text }}
-            </a>
-
-          </div>
-
-        {%- endif -%}
+        </div>
 
       {%- endif -%}
 
@@ -583,6 +512,7 @@
   "name": "DVB Featured Products",
   "tag": "section",
   "class": "shopify-section--dvb-featured-products",
+
   "settings": [
     {
       "type": "text",
@@ -676,38 +606,39 @@
     {
       "type": "url",
       "id": "dvb_fp_cta_link",
-      "label": "Button link",
-      "info": "If empty, the first selected collection link will be used."
+      "label": "Button link"
     }
   ],
+
   "blocks": [
     {
-      "type": "dvb_collection",
-      "name": "Product collection",
+      "type": "dvb_product",
+      "name": "Product",
       "settings": [
         {
-          "type": "collection",
-          "id": "dvb_fp_collection",
-          "label": "Collection"
-        },
-        {
-          "type": "range",
-          "id": "dvb_fp_products_count",
-          "label": "Products to show",
-          "min": 1,
-          "max": 50,
-          "step": 1,
-          "default": 8
+          "type": "product",
+          "id": "dvb_fp_product",
+          "label": "Select product"
         }
       ]
     }
   ],
+
   "presets": [
     {
       "name": "DVB Featured Products",
       "blocks": [
         {
-          "type": "dvb_collection"
+          "type": "dvb_product"
+        },
+        {
+          "type": "dvb_product"
+        },
+        {
+          "type": "dvb_product"
+        },
+        {
+          "type": "dvb_product"
         }
       ]
     }
