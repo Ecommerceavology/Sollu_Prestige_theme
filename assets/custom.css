@@ -4100,9 +4100,10 @@ shipping-estimator.shipping-estimator.bordered-box {
     flex-direction: column;
 }
 shipping-estimator.shipping-estimator.bordered-box p.bordered-box__title.h4 {
-    position: unset !important;
+    position: unset!important;
     margin: 0 auto;
-    transform: unset !important;
+    transform: unset!important;
+    margin-top: 0 !important;
 }
 
 
