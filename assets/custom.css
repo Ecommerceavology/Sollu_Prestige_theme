@@ -3300,7 +3300,7 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     color: #faf7f2 !important;
 }
 .cart-note-save-button:hover {
-    background: #faf7f2;
+    background: #faf7f2 !important;
     color: #2a2420 !important;
 
 }
