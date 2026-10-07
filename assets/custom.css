@@ -4118,7 +4118,10 @@ background:transparent !important;
     bottom: 0 !important;
     top: 60%;
 } */
-
+.cart_cst_page .cart-page label.floating-label.text-xs {
+    top: -20px;
+    left: 0;
+}
 
 
 
