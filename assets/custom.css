@@ -4125,7 +4125,7 @@ background:transparent !important;
 .cart_cst_page .cart-page .shipping-estimator__form {
     justify-content: center;
 }
-.cart_cst_page .cart-page .shipping-estimator__form {
+.cart_cst_page .cart-page .shipping-estimator__form button {
         background: #2a2420!important;
         color: #faf7f2 !important;
 }
