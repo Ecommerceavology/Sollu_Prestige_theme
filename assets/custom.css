@@ -7526,7 +7526,10 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     letter-spacing: 1.4px !important;
     margin-top: 16px !important;
   }
-
+.All_pro_sec .dvb-fp__grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
 }
 
 @media (max-width: 750px) {
