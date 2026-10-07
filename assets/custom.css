@@ -4065,6 +4065,11 @@ background:transparent !important;
 .All_pro_sec article.dvb-fp__card a:hover img {
     transform: scale(1.06) !important;
 }
+.All_pro_sec .dvb-fp__grid {
+    display: grid;
+    gap: 20px!important;
+    grid-template-columns: repeat(4,1fr);
+}
 
 
 
