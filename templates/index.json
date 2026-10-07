@@ -265,28 +265,16 @@
     "all_products_qBUhpb": {
       "type": "all-products",
       "blocks": {
-        "dvb_product_mYDC9k": {
+        "dvb_product_hNWXyK": {
           "type": "dvb_product",
           "settings": {
-            "dvb_fp_product": "julie"
-          }
-        },
-        "dvb_product_Rr3xwH": {
-          "type": "dvb_product",
-          "settings": {
-            "dvb_fp_product": "sollu-ease"
+            "dvb_fp_product": "vibra-in-grey"
           }
         },
         "dvb_product_pzTDCq": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "mary"
-          }
-        },
-        "dvb_product_hNWXyK": {
-          "type": "dvb_product",
-          "settings": {
-            "dvb_fp_product": "vibra-in-grey"
           }
         },
         "dvb_product_BAtEVU": {
@@ -307,22 +295,34 @@
             "dvb_fp_product": "sollu-relief"
           }
         },
+        "dvb_product_Rr3xwH": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-ease"
+          }
+        },
         "dvb_product_6MeRyg": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "sollu-aqua-flosser"
           }
+        },
+        "dvb_product_mYDC9k": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "julie"
+          }
         }
       },
       "block_order": [
-        "dvb_product_mYDC9k",
-        "dvb_product_Rr3xwH",
-        "dvb_product_pzTDCq",
         "dvb_product_hNWXyK",
+        "dvb_product_pzTDCq",
         "dvb_product_BAtEVU",
         "dvb_product_t3AFKw",
         "dvb_product_Aje6aJ",
-        "dvb_product_6MeRyg"
+        "dvb_product_Rr3xwH",
+        "dvb_product_6MeRyg",
+        "dvb_product_mYDC9k"
       ],
       "name": "DVB Featured Products",
       "settings": {

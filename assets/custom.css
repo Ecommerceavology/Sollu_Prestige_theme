@@ -4005,6 +4005,7 @@ background:transparent !important;
     font-weight: 400;
     text-transform: uppercase;
     margin-bottom: 5px;
+    margin-top: 0 !important;
 }
 
 
