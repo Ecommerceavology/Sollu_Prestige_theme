@@ -4031,7 +4031,11 @@ background:transparent !important;
     margin-bottom: 10px;
     margin-top: 5px;
 }
-
+.All_pro_sec .dvb-fp__info {
+    align-items: start !important;
+    text-align: left !important;
+    padding-top: 20px;
+}
 
 
 
