@@ -72,7 +72,7 @@
         "feature_with_icon_M7aamc": {
           "type": "feature_with_icon",
           "settings": {
-            "text": "<p><strong>Fri fragt over 499,00 kr.</strong></p>",
+            "text": "<p><strong>Fri fragt fra</strong> <strong>499,00 kr.</strong></p>",
             "link": "",
             "icon": "picto-delivery-truck",
             "custom_icon": "shopify://shop_images/delivery-package.svg",
@@ -218,30 +218,17 @@
     },
     "featured_collections_W6RYy8": {
       "type": "featured-collections",
-      "blocks": {
-        "product_b8M8a6": {
-          "type": "product",
-          "settings": {
-            "product": "julie"
-          }
-        }
-      },
-      "block_order": [
-        "product_b8M8a6"
-      ],
       "name": "Featured products custom",
       "settings": {
         "section_custom_class": "All_pro_sec related_sec",
         "heading": "Relaterede Produkter",
         "subheading": "",
         "color_scheme": "",
+        "max_products": 10,
         "products_per_row_mobile": 2,
         "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "show_cta": false,
-        "cta_text": "SE ALLE 10 PRODUKTER",
-        "cta_link": ""
+        "vertical_spacing_factor": 1
       }
     },
     "newsletter_yTKYeU": {
