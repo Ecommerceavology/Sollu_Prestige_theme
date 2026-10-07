@@ -277,101 +277,19 @@
         "vertical_spacing_factor": 1
       }
     },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "badges-1": {
-          "type": "badges",
-          "settings": {}
-        },
-        "title-1": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h3"
-          }
-        },
-        "price-1": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "payment-terms-1": {
-          "type": "payment_terms",
-          "settings": {}
-        },
-        "separator-1": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description-1": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false
-          }
-        },
-        "variant-picker-1": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "variant_image_show_underline": false,
-            "size_chart_page": ""
-          }
-        },
-        "quantity-selector-1": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy-buttons-1": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": false,
-            "show_gift_card_recipient": false,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "pickup-availability-1": {
-          "type": "pickup_availability",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "badges-1",
-        "title-1",
-        "price-1",
-        "payment-terms-1",
-        "separator-1",
-        "description-1",
-        "variant-picker-1",
-        "quantity-selector-1",
-        "buy-buttons-1",
-        "pickup-availability-1"
-      ],
-      "disabled": true,
+    "featured_collections_wiXdTA": {
+      "type": "featured-collections",
+      "name": "All Products section",
       "settings": {
+        "section_custom_class": "All_pro_sec1",
+        "heading": "Mest solgte Sollu produkter",
+        "subheading": "Udvalgte",
         "color_scheme": "scheme-1",
-        "product": "julie",
-        "separate_section_with_border": true,
-        "container_size": "lg",
-        "product_info_size": 45,
-        "center_basic_info": false,
-        "desktop_media_layout": "carousel_dots",
-        "desktop_media_grid_gap": 30,
-        "mobile_controls": "dots",
-        "enable_media_autoplay": true,
-        "enable_video_looping": true,
-        "enable_image_zoom": false,
-        "max_image_zoom_level": 3,
-        "subheading": "Our selection",
-        "title": "Product of the week",
-        "heading_style": "h2",
-        "content": ""
+        "max_products": 10,
+        "products_per_row_mobile": 2,
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1
       }
     },
     "custom_product_feature_73g4FA": {
@@ -706,7 +624,7 @@
     "multi_column_g6gVwX",
     "collection_list_wchGVw",
     "featured-collections-2",
-    "featured-product",
+    "featured_collections_wiXdTA",
     "custom_product_feature_73g4FA",
     "multi-column",
     "images-with-text-scroll",
