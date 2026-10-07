@@ -4086,7 +4086,9 @@ background:transparent !important;
 }
 
 
-
+shipping-estimator .form-control::before {
+    display: none;
+}
 
 
 
