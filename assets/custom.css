@@ -4122,7 +4122,9 @@ background:transparent !important;
     top: -20px;
     left: 0;
 }
-
+.cart_cst_page .cart-page .shipping-estimator__form {
+    justify-content: center;
+}
 
 
 /* //responsive  */
