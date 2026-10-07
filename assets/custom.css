@@ -3293,6 +3293,18 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper {
     line-height: 25.6px!important;
     font-weight: 300!important;
 }
+.cart-note-save-button {
+    background: #2a2420;
+    border: 1px solid #2a2420!important;
+    transition: 0.3s all ease-in-out;
+    color: #faf7f2;
+}
+.cart-note-save-button:hover {
+    background: #faf7f2;
+    color: #2a2420 !important;
+
+}
+
 
 .cart-drawer__footer button.button.w-full {
     color: #faf7f2!important;
