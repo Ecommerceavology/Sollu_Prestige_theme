@@ -3997,7 +3997,15 @@ background:transparent !important;
     text-transform: uppercase;
 }
 
-
+.All_pro_sec .dvb-fp__category {
+    color: #e8637a;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
 
 
 
