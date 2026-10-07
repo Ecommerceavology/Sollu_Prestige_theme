@@ -4104,6 +4104,7 @@ shipping-estimator.shipping-estimator.bordered-box p.bordered-box__title.h4 {
     margin: 0 auto;
     transform: unset!important;
     margin-top: 0 !important;
+    margin-bottom: 15px !IMPORTANT;
 }
 
 
