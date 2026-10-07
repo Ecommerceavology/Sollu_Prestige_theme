@@ -26,6 +26,12 @@
             "text": "Announce something here"
           }
         },
+        "message_9Hbkwp": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
+        },
         "message_PKgiFm": {
           "type": "message",
           "settings": {
@@ -42,6 +48,7 @@
       "block_order": [
         "message_abT9BH",
         "message_Tjzjza",
+        "message_9Hbkwp",
         "message_PKgiFm",
         "message_YTRDYW"
       ],
@@ -68,7 +75,7 @@
         "announcement_xYHyyL": {
           "type": "announcement",
           "settings": {
-            "text": "Fri fragt fra 499,00"
+            "text": "Fri fragt fra 499,00 kr."
           }
         },
         "announcement_rzrTJ8": {
