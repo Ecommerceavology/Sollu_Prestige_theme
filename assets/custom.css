@@ -3957,6 +3957,7 @@ background:transparent !important;
     font-weight: 400!important;
     text-transform: uppercase!important;
     transition: all .3s ease!important;
+    margin-top: 20px !important;
 }
 .cart_cst_page .button:hover {
     background: #2a2420!important;
@@ -3969,7 +3970,7 @@ background:transparent !important;
     padding: 0;
 }
 .cart_cst_page p {
-    margin-top: 5px !important;
+    margin-top: 10px !important;
 }
 
 
