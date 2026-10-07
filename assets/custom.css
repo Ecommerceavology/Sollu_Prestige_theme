@@ -3958,7 +3958,11 @@ background:transparent !important;
     text-transform: uppercase!important;
     transition: all .3s ease!important;
 }
-
+.cart_cst_page .button:hover {
+    background: #2a2420!important;
+    color: #fff!important;
+    border-color: #2a2420!important;
+}
 
 /* //responsive  */
 @media (max-width: 1300px) {
