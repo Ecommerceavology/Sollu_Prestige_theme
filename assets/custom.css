@@ -4140,10 +4140,12 @@ background:transparent !important;
 }
 
 
-.shipping-estimator__form .select {
-    box-shadow: none !IMPORTANT;
-    border: none !important;
-    padding: 0 !important;
+.cart_cst_page .cart-page .shipping-estimator__form .select {
+    box-shadow: none!important;
+    border: none!important;
+    padding: 0!important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 .cart_cst_page .cart-page country-selector.contents .form-control {
     padding: 10px;
