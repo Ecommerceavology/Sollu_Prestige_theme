@@ -262,52 +262,58 @@
         "content": ""
       }
     },
-    "all_products_qBUhpb": {
-      "type": "all-products",
+    "dvb_all_products_txTLGK": {
+      "type": "DVB-all-products",
       "blocks": {
-        "dvb_product_hNWXyK": {
+        "dvb_product_nbQ9PR": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "vibra-in-grey"
           }
         },
-        "dvb_product_pzTDCq": {
+        "dvb_product_mDLVCA": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": ""
+          }
+        },
+        "dvb_product_6GgHyR": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "mary"
           }
         },
-        "dvb_product_BAtEVU": {
+        "dvb_product_w8tQTy": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "vibra-in-pink"
           }
         },
-        "dvb_product_t3AFKw": {
+        "dvb_product_qmU7Rk": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "sollu-relief-pro"
           }
         },
-        "dvb_product_Aje6aJ": {
+        "dvb_product_hTrznf": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "sollu-relief"
           }
         },
-        "dvb_product_Rr3xwH": {
-          "type": "dvb_product",
-          "settings": {
-            "dvb_fp_product": "sollu-ease"
-          }
-        },
-        "dvb_product_6MeRyg": {
+        "dvb_product_mPmAWV": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "sollu-aqua-flosser"
           }
         },
-        "dvb_product_mYDC9k": {
+        "dvb_product_L4YYCg": {
+          "type": "dvb_product",
+          "settings": {
+            "dvb_fp_product": "sollu-ease"
+          }
+        },
+        "dvb_product_HDMejC": {
           "type": "dvb_product",
           "settings": {
             "dvb_fp_product": "julie"
@@ -315,14 +321,15 @@
         }
       },
       "block_order": [
-        "dvb_product_hNWXyK",
-        "dvb_product_pzTDCq",
-        "dvb_product_BAtEVU",
-        "dvb_product_t3AFKw",
-        "dvb_product_Aje6aJ",
-        "dvb_product_Rr3xwH",
-        "dvb_product_6MeRyg",
-        "dvb_product_mYDC9k"
+        "dvb_product_nbQ9PR",
+        "dvb_product_mDLVCA",
+        "dvb_product_6GgHyR",
+        "dvb_product_w8tQTy",
+        "dvb_product_qmU7Rk",
+        "dvb_product_hTrznf",
+        "dvb_product_mPmAWV",
+        "dvb_product_L4YYCg",
+        "dvb_product_HDMejC"
       ],
       "name": "DVB Featured Products",
       "settings": {
@@ -670,7 +677,7 @@
     "image-with-text-overlay-1",
     "multi_column_g6gVwX",
     "collection_list_wchGVw",
-    "all_products_qBUhpb",
+    "dvb_all_products_txTLGK",
     "custom_product_feature_73g4FA",
     "multi-column",
     "images-with-text-scroll",
