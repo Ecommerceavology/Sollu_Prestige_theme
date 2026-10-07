@@ -326,10 +326,10 @@
       ],
       "name": "DVB Featured Products",
       "settings": {
-        "dvb_fp_custom_class": "",
+        "dvb_fp_custom_class": "All_pro_sec",
         "dvb_fp_color_scheme": "",
         "dvb_fp_subheading": "Udvalgte",
-        "dvb_fp_heading": "FEATURED PRODUCTS",
+        "dvb_fp_heading": "Mest solgte fra Sollu produkter",
         "dvb_fp_products_per_row_mobile": "2",
         "dvb_fp_products_per_row_desktop": 4,
         "dvb_fp_horizontal_gap": 24,
