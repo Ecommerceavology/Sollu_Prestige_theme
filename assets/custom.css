@@ -4129,7 +4129,10 @@ background:transparent !important;
         background: #2a2420!important;
         color: #faf7f2 !important;
 }
-
+.cart_cst_page .cart-page .shipping-estimator__form button:hover{
+    color: #2a2420!important;
+        background: transparent !important;
+}
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
