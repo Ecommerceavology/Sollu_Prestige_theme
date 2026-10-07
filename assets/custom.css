@@ -3747,7 +3747,7 @@ a.eu-wf-link:hover {
 }
 .cart_cst_page h1 {
     color: #2a2420;
-    text-align: left;
+    text-align: center;
     font-size: clamp(35px,4vw,46px);
     line-height: 50.6px;
     letter-spacing: .46px;
