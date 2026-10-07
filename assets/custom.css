@@ -4138,6 +4138,36 @@ background:transparent !important;
     color: #2a2420!important;
         background: transparent !important;
 }
+
+
+.shipping-estimator__form .select {
+    box-shadow: none !IMPORTANT;
+    border: none !important;
+    padding: 0 !important;
+}
+.cart_cst_page .cart-page country-selector.contents .form-control {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* //responsive  */
 @media (max-width: 1300px) {
     .About_Sec_1 .prose.text-center,
