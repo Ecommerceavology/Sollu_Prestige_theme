@@ -4022,6 +4022,9 @@ background:transparent !important;
     transition: color .3s ease!important;
     margin-top: 0 !important;
 }
+.All_pro_sec a.dvb-fp__title:hover{
+        color: #b8965a!important;
+}
 .All_pro_sec .dvb-fp__highlights {
     color: #8c8278;
     text-align: left;
