@@ -3970,7 +3970,8 @@ background:transparent !important;
     padding: 0;
 }
 .cart_cst_page p {
-    margin-top: 10px !important;
+    margin-top: 10px!important;
+    background: transparent;
 }
 
 .All_pro_sec .dvb-fp__heading {
