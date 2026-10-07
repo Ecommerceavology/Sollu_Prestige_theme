@@ -7398,6 +7398,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
     font-size: 32px !important;
     
 }
+  .cart_cst_page.color-scheme {
+    padding: 60px 20px !important;
+  }
 }
 
 @media (max-width: 750px) {
@@ -9202,6 +9205,9 @@ section.cpf-section.custom-product-feature .cpf-wrapper,
 
   font-size: 14px !important;
 }
+ .cart_cst_page.color-scheme {
+    padding: 40px 16px !important;
+  }
 }
 
 @media (max-width: 400px) {
