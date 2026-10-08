@@ -4176,7 +4176,9 @@ background:transparent !important;
    display: none !important;
 } */
 
-
+footer.hidden_footer {
+display: none !important;
+}
 
 
 
