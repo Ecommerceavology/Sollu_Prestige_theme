@@ -1,1 +1,107 @@
-{"type":"footer","name":"Footer group","sections":{"footer":{"type":"footer","blocks":{"links":{"type":"links","settings":{"menu":"footer-menu","menu_title":"Butik"}},"links_AdMfrJ":{"type":"links","settings":{"menu":"kundeservice","menu_title":"Kundeservice"}},"links_z6Gd3q":{"type":"links","settings":{"menu":"om-sollu","menu_title":"Om Sollu"}}},"block_order":["links","links_AdMfrJ","links_z6Gd3q"],"settings":{"custom_class":"Footer_sec","logo":"shopify:\/\/shop_images\/Sollu_3.png","logo_alt":"Sollu","logo_link":"","logo_width":80,"show_brand_name":true,"brand_name":"","brand_content":"<p>Din nye rutine – dine resultater<\/p><p>Sollu ApS · CVR 00000000<br\/>Danmark · kontakt@sollu.dk<\/p>","footer_background":"#29231f","footer_heading_color":"#f5f1eb","footer_text_color":"#a9a19a","divider_color":"#514943","payment_border_color":"#514943","payment_text_color":"#a9a19a","brand_font_size":25,"heading_font_size":12,"body_font_size":11,"copyright_name":"Sollu ApS","legal_short_text":"<p>Klager kan indbringes for <a href=\"#\" title=\"#\">Forbrugerklagenævnet<\/a>, Nævnenes Hus, Toldboden 2, 8800 Viborg<\/p>"}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "footer-menu",
+            "menu_title": "Butik"
+          }
+        },
+        "links_AdMfrJ": {
+          "type": "links",
+          "settings": {
+            "menu": "kundeservice",
+            "menu_title": "Kundeservice"
+          }
+        },
+        "links_z6Gd3q": {
+          "type": "links",
+          "settings": {
+            "menu": "om-sollu",
+            "menu_title": "Om Sollu"
+          }
+        }
+      },
+      "block_order": [
+        "links",
+        "links_AdMfrJ",
+        "links_z6Gd3q"
+      ],
+      "settings": {
+        "custom_class": "Footer_sec",
+        "logo": "shopify://shop_images/Sollu_3.png",
+        "logo_alt": "Sollu",
+        "logo_link": "",
+        "logo_width": 80,
+        "show_brand_name": true,
+        "brand_name": "",
+        "brand_content": "<p>Dine Rutiner — Dine Resultater</p><p>Sollu ApS · CVR 46 09 28 72<br/>Holte, Danmark · kontakt@sollu.dk</p>",
+        "footer_background": "#29231f",
+        "footer_heading_color": "#f5f1eb",
+        "footer_text_color": "#a9a19a",
+        "divider_color": "#514943",
+        "payment_border_color": "#514943",
+        "payment_text_color": "#a9a19a",
+        "brand_font_size": 25,
+        "heading_font_size": 12,
+        "body_font_size": 11,
+        "copyright_name": "Sollu ApS",
+        "legal_short_text": "<p>Klager kan indbringes for <a href=\"#\" title=\"#\">Forbrugerklagenævnet</a>, Nævnenes Hus, Toldboden 2, 8800 Viborg</p>"
+      }
+    },
+    "footer_GMRiwM": {
+      "type": "footer",
+      "blocks": {
+        "links_hxE6UB": {
+          "type": "links",
+          "settings": {
+            "menu": "merchant-menu",
+            "menu_title": "Shop"
+          }
+        }
+      },
+      "block_order": [
+        "links_hxE6UB"
+      ],
+      "name": "Custom Sollu Footer",
+      "settings": {
+        "custom_class": "hidden_footer",
+        "logo_alt": "Sollu",
+        "logo_link": "",
+        "logo_width": 80,
+        "show_brand_name": true,
+        "brand_name": "Sollu",
+        "brand_content": "<p>Din nye rutine – dine resultater</p><p>Sollu ApS · CVR 00000000<br/>Danmark · kontakt@sollu.dk</p>",
+        "footer_background": "#29231F",
+        "footer_heading_color": "#F5F1EB",
+        "footer_text_color": "#A9A19A",
+        "divider_color": "#514943",
+        "payment_border_color": "#514943",
+        "payment_text_color": "#A9A19A",
+        "brand_font_size": 25,
+        "heading_font_size": 12,
+        "body_font_size": 11,
+        "copyright_name": "Sollu ApS",
+        "legal_short_text": "<p>Klager kan indbringes for Forbrugerklagenævnet, Nævnenes Hus, Toldboden 2, 8800 Viborg</p>"
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "footer_GMRiwM"
+  ]
+}
