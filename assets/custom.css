@@ -767,7 +767,7 @@ a.sollu-footer__logo {
     font-weight: 300!important;
     opacity: 1!important;
     transition: color .3s ease!important;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .sollu-footer__links a:hover {
