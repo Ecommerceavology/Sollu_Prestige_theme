@@ -177,6 +177,20 @@
       color: inherit;
     }
   }
+  /* SOLLU: ikoner i stedet for tekst (søg, konto, kurv) */
+  #shopify-section-{{ section.id }} .mobile-search-icon,
+  #shopify-section-{{ section.id }} .mobile-cart-icon,
+  #shopify-section-{{ section.id }} .account-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .mobile-search-text,
+  #shopify-section-{{ section.id }} .mobile-cart-text,
+  #shopify-section-{{ section.id }} .mobile-cart-count {
+    display: none;
+  }
 </style>
 
 
@@ -621,7 +635,7 @@
             >
 
               <span class="custom-header-label">
-                {{ section.settings.account_text }}
+                <span class="sr-only">{{ section.settings.account_text | escape }}</span><span class="account-icon" aria-hidden="true">{%- render 'icon' with 'account', class: 'header__nav-icon' -%}</span>
               </span>
 
             </a>
